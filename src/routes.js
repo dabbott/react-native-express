@@ -32,6 +32,10 @@ import Realm from 'containers/Pages/Realm'
 import Persistence from 'containers/Pages/Persistence'
 import AsyncStorage from 'containers/Pages/AsyncStorage'
 
+import Animation from 'containers/Pages/Animation'
+import Animated from 'containers/Pages/Animated'
+import ReactNativeAnimatable from 'containers/Pages/ReactNativeAnimatable'
+
 import Boilerplates from 'containers/Pages/Boilerplates'
 
 export default () => {
@@ -69,6 +73,9 @@ export default () => {
         <Route path={"realm"} component={Realm} />
         <Route path={"persistence"} component={Persistence} />
         <Route path={"asyncstorage"} component={AsyncStorage} />
+        <Route path={"animation"} component={Animation} />
+        <Route path={"animated"} component={Animated} />
+        <Route path={"react_native_animatable"} component={ReactNativeAnimatable} />
         <Route path={"boilerplates"} component={Boilerplates} />
 
         { /* Catch all route */ }
