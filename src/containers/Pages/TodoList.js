@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 import Page from './Page'
 import styles from './styles'
@@ -29,10 +29,10 @@ export default class TodoList extends Component {
               </div>
               <div style={styles.h4}> Sections </div>
               <ul>
-                <li> <Link to={'todo_list_1'}> Step 1 - App setup </Link> </li>
-                <li> <Link to={'todo_list_2'}> Step 2 - Input and first Redux action </Link> </li>
-                <li> <Link to={'todo_list_3'}> Step 3 - List and Checkbox </Link> </li>
-                <li> <Link to={'todo_list_4'}> Step 4 - Remove completed and styling </Link> </li>
+                <li style={styles.li}> <Link to={'todo_list_1'}> Step 1 - App setup </Link> </li>
+                <li style={styles.li}> <Link to={'todo_list_2'}> Step 2 - Input and ADD_ITEM </Link> </li>
+                <li style={styles.li}> <Link to={'todo_list_3'}> Step 3 - List and Checkbox </Link> </li>
+                <li style={styles.li}> <Link to={'todo_list_4'}> Step 4 - Remove completed items and styling </Link> </li>
               </ul>
             </div>
             <div style={{border: '1px solid black'}}>
