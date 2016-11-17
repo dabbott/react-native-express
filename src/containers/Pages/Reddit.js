@@ -14,10 +14,10 @@ const contentStyle = {
   marginTop: '-15px',
 }
 
-export default class TodoList extends Component {
+export default class Reddit extends Component {
   render() {
     return (
-      <Page title={'Todo List'}>
+      <Page title={'Reddit Client'}>
         <div style={styles.well}>
           <div style={containerStyle}>
             <div style={contentStyle}>
@@ -35,16 +35,16 @@ export default class TodoList extends Component {
               </div>
               <div style={styles.h4}> Sections </div>
               <ul>
-                <li style={styles.li}> <Link to={'todo_list_1'}> Step 1 - App setup </Link> </li>
-                <li style={styles.li}> <Link to={'todo_list_2'}> Step 2 - Input and ADD_ITEM </Link> </li>
-                <li style={styles.li}> <Link to={'todo_list_3'}> Step 3 - List and Checkbox </Link> </li>
-                <li style={styles.li}> <Link to={'todo_list_4'}> Step 4 - Remove completed items and styling </Link> </li>
+                <li style={styles.li}> <Link to={'todo_list_1'}> Step 1 - Setup Router </Link> </li>
+                <li style={styles.li}> <Link to={'todo_list_2'}> Step 2 - Reddit OAuth </Link> </li>
+                <li style={styles.li}> <Link to={'todo_list_3'}> Step 3 - Persisting Token with AsyncStorage </Link> </li>
+                <li style={styles.li}> <Link to={'todo_list_4'}> Step 4 - Fetch and Display Reddit Posts </Link> </li>
               </ul>
             </div>
             <div style={{border: '1px solid black'}}>
               <img
                 width={280}
-                src={'todo-screenshot.png'}
+                src={'reddit-screenshot.png'}
               />
             </div>
           </div>
