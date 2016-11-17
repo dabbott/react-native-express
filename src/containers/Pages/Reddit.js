@@ -1,30 +1,52 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+
 import Page from './Page'
 import styles from './styles'
 
-export default class Reddit extends Component {
+const containerStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+}
+
+const contentStyle = {
+  paddingRight: '30px',
+  marginTop: '-15px',
+}
+
+export default class TodoList extends Component {
   render() {
     return (
-      <Page title={'Reddit'}>
+      <Page title={'Todo List'}>
         <div style={styles.well}>
-          <div style={styles.h3}>Modern JavaScript</div>
-          <div style={styles.p}>
-            In the old days, you could just include a <code>{`<script>`}</code> tag in the header of your webpage, and your JavaScript would run as intended. These days, we preprocess our JavaScript in order to access experimental features and language extensions like JSX.
-          </div>
-          <div style={styles.p}>
-            Reddit is the main tool used to preprocess JavaScript. Reddit is a highly configurable parser that lets you use experimental features and extensions, compiling down into old-style JavaScript that can be supported on a wider range of platforms. Of course, if a native platform doesn't support an ES6 feature like <code>Map()</code>, Reddit won't fully be able to help -- but it can in many cases polyfill missing APIs to provide this functionality.
-          </div>
-          <div style={styles.p}>
-            Reddit enables debugging of the the original source code by including <b>source maps</b> with the compiled JavaScript. JavaScript interpretters will run the compiled code, but map it to the source code in the debugger so that you can debug the source code instead of the (generally quite ugly) compiled output.
-          </div>
-        </div>
-        <div style={styles.well}>
-          <div style={styles.h3}>Reddit Configuration</div>
-          <div style={styles.p}>
-            You can configure Reddit by including a <code>{`.babelrc`}</code> file in the root directory of your project. This file can specify which experimental JS features to enable and which plugins to use (JSX).
-          </div>
-          <div style={styles.p}>
-            React Native takes care of properly configuring babel for you, so you generally won't need to create a <code>{`.babelrc`}</code>. However, if you want to modify the default presets, you can use the npm package <a href={'https://github.com/facebook/react-native/tree/master/babel-preset'}>babel-preset-react-native</a> as a base configuration, and apply additional plugins/configuration on top.
+          <div style={containerStyle}>
+            <div style={contentStyle}>
+              <div style={styles.h3}> Overview </div>
+              <div style={styles.p}>
+                This exercise will be a basic Reddit clone. This exercise will include some more complex elements such as <code>fetch</code>, <code>AsyncStorage</code>, and authentication.
+              </div>
+              <div style={styles.h4}> Download </div>
+              <div style={styles.p}>
+                Download the basic project template <a href={'https://raw.githubusercontent.com/gabergg/ReactNativeTodoList/starting-point/boilerplate/TodoList.zip'}>here</a> to begin.
+              </div>
+              <div style={styles.h4}> Completed </div>
+              <div style={styles.p}>
+                View the source code for the completed project <a href={'https://github.com/gabergg/ReactNativeTodoList'}>here</a>.
+              </div>
+              <div style={styles.h4}> Sections </div>
+              <ul>
+                <li style={styles.li}> <Link to={'todo_list_1'}> Step 1 - App setup </Link> </li>
+                <li style={styles.li}> <Link to={'todo_list_2'}> Step 2 - Input and ADD_ITEM </Link> </li>
+                <li style={styles.li}> <Link to={'todo_list_3'}> Step 3 - List and Checkbox </Link> </li>
+                <li style={styles.li}> <Link to={'todo_list_4'}> Step 4 - Remove completed items and styling </Link> </li>
+              </ul>
+            </div>
+            <div style={{border: '1px solid black'}}>
+              <img
+                width={280}
+                src={'todo-screenshot.png'}
+              />
+            </div>
           </div>
         </div>
         <div style={styles.well}>

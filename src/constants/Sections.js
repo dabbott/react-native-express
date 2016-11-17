@@ -47,7 +47,13 @@ let sections = [
   {depth: 2, title: 'List and Checkbox', slug: 'todo_list_3'},
   {depth: 2, title: 'Removal & Styling', slug: 'todo_list_4'},
 
-  // {depth: 1, title: 'Reddit', slug: 'reddit'},
+  {depth: 1, title: 'Reddit', slug: 'reddit'},
+  {depth: 2, title: 'Router', slug: 'reddit_1'},
+  {depth: 2, title: 'Login & Auth', slug: 'reddit_2'},
+  {depth: 2, title: 'API ', slug: 'reddit_3'},
+  {depth: 2, title: 'Results List', slug: 'reddit_4'},
+  {depth: 2, title: 'UI Polish', slug: 'reddit_5'},
+
 
   {depth: 1, title: 'Uber', slug: 'uber'},
   {depth: 2, title: 'Search Header', slug: 'uber_1'},
