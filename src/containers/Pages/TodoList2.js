@@ -9,13 +9,18 @@ const containerStyle = {
   flexDirection: 'row',
 }
 
+const contentStyle = {
+  paddingRight: '30px',
+  marginTop: '-15px',
+}
+
 export default class TodoList2 extends Component {
   render() {
     return (
       <Page title={'Todo List - Step 2'}>
         <div style={styles.well}>
           <div style={containerStyle}>
-            <div style={{paddingRight: '30px'}}>
+            <div style={contentStyle}>
               <div style={styles.h3}> Input and ADD_ITEM </div>
               <div style={styles.p}>
                 The goal of this step is to get Input working with local component state. Then, using that input, we'll build the functionality to add an item to the todo list.

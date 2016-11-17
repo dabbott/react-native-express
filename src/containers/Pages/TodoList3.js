@@ -8,13 +8,18 @@ const containerStyle = {
   flexDirection: 'row',
 }
 
+const contentStyle = {
+  paddingRight: '30px',
+  marginTop: '-15px',
+}
+
 export default class TodoList3 extends Component {
   render() {
     return (
       <Page title={'Todo List - Step 3'}>
         <div style={styles.well}>
           <div style={containerStyle}>
-            <div style={{paddingRight: '30px'}}>
+            <div style={contentStyle}>
               <div style={styles.h3}> List and Checkbox </div>
               <div style={styles.p}>
                 The goal of this step is to render a list of items with working checkboxes and deletion. We'll also add redux actions to toggle item completion and remove individual items.
