@@ -62,6 +62,8 @@ export default class Reddit4 extends Component {
               <div style={styles.h3}> Fetching Posts </div>
               <div style={styles.p}>
                 Now that we have the token, we can move on to fetching the posts and displaying them in a list.
+                <br/>
+                <br/>
                 <a href="https://www.reddit.com/dev/api/#GET_hot">API Documentation</a>
               </div>
               <div style={styles.h4}> Tasks </div>

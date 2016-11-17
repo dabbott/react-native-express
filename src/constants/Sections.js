@@ -52,7 +52,7 @@ let sections = [
   {depth: 2, title: 'OAuth', slug: 'reddit_2'},
   {depth: 2, title: 'Persisting Token', slug: 'reddit_3'},
   {depth: 2, title: 'Fetch Posts', slug: 'reddit_4'},
-  {depth: 2, title: 'UI Polish', slug: 'reddit_5'},
+  {depth: 2, title: 'Display Posts', slug: 'reddit_5'},
 
 
   {depth: 1, title: 'Uber', slug: 'uber'},

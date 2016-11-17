@@ -16,13 +16,13 @@ const contentStyle = {
 export default class Reddit5 extends Component {
   render() {
     return (
-      <Page title={'UI Polish'}>
+      <Page title={'Display Posts'}>
         <div style={styles.well}>
           <div style={containerStyle}>
             <div style={contentStyle}>
-              <div style={styles.h3}> UI Polish </div>
+              <div style={styles.h3}> Display Posts </div>
               <div style={styles.p}>
-                We have all the data we need, so now all that's left to do is display it!
+                We have all the data we need, so now all that's left to do is render it!
               </div>
               <div style={styles.h4}> Tasks </div>
               <ul>

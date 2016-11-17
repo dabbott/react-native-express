@@ -22,7 +22,7 @@ export default class Reddit1 extends Component {
             <div style={contentStyle}>
               <div style={styles.h3}> Setting up the Router </div>
               <div style={styles.p}>
-              Navigation is an important piece of any mobile app. As of now, there are many navigator libraries for React Native and no single library .
+              Navigation is an important piece of any mobile app. As of now, there are many navigator libraries for React Native and no single library is THE standard.
               In this example, we'll be using the <a href="https://github.com/aksonov/react-native-router-flux">react-native-router-flux</a> node module.
 
 
@@ -33,7 +33,7 @@ export default class Reddit1 extends Component {
                   Complete the Router.js file and implement AppRouter component. The component should render a top-level <code>Router</code>
                 </li>
                 <li style={styles.li}>
-                  Add <code> Scenes </code> to the Router.js file
+                  Add <code>Scenes</code> to the Router.js file
                   <ul>
                     <li style={styles.li}>Add tabs scene</li>
                     <li style={styles.li}>Add "posts" tab with component <code>Posts.js</code></li>
