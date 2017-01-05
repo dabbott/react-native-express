@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AppRegistry, TextInput, StyleSheet } from 'react-native'
+import { TextInput, StyleSheet } from 'react-native'
 
 export default class Input extends Component {
 
