@@ -20,7 +20,7 @@ export default class Input extends Component {
   }
 
   render() {
-    const {onSubmitEditing, placeholder} = this.props
+    const {placeholder} = this.props
     const {text} = this.state
 
     return (
