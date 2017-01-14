@@ -60,8 +60,7 @@ const styles = {
     marginBottom: 15,
   },
   h4: {
-    fontSize: 14,
-    fontWeight: 500,
+    fontSize: 16,
     marginTop: 35,
     marginBottom: 15,
   },
@@ -71,11 +70,14 @@ const styles = {
     lineHeight: '22px',
     marginBottom: 15
   },
-  cmHeaderCode: {
-    backgroundColor: 'transparent',
+  strong: {
     fontWeight: 'bold',
-    color: 'rgba(0,0,0,0.8)',
   },
+  // cmHeaderCode: {
+  //   backgroundColor: 'transparent',
+  //   fontWeight: 'bold',
+  //   color: 'rgba(0,0,0,0.8)',
+  // },
 }
 
 Object.assign(styles, {
