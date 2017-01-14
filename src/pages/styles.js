@@ -47,10 +47,16 @@ const styles = {
   li: {
     margin: '10px 0',
   },
-  h3: {
+  pageHeader: {
     fontSize: 20,
     fontWeight: 300,
     marginTop: 15,
+    marginBottom: 15,
+  },
+  h3: {
+    fontSize: 20,
+    fontWeight: 300,
+    marginTop: 60,
     marginBottom: 15,
   },
   h4: {

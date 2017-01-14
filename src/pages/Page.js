@@ -9,7 +9,7 @@ import styles from './styles'
   scroller: {
     borderTop: '1px solid rgba(220,220,220,0.5)',
     backgroundColor: 'white',
-    padding: '40px 40px 0 40px',
+    padding: '60px 60px 40px 60px',
   },
 })
 export default class Page extends Component {
