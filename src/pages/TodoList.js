@@ -51,8 +51,9 @@ export default props =>
         />
         {content}
       </div>
-      <div style={{border: '1px solid black'}}>
+      <div>
         <img
+          style={{border: '1px solid black'}}
           width={280}
           src={'todo-screenshot.png'}
         />
