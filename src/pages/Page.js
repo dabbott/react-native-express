@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import createStyles, { responsive } from 'react-styles-provider'
 
-import styles from './styles'
+import styles from '../styles'
 
 @responsive()
 @createStyles({

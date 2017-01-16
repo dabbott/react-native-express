@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import DefaultPage from './DefaultPage'
-import styles from './styles'
+import styles from '../styles'
 
 const containerStyle = {
   display: 'flex',

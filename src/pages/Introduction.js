@@ -4,7 +4,7 @@ import markdown from 'markdown-in-js'
 
 import markdownOptions from '../utils/markdownOptions'
 import Page from './Page'
-import styles from './styles'
+import styles from '../styles'
 import { WebPlayer, GithubCorner, PageHeader } from '../components'
 
 const code = `/**

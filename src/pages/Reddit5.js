@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Page from './Page'
-import styles from './styles'
+import styles from '../styles'
 import { PageHeader } from '../components'
 
 const containerStyle = {

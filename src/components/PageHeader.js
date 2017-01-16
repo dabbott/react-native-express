@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-import styles from '../pages/styles'
+import styles from '../styles'
 import Author from './Author'
 
 export default class PageHeader extends Component {

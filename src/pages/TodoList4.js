@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { PageHeader } from '../components'
 import Page from './Page'
-import styles from './styles'
+import styles from '../styles'
 
 const containerStyle = {
   display: 'flex',
