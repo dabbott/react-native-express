@@ -150,38 +150,11 @@ Components specify the layout of their children using the <b>flexbox</b> algorit
 
 To choose the right layout for a component's children, you must make 3 choices:
 
-${
-  <table className={'table'}>
-    <thead>
-      <tr>
-        <th>Property</th>
-        <th>Default</th>
-        <th>Options</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>flexDirection</code></td>
-        <td><code>column</code></td>
-        <td><code>row, column</code></td>
-        <td>Do you want a vertical (<code>column</code>) or horizontal (<code>row</code>) layout?. This choice determines the orientation of the <b>primary axis</b> of your layout.</td>
-      </tr>
-      <tr>
-        <td><code>justifyContent</code></td>
-        <td><code>flex-start</code></td>
-        <td><code>flex-start, center, flex-end, space-around, space-between</code></td>
-        <td>How should the content be distributed along the <b>primary axis</b> of your layout? Should it be at the start, the center, the end, or spaced evenly?</td>
-      </tr>
-      <tr>
-        <td><code>alignItems</code></td>
-        <td><code>stretch</code></td>
-        <td><code>flex-start, center, flex-end, stretch</code></td>
-        <td>How should the content be aligned along the <b>secondary axis</b> of your layout? (If the primary axis is <code>row</code>, then the secondary axis is <code>column</code>, and vice versa) Should content be aligned at the start, the center, the end, or stretched to fill?</td>
-      </tr>
-    </tbody>
-  </table>
-}
+Property | Default | Options | Description
+---      | ---     | ---     | ---
+\`flexDirection\` | \`column\` | \`row, column\` | Do you want a vertical (\`column\`) or horizontal (\`row\`) layout? This choice determines the orientation of the **primary axis** of your layout.
+\`justifyContent\` | \`flex-start\` | \`flex-start, center, flex-end, space-around, space-between\` | How should the content be distributed along the <b>primary axis</b> of your layout? Should it be at the start, the center, the end, or spaced evenly?
+\`alignItems\` | \`stretch\` | \`flex-start, center, flex-end, stretch\` | How should the content be aligned along the <b>secondary axis</b> of your layout? (If the primary axis is \`row\`, then the secondary axis is \`column\`, and vice versa) Should content be aligned at the start, the center, the end, or stretched to fill?
 
 The following example lets you try all the possible combinations of flexbox properties and layouts.
 

@@ -2523,9 +2523,9 @@ macaddress@^0.2.8:
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/macaddress/-/macaddress-0.2.8.tgz#5904dc537c39ec6dbefeae902327135fa8511f12"
 
-markdown-in-js:
+markdown-in-js@dabbott/markdown-in-js#gfm-tables-dist:
   version "1.1.3"
-  resolved "https://registry.yarnpkg.com/markdown-in-js/-/markdown-in-js-1.1.3.tgz#6571130cd60e281f884a994f6061e81e1a6eb8d4"
+  resolved "https://codeload.github.com/dabbott/markdown-in-js/tar.gz/549a56b36f916ff73c26d9714561ed1974512dc0"
   dependencies:
     babylon "^6.14.1"
     commonmark "^0.27.0"
