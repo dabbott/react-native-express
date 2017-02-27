@@ -41,6 +41,7 @@ let sections = [
   {depth: 1, title: 'Component State', slug: 'data_component_state', componentName: 'ComponentState'},
   {depth: 1, title: 'Redux', slug: 'redux', componentName: 'Redux'},
   {depth: 2, title: 'React Redux', slug: 'react_redux', componentName: 'ReactRedux'},
+  {depth: 1, title: 'GraphQL', slug: 'graphql', componentName: 'GraphQL'},
   {depth: 1, title: 'Realm', slug: 'realm', componentName: 'Realm'},
   // {depth: 1, title: 'Firebase', slug: 'firebase_data'},
 
