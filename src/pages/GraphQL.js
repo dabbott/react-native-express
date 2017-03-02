@@ -5,65 +5,80 @@ import markdownOptions from '../utils/MarkdownOptions'
 import Page from './Page'
 import { WebPlayer, PageHeader } from '../components'
 
-const simpleQuery = `import { AppRegistry, Image, View, StyleSheet } from 'react-native'
+const simpleQuery = `import React, { Component } from 'react'
+import { AppRegistry, Image, View, ActivityIndicator, StyleSheet } from 'react-native'
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider, graphql } from 'react-apollo'
 
 import gql from 'graphql-tag'
 
-// Initialize Apollo Client
+// Initialize the Apollo Client
 const client = new ApolloClient({
-  networkInterface: createNetworkInterface({ uri: 'https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q'}),
+  networkInterface: createNetworkInterface({
+    uri: 'https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q',
+  }),
 })
 
 // Define query types
-const FeedQuery = gql\`query posts { allPosts { id imageUrl description } }\`
-
-// Define plain React component
-const Feed = (props) => {
-  // render loading state before data has arrived
-  if (props.data.loading) {
-    return (<div>Loading...</div>)
+const FeedQuery = gql\`
+  query posts {
+    allPosts {
+      id
+      imageUrl
+      description
+    }
   }
+\`
 
-  const listItems = props.data.allPosts.map((post) => {
-    const imageUrl = post.imageUrl
-    const image = {uri: imageUrl}
+class Feed extends Component {
 
+  renderPost = ({id, imageUrl}) => {
     return (
       <Image
+        key={id}
         style={styles.image}
-        source={image}
+        source={{uri: imageUrl}}
       />
-    )}
-  )
+    )
+  }
 
-  // render posts when the query has finished
-  return (
-    <View
-      style={styles.feed}
-    >
-      {listItems}
-    </View>
-  )
+  render() {
+
+    // Apollo injects the \`data\` prop, containing the result of our query,
+    // and a loading indicator to tell us when the data is ready.
+    const {data} = this.props
+    const {loading, allPosts} = data
+
+    // If we're loading, show a spinner.
+    if (loading) {
+      return <ActivityIndicator />
+    }
+
+    return (
+      <View style={styles.feed}>
+        {allPosts.map(this.renderPost)}
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
   feed: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   image: {
     width: 150,
     height: 150,
-    margin: 15
+    margin: 15,
   },
 })
 
-// inject query response as props.data
+// Inject query response as \`this.props.data\`
 const FeedWithData = graphql(FeedQuery)(Feed)
 
-// ApolloProvider makes Apollo client capabilities available to inner components
+// ApolloProvider lets us use Apollo Client in descendant components
 const App = () => (
   <ApolloProvider client={client}>
     <FeedWithData />
@@ -80,19 +95,17 @@ const vendorComponents = [
 ]
 
 const content = markdown(markdownOptions)`
-# Overview
+[GraphQL](http://graphql.org) is a query language for efficient and expressive fetching of hierarchical data. To use GraphQL, we need both a GraphQL server and a GraphQL client.
 
-[GraphQL](http://graphql.org) is a query language for efficient and expressive fetching of hierarchical data. To use GraphQL, you need both a GraphQL server and a GraphQL client.
+GraphQL servers expose a typed API, called the GraphQL schema. It acts as an abstraction layer between the database and clients, exposing available queries (to fetch data) and mutations (to write data), as well as the input and output types for those operations.
 
-GraphQL servers expose a typed API, called the GraphQL schema. It acts as an abstraction layer between the database and clients and exposes available queries (to fetch data) and mutations (to write data) as well as input and output types for those operations.
-
-Client applications communicate with GraphQL servers using plain HTTP or dedicated GraphQL clients, such as [Apollo Client](http://dev.apollodata.com) that comes with a cache and hooks into the component lifecycle for consistent data across components. Another popular choice is [Relay](https://facebook.github.io/relay/) which has additional requirements for the GraphQL server and takes a different approach for handling mutations. This results in a steep learning curve but cache consistency requires less manual work in the client.
+Client applications communicate with GraphQL servers using either plain HTTP or a dedicated GraphQL client, such as [Apollo Client](http://dev.apollodata.com). Apollo provides a data cache, along with hooks into the component lifecycle for consistent data across components. We'll use Apollo in the example below. Another popular client is [Relay](https://facebook.github.io/relay/), which has a steeper learning curve and requires more server-side setup, but provides cache consistency and requires less manual effort for the client.
 
 # Getting Started with GraphQL
 
-The easiest way to get started with GraphQL is [Graphcool](https://graph.cool) which allows you to setup a powerful GraphQL server in minutes. The powerful and easy to use API and features like realtime subscriptions and authentication enable you to quickly iterate your production-ready mobile applications.
+To get started with GraphQL, we first need to set up a GraphQL server - the easiest way to do this is through [Graphcool](https://graph.cool). Graphcool allows us to set up a powerful, easy-to-use, hosted GraphQL server in minutes. The API provides essential features, such as authentication and realtime subscriptions, allowing us to iterate rapidly on our React Native apps.
 
-Let's see how that would work for an Instagram clone. We want to display several posts with a description and image url in a feed. So we add a Post type to our GraphQL schema:
+Let's see how that would work for an Instagram clone. We want to display several posts with a description and image url in a feed. So we add a \`Post\` type to our GraphQL schema:
 
 ${<pre><code>{
 `type Post {
@@ -102,11 +115,11 @@ ${<pre><code>{
 }`
 }</code></pre>}
 
-Graphcool automatically generates queries and mutations based on the available model types. We can explore the API using [GraphiQL](https://github.com/graphql/graphiql), as demonstrated in the GIF below.
+Graphcool automatically generates queries and mutations based on the available model types. We can explore the API using [GraphiQL](https://github.com/graphql/graphiql), as demonstrated in the GIF below. You can try it out for yourself [here](https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q)!
 
 ![](graphql-autocompletion.gif)
 
-Try it out yourself [here](https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q)! We can use this query to list all posts:
+We can use this query to list all \`Posts\`:
 
 ${<pre><code>{
 `query posts {
@@ -117,7 +130,7 @@ ${<pre><code>{
 }`
 }</code></pre>}
 
-The [GraphQL documentation](http://graphql.org/learn) provides additional resources about the query syntax that comes with high flexibility as the client decides which fields to include. Additionally, query arguments can be used for more control, for example in the form of filters and ordering, as in [this query](https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q?query=query%20%7B%0A%20%20allPosts(filter%3A%20%7B%0A%20%20%20%20description_contains%3A%20%22%23nature%22%0A%20%20%7D)%20%7B%0A%20%20%20%20description%0A%20%20%20%20imageUrl%0A%20%20%20%20comments(orderBy%3A%20text_ASC)%20%7B%0A%09%09%09text%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D):
+The [GraphQL documentation](http://graphql.org/learn) provides additional info about the query syntax. GraphQL queries are highly flexibility: the client decides which fields to include in the response. Query parameters can be used for even more control, e.g the client can specify filtering and ordering parameters, as in [this query](https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q?query=query%20%7B%0A%20%20allPosts(filter%3A%20%7B%0A%20%20%20%20description_contains%3A%20%22%23nature%22%0A%20%20%7D)%20%7B%0A%20%20%20%20description%0A%20%20%20%20imageUrl%0A%20%20%20%20comments(orderBy%3A%20text_ASC)%20%7B%0A%09%09%09text%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D):
 
 ${<pre><code>{
 `query {
@@ -133,11 +146,11 @@ ${<pre><code>{
 }`
 }</code></pre>}
 
-Read this tutorial to find out more about [powerful query arguments](https://www.graph.cool/docs/tutorials/designing-powerful-apis-with-graphql-query-parameters-aing7uech3).
+You can read more about GraphQL query parameters [here](https://www.graph.cool/docs/tutorials/designing-powerful-apis-with-graphql-query-parameters-aing7uech3).
 
 # Minimal Example
 
-Now we can use this query with Apollo Client to connect to the GraphQL server and fetch all posts from within React Native component that also displays them.
+Let's use this query, along with the Apollo Client, to connect to the GraphQL server from our React Native app. We'll fetch the the \`Posts\`, and render them.
 
 ${
   <WebPlayer
@@ -146,7 +159,7 @@ ${
   />
 }
 
-For an in-depth GraphQL tutorial for React Native follow the [Learn Apollo React Native](https://www.learnapollo.com/tutorial-react-native-exponent/rne-01) guide using Apollo Client and Graphcool.
+For an in-depth GraphQL tutorial for React Native, follow the [Learn Apollo React Native](https://www.learnapollo.com/tutorial-react-native-exponent/rne-01).
 `
 
 export default props =>
