@@ -103,7 +103,7 @@ Client applications communicate with GraphQL servers using either plain HTTP or 
 
 # Getting Started with GraphQL
 
-To get started with GraphQL, we first need to set up a GraphQL server - the easiest way to do this is through [Graphcool](https://graph.cool). Graphcool allows us to set up a powerful, easy-to-use, hosted GraphQL server in minutes. The API provides essential features, such as authentication and realtime subscriptions, allowing us to iterate rapidly on our React Native apps.
+To get started with GraphQL, we first need to set up a GraphQL server - the easiest way to do this is through [Graphcool](https://graph.cool). Graphcool allows us to set up a powerful, easy-to-use, hosted GraphQL server in minutes. The API provides essential features, such as authentication and realtime subscriptions, allowing us to iterate rapidly on our React Native apps. Find out more in the [five minute getting started tutorial](https://www.youtube.com/watch?v=SooujCyMHe4).
 
 Let's see how that would work for an Instagram clone. We want to display several posts with a description and image url in a feed. So we add a \`Post\` type to our GraphQL schema:
 
@@ -158,6 +158,8 @@ ${
     vendorComponents={vendorComponents}
   />
 }
+
+You might need to disable the Redux DevTools or similar extensions for this example to work, or simply run this page in an incognito window.
 
 For an in-depth GraphQL tutorial for React Native, follow the [Learn Apollo React Native](https://www.learnapollo.com/tutorial-react-native-exponent/rne-01).
 `
