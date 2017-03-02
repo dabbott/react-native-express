@@ -130,7 +130,7 @@ ${<pre><code>{
 }`
 }</code></pre>}
 
-The [GraphQL documentation](http://graphql.org/learn) provides additional info about the query syntax. GraphQL queries are highly flexibility: the client decides which fields to include in the response. Query parameters can be used for even more control, e.g the client can specify filtering and ordering parameters, as in [this query](https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q?query=query%20%7B%0A%20%20allPosts(filter%3A%20%7B%0A%20%20%20%20description_contains%3A%20%22%23nature%22%0A%20%20%7D)%20%7B%0A%20%20%20%20description%0A%20%20%20%20imageUrl%0A%20%20%20%20comments(orderBy%3A%20text_ASC)%20%7B%0A%09%09%09text%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D):
+The [GraphQL documentation](http://graphql.org/learn) provides additional info about the query syntax. GraphQL queries are highly flexible: the client decides which fields to include in the response. Query parameters can be used for even more control, e.g the client can specify filtering and ordering parameters, as in [this query](https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q?query=query%20%7B%0A%20%20allPosts(filter%3A%20%7B%0A%20%20%20%20description_contains%3A%20%22%23nature%22%0A%20%20%7D)%20%7B%0A%20%20%20%20description%0A%20%20%20%20imageUrl%0A%20%20%20%20comments(orderBy%3A%20text_ASC)%20%7B%0A%09%09%09text%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D):
 
 ${<pre><code>{
 `query {
