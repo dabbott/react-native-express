@@ -159,6 +159,8 @@ ${
   />
 }
 
+You might need to disable the Redux DevTools or similar extensions for this example to work, or simply run this page in an incognito window.
+
 For an in-depth GraphQL tutorial for React Native, follow the [Learn Apollo React Native](https://www.learnapollo.com/tutorial-react-native-exponent/rne-01).
 `
 
