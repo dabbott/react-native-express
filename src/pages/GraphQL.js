@@ -117,7 +117,12 @@ ${<pre><code>{
 
 Graphcool automatically generates queries and mutations based on the available model types. We can explore the API using [GraphiQL](https://github.com/graphql/graphiql), as demonstrated in the GIF below. You can try it out for yourself [here](https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q)!
 
-![](graphql-autocompletion.gif)
+<div>
+  <img
+    width='100%'
+    src={'graphql-autocompletion.gif'}
+  />
+</div>
 
 We can use this query to list all \`Posts\`:
 
