@@ -5,7 +5,7 @@ import markdownOptions from '../utils/MarkdownOptions'
 import DefaultPage from './DefaultPage'
 
 const content = markdown(markdownOptions)`
-Realm is a cross-platform database for iOS and Android, made available as a React Native component. You can read more about it in the [Realm docs](https://realm.io/docs/react-native/latest/).
+Realm is a cross-platform database for iOS and Android, made available as a React Native component. You can read more about it in the [Realm docs](https://realm.io/docs/javascript/latest/).
 
 We won't go into much detail here, but Realm is generally your best option if you want to use a real database, instead of storing all data in-memory with Redux. With Realm, you can:
 
