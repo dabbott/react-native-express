@@ -17,7 +17,7 @@ export default class Toggle extends Component {
   }
 
   renderOption = (option) => {
-    const {value, options} = this.props
+    const {value} = this.props
 
     return (
       <TouchableOpacity
