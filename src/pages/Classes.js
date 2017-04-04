@@ -49,7 +49,7 @@ The \`class\` gives us simple inheritance with the keyword \`extends\`. In class
   title=${'Inheritance'}
 />
 
-For full details on the \`class\` syntax, see the MDN reference for [class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes').
+For full details on the \`class\` syntax, see the MDN reference for [class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
 `
 
 export default props =>
