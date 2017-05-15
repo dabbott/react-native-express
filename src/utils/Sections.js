@@ -30,7 +30,10 @@ let sections = [
   {depth: 1, title: 'Text', slug: 'text', componentName: 'Text'},
   {depth: 1, title: 'Image', slug: 'image', componentName: 'Image'},
   {depth: 1, title: 'ScrollView', slug: 'scrollview', componentName: 'ScrollView'},
-  {depth: 1, title: 'ListView', slug: 'listview', componentName: 'ListView'},
+  {depth: 1, title: 'Lists', slug: 'lists', componentName: 'Lists'},
+  {depth: 2, title: 'FlatList', slug: 'flatlist', componentName: 'FlatList'},
+  {depth: 2, title: 'SectionList', slug: 'sectionlist', componentName: 'SectionList'},
+  {depth: 2, title: 'ListView', slug: 'listview', componentName: 'ListView'},
 
   {depth: 0, title: 'Component Libraries', slug: 'component_libraries', componentName: 'ComponentLibraries'},
   {depth: 1, title: 'Shoutem UI', slug: 'shoutem_ui', componentName: 'ShoutemUI'},
