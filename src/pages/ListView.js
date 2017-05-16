@@ -141,9 +141,9 @@ AppRegistry.registerComponent('App', () => App)
 `
 
 const content = markdown(markdownOptions)`
-\`ListViews\`s are used for large quantities of scrollable content. They expose the underlying \`ScrollView\`, but add performance improvements: only rendering the content on screen (clipping offscreen content), and only updating rows that have changed. Like \`ScrollView\`s, they can scroll horizontally or vertically.
+\`ListViews\`s are used for large quantities of scrollable content. \`ListView\` existed long before \`FlatList\` and \`SectionList\`, and it still has some features that the newer list components are currently missing (e.g. sticky headers).
 
-Instead of rendering their \`children\` prop, \`ListViews\`s render each item in their input \`dataSource\` using the \`renderRow\` prop. The \`renderRow\` prop is a function which takes an item from the \`dataSource\` and maps it to a React Element, e.g. if \`dataSource\` contains an array of strings, then \`${`(rowData) => <Text>{rowData}</Text>`}\`.
+\`ListViews\`s render each item in their input \`dataSource\` using the \`renderRow\` prop. The \`renderRow\` prop is a function which takes an item from the \`dataSource\` and maps it to a React Element, e.g. if \`dataSource\` contains an array of strings, then \`${`(rowData) => <Text>{rowData}</Text>`}\`.
 
 # DataSource
 

@@ -11,9 +11,7 @@ const content = markdown(markdownOptions)`
 Instead of rendering their \`children\` prop, \`FlatList\`s render each item in their input \`data\` using the \`renderItem\` prop. The \`renderItem\` prop is a function which takes an item from the \`data\` array and maps it to a React Element. Each item in \`data\` should be an object with a unique id, so that React can determine when items are rearranged. The unique id is looked up as \`item.key\` by default, but you can specify another way to find/build a the id by passing a \`keyExtractor\` function prop.
 
 # Basic Example
-${
-  <SnackPlayer id="SyKH_IDeZ" />
-}
+${<SnackPlayer id="SyKH_IDeZ" />}
 
 `
 
