@@ -21,6 +21,8 @@ let sections = [
   {depth: 2, title: 'Async and Await', slug: 'async_await', componentName: 'AsyncAwait'},
   {depth: 1, title: 'JSX', slug: 'jsx', componentName: 'JSX'},
 
+  {depth: 1, title: 'Setting Up React Native', slug: 'getting_started', componentName: 'GettingStarted'},
+
   {depth: 0, title: 'React Components', slug: 'components', componentName: 'Component'},
   {depth: 1, title: 'Component API', slug: 'component_api', componentName: 'ComponentAPI'},
   {depth: 1, title: 'Lifecycle API', slug: 'lifecycle_api', componentName: 'LifecycleAPI'},
