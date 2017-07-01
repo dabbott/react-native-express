@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 
-const addCommas = (n) => {
-  if (n < 1000) return n.toString()
-
-  return Math.floor(n / 1000).toString() + ',' + n % 1000
+// https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+const addCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 const cache = {}
