@@ -9,7 +9,7 @@ In the old days, you could just include a \`${'<script>'}\` tag in the header of
 
 # Babel
 
-Babel is the main tool used to preprocess JavaScript. Babel is a highly configurable parser that lets you use experimental features and extensions, compiling down into old-style JavaScript that can be supported on a wider range of platforms. Of course, if a native platform doesn't support an ES6 feature like \`Map()\`, Babel won't fully be able to help -- but it can in many cases polyfill missing APIs to provide this functionality.
+Babel is the main tool used to preprocess JavaScript. Babel is a highly configurable compiler that lets you use experimental features and extensions, compiling down into old-style JavaScript that can be supported on a wider range of platforms. Of course, if a native platform doesn't support an ES6 feature like \`Promise()\`, Babel won't fully be able to help -- but it can in many cases polyfill missing APIs to provide this functionality.
 
 Babel enables debugging of the the original source code by including **source maps** with the compiled JavaScript. JavaScript interpreters will run the compiled code, but map it to the source code in the debugger so that you can debug the source code instead of the (generally quite ugly) compiled output.
 

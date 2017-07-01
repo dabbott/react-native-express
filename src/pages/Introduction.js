@@ -86,9 +86,9 @@ When you create a new React Native app, it will look like this:
 
 <WebPlayer code={code} />
 
-You may notice the code doesn't look like the JavaScript you write currently. This is because it uses new language features (ES6 imports, classes, block-scoped variable declarations) and the JSX language extension.
+You may notice the code doesn't look like the JavaScript you write currently. This is because it uses new language features (ES6 imports, classes, block-scoped variable declarations) and the JSX language extension. In the following sections, I'll give a brief background on each of these topics. If you're already familiar with a topic, feel free to skip ahead. Most of the sections in this guide are independent from one another.
 
-In the following sections, I'll give a brief background on each of these topics. If you're already familiar with each, skip to [Components](components) to learn more about React Components and the Component Lifecycle. If you're already familiar with React, skip to [Core Components](core_components).
+But first, let's set up our React Native development environment!
 `
 
     return (
@@ -109,7 +109,7 @@ In the following sections, I'll give a brief background on each of these topics.
           authorURL={'https://twitter.com/devinaabbott'}
         />
         {content}
-        <Link to={'modern_javascript'} style={buttonStyle}>
+        <Link to={'environment'} style={buttonStyle}>
           Let's get started!
         </Link>
       </Page>
