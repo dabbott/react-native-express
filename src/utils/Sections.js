@@ -1,6 +1,9 @@
 
 
 let sections = [
+  {depth: 0, title: 'Environment', slug: 'environment', componentName: 'Environment'},
+  {depth: 1, title: 'Quick Start', slug: 'quick_start', componentName: 'QuickStart'},
+
   {depth: 0, title: 'Modern JavaScript', slug: 'modern_javascript', componentName: 'ModernJavascript'},
   {depth: 1, title: 'ES6', slug: 'es6', componentName: 'ES6'},
 
@@ -20,8 +23,6 @@ let sections = [
   {depth: 2, title: 'Object Spread', slug: 'object_spread', componentName: 'ObjectSpread'},
   {depth: 2, title: 'Async and Await', slug: 'async_await', componentName: 'AsyncAwait'},
   {depth: 1, title: 'JSX', slug: 'jsx', componentName: 'JSX'},
-
-  {depth: 1, title: 'Setting Up React Native', slug: 'getting_started', componentName: 'GettingStarted'},
 
   {depth: 0, title: 'React Components', slug: 'components', componentName: 'Component'},
   {depth: 1, title: 'Component API', slug: 'component_api', componentName: 'ComponentAPI'},
