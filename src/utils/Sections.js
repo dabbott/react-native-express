@@ -49,6 +49,9 @@ let sections = [
   {depth: 1, title: 'Redux', slug: 'redux', componentName: 'Redux'},
   {depth: 2, title: 'React Redux', slug: 'react_redux', componentName: 'ReactRedux'},
   {depth: 1, title: 'GraphQL', slug: 'graphql', componentName: 'GraphQL'},
+  {depth: 2, title: 'Communicating with a GraphQL API', slug: 'graphql_api', componentName: 'CommunicatingWithGraphQLAPI'},
+  {depth: 2, title: 'The GraphQL Schema', slug: 'graphql_schema', componentName: 'GraphQLSchema'},
+  {depth: 2, title: 'Getting Started with GraphQL', slug: 'graphql_getting_started', componentName: 'GettingStartedWithGraphQL'},
   {depth: 1, title: 'Realm', slug: 'realm', componentName: 'Realm'},
   // {depth: 1, title: 'Firebase', slug: 'firebase_data'},
 
