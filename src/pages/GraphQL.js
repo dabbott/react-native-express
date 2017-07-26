@@ -5,7 +5,7 @@ import markdownOptions from '../utils/MarkdownOptions'
 import Page from './Page'
 import { WebPlayer, PageHeader } from '../components'
 
-const simpleQuery = `import React, { Component } from 'react'
+const simpleInstagramApp = `import React, { Component } from 'react'
 import { AppRegistry, Image, View, ActivityIndicator, StyleSheet } from 'react-native'
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider, graphql } from 'react-apollo'
@@ -94,87 +94,43 @@ const vendorComponents = [
   ['graphql-tag', 'https://gist.githubusercontent.com/dabbott/bf832015419ee30344ac573705c2cbeb/raw/6bfcd7294d324aeaf117f6b8bde40715bc89ec78/graphql-tag']
 ]
 
+
 const content = markdown(markdownOptions)`
-[GraphQL](http://graphql.org) is a query language for efficient and expressive fetching of hierarchical data. To use GraphQL, we need both a GraphQL server and a GraphQL client.
+[GraphQL](http://graphql.org/) is a *query language* for APIs. It enables declarative data fetching and thus ties in perfectly with React as a declarative framework for building user interfaces. GraphQL can either complement or entirely replace the usage of REST APIs. 
 
-GraphQL servers expose a typed API, called the GraphQL schema. It acts as an abstraction layer between the database and clients, exposing available queries (to fetch data) and mutations (to write data), as well as the input and output types for those operations.
+The main difference between REST and GraphQL is that RESTful APIs have *multiple endpoints* that return *fixed data structures* whereas a GraphQL server only exposes a *single endpoint* and returns *flexible data structures*. This works because a client that needs data from the server also submits its precise data requirements in each request which allows the server to tailor the response exactly according to the client’s needs. 
 
-Client applications communicate with GraphQL servers using either plain HTTP or a dedicated GraphQL client, such as [Apollo Client](http://dev.apollodata.com). Apollo provides a data cache, along with hooks into the component lifecycle for consistent data across components. We'll use Apollo in the example below. Another popular client is [Relay](https://facebook.github.io/relay/), which has a steeper learning curve and requires more server-side setup, but provides cache consistency and requires less manual effort for the client.
+You can learn more about the differences between GraphQL and REST [here](https://www.howtographql.com/basics/1-graphql-is-the-better-rest/). To get a high-level overview and understand more about the architectural use cases of GraphQL, take a look at [this](https://www.howtographql.com/basics/3-big-picture/) article.
 
-# Getting Started with GraphQL
+## Community & Resources
 
-To get started with GraphQL, we first need to set up a GraphQL server - the easiest way to do this is through [Graphcool](https://graph.cool). Graphcool allows us to set up a powerful, easy-to-use, hosted GraphQL server in minutes. The API provides essential features, such as authentication and realtime subscriptions, allowing us to iterate rapidly on our React Native apps. Find out more in the [five minute getting started tutorial](https://www.youtube.com/watch?v=SooujCyMHe4).
+GraphQL has a rapidly growing community. To stay up-to-date about everything that’s happening in the GraphQL ecosystem, check out these resources:
 
-Let's see how that would work for an Instagram clone. We want to display several posts with a description and image url in a feed. So we add a \`Post\` type to our GraphQL schema:
+* [GraphQL Weekly](https://www.graphqlweekly.com/): Weekly newsletter about GraphQL
+* [GraphQL Radio](https://www.graphqlradio.com/): Podcast discussing real-world use cases of GraphQL
 
-${<pre><code>{
-`type Post {
-  id: ID!
-  description: String!
-  imageUrl: String!
-}`
-}</code></pre>}
+For an in-depth learning experience, visit the [How to GraphQL](https://www.howtographql.com/) fullstack tutorial website.
 
-Graphcool automatically generates queries and mutations based on the available model types. We can explore the API using [GraphiQL](https://github.com/graphql/graphiql), as demonstrated in the GIF below. You can try it out for yourself [here](https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q)!
 
-<div>
-  <img
-    width='100%'
-    src={'graphql-autocompletion.gif'}
-  />
-</div>
+## Minimal Example
 
-We can use this query to list all \`Posts\`:
-
-${<pre><code>{
-`query posts {
-  allPosts {
-    imageUrl
-    description
-  }
-}`
-}</code></pre>}
-
-The [GraphQL documentation](http://graphql.org/learn) provides additional info about the query syntax. GraphQL queries are highly flexible: the client decides which fields to include in the response. Query parameters can be used for even more control, e.g the client can specify filtering and ordering parameters, as in [this query](https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q?query=query%20%7B%0A%20%20allPosts(filter%3A%20%7B%0A%20%20%20%20description_contains%3A%20%22%23nature%22%0A%20%20%7D)%20%7B%0A%20%20%20%20description%0A%20%20%20%20imageUrl%0A%20%20%20%20comments(orderBy%3A%20text_ASC)%20%7B%0A%09%09%09text%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D):
-
-${<pre><code>{
-`query {
-  allPosts(filter: {
-    description_contains: "#nature"
-  }) {
-    description
-    imageUrl
-    comments(orderBy: text_ASC) {
-      text
-    }
-  }
-}`
-}</code></pre>}
-
-You can read more about GraphQL query parameters [here](https://www.graph.cool/docs/tutorials/designing-powerful-apis-with-graphql-query-parameters-aing7uech3).
-
-# Minimal Example
-
-Let's use this query, along with the Apollo Client, to connect to the GraphQL server from our React Native app. We'll fetch the the \`Posts\`, and render them.
+Here is a minimal example that demonstrates how to load data using [Graphcool](https://www.graph.cool/) and [Apollo Client](http://dev.apollodata.com/react/). If you want to understand more about how it works, check out the following chapters.
 
 ${
   <WebPlayer
-    code={simpleQuery}
+    code={simpleInstagramApp}
     vendorComponents={vendorComponents}
   />
-}
-
-You might need to disable the Redux DevTools or similar extensions for this example to work, or simply run this page in an incognito window.
-
-For an in-depth GraphQL tutorial for React Native, follow the [Learn Apollo React Native](https://www.learnapollo.com/tutorial-react-native-exponent/rne-01).
+  }
 `
 
 export default props =>
   <Page {...props}>
     <PageHeader
       title={props.title}
-      author={"@_marktani"}
-      authorURL={'https://twitter.com/_marktani'}
+      author={"@nikolasburk"}
+      authorURL={'https://twitter.com/nikolasburk'}
     />
     {content}
   </Page>
+
