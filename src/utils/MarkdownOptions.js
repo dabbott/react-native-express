@@ -8,6 +8,7 @@ export default {
   h1: props => <SectionHeader {...props} />,
   h2: props => <div {...props} style={styles.h4} />,
   strong: props => <strong {...props} style={styles.strong} />,
+  em: props => <em {...props} style={styles.em} />,
   table: props => <table {...props} className={"table"} />,
   a: Link,
   img: props => <img {...props} style={{ maxWidth: "100%" }} />,

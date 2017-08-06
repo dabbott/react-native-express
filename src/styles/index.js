@@ -74,6 +74,9 @@ const styles = {
   strong: {
     fontWeight: 'bold',
   },
+  em: {
+    fontStyle: 'italic',
+  },
 }
 
 Object.assign(styles, {
