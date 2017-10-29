@@ -78,7 +78,7 @@ React Native is a framework for building cross-platform apps.
 
 Building with React Native is extremely efficient and highly addictive - but getting started can be a little tricky. You should use this guide as a companion to the official Facebook documentation for [getting started](https://facebook.github.io/react-native/docs/getting-started.html). The Facebook guide assumes some existing knowledge about React development for the web. If you run into topics that aren't covered thoroughly, e.g. how Babel works, play with the examples in this guide to quickly get up to speed. This guide also covers related topics, such as Redux, which are beyond the scope of the React Native docs.
 
-I hope you enjoy learning React Native. Reach out to me, [@devinaabbott](https://twitter.com/devinaabbott), with comments or questions you have along the way. Some pages are written by other authors (listed at top of each page), so feel free to contact them too.
+I hope you enjoy learning React Native. Reach out to me, [@dvnabbott](https://twitter.com/dvnabbott), with comments or questions you have along the way. Some pages are written by other authors (listed at top of each page), so feel free to contact them too.
 
 # Hello World
 
@@ -105,8 +105,8 @@ But first, let's set up our React Native development environment!
         <GithubCorner />
         <PageHeader
           title={'Learning React Native'}
-          author={'@devinaabbott'}
-          authorURL={'https://twitter.com/devinaabbott'}
+          author={'@dvnabbott'}
+          authorURL={'https://twitter.com/dvnabbott'}
         />
         {content}
         <Link to={'environment'} style={buttonStyle}>

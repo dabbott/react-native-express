@@ -41,4 +41,4 @@ MIT, Copyright (c) 2016 Devin Abbott
 
 ## Author
 
-Devin Abbott, [@devinaabbott](http://twitter.com/devinaabbott)
+Devin Abbott, [@dvnabbott](http://twitter.com/dvnabbott)
