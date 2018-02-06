@@ -45,7 +45,7 @@ const mapStateToProps = (state) => ({
   todos: state.todos,
 })
 
-class App extends Component {
+export default class App extends Component {
 
   onAddTodo = (text) => {
     const {dispatch} = this.props

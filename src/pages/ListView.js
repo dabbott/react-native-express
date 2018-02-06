@@ -23,7 +23,7 @@ const rowHasChanged = (r1, r2) => r1.id !== r2.id
 // DataSource template object
 const ds = new ListView.DataSource({rowHasChanged})
 
-class App extends Component {
+export default class App extends Component {
 
   state = {
     dataSource: ds.cloneWithRows(rows)

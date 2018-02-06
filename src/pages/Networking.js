@@ -8,7 +8,7 @@ import { WebPlayer } from '../components'
 const code = `import React, { Component } from 'react'
 import { AppRegistry, View, Text, ActivityIndicator, ScrollView, StyleSheet } from 'react-native'
 
-class App extends Component {
+export default class App extends Component {
 
   state = {
     loading: true,

@@ -97,7 +97,7 @@ const mapStateToProps = (state) => ({
   posts: state.posts,
 })
 
-class App extends Component {
+export default class App extends Component {
 
   componentWillMount() {
     const {dispatch} = this.props

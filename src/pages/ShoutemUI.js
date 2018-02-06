@@ -27,7 +27,7 @@ const imageSources = [
   {uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-4.png'},
 ]
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <ScrollView style={styles.container}>

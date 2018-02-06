@@ -104,7 +104,7 @@ import {
 
 const imageSource = {uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-3.png'}
 
-class App extends Component {
+export default class App extends Component {
 
   driver = new ScrollDriver()
 
