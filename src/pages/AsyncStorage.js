@@ -12,7 +12,7 @@ import Input from './Input'
 
 const STORAGE_KEY = 'ASYNC_STORAGE_NAME_EXAMPLE'
 
-class App extends Component {
+export default class App extends Component {
 
   state = {name: 'World'}
 

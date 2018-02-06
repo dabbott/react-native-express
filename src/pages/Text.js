@@ -8,7 +8,7 @@ import { WebPlayer } from '../components'
 const code = `import React, { Component } from 'react'
 import { AppRegistry, View, Text, StyleSheet } from 'react-native'
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
