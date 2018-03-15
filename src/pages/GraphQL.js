@@ -12,14 +12,14 @@ import { ApolloProvider, ApolloClient, createNetworkInterface, gql, graphql } fr
 // Initialize the Apollo Client
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({
-    uri: 'https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q',
+    uri: 'https://rn-express-pjxhoukqko.now.sh',
   }),
 })
 
 // Define query types
-const FeedQuery = gql\`
-  query posts {
-    allPosts {
+const FEED_QUERY = gql\`
+  query feed {
+    feed {
       id
       imageUrl
       description
@@ -44,7 +44,7 @@ class Feed extends Component {
     // Apollo injects the \`data\` prop, containing the result of our query,
     // and a loading indicator to tell us when the data is ready.
     const {data} = this.props
-    const {loading, allPosts} = data
+    const {loading, feed} = data
 
     // If we're loading, show a spinner.
     if (loading) {
@@ -53,7 +53,7 @@ class Feed extends Component {
 
     return (
       <View style={styles.feed}>
-        {allPosts.map(this.renderPost)}
+        {feed.map(this.renderPost)}
       </View>
     )
   }
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
 })
 
 // Inject query response as \`this.props.data\`
-const FeedWithData = graphql(FeedQuery)(Feed)
+const FeedWithData = graphql(FEED_QUERY)(Feed)
 
 // ApolloProvider lets us use Apollo Client in descendant components
 const App = () => (
@@ -103,13 +103,15 @@ GraphQL has a rapidly growing community. To stay up-to-date about everything tha
 
 * [GraphQL Weekly](https://www.graphqlweekly.com/): Weekly newsletter about GraphQL
 * [GraphQL Radio](https://www.graphqlradio.com/): Podcast discussing real-world use cases of GraphQL
+* [GraphQL Europe](https://www.graphql-europe.org/): Europe's biggest GraphQL conference
+* [Prisma blog](https://blog.graph.cool/): Technical deep dives and tutorials all around GraphQL development
 
 For an in-depth learning experience, visit the [How to GraphQL](https://www.howtographql.com/) fullstack tutorial website.
 
 
 ## Minimal Example
 
-Here is a minimal example that demonstrates how to load data using [Graphcool](https://www.graph.cool/) and [Apollo Client](http://dev.apollodata.com/react/). If you want to understand more about how it works, check out the following chapters.
+Here is a minimal example that demonstrates how to load data using [Prisma](https://www.graph.cool/), [\`graphql-yoga\`](https://github.com/graphcool/graphql-yoga) and [Apollo Client](https://www.apollographql.com/client). If you want to understand more about how it works, check out the following chapters.
 
 Note that the example will throw an error if you have the Redux DevTools Chrome extension enabled!
 
