@@ -39,7 +39,7 @@ const mapStateToProps = (state) => ({
   todos: state.todos,
 })
 
-export default class App extends Component {
+class App extends Component {
 
   onAddTodo = (text) => {
     const {dispatch} = this.props
@@ -87,8 +87,8 @@ const files = [
 ]
 
 const vendorComponents = [
-  ['redux', 'Redux', 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.min.js'],
-  ['react-redux', 'ReactRedux', 'https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.4.5/react-redux.min.js'],
+  ['redux', 'Redux', 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js'],
+  ['react-redux', 'ReactRedux', 'https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.7/react-redux.min.js'],
 ]
 
 const content = markdown(markdownOptions)`

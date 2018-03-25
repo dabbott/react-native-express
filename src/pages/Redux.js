@@ -134,7 +134,7 @@ const files = [
 ]
 
 const vendorComponents = [
-  ['redux', 'Redux', 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.min.js'],
+  ['redux', 'Redux', 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js'],
 ]
 
 const content = markdown(markdownOptions)`
