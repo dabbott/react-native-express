@@ -79,6 +79,9 @@ export const reducer = (state = initialState, action) => {
 
       return {...state, loading: false, posts: payload}
     }
+    case types.CLEAR_POSTS: {
+      return {...state, loading: false, posts: []}
+    }
   }
 
   return state
