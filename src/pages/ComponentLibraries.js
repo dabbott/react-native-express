@@ -18,11 +18,11 @@ Component collections speed up development by letting you focus on the architect
 
 However, component collections aren't for every app: they can add a lot of code and complexity, and you may not be able to customize them as much as you like. If you're working closely with a designer or design team, it's likely that starting from scratch will give you the flexibility you need to make the app look just right.
 
-Currently, the three largest component collections are:
+Currently, three of the largest component collections are:
 
-- ${<GithubRepositoryLink user={'shoutem'} repo={'ui'} title={'Shoutem UI'} />}
 - ${<GithubRepositoryLink user={'react-native-community'} repo={'react-native-elements'} title={'React Native Elements'} />}
 - ${<GithubRepositoryLink user={'GeekyAnts'} repo={'NativeBase'} title={'NativeBase'} />}
+- ${<GithubRepositoryLink user={'shoutem'} repo={'ui'} title={'Shoutem UI'} />}
 `
 
 export default props => <DefaultPage {...props}>{content}</DefaultPage>
