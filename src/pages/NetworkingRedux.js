@@ -65,7 +65,6 @@ const initialState = {
 }
 
 export const reducer = (state = initialState, action) => {
-  const {todos} = state
   const {type, payload, error} = action
 
   switch (type) {
