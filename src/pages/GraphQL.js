@@ -111,7 +111,7 @@ For an in-depth learning experience, visit the [How to GraphQL](https://www.howt
 
 ## Minimal Example
 
-Here is a minimal example that demonstrates how to load data using [Prisma](https://www.graph.cool/), [\`graphql-yoga\`](https://github.com/graphcool/graphql-yoga) and [Apollo Client](https://www.apollographql.com/client). If you want to understand more about how it works, check out the following chapters.
+Here is a minimal example that demonstrates how to load data using [Prisma](https://www.prisma.io/), [\`graphql-yoga\`](https://github.com/graphcool/graphql-yoga) and [Apollo Client](https://www.apollographql.com/client). If you want to understand more about how it works, check out the following chapters.
 
 Note that the example will throw an error if you have the Redux DevTools Chrome extension enabled!
 
