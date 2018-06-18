@@ -77,7 +77,7 @@ import { AppRegistry, View, StyleSheet } from 'react-native'
 
 import Toggle from './Toggle'
 
-class App extends Component {
+export default class App extends Component {
 
   state = {
     flexDirection: 'row',
