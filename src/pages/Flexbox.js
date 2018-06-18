@@ -16,13 +16,14 @@ export default class Toggle extends Component {
     onChange(option)
   }
 
-  renderOption = (option) => {
+  renderOption = (option, i) => {
     const {value} = this.props
 
     return (
       <TouchableOpacity
         style={[styles.option, option === value && styles.activeOption]}
         onPress={this.onPress.bind(this, option)}
+        key={i}
       >
         <Text style={styles.text}>
           {option}
