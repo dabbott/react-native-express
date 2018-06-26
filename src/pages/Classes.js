@@ -17,6 +17,9 @@ const classExample = `class Animal {
   printName() {
     console.log(this.name)
   }
+
+  printAnimalName() {
+    console.log(`${this.printName()} is an Animal.`)
 }
 
 const animal = new Animal('Cat')
