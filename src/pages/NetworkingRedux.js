@@ -65,7 +65,6 @@ const initialState = {
 }
 
 export const reducer = (state = initialState, action) => {
-  const {todos} = state
   const {type, payload, error} = action
 
   switch (type) {
@@ -78,6 +77,9 @@ export const reducer = (state = initialState, action) => {
       }
 
       return {...state, loading: false, posts: payload}
+    }
+    case types.CLEAR_POSTS: {
+      return {...state, loading: false, posts: []}
     }
   }
 

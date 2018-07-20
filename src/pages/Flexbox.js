@@ -16,13 +16,14 @@ export default class Toggle extends Component {
     onChange(option)
   }
 
-  renderOption = (option) => {
+  renderOption = (option, i) => {
     const {value} = this.props
 
     return (
       <TouchableOpacity
         style={[styles.option, option === value && styles.activeOption]}
         onPress={this.onPress.bind(this, option)}
+        key={i}
       >
         <Text style={styles.text}>
           {option}
@@ -77,7 +78,7 @@ import { AppRegistry, View, StyleSheet } from 'react-native'
 
 import Toggle from './Toggle'
 
-class App extends Component {
+export default class App extends Component {
 
   state = {
     flexDirection: 'row',
