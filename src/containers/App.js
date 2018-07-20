@@ -4,7 +4,7 @@ import createStyles, { responsive } from 'react-styles-provider'
 
 import Sidebar from './Sidebar'
 import NavigatorButton from './NavigatorButton'
-import { HamburgerButton, Disqus } from '../components'
+import { HamburgerButton, Disqus, BookBanner } from '../components'
 import { getSection, getNextSection, getPreviousSection } from '../utils/Sections'
 import * as config from '../config'
 
@@ -63,7 +63,6 @@ import * as config from '../config'
     backgroundColor: 'white',
   },
   footer: {
-    marginTop: 20,
     padding: ({responsive}) => responsive.match('mobile') ? 20 : 60,
     backgroundColor: 'rgb(250,250,250)',
   },
@@ -140,11 +139,11 @@ export default class App extends Component {
           <div>
             <div style={styles.navigatorButtonContainer}>
               <NavigatorButton
-                vertical={responsive.match('small') && responsive.match('mobile')}
                 nextSection={getNextSection(pathname)}
                 previousSection={getPreviousSection(pathname)}
               />
             </div>
+            <BookBanner />
             <div style={styles.footer}>
               <Disqus
                 title={title}

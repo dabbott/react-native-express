@@ -10,6 +10,8 @@ React Native provides two animation APIs out of the box: \`Animated\` and \`Layo
 \`Animated\` is a somewhat imperative API, meaning that you'll manually specify when to start and stop animations. This gives you a lot of control, but can get tedious quickly. Consider using [React Native Animatable](react_native_animatable) for a component-based declarative API around \`Animated\`.
 
 If you're planning on building a rich, interactive UI, you'll also need the \`PanResponder\` API for tracking and responding to touch events.
+
+Let's take a look at how these APIs work. If you want more hands-on practice with these APIs, we build a complete puzzle game in the "Animation" and "Gestures" chapters of my [book](https://gumroad.com/a/567063667).
 `
 
 export default props => <DefaultPage {...props}>{content}</DefaultPage>

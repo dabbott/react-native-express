@@ -80,6 +80,8 @@ Building with React Native is extremely efficient and highly addictive - but get
 
 I hope you enjoy learning React Native. Reach out to me, [@dvnabbott](https://twitter.com/dvnabbott), with comments or questions you have along the way. Some pages are written by other authors (listed at top of each page), so feel free to contact them too.
 
+If you like this site, I recently wrote a digital book, [Fullstack React Native: The complete guide to React Native](https://gumroad.com/a/567063667). In the book, I cover the most important React Native topics in-depth as we build 7 full apps. Be sure to check it out!
+
 # Hello World
 
 When you create a new React Native app, it will look like this:
