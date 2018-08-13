@@ -148,7 +148,7 @@ An application will create a single Redux \`store\` to hold <i>all</i> data and 
 
 ## **\`action\`**
 
-\`action\`s should be plain objects containing a \`type\` field, e.g. \`${`{type: 'INCREMENT'}`}\`. You can define any types you want. You may also include other fields in the \`action\` object. By convention, we often pass extra data in a \`payload\` field, e.g. \`${`{type: 'SET_VALUE', payload: 42}`}\`. Read more about \`action\` conventions here: [Flux Standard Actions](https://github.com/acdlite/flux-standard-action).
+\`action\`s should be plain objects containing a \`type\` field, e.g. \`${`{type: 'INCREMENT'}`}\`. You can define any type you want. You may also include other fields in the \`action\` object. By convention, we often pass extra data in a \`payload\` field, e.g. \`${`{type: 'SET_VALUE', payload: 42}`}\`. Read more about \`action\` conventions here: [Flux Standard Actions](https://github.com/acdlite/flux-standard-action).
 
 ## **\`reducer\`**
 
