@@ -150,7 +150,7 @@ We can get started using \`fetch\` with just that! If you want to use fetch with
 
 Here we'll fetch a list of posts and display them in a ScrollView. Since \`fetch\` is asynchronous, our app may not have data when it loads. We should be prepared to show an \`ActivityIndicator\` (spinner) while data loads. We should also be prepared to show an error message if fetching data fails.
 
-*Note: fetch only works in Chrome and Firefox at the moment, so this example won't run in Safari or IE.*
+*Note: fetch only works in Chrome, Firefox and Safari at the moment, so this example won't run in IE.*
 
 ${
   <WebPlayer
