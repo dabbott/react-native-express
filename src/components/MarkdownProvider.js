@@ -15,7 +15,7 @@ export default function MarkdownProvider({ children }) {
         strong: props => <strong {...props} style={styles.strong} />,
         table: props => <table {...props} className={'table'} />,
         // a: Link,
-        img: props => <img alt="" {...props} style={styles.img} />,
+        img: props => <img alt="" style={styles.img} {...props} />,
         pre: props => <pre {...props} style={styles.pre} />,
         blockquote: props => (
           <blockquote {...props} style={styles.blockquote} />

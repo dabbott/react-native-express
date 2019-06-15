@@ -1,6 +1,6 @@
-import ChapterPage from '../components/ChapterPage';
-import createnativeapp from '../images/createnativeapp.png';
-import expo from '../images/expo.png';
+import ChapterPage from '../components/ChapterPage'
+import createnativeapp from '../images/createnativeapp.png'
+import expo from '../images/expo.png'
 
 export default ChapterPage
 
@@ -26,13 +26,13 @@ npm start
 
 CRNA might take a few minutes to download dependencies. You should see a QR code like this after it's done:
 
-<img src={createnativeapp} style={{width: 550, maxWidth: '100%'}} />
+<img src={createnativeapp} style={{ width: '550px', maxWidth: '100%' }} />
 
 You just created your first React Native app! Now you can install the Expo Client on [iOS](https://itunes.apple.com/us/app/expo-client/id982107779?mt=8) or [Android](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en) and scan the QR code to view it.
 
 If you see this, success! You're ready to start working on your new React Native App.
 
-<img src={expo} style={{width: 250, maxWidth: '100%'}} />
+<img src={expo} style={{ width: '400px', maxWidth: '100%' }} />
 
 ## Making Changes
 
