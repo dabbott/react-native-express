@@ -11,7 +11,7 @@ const playerStyles = {
   header: {
     backgroundColor: 'rgb(250,250,250)',
     boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 1px',
-    zIndex: 10,
+    zIndex: 1000,
   },
   headerText: {
     color: '#AAA',
@@ -20,7 +20,7 @@ const playerStyles = {
   transpilerHeader: {
     backgroundColor: 'rgb(240,240,240)',
     boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 1px',
-    zIndex: 10,
+    zIndex: 1000,
   },
   transpilerHeaderText: {
     color: '#888',
@@ -32,7 +32,17 @@ const playerStyles = {
   tabTextActive: {
     color: '#000',
   },
+  playerPane: {
+    // backgroundColor: 'rgba(0,0,0,0.02)',
+    overflow: 'hidden',
+  },
+  consolePane: {
+    backgroundColor: 'white',
+  },
 }
+
+playerStyles.playerHeader = playerStyles.header
+playerStyles.playerHeaderText = playerStyles.headerText
 
 const Container = styled.div({
   display: 'flex',
@@ -54,6 +64,7 @@ export default class WebPlayer extends React.Component {
     width: 260,
     scale: 0.75,
     showTranspiler: false,
+    showConsole: false,
     fullscreen: true,
   }
 
@@ -64,6 +75,7 @@ export default class WebPlayer extends React.Component {
   render() {
     const {
       showTranspiler,
+      showConsole,
 
       // Passthrough
       code,
@@ -75,6 +87,8 @@ export default class WebPlayer extends React.Component {
       scale,
       fullscreen,
       transpilerTitle,
+      playerTitle,
+      platform,
       vendorComponents,
     } = this.props
 
@@ -87,7 +101,9 @@ export default class WebPlayer extends React.Component {
       scale,
       fullscreen,
       transpilerTitle,
+      playerTitle,
       vendorComponents,
+      platform,
       styles: playerStyles,
     }
 
@@ -98,6 +114,23 @@ export default class WebPlayer extends React.Component {
         params.panes = ['editor', 'transpiler']
       } else {
         params.panes = ['editor', 'player']
+      }
+
+      if (showConsole) {
+        params.console = {
+          enabled: true,
+          visible: true,
+          maximized: true,
+          collapsible: false,
+        }
+        params.styles = {
+          ...playerStyles,
+          playerPane: {
+            ...playerStyles.playerPane,
+            marginLeft: 0,
+            marginRight: 0,
+          },
+        }
       }
     }
 
