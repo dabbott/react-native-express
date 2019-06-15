@@ -29,7 +29,7 @@ let sections = [
     slug: 'modern_javascript',
     componentName: 'ModernJavascript',
   },
-  { depth: 1, title: 'ES6', slug: 'es6', componentName: 'ES6' },
+  { depth: 1, title: 'ES2015', slug: 'es6', componentName: 'ES6' },
 
   {
     depth: 2,
@@ -77,7 +77,7 @@ let sections = [
 
   {
     depth: 1,
-    title: 'ES7 and Beyond',
+    title: 'ES2016+',
     slug: 'es7_and_beyond',
     componentName: 'ES7AndBeyond',
   },
@@ -89,8 +89,8 @@ let sections = [
   },
   {
     depth: 2,
-    title: 'Class Instance Properties',
-    slug: 'class_instance_properties',
+    title: 'Property Initializers',
+    slug: 'property_initializers',
     componentName: 'ClassInstanceProperties',
   },
   {
