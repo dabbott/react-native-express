@@ -1,25 +1,21 @@
-import React, { Component, PropTypes } from 'react'
-import createStyles, { responsive } from 'react-styles-provider'
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import mediaQuery from '../utils/mediaQuery'
 
-import styles from '../styles'
-
-@responsive()
-@createStyles({
-  main: {
-    fontSize: 20,
-    fontWeight: 300,
-    marginTop: props => props.responsive.match('mobile') ? 20 : 60,
-    marginBottom: 15,
+const Container = styled.div({
+  fontSize: '20px',
+  fontWeight: '300',
+  marginTop: '60px',
+  [mediaQuery.small]: {
+    marginTop: '20px',
   },
+  marginBottom: '15px',
 })
-export default class PageHeader extends Component {
-  render() {
-    const {styles, children} = this.props
 
-    return (
-      <div style={styles.main}>
-        {children}
-      </div>
-    )
+export default class SectionHeader extends Component {
+  render() {
+    const { children } = this.props
+
+    return <Container>{children}</Container>
   }
 }

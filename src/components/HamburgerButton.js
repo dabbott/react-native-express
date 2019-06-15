@@ -1,62 +1,54 @@
-import React, { Component, PropTypes } from 'react'
-import createStyles from 'react-styles-provider'
+import React, { Component } from 'react'
+import styled from 'styled-components'
 
-@createStyles({
-  container: {
-    padding: '15px 12px',
-    width: 40,
-    height: 40,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'stretch',
-    cursor: 'pointer',
-  },
-  bar: {
-    height: 2,
-    backgroundColor: 'rgb(38, 48, 83)',
-    opacity: (props, {pressed}) => pressed ? 0.3 : 0.8,
-    transition: 'opacity 0.1s',
-  },
+const Container = styled.div({
+  padding: '15px 12px',
+  width: '40px',
+  height: '40px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  alignItems: 'stretch',
+  cursor: 'pointer',
 })
-export default class HamburgerButton extends Component {
 
+const Bar = styled.div(({ pressed }) => ({
+  height: '2px',
+  backgroundColor: 'rgb(38, 48, 83)',
+  opacity: pressed ? '0.3' : '0.8',
+  transition: 'opacity 0.1s',
+}))
+
+export default class HamburgerButton extends Component {
   static defaultProps = {
     barCount: 3,
     onPress: () => {},
   }
 
-  state = {pressed: false}
+  state = { pressed: false }
 
-  onMouseDown = () => this.setState({pressed: true})
+  onMouseDown = () => this.setState({ pressed: true })
 
-  onMouseUp = () => this.setState({pressed: false})
+  onMouseUp = () => this.setState({ pressed: false })
 
   render() {
-    const {getStyles, style, barCount, onPress} = this.props
-    const styles = getStyles(this.state)
+    const { barCount, onPress } = this.props
+    const { pressed } = this.state
+
     const elements = []
 
     for (let i = 0; i < barCount; i++) {
-      elements.push(
-        <div
-          key={i}
-          style={styles.bar}
-        />
-      )
+      elements.push(<Bar key={i} pressed={pressed} />)
     }
 
     return (
-      <div
-        style={style}
+      <Container
         onClick={onPress}
         onMouseDown={this.onMouseDown}
         onMouseUp={this.onMouseUp}
       >
-        <div style={styles.container}>
-          {elements}
-        </div>
-      </div>
+        {elements}
+      </Container>
     )
   }
 }

@@ -1,5 +1,8 @@
+# Project dependencies
+.cache
 node_modules
-npm-debug.log
 yarn-error.log
-dist
-!dist/index.html
+
+# Build directory
+/public
+.DS_Store
