@@ -1,8 +1,9 @@
 const title = 'Default parameters'
-const code = `const printAnimal = (animal = 'cat') => {
-  console.log(animal)
+const code = `const printInput = (input = 'world') => {
+  console.log('hello ' + input)
 }
-printAnimal() // cat
-printAnimal('dog') // dog`
+
+printInput()
+printInput('universe')`
 
 export default { code, title }
