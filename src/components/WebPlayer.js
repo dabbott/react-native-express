@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
-import createStyles, { responsive } from 'react-styles-provider'
+import React from 'react'
+import styled from 'styled-components'
 import ReactNativeWebPlayer from 'react-native-web-player'
+
+import isMobile from '../utils/isMobile'
 
 const playerStyles = {
   tab: {
@@ -32,21 +34,21 @@ const playerStyles = {
   },
 }
 
-@responsive()
-@createStyles({
-  container: {
-    display: 'flex',
-    marginBottom: 15,
-  },
+const Container = styled.div({
+  display: 'flex',
+  marginBottom: '15px',
+})
+
+const styles = {
   player: {
     flex: '1 1 auto',
-    minWidth: 0,
-    minHeight: 0,
-    marginRight: -10,
+    minWidth: '0',
+    minHeight: '0',
+    marginRight: '-10px',
   },
-})
-export default class WebPlayer extends Component {
+}
 
+export default class WebPlayer extends React.Component {
   static defaultProps = {
     height: 700,
     width: 260,
@@ -61,9 +63,7 @@ export default class WebPlayer extends Component {
 
   render() {
     const {
-      styles,
       showTranspiler,
-      responsive,
 
       // Passthrough
       code,
@@ -91,7 +91,7 @@ export default class WebPlayer extends Component {
       styles: playerStyles,
     }
 
-    if (responsive.match('mobile')) {
+    if (isMobile) {
       params.panes = ['editor']
     } else {
       if (showTranspiler) {
@@ -102,12 +102,12 @@ export default class WebPlayer extends Component {
     }
 
     return (
-      <div style={styles.container}>
+      <Container>
         <ReactNativeWebPlayer
-          style={{...styles.player, height}}
+          style={{ ...styles.player, height }}
           {...params}
         />
-      </div>
+      </Container>
     )
   }
 }

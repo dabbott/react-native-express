@@ -1,19 +1,24 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import styled from 'styled-components'
 
-import styles from '../styles'
 import Author from './Author'
+
+const Container = styled.div({
+  fontSize: '20px',
+  fontWeight: '300',
+  marginTop: '15px',
+  marginBottom: '15px',
+})
 
 export default class PageHeader extends Component {
   render() {
-    const {title, author, authorURL} = this.props
+    const { title, author, authorURL } = this.props
 
     return (
-      <div style={styles.pageHeader}>
+      <Container>
         {title}
-        <Author url={authorURL}>
-          {author}
-        </Author>
-      </div>
+        <Author url={authorURL}>{author}</Author>
+      </Container>
     )
   }
 }
