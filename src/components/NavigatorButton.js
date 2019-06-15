@@ -26,8 +26,21 @@ const Item = styled.div({
   },
 })
 
-const NextItem = Item.extend({
+// const NextItem = Item.extend({
+//   backgroundColor: 'rgb(54,203,170)',
+// })
+
+const NextItem = styled.div({
+  flex: '0 0 auto',
+  padding: '10px 15px',
   backgroundColor: 'rgb(54,203,170)',
+  color: 'white',
+  borderRadius: '3px',
+  textAlign: 'center',
+  marginBottom: '0',
+  [mediaQuery.small]: {
+    marginBottom: '15px',
+  },
 })
 
 const styles = {
