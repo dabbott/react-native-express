@@ -1,3 +1,13 @@
+const gabe = {
+  name: "Gabe G'Sell",
+  url: 'http://gabegsell.com/',
+}
+
+const jimmy = {
+  name: '@jimmyliu',
+  url: 'https://twitter.com/jimmyliu',
+}
+
 let sections = [
   {
     hidden: true,
@@ -17,10 +27,7 @@ let sections = [
     title: 'Quick Start',
     slug: 'quick_start',
     componentName: 'QuickStart',
-    author: {
-      name: '@jimmyliu',
-      url: 'https://twitter.com/jimmyliu',
-    },
+    author: jimmy,
   },
 
   {
@@ -92,12 +99,7 @@ let sections = [
     title: 'Property Initializers',
     slug: 'property_initializers',
     componentName: 'ClassInstanceProperties',
-  },
-  {
-    depth: 2,
-    title: 'Bound Instance Methods',
-    slug: 'bound_instance_methods',
-    componentName: 'BoundInstanceMethods',
+    author: gabe,
   },
   {
     depth: 2,
