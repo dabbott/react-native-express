@@ -4,23 +4,26 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@mdx-js/mdx": "^0.15.0",
-    "@mdx-js/tag": "^0.15.0",
-    "babel-plugin-styled-components": "^1.5.1",
+    "@babel/core": "^7.0.0-0",
+    "@mdx-js/mdx": "^1.0.20",
+    "@mdx-js/react": "^1.0.0",
+    "@mdx-js/tag": "^0.20.3",
+    "babel-plugin-styled-components": "^1.10.0",
     "disqus-react": "^1.0.5",
-    "gatsby": "next",
-    "gatsby-cli": "^1.1.58",
-    "gatsby-mdx": "^0.0.10",
-    "gatsby-plugin-manifest": "next",
-    "gatsby-plugin-offline": "next",
-    "gatsby-plugin-react-helmet": "next",
-    "gatsby-plugin-styled-components": "^2.0.11",
-    "global": "^4.3.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-helmet": "^5.2.0",
+    "gatsby": "^2.9.4",
+    "gatsby-cli": "^2.6.7",
+    "gatsby-mdx": "^0.6.3",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-offline": "^2.1.3",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "global": "^4.4.0",
+    "graphql": "^0.13.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
     "react-native-web-player": "^2.0.0-alpha.3",
-    "styled-components": "^3.4.2"
+    "styled-components": "^4.3.1"
   },
   "keywords": [
     "gatsby"
@@ -33,8 +36,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@mdx-js/loader": "^0.15.0",
-    "loader-utils": "^1.1.0",
+    "@mdx-js/loader": "^1.0.20",
+    "eslint-plugin-graphql": "^3.0.3",
+    "loader-utils": "^1.2.3",
     "prettier": "^1.13.7"
   },
   "repository": {
