@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "react-native-express",
+  "description": "Interactive examples, code samples, and tutorial projects for React Native",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Devin Abbott <devinabbott@gmail.com> (http://github.com/dabbott)",
   "dependencies": {
     "@babel/core": "^7.0.0-0",
     "@mdx-js/mdx": "^1.0.20",
