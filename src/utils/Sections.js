@@ -158,7 +158,6 @@ let sections = [
     slug: 'sectionlist',
     componentName: 'SectionList',
   },
-  { depth: 2, title: 'ListView', slug: 'listview', componentName: 'ListView' },
 
   {
     depth: 0,
