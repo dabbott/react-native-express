@@ -265,76 +265,76 @@ let sections = [
   },
   // {depth: 1, title: 'Ignite', slug: 'ignite'},
 
-  {
-    depth: 0,
-    title: 'Exercises',
-    slug: 'exercises',
-    componentName: 'Exercises',
-  },
+  // {
+  //   depth: 0,
+  //   title: 'Exercises',
+  //   slug: 'exercises',
+  //   componentName: 'Exercises',
+  // },
 
-  {
-    depth: 1,
-    title: 'Todo List',
-    slug: 'todo_list',
-    componentName: 'TodoList',
-  },
-  {
-    depth: 2,
-    title: 'App Layout',
-    slug: 'todo_list_1',
-    componentName: 'TodoList1',
-  },
-  {
-    depth: 2,
-    title: 'Input & Adding',
-    slug: 'todo_list_2',
-    componentName: 'TodoList2',
-  },
-  {
-    depth: 2,
-    title: 'List and Checkbox',
-    slug: 'todo_list_3',
-    componentName: 'TodoList3',
-  },
-  {
-    depth: 2,
-    title: 'Removal & Styling',
-    slug: 'todo_list_4',
-    componentName: 'TodoList4',
-  },
+  // {
+  //   depth: 1,
+  //   title: 'Todo List',
+  //   slug: 'todo_list',
+  //   componentName: 'TodoList',
+  // },
+  // {
+  //   depth: 2,
+  //   title: 'App Layout',
+  //   slug: 'todo_list_1',
+  //   componentName: 'TodoList1',
+  // },
+  // {
+  //   depth: 2,
+  //   title: 'Input & Adding',
+  //   slug: 'todo_list_2',
+  //   componentName: 'TodoList2',
+  // },
+  // {
+  //   depth: 2,
+  //   title: 'List and Checkbox',
+  //   slug: 'todo_list_3',
+  //   componentName: 'TodoList3',
+  // },
+  // {
+  //   depth: 2,
+  //   title: 'Removal & Styling',
+  //   slug: 'todo_list_4',
+  //   componentName: 'TodoList4',
+  // },
 
-  { depth: 1, title: 'Reddit', slug: 'reddit', componentName: 'Reddit' },
-  { depth: 2, title: 'Router', slug: 'reddit_1', componentName: 'Reddit1' },
-  { depth: 2, title: 'OAuth', slug: 'reddit_2', componentName: 'Reddit2' },
-  {
-    depth: 2,
-    title: 'Persisting Token',
-    slug: 'reddit_3',
-    componentName: 'Reddit3',
-  },
-  {
-    depth: 2,
-    title: 'Fetch Posts',
-    slug: 'reddit_4',
-    componentName: 'Reddit4',
-  },
-  {
-    depth: 2,
-    title: 'Display Posts',
-    slug: 'reddit_5',
-    componentName: 'Reddit5',
-  },
+  // { depth: 1, title: 'Reddit', slug: 'reddit', componentName: 'Reddit' },
+  // { depth: 2, title: 'Router', slug: 'reddit_1', componentName: 'Reddit1' },
+  // { depth: 2, title: 'OAuth', slug: 'reddit_2', componentName: 'Reddit2' },
+  // {
+  //   depth: 2,
+  //   title: 'Persisting Token',
+  //   slug: 'reddit_3',
+  //   componentName: 'Reddit3',
+  // },
+  // {
+  //   depth: 2,
+  //   title: 'Fetch Posts',
+  //   slug: 'reddit_4',
+  //   componentName: 'Reddit4',
+  // },
+  // {
+  //   depth: 2,
+  //   title: 'Display Posts',
+  //   slug: 'reddit_5',
+  //   componentName: 'Reddit5',
+  // },
 
-  { depth: 1, title: 'Uber', slug: 'uber', componentName: 'Uber' },
-  { depth: 2, title: 'Search Header', slug: 'uber_1', componentName: 'Uber1' },
-  { depth: 2, title: 'Results List', slug: 'uber_2', componentName: 'Uber2' },
-  {
-    depth: 2,
-    title: 'Map & Geolocation',
-    slug: 'uber_3',
-    componentName: 'Uber3',
-  },
-  { depth: 2, title: 'UI Polish', slug: 'uber_4', componentName: 'Uber4' },
+  // { depth: 1, title: 'Uber', slug: 'uber', componentName: 'Uber' },
+  // { depth: 2, title: 'Search Header', slug: 'uber_1', componentName: 'Uber1' },
+  // { depth: 2, title: 'Results List', slug: 'uber_2', componentName: 'Uber2' },
+  // {
+  //   depth: 2,
+  //   title: 'Map & Geolocation',
+  //   slug: 'uber_3',
+  //   componentName: 'Uber3',
+  // },
+  // { depth: 2, title: 'UI Polish', slug: 'uber_4', componentName: 'Uber4' },
 ]
 
 // Add section numbers. I use semver naming, since it's easy to remember
