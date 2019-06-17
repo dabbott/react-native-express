@@ -36,7 +36,6 @@ export default class StarCount extends React.Component {
   }
 
   render() {
-    const { user, repo } = this.props
     const { count } = this.state
 
     if (!count) return null
