@@ -52,9 +52,9 @@ export default class App extends Component {
 const files = [
   // ['index.js', require('!!raw!../examples/IndexRegisterApp')],
   ['App.js', appFile],
-  ['List.js', require('!!raw-loader!../examples/List')],
-  ['Input.js', require('!!raw-loader!../examples/Input')],
-  ['Title.js', require('!!raw-loader!../examples/Title')],
+  ['List.js', require('../examples/List')],
+  ['Input.js', require('../examples/Input')],
+  ['Title.js', require('../examples/Title')],
 ]
 
 export default { files }
