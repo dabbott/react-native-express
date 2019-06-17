@@ -1,6 +1,7 @@
+import Router, { withRouter } from 'next/router'
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import Link from 'next/link'
 
 import { chapters } from '../utils/Sections'
 
@@ -10,13 +11,15 @@ const SidebarTitle = styled.div(({ centered }) => ({
   borderBottom: '1px solid rgba(220,220,220,0.5)',
 }))
 
-const SidebarTitleText = styled.div(({ centered }) => ({
+const SidebarTitleText = styled.a(({ centered }) => ({
   paddingLeft: centered ? '0' : '35px',
   flex: '0 0 auto',
   fontSize: '18px',
   fontWeight: '300',
   lineHeight: '60px',
   color: '#263053',
+  cursor: 'pointer',
+  userSelect: 'none',
 }))
 
 const SidebarRowsContainer = styled.div(({ centered }) => ({
@@ -61,9 +64,15 @@ const Dot = styled.div({
   backgroundColor: '#DEDFE8',
 })
 
-const SidebarLinkText = styled.span({
-  color: '#263053',
-})
+const SidebarLinkText = styled.a(({ isActive }) =>
+  Object.assign(
+    { color: '#263053', cursor: 'pointer', userSelect: 'none' },
+    isActive && {
+      textDecoration: 'underline',
+      fontWeight: '500',
+    }
+  )
+)
 
 const ExpandButton = styled.div(({ active }) => ({
   fontSize: '14px',
@@ -81,7 +90,7 @@ const ExpandButton = styled.div(({ active }) => ({
   opacity: active ? '0.5' : '1',
 }))
 
-export default class Sidebar extends Component {
+class Sidebar extends Component {
   constructor(props) {
     super()
 
@@ -124,7 +133,7 @@ export default class Sidebar extends Component {
     i,
     list
   ) => {
-    const { centered } = this.props
+    const { router, centered } = this.props
     const { expanded } = this.state
 
     if (depth === 2 && !expanded[parent]) {
@@ -153,14 +162,10 @@ export default class Sidebar extends Component {
       >
         <Numeral centered={centered}>{majorOrMinor ? numeral : ''}</Numeral>
 
-        <Link
-          to={slug}
-          activeStyle={{
-            textDecoration: 'underline',
-            fontWeight: '500',
-          }}
-        >
-          <SidebarLinkText>{title}</SidebarLinkText>
+        <Link href={slug}>
+          <SidebarLinkText isActive={router.asPath === `/${slug}`}>
+            {title}
+          </SidebarLinkText>
         </Link>
 
         {hasChildSection && (
@@ -181,7 +186,7 @@ export default class Sidebar extends Component {
     return (
       <>
         <SidebarTitle centered={centered}>
-          <Link to={'/'}>
+          <Link href={'/'}>
             <SidebarTitleText centered={centered}>
               React Native Express
             </SidebarTitleText>
@@ -201,3 +206,5 @@ export default class Sidebar extends Component {
     )
   }
 }
+
+export default withRouter(Sidebar)

@@ -1,22 +1,20 @@
-import '../styles/reset.css'
-import '../styles/main.css'
-
+import Router, { withRouter } from 'next/router'
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
 import mediaQuery from '../utils/mediaQuery'
 
-import Page from '../components/Page'
-import HideAt from '../components/HideAt'
-import ShowAt from '../components/ShowAt'
-import Sidebar from '../components/Sidebar'
-import PageHeader from '../components/PageHeader'
-import NavigatorButton from '../components/NavigatorButton'
-import HamburgerButton from '../components/HamburgerButton'
-import Disqus from '../components/Disqus'
-import BookBanner from '../components/BookBanner'
+import MarkdownProvider from './MarkdownProvider'
+import Page from './Page'
+import HideAt from './HideAt'
+import ShowAt from './ShowAt'
+import Sidebar from './Sidebar'
+import PageHeader from './PageHeader'
+import NavigatorButton from './NavigatorButton'
+import HamburgerButton from './HamburgerButton'
+import Disqus from './Disqus'
+import BookBanner from './BookBanner'
 import {
   getSection,
   getNextSection,
@@ -101,14 +99,6 @@ class ChapterPage extends React.Component {
     showMenu: false,
   }
 
-  componentDidMount() {
-    console.log('MOUNT')
-  }
-
-  componentWillUnmount() {
-    console.log('UNMOUNT')
-  }
-
   toggleSidebar = () => {
     const { showSidebar } = this.state
 
@@ -125,7 +115,7 @@ class ChapterPage extends React.Component {
     const { children } = this.props
     const { showSidebar, showMenu } = this.state
 
-    const slug = this.props['*']
+    const slug = this.props.router.pathname.slice(1)
 
     const isIntroduction = slug === ''
     const section = getSection(slug)
@@ -160,86 +150,73 @@ class ChapterPage extends React.Component {
           author={author.name || '@dvnabbott'}
           authorURL={author.url || 'https://twitter.com/dvnabbott'}
         />
-        {children}
+        <MarkdownProvider>{children}</MarkdownProvider>
       </>
     )
 
     return (
-      <StaticQuery
-        query={graphql`
-          query {
-            site {
-              siteMetadata {
-                title
-              }
-            }
-          }
-        `}
-        render={data => (
-          <>
-            <Helmet
-              // title={data.site.siteMetadata.title}
-              meta={[
-                { name: 'description', content: 'Sample' },
-                { name: 'keywords', content: 'sample, something' },
-              ]}
-            >
-              <html lang="en" />
-            </Helmet>
-            <Container>
-              <Inner>
-                {showSidebar && (
-                  <HideAt
-                    style={{
-                      flex: '0 0 280px',
-                    }}
-                    breakpoint="small"
-                    flex
-                  >
-                    <SidebarContainer>
-                      <Sidebar currentSection={section} />
-                    </SidebarContainer>
-                  </HideAt>
-                )}
-                <Content>
-                  <MenuButtonContainer>
-                    <HideAt breakpoint="small">
-                      <HamburgerButton onPress={this.toggleSidebar} />
-                    </HideAt>
-                    <ShowAt breakpoint="small">
-                      <HamburgerButton onPress={this.toggleMenu} />
-                    </ShowAt>
-                  </MenuButtonContainer>
-                  {isIntroduction ? (
-                    <Page
-                      title={'React Native Express'}
-                      subtitle={
-                        'Learn React Native, the cross-platform app framework'
-                      }
-                      footer={footer}
-                      bannerHeight={560}
-                      showLogo
-                    >
-                      {contents}
-                    </Page>
-                  ) : (
-                    <Page title={title} footer={footer}>
-                      {contents}
-                    </Page>
-                  )}
-                </Content>
-              </Inner>
-              {showMenu && (
+      <>
+        <Helmet
+          // title={data.site.siteMetadata.title}
+          meta={[
+            { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'sample, something' },
+          ]}
+        >
+          <html lang="en" />
+        </Helmet>
+        <Container>
+          <Inner>
+            {showSidebar && (
+              <HideAt
+                style={{
+                  flex: '0 0 280px',
+                }}
+                breakpoint="small"
+                flex
+              >
+                <SidebarContainer>
+                  <Sidebar currentSection={section} />
+                </SidebarContainer>
+              </HideAt>
+            )}
+            <Content key={slug}>
+              <MenuButtonContainer>
+                <HideAt breakpoint="small">
+                  <HamburgerButton onPress={this.toggleSidebar} />
+                </HideAt>
                 <ShowAt breakpoint="small">
-                  <MenuContainer tabIndex="-1">
-                    <Sidebar currentSection={section} centered />
-                  </MenuContainer>
+                  <HamburgerButton onPress={this.toggleMenu} />
                 </ShowAt>
+              </MenuButtonContainer>
+              {isIntroduction ? (
+                <Page
+                  title={'React Native Express'}
+                  subtitle={
+                    'Learn React Native, the cross-platform app framework'
+                  }
+                  footer={footer}
+                  bannerHeight={560}
+                  showLogo
+                >
+                  {contents}
+                </Page>
+              ) : (
+                <Page title={title} footer={footer}>
+                  {contents}
+                </Page>
               )}
-            </Container>
-          </>
-        )}
-      />
+            </Content>
+          </Inner>
+          {showMenu && (
+            <ShowAt breakpoint="small">
+              <MenuContainer tabIndex="-1">
+                <Sidebar currentSection={section} centered />
+              </MenuContainer>
+            </ShowAt>
+          )}
+        </Container>
+      </>
     )
   }
 }
@@ -248,4 +225,4 @@ ChapterPage.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default ChapterPage
+export default withRouter(ChapterPage)

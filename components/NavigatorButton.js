@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import Link from 'next/link'
 import mediaQuery from '../utils/mediaQuery'
 
 const Container = styled.div({
@@ -55,14 +55,14 @@ export default class extends React.Component {
     return (
       <Container>
         {previousSection ? (
-          <Link to={previousSection.slug} style={styles.link}>
+          <Link href={previousSection.slug} style={styles.link}>
             <Item>Previous - {previousSection.title}</Item>
           </Link>
         ) : (
           <div />
         )}
         {nextSection && (
-          <Link to={nextSection.slug} style={styles.link}>
+          <Link href={nextSection.slug} style={styles.link}>
             <NextItem>Next - {nextSection.title}</NextItem>
           </Link>
         )}
