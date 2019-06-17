@@ -38,16 +38,17 @@ const NextItem = styled.div({
   borderRadius: '3px',
   textAlign: 'center',
   marginBottom: '0',
+  cursor: 'pointer',
   [mediaQuery.small]: {
     marginBottom: '15px',
   },
 })
 
-const styles = {
-  link: {
-    textDecoration: 'none',
-  },
-}
+// const styles = {
+//   link: {
+//     textDecoration: 'none',
+//   },
+// }
 
 export default class extends React.Component {
   render() {
@@ -55,14 +56,14 @@ export default class extends React.Component {
     return (
       <Container>
         {previousSection ? (
-          <Link href={previousSection.slug} style={styles.link}>
+          <Link href={previousSection.slug}>
             <Item>Previous - {previousSection.title}</Item>
           </Link>
         ) : (
           <div />
         )}
         {nextSection && (
-          <Link href={nextSection.slug} style={styles.link}>
+          <Link href={nextSection.slug}>
             <NextItem>Next - {nextSection.title}</NextItem>
           </Link>
         )}
