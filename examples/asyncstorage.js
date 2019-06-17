@@ -64,7 +64,7 @@ AppRegistry.registerComponent('App', () => App)
 
 const files = [
   ['index.js', indexFile],
-  ['Input.js', require('!!raw-loader!../examples/Input')],
+  ['Input.js', require('../examples/files/Input')],
 ]
 
 export default { files }

@@ -109,10 +109,10 @@ export default class App extends React.Component {
 const files = [
   ['App.js', appFile],
   ['store.js', storeFile],
-  ['todoListRedux.js', require('!!raw-loader!../examples/TodoListRedux')],
-  ['List.js', require('!!raw-loader!../examples/List')],
-  ['Input.js', require('!!raw-loader!../examples/Input')],
-  ['Title.js', require('!!raw-loader!../examples/Title')],
+  ['todoListRedux.js', require('../examples/files/TodoListRedux').default],
+  ['List.js', require('../examples/files/List').default],
+  ['Input.js', require('../examples/files/Input').default],
+  ['Title.js', require('../examples/files/Title').default],
 ]
 
 const vendorComponents = [
