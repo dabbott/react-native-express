@@ -111,6 +111,15 @@ class ChapterPage extends React.Component {
     this.setState({ showMenu: !showMenu })
   }
 
+  // Hide the menu on mobile after clicking a link
+  componentWillReceiveProps(nextProps) {
+    const { showMenu } = this.state
+
+    if (showMenu && nextProps.router.pathname !== this.props.router.pathname) {
+      this.setState({ showMenu: false })
+    }
+  }
+
   render() {
     const { children } = this.props
     const { showSidebar, showMenu } = this.state
