@@ -4,27 +4,27 @@ import expo from '../images/expo.png'
 
 export default ChapterPage
 
-Creating a new React Native project is easy.
+In this section, we'll use `expo-cli` to set up a new React Native app.
 
-You'll need Node.js installed, so if you don't have it already, download the installer at [nodejs.org](https://nodejs.org/en/download/). Choose the appropriate package for your platform and follow the instructions to install.
+You'll need Node.js (v10 or newer) installed, so if you don't have it already, download the installer at [nodejs.org](https://nodejs.org/en/download/). Choose the appropriate package for your platform and follow the instructions to install.
 
 ## Installation
 
-First, let's install `create-react-native-app` (CRNA). [CRNA](https://github.com/react-community/create-react-native-app) is a command-line tool for easily starting a new React Native project.
+First, let's install `expo-cli`. [`expo-cli`](https://docs.expo.io/versions/latest/workflow/expo-cli/) is a command-line tool for easily starting a new React Native project.
 
 ```bash
-npm install -g create-react-native-app
+npm install -g expo-cli
 ```
 
-Now use CRNA to create a new app:
+Now use expo-cli to create a new app:
 
 ```bash
-create-react-native-app my-app
-cd my-app/
+expo init MyApp
+cd MyApp
 npm start
 ```
 
-CRNA might take a few minutes to download dependencies. You should see a QR code like this after it's done:
+`expo-cli` might take a few minutes to download dependencies. You should see a QR code like this after it's done:
 
 <img src={createnativeapp} style={{ width: '550px', maxWidth: '100%' }} />
 

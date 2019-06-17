@@ -68,18 +68,26 @@ let sections = [
     slug: 'default_parameters',
     componentName: 'DefaultParameters',
   },
-  { depth: 2, title: 'Classes', slug: 'classes', componentName: 'Classes' },
+  {
+    depth: 2,
+    title: 'Classes',
+    slug: 'classes',
+    componentName: 'Classes',
+    author: gabe,
+  },
   {
     depth: 2,
     title: 'Dynamic Object Keys',
     slug: 'dynamic_object_keys',
     componentName: 'DynamicObjectKeys',
+    author: gabe,
   },
   {
     depth: 2,
     title: 'Array Spread',
     slug: 'array_spread',
     componentName: 'ArraySpread',
+    author: gabe,
   },
 
   {

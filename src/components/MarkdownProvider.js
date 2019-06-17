@@ -11,8 +11,9 @@ export default function MarkdownProvider({ children }) {
       components={{
         p: Paragraph,
         h1: SectionHeader,
-        h2: props => <div {...props} style={styles.h4} />,
+        h2: props => <div {...props} style={styles.h2} />,
         strong: props => <strong {...props} style={styles.strong} />,
+        em: props => <em {...props} style={styles.em} />,
         table: props => <table {...props} className={'table'} />,
         // a: Link,
         img: props => <img alt="" style={styles.img} {...props} />,
@@ -28,13 +29,13 @@ export default function MarkdownProvider({ children }) {
 }
 
 const styles = {
-  h3: {
-    fontSize: '20px',
-    fontWeight: '300',
-    marginTop: '60px',
-    marginBottom: '15px',
-  },
-  h4: {
+  // h3: {
+  //   fontSize: '16px',
+  //   fontWeight: '500',
+  //   marginTop: '40px',
+  //   marginBottom: '15px',
+  // },
+  h2: {
     fontSize: '14px',
     fontWeight: '500',
     marginTop: '35px',
@@ -42,6 +43,9 @@ const styles = {
   },
   strong: {
     fontWeight: 'bold',
+  },
+  em: {
+    fontStyle: 'italic',
   },
   blockquote: {
     borderLeft: '4px solid #DEDFE8',
