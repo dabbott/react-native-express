@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ReactNativeWebPlayer from 'react-native-web-player'
 
 import isMobile from '../utils/isMobile'
+import { param } from 'change-case'
 
 const playerStyles = {
   tab: {
@@ -39,10 +40,16 @@ const playerStyles = {
   consolePane: {
     backgroundColor: 'white',
   },
+  workspacesPane: {
+    width: '25%',
+  },
 }
 
 playerStyles.playerHeader = playerStyles.header
 playerStyles.playerHeaderText = playerStyles.headerText
+
+playerStyles.workspacesHeader = playerStyles.header
+playerStyles.workspacesHeaderText = playerStyles.headerText
 
 const Container = styled.div({
   display: 'flex',
@@ -66,6 +73,7 @@ export default class WebPlayer extends React.Component {
     showTranspiler: false,
     showConsole: false,
     fullscreen: true,
+    workspaces: [],
   }
 
   shouldComponentUpdate() {
@@ -90,6 +98,9 @@ export default class WebPlayer extends React.Component {
       playerTitle,
       platform,
       vendorComponents,
+      workspaces,
+      workspacesTitle,
+      statusBarHeight,
     } = this.props
 
     const params = {
@@ -104,6 +115,9 @@ export default class WebPlayer extends React.Component {
       playerTitle,
       vendorComponents,
       platform,
+      workspaces,
+      workspacesTitle,
+      statusBarHeight,
       styles: playerStyles,
     }
 
@@ -132,6 +146,10 @@ export default class WebPlayer extends React.Component {
           },
         }
       }
+    }
+
+    if (workspaces.length > 0) {
+      params.panes = ['workspaces', ...params.panes]
     }
 
     return (
