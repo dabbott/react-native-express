@@ -83,7 +83,7 @@ This allows the rest of our app to access the store.`,
     },
     {
       title: '5. Create TodoList.js',
-      description: `Create a new file, \`Todolist.js\`.
+      description: `Create a new file, \`TodoList.js\`.
 
 We'll need to do a couple things here:
 
