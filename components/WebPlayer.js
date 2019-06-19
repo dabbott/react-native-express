@@ -36,6 +36,11 @@ const playerStyles = {
   playerPane: {
     // backgroundColor: 'rgba(0,0,0,0.02)',
     overflow: 'hidden',
+    paddingLeft: 10,
+    paddingRight: 10,
+    marginLeft: 0,
+    marginRight: 0,
+    background: 'white',
   },
   consolePane: {
     backgroundColor: 'white',
