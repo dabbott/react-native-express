@@ -3,10 +3,16 @@ import { DiscussionEmbed } from 'disqus-react'
 
 export default class Disqus extends Component {
   render() {
+    if (typeof window === 'undefined') {
+      return null
+    }
+
+    const url = window.location.href
+
     const prod = window.location.hostname.match('reactnativeexpress.com')
     const shortname = prod ? 'reactnativeexpress' : 'reactnativeexpress-staging'
 
-    const { identifier, title, url } = this.props
+    const { identifier, title } = this.props
 
     const config = { url, identifier, title }
 

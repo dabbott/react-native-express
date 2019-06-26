@@ -2148,6 +2148,7 @@ diffie-hellman@^5.0.0:
 disqus-react@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/disqus-react/-/disqus-react-1.0.5.tgz#828ea186bd241c5e2a6dfebab5135e52a2d91d11"
+  integrity sha1-go6hhr0kHF4qbf66tRNeUqLZHRE=
   dependencies:
     react "^15.6.1"
     react-dom "^15.6.1"

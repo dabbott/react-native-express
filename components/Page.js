@@ -66,10 +66,10 @@ export default class Page extends Component {
                 {subtitle && <Subtitle>{subtitle}</Subtitle>}
                 {showLogo && (
                   <Logo
-                    src="https://cdn.rawgit.com/dabbott/react-native-express/master/static/logo@2x.png"
+                    src="https://cdn.rawgit.com/dabbott/react-native-express/master/images/logo@2x.png"
                     srcSet={[
-                      'https://cdn.rawgit.com/dabbott/react-native-express/master/static/logo.png 1x',
-                      'https://cdn.rawgit.com/dabbott/react-native-express/master/static/logo@2x.png 2x',
+                      'https://cdn.rawgit.com/dabbott/react-native-express/master/images/logo.png 1x',
+                      'https://cdn.rawgit.com/dabbott/react-native-express/master/images/logo@2x.png 2x',
                     ].join(',')}
                   />
                 )}
