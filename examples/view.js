@@ -1,5 +1,5 @@
 const code = `import React, { Component } from 'react'
-import { AppRegistry, View, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 
 export default class App extends Component {
   render() {

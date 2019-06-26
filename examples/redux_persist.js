@@ -1,4 +1,4 @@
-const indexFile = `import { AppRegistry, View } from 'react-native'
+const indexFile = `import { View } from 'react-native'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { persistStore, autoRehydrate } from 'redux-persist'
@@ -16,17 +16,15 @@ persistStore(store)
 import App from './App'
 
 // Pass the store into the Provider
-const AppWithStore = () => (
+export default () => (
   <Provider store={store}>
     <App />
   </Provider>
 )
-
-AppRegistry.registerComponent('App', () => AppWithStore)
 `
 
 const appFile = `import React, { Component } from 'react'
-import { AppRegistry, View } from 'react-native'
+import { View } from 'react-native'
 import { connect } from 'react-redux'
 
 import { actionCreators } from './todoListRedux'

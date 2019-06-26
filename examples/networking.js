@@ -1,6 +1,6 @@
 const title = 'Networking with Fetch'
 const code = `import React, { Component } from 'react'
-import { AppRegistry, View, Text, ActivityIndicator, ScrollView, StyleSheet } from 'react-native'
+import { View, Text, ActivityIndicator, ScrollView, StyleSheet } from 'react-native'
 
 export default class App extends Component {
 
@@ -107,8 +107,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'skyblue',
   },
 })
-
-AppRegistry.registerComponent('App', () => App)
 `
 
 export default { code, title }

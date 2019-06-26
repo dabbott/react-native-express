@@ -1,6 +1,6 @@
 const title = 'Animated'
 const code = `import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, Text, TouchableOpacity, Animated } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, Animated } from 'react-native'
 
 // Wrap a component to make it animatable
 const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity)
@@ -50,8 +50,6 @@ const styles = StyleSheet.create({
     fontSize: 42,
   },
 })
-
-AppRegistry.registerComponent('App', () => App)
 `
 
 export default { code, title }

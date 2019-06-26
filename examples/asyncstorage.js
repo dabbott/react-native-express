@@ -1,5 +1,5 @@
 const indexFile = `import React, { Component } from 'react'
-import { AppRegistry, View, Text, AsyncStorage, StyleSheet } from 'react-native'
+import { View, Text, AsyncStorage, StyleSheet } from 'react-native'
 
 import Input from './Input'
 
@@ -58,13 +58,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'skyblue',
   },
 })
-
-AppRegistry.registerComponent('App', () => App)
 `
 
 const files = [
   ['index.js', indexFile],
-  ['Input.js', require('../examples/files/Input')],
+  ['Input.js', require('../examples/files/Input').default],
 ]
 
 export default { files }

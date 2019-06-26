@@ -1,20 +1,20 @@
 const title = 'Gestures'
 const code = `import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, View, Text, PanResponder } from 'react-native'
+import { StyleSheet, View, Text, PanResponder } from 'react-native'
 
 export default class App extends Component {
 
-  state = {
-    dragging: false,
-    initialTop: 50,
-    initialLeft: 50,
-    offsetTop: 0,
-    offsetLeft: 0,
-  }
+  constructor(props) {
+    super(props)
 
-  panResponder = {}
+    this.state = {
+      dragging: false,
+      initialTop: 50,
+      initialLeft: 50,
+      offsetTop: 0,
+      offsetLeft: 0,
+    }
 
-  componentWillMount() {
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: this.handleStartShouldSetPanResponder,
       onPanResponderGrant: this.handlePanResponderGrant,
@@ -103,8 +103,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
   }
 })
-
-AppRegistry.registerComponent('App', () => App)
 `
 
 export default { code, title, scale: 1 }
