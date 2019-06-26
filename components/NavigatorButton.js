@@ -10,6 +10,8 @@ const Container = styled.div({
   [mediaQuery.small]: {
     flexDirection: 'column-reverse',
     alignItems: 'stretch',
+    paddingLeft: '20px',
+    paddingRight: '20px',
   },
 })
 

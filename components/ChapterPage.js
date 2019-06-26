@@ -84,14 +84,7 @@ const MenuButtonContainer = styled.div({
   zIndex: 12000,
 })
 
-const Footer = styled.div({
-  marginTop: 20,
-  padding: '60px',
-  [mediaQuery.small]: {
-    padding: '20px',
-  },
-  backgroundColor: 'rgb(250,250,250)',
-})
+const Footer = styled.div({})
 
 class ChapterPage extends React.Component {
   state = {
@@ -138,7 +131,7 @@ class ChapterPage extends React.Component {
     const previousSection = getPreviousSection(slug)
 
     const footer = (
-      <>
+      <Footer>
         <NavigatorButtonContainer>
           <NavigatorButton
             nextSection={nextSection}
@@ -146,10 +139,8 @@ class ChapterPage extends React.Component {
           />
         </NavigatorButtonContainer>
         {!isIntroduction && <BookBanner />}
-        <Footer>
-          <Disqus title={title} identifier={slug} />
-        </Footer>
-      </>
+        {!isIntroduction && <Disqus title={title} identifier={slug} />}
+      </Footer>
     )
 
     const contents = (

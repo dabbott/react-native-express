@@ -39,6 +39,11 @@ const Logo = styled.img({
   height: '296px',
 })
 
+const FooterContainer = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+})
+
 export default class Page extends Component {
   render() {
     const {
@@ -52,12 +57,9 @@ export default class Page extends Component {
 
     return (
       <MarkdownProvider>
-        <>
+        <FooterContainer>
           <ShowAt breakpoint={'small'}>
-            <Mobile tabIndex={'-1'}>
-              {children}
-              {footer}
-            </Mobile>
+            <Mobile tabIndex={'-1'}>{children}</Mobile>
           </ShowAt>
           <HideAt breakpoint={'small'}>
             <Container tabIndex={'-1'}>
@@ -76,11 +78,11 @@ export default class Page extends Component {
               </Banner>
               <Content>
                 <ContentContainer>{children}</ContentContainer>
-                {footer}
               </Content>
             </Container>
           </HideAt>
-        </>
+          {footer}
+        </FooterContainer>
       </MarkdownProvider>
     )
   }

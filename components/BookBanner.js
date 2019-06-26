@@ -17,12 +17,12 @@ const Container = styled.div({
   alignItems: 'stretch',
   paddingLeft: '60px',
   paddingRight: '60px',
-  paddingBottom: '40px',
+  paddingBottom: '60px',
   borderTop: '1px solid rgba(220,220,220,0.5)',
   borderBottom: '1px solid rgba(220,220,220,0.5)',
   [mediaQuery.small]: {
-    paddingLeft: '0',
-    paddingRight: '0',
+    paddingLeft: '20px',
+    paddingRight: '20px',
   },
 })
 

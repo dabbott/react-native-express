@@ -9,10 +9,4 @@ const mediaQuery = {
   large: `@media (min-width: ${size.large})`,
 }
 
-export const query = {
-  small: { maxWidth: size.medium },
-  medium: { maxWidth: size.large, minWidth: size.medium },
-  large: { minWidth: size.large },
-}
-
 export default mediaQuery
