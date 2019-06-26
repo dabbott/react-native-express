@@ -3,7 +3,7 @@ import { DiscussionEmbed } from 'disqus-react'
 
 export default class Disqus extends Component {
   render() {
-    if (typeof window === 'undefined') {
+    if (typeof window === 'undefined' || window.location.pathname === '/') {
       return null
     }
 

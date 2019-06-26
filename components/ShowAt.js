@@ -1,52 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
-import mediaQuery from '../utils/mediaQuery'
-
-const ShowAtLarge = styled.div({
-  [mediaQuery.small]: {
-    display: 'none',
-  },
-  [mediaQuery.medium]: {
-    display: 'none',
-  },
-  [mediaQuery.large]: {
-    display: 'block',
-  },
-})
-
-const ShowAtMedium = styled.div({
-  [mediaQuery.small]: {
-    display: 'none',
-  },
-  [mediaQuery.medium]: {
-    display: 'block',
-  },
-  [mediaQuery.large]: {
-    display: 'none',
-  },
-})
-
-const ShowAtSmall = styled.div({
-  [mediaQuery.small]: {
-    display: 'block',
-  },
-  [mediaQuery.medium]: {
-    display: 'none',
-  },
-  [mediaQuery.large]: {
-    display: 'none',
-  },
-})
+import { query } from '../utils/mediaQuery'
+import { useMediaQuery } from 'react-responsive'
 
 export default function ShowAt({ breakpoint, ...rest }) {
-  switch (breakpoint) {
-    case 'small':
-      return <ShowAtSmall {...rest} />
-    case 'medium':
-      return <ShowAtMedium {...rest} />
-    case 'large':
-      return <ShowAtLarge {...rest} />
-    default:
-      throw new Error('Invalid ShowAt breakpoint')
+  let isSmall = useMediaQuery(query.small)
+  let isMedium = useMediaQuery(query.medium)
+  let isLarge = useMediaQuery(query.large)
+
+  if (breakpoint === 'small' && isSmall) {
+    return <div {...rest} />
   }
+  if (breakpoint === 'medium' && isMedium) {
+    return <div {...rest} />
+  }
+  if (breakpoint === 'large' && isLarge) {
+    return <div {...rest} />
+  }
+  return null
 }
