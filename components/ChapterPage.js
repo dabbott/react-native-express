@@ -147,7 +147,13 @@ class ChapterPage extends React.Component {
         </NavigatorButtonContainer>
         {!isIntroduction && <BookBanner />}
         <Footer>
-          {/* <Disqus title={title} identifier={slug} url={window.location.href} /> */}
+          {typeof window !== 'undefined' && (
+            <Disqus
+              title={title}
+              identifier={slug}
+              url={window.location.href}
+            />
+          )}
         </Footer>
       </>
     )
