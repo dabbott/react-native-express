@@ -1,7 +1,7 @@
 const title = 'React Native Animatable'
 
 const code = `import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, Text, View, TouchableOpacity, Animated } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Animated } from 'react-native'
 
 import * as Animatable from 'react-native-animatable'
 
@@ -29,7 +29,7 @@ export default class App extends Component {
         delay={i * 100}
         style={[styles.button, {backgroundColor: color}]}
       >
-        <Text style={styles.text}>{i}</Text>
+        <Text style={styles.text}>Tap me {i}</Text>
       </Animatable.View>
     )
   }
@@ -60,8 +60,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 })
-
-AppRegistry.registerComponent('App', () => App)
 `
 
 const vendorComponents = [

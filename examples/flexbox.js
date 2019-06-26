@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
 `
 
 const indexFile = `import React, { Component } from 'react'
-import { AppRegistry, View, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 
 import Toggle from './Toggle'
 

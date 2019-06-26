@@ -1,4 +1,4 @@
-const indexFile = `import { AppRegistry, View } from 'react-native'
+const indexFile = `import { View } from 'react-native'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
@@ -13,13 +13,11 @@ const store = createStore(reducer, applyMiddleware(thunk))
 import App from './App'
 
 // Pass the store into the Provider
-const AppWithStore = () => (
+export default () => (
   <Provider store={store}>
     <App />
   </Provider>
 )
-
-AppRegistry.registerComponent('App', () => AppWithStore)
 `
 
 const reduxFile = `export const types = {
