@@ -165,13 +165,7 @@ class ChapterPage extends React.Component {
 
     return (
       <>
-        <Helmet
-          // title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
+        <Helmet title={title}>
           <html lang="en" />
         </Helmet>
         <Container>
