@@ -5,7 +5,9 @@ import React from 'react'
 import App, { Container } from 'next/app'
 import Head from 'next/head'
 import Router from 'next/router'
+import withGA from 'next-ga'
 import ChapterPage from '../components/ChapterPage'
+import { pageView } from '../utils/Analytics'
 
 export default class MyApp extends App {
   render() {
@@ -20,4 +22,9 @@ export default class MyApp extends App {
       </Container>
     )
   }
+}
+
+if (typeof document !== 'undefined') {
+  document.onload = pageView
+  Router.onRouteChangeComplete = pageView
 }
