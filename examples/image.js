@@ -6,7 +6,7 @@ export default class App extends Component {
     return (
       <Image
         style={styles.image}
-        source={{uri: 'http://www.reactnativeexpress.com/logo.png'}}
+        source={{uri: 'http://www.reactnativeexpress.com/static/logo.png'}}
       />
     )
   }

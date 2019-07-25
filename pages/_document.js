@@ -42,7 +42,7 @@ export default class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="http://www.reactnativeexpress.com/logo@2x.png"
+            content="http://www.reactnativeexpress.com/static/logo@2x.png"
           />
           <meta property="og:image:width" content="256" />
           <meta property="og:image:height" content="256" />
