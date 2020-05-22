@@ -1,6 +1,15 @@
-function createSection2(folder, title) {
-  const slug = folder + '/' + title.replace(/ /g, '_').toLowerCase()
-  return { depth: 2, title, slug }
+function formatSlug(string) {
+  return string.replace(/ /g, '_').toLowerCase()
+}
+
+function createSection(folder, title) {
+  if (!title) {
+    const slug = formatSlug(`${folder}/index`)
+    return { depth: 0, title: folder, slug }
+  }
+
+  const slug = formatSlug(`${folder}/${title}`)
+  return { depth: 1, title, slug }
 }
 
 let sections = [
@@ -10,31 +19,63 @@ let sections = [
     title: 'Learning JavaScript',
     slug: '',
   },
-  {
-    depth: 0,
-    title: 'Environment',
-    slug: 'environment/index',
-  },
-  {
-    depth: 1,
-    title: 'Quick Start',
-    slug: 'environment/quick_start',
-  },
-  {
-    depth: 0,
-    title: 'Language',
-    slug: 'chapters/language',
-  },
-  {
-    depth: 1,
-    title: 'Fundamentals',
-    slug: 'fundamentals/index',
-  },
-  createSection2('fundamentals', 'Primitive Types'),
-  createSection2('fundamentals', 'Library Types'),
-  createSection2('fundamentals', 'Variables'),
-  createSection2('fundamentals', 'Comparisons'),
-  createSection2('fundamentals', 'Fancy Syntax'),
+
+  createSection('Environment'),
+  createSection('Environment', 'Quick Start'),
+
+  createSection('Types'),
+  createSection('Types', 'Primitive Types'),
+  createSection('Types', 'Reference Types'),
+  createSection('Types', 'Library Types'),
+  createSection('Types', 'Type Names'),
+
+  createSection('Syntax'),
+  createSection('Syntax', 'Variables'),
+  createSection('Syntax', 'Equality'),
+
+  createSection('Collections'),
+  createSection('Collections', 'Arrays'),
+  createSection('Collections', 'Objects'),
+  createSection('Collections', 'Sets and Maps'),
+  createSection('Collections', 'Iteration'),
+
+  createSection('Functions'),
+  createSection('Functions', 'Syntax'),
+  createSection('Functions', 'Arguments'),
+  createSection('Functions', 'Returning'), // No tuples, use arrays & objects
+  createSection('Functions', 'Callbacks'),
+  createSection('Functions', 'Scope'),
+  createSection('Functions', 'Context'),
+
+  createSection('Classes'), // Constructors, instantiation, new & instanceof
+  createSection('Classes', 'Properties'), // Getters & setters, default values, static
+  createSection('Classes', 'Methods'), // Scope, super
+  createSection('Classes', 'Inheritance'), // Super
+
+  createSection('Type Declarations'),
+  createSection('Type Declarations', 'Constants'), // Like type = "hello"
+  createSection('Type Declarations', 'Enums'),
+  createSection('Type Declarations', 'Arrays'), // Cover tuple behavior
+  createSection('Type Declarations', 'Objects'),
+  createSection('Type Declarations', 'Interfaces'),
+  createSection('Type Declarations', 'Unions'), // Including discriminated
+  createSection('Type Declarations', 'Generics'),
+  createSection('Type Declarations', 'Type Casting'),
+  createSection('Type Declarations', 'Type Guards'),
+  createSection('Type Declarations', 'Any and Unknown'),
+
+  createSection('Async Control Flow'), // No threads. Callbacks & promises
+  createSection('Async Control Flow', 'Callbacks'),
+  createSection('Async Control Flow', 'Event Loop'), // setTimeout, setInterval
+  createSection('Async Control Flow', 'Promises'), // setTimeout, setInterval
+  createSection('Async Control Flow', 'Async and Await'), // setTimeout, setInterval
+  createSection('Async Control Flow', 'Fetch'), // setTimeout, setInterval
+
+  createSection('Exercises'),
+  createSection('Exercises', 'A'),
+  createSection('Exercises', 'B'),
+
+  // createSection('Syntax', 'Fancy Syntax'),
 ]
 
 // Add section numbers. I use semver naming, since it's easy to remember

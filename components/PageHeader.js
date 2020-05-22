@@ -17,7 +17,7 @@ export default class PageHeader extends Component {
     return (
       <Container>
         {title}
-        <Author url={authorURL}>{author}</Author>
+        {author && <Author url={authorURL}>{author}</Author>}
       </Container>
     )
   }

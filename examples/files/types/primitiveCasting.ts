@@ -4,5 +4,5 @@ const myString = '100'
 // Use .toString to get a string
 console.log(myNumber.toString())
 
-// Use the global parseInt to get a number
+// Use the global parseInt or parseFloat to get a number
 console.log(parseInt(myString))

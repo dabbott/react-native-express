@@ -147,8 +147,8 @@ class ChapterPage extends React.Component {
       <>
         <PageHeader
           title={title}
-          author={author.name || '@dvnabbott'}
-          authorURL={author.url || 'https://twitter.com/dvnabbott'}
+          // author={author.name || '@dvnabbott'}
+          // authorURL={author.url || 'https://twitter.com/dvnabbott'}
         />
         <MarkdownProvider>{children}</MarkdownProvider>
       </>

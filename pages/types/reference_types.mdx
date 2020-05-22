@@ -1,0 +1,27 @@
+import EditorConsole from '../../components/EditorConsole'
+import arrayType from '../../examples/files/types/arrayType.ts'
+import objectType from '../../examples/files/types/objectType.ts'
+
+Everything that isn't a primitive type is a reference type. 
+
+The main difference is: primitive types are passed _by value_ (a copy), while reference types are passed _by reference_ (the original).
+
+There are 2 extremely common built-in reference types: `Array` and `Object`.
+
+## Arrays
+
+We use array literal syntax to declare arrays:
+
+<EditorConsole   
+  title={"Arrays"}
+  code={arrayType}
+/>
+
+## Objects
+
+We use object literal syntax to declare objects:
+
+<EditorConsole
+  title={"Objects"}
+  code={objectType}
+/>

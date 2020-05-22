@@ -58,14 +58,14 @@ export default class extends React.Component {
     return (
       <Container>
         {previousSection ? (
-          <Link href={previousSection.slug}>
+          <Link href={`/${previousSection.slug}`}>
             <Item>Previous - {previousSection.title}</Item>
           </Link>
         ) : (
           <div />
         )}
         {nextSection && (
-          <Link href={nextSection.slug}>
+          <Link href={`/${nextSection.slug}`}>
             <NextItem>Next - {nextSection.title}</NextItem>
           </Link>
         )}

@@ -1,0 +1,41 @@
+import EditorConsole from '../../components/EditorConsole'
+import literals from '../../examples/files/types/literals.ts'
+import primitiveConstructors from '../../examples/files/types/primitiveConstructors.ts'
+import primitiveMethods from '../../examples/files/types/primitiveMethods.ts'
+import primitiveCasting from '../../examples/files/types/primitiveCasting.ts'
+
+## Literal values
+
+We declare primitive types using literal values:
+
+<EditorConsole   
+  title={"Literal values"}
+  code={literals}
+/>
+
+## Constructor functions
+
+It's also possible to instantiate the built-in types using their constructors -- however, this is relatively uncommon and not idiomatic for common usage.
+
+<EditorConsole 
+  title={'Constructor functions'}
+  code={primitiveConstructors}
+/>
+
+## Standard library methods
+
+We use standard library methods for manipulating primitives. These are available as methods on the instance:
+
+<EditorConsole 
+  title={'Standard library methods'}
+  code={primitiveMethods}
+/>
+
+## Type casting
+
+There are library methods for casting strings to numbers and vice versa:
+
+<EditorConsole 
+  title={'Type casting'}
+  code={primitiveCasting}
+/>
