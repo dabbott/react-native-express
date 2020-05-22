@@ -1,0 +1,21 @@
+import EditorConsole from '../../components/EditorConsole'
+import variables from '../../examples/files/fundamentals/variables.ts'
+import constants from '../../examples/files/fundamentals/constants.ts'
+
+Declare constants with `const` and variables with `let`. 
+
+> Somebody on your team will have a string opinion about when to use one or the other.
+
+<EditorConsole   
+  title={"Declaring variables"}
+  height={400}
+  code={variables}
+/>
+
+Only the variable _name_ is constant. The value associated with that name can still change. This only applies to non-primitive values.
+
+<EditorConsole   
+  title={"Declaring constants"}
+  height={400}
+  code={constants}
+/>

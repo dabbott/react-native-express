@@ -154,6 +154,8 @@ class Sidebar extends Component {
     const hasChildSection =
       depth === 1 && list[i + 1] && list[i + 1].depth === 2
 
+    const linkPath = `/${slug}`
+
     return (
       <SidebarRow
         small={!majorOrMinor}
@@ -162,8 +164,8 @@ class Sidebar extends Component {
       >
         <Numeral centered={centered}>{majorOrMinor ? numeral : ''}</Numeral>
 
-        <Link href={slug}>
-          <SidebarLinkText isActive={router.asPath === `/${slug}`}>
+        <Link href={linkPath}>
+          <SidebarLinkText isActive={router.asPath === linkPath}>
             {title}
           </SidebarLinkText>
         </Link>
@@ -188,7 +190,7 @@ class Sidebar extends Component {
         <SidebarTitle centered={centered}>
           <Link href={'/'}>
             <SidebarTitleText centered={centered}>
-              React Native Express
+              JavaScript Express
             </SidebarTitleText>
           </Link>
         </SidebarTitle>

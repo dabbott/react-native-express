@@ -12,6 +12,8 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
 
+    console.log('cmp', this.props)
+
     return (
       <Container>
         <Head />

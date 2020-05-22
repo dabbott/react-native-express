@@ -10,7 +10,7 @@ const withRawExampleLoader = (nextConfig = {}) => {
   return Object.assign({}, nextConfig, {
     webpack(config, options) {
       config.module.rules.push({
-        test: /examples\/files\/.*\.js$/,
+        test: /examples\/files\/.*$/,
         use: 'raw-loader',
       })
 

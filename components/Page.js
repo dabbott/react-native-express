@@ -40,9 +40,12 @@ const Logo = styled.img({
 })
 
 const FooterContainer = styled.div({
+  flex: '1 1 auto',
   display: 'flex',
   flexDirection: 'column',
 })
+
+import logo from '../images/logo.png'
 
 export default class Page extends Component {
   render() {
@@ -66,15 +69,7 @@ export default class Page extends Component {
               <Banner height={bannerHeight}>
                 <Title>{title}</Title>
                 {subtitle && <Subtitle>{subtitle}</Subtitle>}
-                {showLogo && (
-                  <Logo
-                    src="https://cdn.rawgit.com/dabbott/react-native-express/master/images/logo@2x.png"
-                    srcSet={[
-                      'https://cdn.rawgit.com/dabbott/react-native-express/master/images/logo.png 1x',
-                      'https://cdn.rawgit.com/dabbott/react-native-express/master/images/logo@2x.png 2x',
-                    ].join(',')}
-                  />
-                )}
+                {showLogo && <Logo src={logo} />}
               </Banner>
               <Content>
                 <ContentContainer>{children}</ContentContainer>

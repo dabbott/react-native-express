@@ -5,17 +5,17 @@ import GithubCorner from './GithubCorner'
 const Container = styled.div(({ height }) => ({
   position: 'relative',
   height: `${height || 200}px`,
-  backgroundImage: `url(//cdn.rawgit.com/dabbott/react-native-express/master/images/background-compressed.jpg)`,
-  backgroundSize: 'cover',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'column',
+  background:
+    'linear-gradient(to bottom, rgba(104,43,255,0.1), rgba(104,43,255,0.02))',
 }))
 
 export default ({ children, height }) => (
   <Container height={height}>
-    <GithubCorner />
+    {/* <GithubCorner /> */}
     {children}
   </Container>
 )

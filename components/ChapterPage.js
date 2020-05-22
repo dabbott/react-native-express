@@ -138,8 +138,8 @@ class ChapterPage extends React.Component {
             previousSection={previousSection}
           />
         </NavigatorButtonContainer>
-        {!isIntroduction && <BookBanner />}
-        {!isIntroduction && <Disqus title={title} identifier={slug} />}
+        {/* {!isIntroduction && <BookBanner />} */}
+        {/* {!isIntroduction && <Disqus title={title} identifier={slug} />} */}
       </Footer>
     )
 
@@ -185,10 +185,7 @@ class ChapterPage extends React.Component {
               </MenuButtonContainer>
               {isIntroduction ? (
                 <Page
-                  title={'React Native Express'}
-                  subtitle={
-                    'Learn React Native, the cross-platform app framework'
-                  }
+                  title={'JavaScript Express'}
                   footer={footer}
                   bannerHeight={560}
                   showLogo

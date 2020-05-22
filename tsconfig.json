@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "lib": ["es6"],
+    "types": ["node"]
+  },
+  "exclude": ["**/*.ts"]
+}
