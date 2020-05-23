@@ -27,11 +27,13 @@ let sections = [
   createSection('Types', 'Primitive Types'),
   createSection('Types', 'Reference Types'),
   createSection('Types', 'Library Types'),
+  createSection('Types', 'Nullability'),
   createSection('Types', 'Type Names'),
 
   createSection('Syntax'),
   createSection('Syntax', 'Variables'),
   createSection('Syntax', 'Equality'),
+  createSection('Syntax', 'Logical Operators'),
 
   createSection('Collections'),
   createSection('Collections', 'Arrays'),

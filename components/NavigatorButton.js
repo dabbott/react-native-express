@@ -23,6 +23,7 @@ const Item = styled.div({
   borderRadius: '3px',
   textAlign: 'center',
   marginBottom: '0',
+  border: '1px solid rgba(0,0,0,0.05)',
   [mediaQuery.small]: {
     marginBottom: '15px',
   },
@@ -35,12 +36,13 @@ const Item = styled.div({
 const NextItem = styled.div({
   flex: '0 0 auto',
   padding: '10px 15px',
-  backgroundColor: 'rgb(54,203,170)',
-  color: 'white',
+  backgroundColor: 'rgb(255,223,67)',
+  color: 'black',
   borderRadius: '3px',
   textAlign: 'center',
   marginBottom: '0',
   cursor: 'pointer',
+  border: '1px solid rgba(0,0,0,0.05)',
   [mediaQuery.small]: {
     marginBottom: '15px',
   },

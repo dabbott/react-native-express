@@ -1,0 +1,26 @@
+import EditorConsole from '../../components/EditorConsole'
+import strictEquality from '../../examples/files/syntax/strictEquality.ts'
+import looseEquality from '../../examples/files/syntax/looseEquality.ts'
+
+There are two kinds equality operators:
+
+- `===`: **strict** equality comparison, which compares _references_
+- `==`: **loose** equality comparison, which compares _structure_ using type coercion
+
+## Strict equality
+
+We should _almost always_ use strict equality comparison with `===`, since the behavior is much more predictable.
+
+<EditorConsole   
+  title={"Strict equality"}
+  code={strictEquality}
+/>
+
+## Loose equality
+
+Loose equality is convenient, but even more unpredictable, so it's best to use `===` instead where possible.
+
+<EditorConsole   
+  title={"Loose equality"}
+  code={looseEquality}
+/>
