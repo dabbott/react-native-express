@@ -5,8 +5,9 @@ const myObject = {
 
 console.log(myObject)
 
-// Access a property
+// Property access
 console.log(myObject['name'])
+
 console.log(myObject.name)
 
 // More on objects later!

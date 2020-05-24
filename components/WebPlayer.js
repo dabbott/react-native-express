@@ -106,6 +106,8 @@ export default class WebPlayer extends React.Component {
       workspaces,
       workspacesTitle,
       statusBarHeight,
+      playground,
+      panes, // Should be used sparingly to override
     } = this.props
 
     const params = {
@@ -124,6 +126,7 @@ export default class WebPlayer extends React.Component {
       workspacesTitle,
       statusBarHeight,
       styles: playerStyles,
+      playground,
     }
 
     if (isMobile) {
@@ -155,6 +158,10 @@ export default class WebPlayer extends React.Component {
 
     if (workspaces.length > 0) {
       params.panes = ['workspaces', ...params.panes]
+    }
+
+    if (panes) {
+      params.panes = panes
     }
 
     return (

@@ -1,19 +1,27 @@
 import EditorConsole from '../../components/EditorConsole'
-import variables from '../../examples/files/types/variables.ts'
-import constants from '../../examples/files/types/constants.ts'
+import variables from '../../examples/files/syntax/variables.ts'
+import constants from '../../examples/files/syntax/constants.ts'
 
-Declare constants with `const` and variables with `let`. 
+Declare variables with `let` and constants with `const`. 
 
 > Somebody on your team will have a string opinion about when to use one or the other.
 
+## Declaring variables and constants
+
+Here's an example of both in action:
+
 <EditorConsole   
-  title={"Declaring variables"}
+  title={"Declaring variables and constants"}
   code={variables}
 />
 
-Only the variable _name_ is constant. The value associated with that name can still change. This only applies to non-primitive values.
+## Constants with mutable values
+
+With `const`, a _name_ is permanently bound to a value in scope. 
+
+However, if the _value_ is a reference value, then the value is still mutable.
 
 <EditorConsole   
-  title={"Declaring constants"}
+  title={"Constants with mutable values"}
   code={constants}
 />

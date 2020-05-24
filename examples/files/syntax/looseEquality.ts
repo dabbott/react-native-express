@@ -1,9 +1,11 @@
-console.log(1, '' == 0)
+console.log(0 == false)
 
-console.log(2, false == 0)
+console.log('' == false)
 
-console.log(3, false == '')
+console.log([] == false)
 
-console.log(4, false == null)
+console.log({} == false)
 
-console.log(5, false == undefined)
+console.log(null == false)
+
+console.log(undefined == false)

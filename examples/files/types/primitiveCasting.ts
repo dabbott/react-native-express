@@ -1,8 +1,11 @@
 const myNumber = 42
-const myString = '100'
+const myString = '100.5'
 
-// Use .toString to get a string
+// Anything to string
 console.log(myNumber.toString())
 
-// Use the global parseInt or parseFloat to get a number
+// String to number
+console.log(Number(myString))
+
+// Alternately, the global parseInt or parseFloat
 console.log(parseInt(myString))

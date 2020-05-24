@@ -1,3 +1,5 @@
+import EditorConsole from '../../components/EditorConsole'
+
 JavaScript has most of the features you'd expect from a general purpose high-level programming language:
 
 - Variables & constants
@@ -9,8 +11,11 @@ JavaScript has most of the features you'd expect from a general purpose high-lev
 
 The syntax is generally similar to the C family of languages, so if you're not sure what to do, add parentheses around expressions and curly braces around blocks!
 
-```js
-if (myValue > anotherValue) {
+<EditorConsole   
+  title={"Example"}
+  panes={['editor']}
+  playground={{ enabled: false }}
+  code={`if (myValue > anotherValue) {
   doSomething()
-}
-```
+}`}
+/>

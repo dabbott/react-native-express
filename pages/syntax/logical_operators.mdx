@@ -1,0 +1,77 @@
+import EditorConsole from '../../components/EditorConsole'
+import notOperator from '../../examples/files/syntax/notOperator.ts'
+import andOperator from '../../examples/files/syntax/andOperator.ts'
+import orOperator from '../../examples/files/syntax/orOperator.ts'
+import shortCircuiting from '../../examples/files/syntax/shortCircuiting.ts'
+
+The main logical operators are:
+
+- `&&` - and
+- `||` - or
+- `!` - not
+
+These automatically coerce types, which _is_ idiomatic to do, despite being somewhat confusing.
+
+## Truthiness
+
+When using logical operators, the operands will be coerced to booleans before being compared. We refer to values that are coerced to `true` as **truthy** values, and values that are coerced to `false` as **falsy** values.
+
+A **truthy** value is a value that is considered true when encountered in a Boolean context. All values are truthy unless they are defined as falsy. (Definition: [mdn](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)).
+
+There are 8 falsy values:
+
+| Value | Description |
+| --- | --- |
+| `false` | The keyword `false` |
+| `0` | The number zero |
+| `-0` | The number negative zero |
+| `0n` | BigInt, when used as a boolean, follows the same rule as a Number. 0n is falsy. |
+| `""` | Empty string value |
+| `null` | `null` - the absence of any value |
+| `undefined` | `undefined` - the primitive value |
+| `NaN` | `NaN` - not a number |
+
+## Not Operator
+
+We use `!` to convert a **truthy** value to `false`, or a **falsy** value to `true`.
+
+<EditorConsole   
+  title={"Not Operator"}
+  code={notOperator}
+/>
+
+## And Operator
+
+The `&&` operator takes two operands: 
+
+- If the first operand is falsy, it **evaluates to the first operand** 
+- If the first operand is truthy, and it **evaluates to the second operand**
+
+<EditorConsole   
+  title={"And Operator"}
+  code={andOperator}
+/>
+
+## Or Operator
+
+The `&&` operator takes two operands: 
+
+- If the first operand is truthy, it **evaluates to the first operand** 
+- If the first operand is false, and it **evaluates to the second operand**
+
+<EditorConsole   
+  title={"Or Operator"}
+  code={orOperator}
+/>
+
+## Short Circuiting
+
+Both `&&` and `||` are _short-circuiting_ operators:
+
+- `&&`: if the first operand is evaluated as falsy, the second operand will not be evaluated at all (i.e. side-effects will not occur)
+- `||`: if the first operand is evaluated as truthy, the second operand will not be evaluated at all
+
+<EditorConsole   
+  title={"Short Circuiting"}
+  code={shortCircuiting}
+/>
