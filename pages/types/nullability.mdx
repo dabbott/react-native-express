@@ -2,11 +2,11 @@ import EditorConsole from '../../components/EditorConsole'
 import undefinedType from '../../examples/files/types/undefinedType.ts'
 import nullType from '../../examples/files/types/nullType.ts'
 
-JavaScript has two different values used to represent things that don't exist: `null` and `undefined`.
+JavaScript has two different values used to represent "nothing": `null` and `undefined`.
 
 ## Undefined
 
-The value `undefined` usually means "we don't know about this value". Here are a few common places where you'll see it: 
+The value `undefined` roughly means "this value doesn't exist". Here are a few common places where you'll see it: 
 
 - It's the value of a variable before it gets assigned a value
 - It's the return value of a function without a return statement
@@ -19,7 +19,7 @@ The value `undefined` usually means "we don't know about this value". Here are a
 
 ## Null
 
-The value `null` is used for _intentional_ non-existance: "we know about this value, and it's nothing".
+The value `null` is used for _intentional_ non-existence: "this value exists, and it represents nothing". Conceptually, it's similar to the empty string for strings, or 0 for numbers.
 
 <EditorConsole   
   title={"Null"}
