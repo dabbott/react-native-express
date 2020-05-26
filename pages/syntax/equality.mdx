@@ -1,11 +1,14 @@
 import EditorConsole from '../../components/EditorConsole'
 import strictEquality from '../../examples/files/syntax/strictEquality.ts'
 import looseEquality from '../../examples/files/syntax/looseEquality.ts'
+import structuralEquality from '../../examples/files/syntax/structuralEquality.ts'
 
 There are two kinds equality operators:
 
-- `===`: **strict** equality comparison, which compares _references_
-- `==`: **loose** equality comparison, which compares _structure_ using type coercion
+- `===`: **strict** equality comparison using "triple equals"
+- `==`: **loose** equality comparison using "double equals", which first uses _type coercion_ to convert values to the same type, and then compares them
+
+> There's no built-in way to compare values for "structural equality" (e.g. comparing two arrays to see if they contain the same element)
 
 ## Strict equality
 
@@ -23,4 +26,13 @@ Loose equality can be convenient, but is less consistent, so it's best to use `=
 <EditorConsole   
   title={"Loose equality"}
   code={looseEquality}
+/>
+
+## Structural equality
+
+If we want to compare structural equality, we'll usually turn to a 3rd party library, such as [lodash.isequal](https://www.npmjs.com/package/lodash.isequal). However, an _inefficient but convenient_ way is possible using the built-in `JSON.stringify` method.
+
+<EditorConsole   
+  title={"Structural equality"}
+  code={structuralEquality}
 />

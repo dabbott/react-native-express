@@ -12,7 +12,7 @@ const playerStyles = {
   header: {
     backgroundColor: 'rgb(250,250,250)',
     boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 1px',
-    zIndex: 1000,
+    zIndex: 9,
   },
   headerText: {
     color: '#AAA',
@@ -21,7 +21,7 @@ const playerStyles = {
   transpilerHeader: {
     backgroundColor: 'rgb(240,240,240)',
     boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 1px',
-    zIndex: 1000,
+    zIndex: 9,
   },
   transpilerHeaderText: {
     color: '#888',
@@ -107,6 +107,7 @@ export default class WebPlayer extends React.Component {
       workspacesTitle,
       statusBarHeight,
       playground,
+      typescript,
       panes, // Should be used sparingly to override
     } = this.props
 
@@ -127,6 +128,7 @@ export default class WebPlayer extends React.Component {
       statusBarHeight,
       styles: playerStyles,
       playground,
+      typescript,
     }
 
     if (isMobile) {

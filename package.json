@@ -20,7 +20,7 @@
     "react-dom": "^16.8.6",
     "react-ga": "^2.6.0",
     "react-helmet": "^5.2.1",
-    "react-native-web-player": "^2.0.0-alpha.10",
+    "react-native-web-player": "^2.0.0-alpha.15",
     "styled-components": "^4.3.1"
   },
   "keywords": [],

@@ -1,6 +1,7 @@
 import EditorConsole from '../../components/EditorConsole'
 import arrayType from '../../examples/files/types/arrayType.ts'
 import objectType from '../../examples/files/types/objectType.ts'
+import functionType from '../../examples/files/types/functionType.ts'
 
 Everything that isn't a primitive type is a reference type. 
 
@@ -9,7 +10,7 @@ The main differences are:
 - Primitive types are **immutable**, while reference types are **mutable** 
 - Primitive types are passed to functions **by value** (a copy of the data), while reference types are passed **by reference** (the original).
 
-There are 2 extremely common built-in reference types: `Array` and `Object`.
+There are 3 extremely common built-in reference types: `Array`, `Object`, and `Function`.
 
 ## Arrays
 
@@ -31,4 +32,15 @@ We use object literal syntax to declare objects:
 <EditorConsole
   title={"Objects"}
   code={objectType}
+/>
+
+## Functions
+
+Functions are reference types. They can assigned to variables and passed as arguments to other functions.
+
+We'll go into functions in detail in a later section!
+
+<EditorConsole
+  title={"Functions"}
+  code={functionType}
 />

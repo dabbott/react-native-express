@@ -39,6 +39,7 @@ export default class EditorConsole extends Component {
         height={this.props.code ? codeHeight(this.props.code) : 400}
         playground={{ enabled: true }}
         width={0}
+        typescript={{ enabled: true }}
         {...this.props}
       />
     )
