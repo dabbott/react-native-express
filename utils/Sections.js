@@ -73,13 +73,19 @@ let sections = [
   createSection('Async Control Flow'), // No threads. Callbacks & promises
   createSection('Async Control Flow', 'Callbacks'),
   createSection('Async Control Flow', 'Event Loop'), // setTimeout, setInterval
-  createSection('Async Control Flow', 'Promises'), // setTimeout, setInterval
-  createSection('Async Control Flow', 'Async and Await'), // setTimeout, setInterval
-  createSection('Async Control Flow', 'Fetch'), // setTimeout, setInterval
+  createSection('Async Control Flow', 'Promises'),
+  createSection('Async Control Flow', 'Async and Await'),
+  createSection('Async Control Flow', 'Fetch'),
+
+  createSection('Modules'),
+  createSection('Modules', 'Syntax'),
+  createSection('Modules', 'Package Managers'),
+
+  createSection('Node'),
 
   createSection('Exercises'),
-  createSection('Exercises', 'A'),
-  createSection('Exercises', 'B'),
+  // createSection('Exercises', 'A'),
+  // createSection('Exercises', 'B'),
 
   // createSection('Syntax', 'Fancy Syntax'),
 ]

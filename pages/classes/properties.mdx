@@ -1,0 +1,18 @@
+import EditorConsole from '../../components/EditorConsole'
+import properties from '../../examples/files/classes/properties.ts'
+
+Properties can be configured in a variety of ways:
+
+- Properties can have default values
+- Private properties are prefixed with `#`
+- Dynamically computed properties (getters) are defined as functions with the `get` keyword
+- Static properties use the `static` keyword
+
+<EditorConsole   
+  title={"Properties"}
+  code={properties}
+/>
+
+## Legacy private properties
+
+Prior to `#` private property support, properties were made "private" by convention: private properties and methods were prefixed with `_`.

@@ -6,7 +6,7 @@ import structuralEquality from '../../examples/files/syntax/structuralEquality.t
 There are two kinds equality operators:
 
 - `===`: **strict** equality comparison using "triple equals"
-- `==`: **loose** equality comparison using "double equals", which first uses _type coercion_ to convert values to the same type, and then compares them
+- `==`: **loose** or **abstract** equality comparison using "double equals", which first uses _type coercion_ to convert values to the same type, and then compares them
 
 > There's no built-in way to compare values for "structural equality" (e.g. comparing two arrays to see if they contain the same element)
 
@@ -32,3 +32,6 @@ Loose equality can be convenient, but is less consistent, so it's best to use `=
 
 If we want to compare structural equality, we'll usually turn to a 3rd party library, such as [lodash.isequal](https://www.npmjs.com/package/lodash.isequal). 
 
+## SameValueZero
+
+Many built-in methods use the [SameValueZero](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Same-value-zero_equality) algorithm to test for equality, instead of `==` or `===`. However, the differences are only relevant in edge cases, so it's generally safe to think of this as `===` equality.

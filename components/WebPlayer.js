@@ -86,7 +86,7 @@ export default class WebPlayer extends React.Component {
   }
 
   render() {
-    const {
+    let {
       showTranspiler,
       showConsole,
 
@@ -111,6 +111,8 @@ export default class WebPlayer extends React.Component {
       panes, // Should be used sparingly to override
     } = this.props
 
+    code = code.replace('export {}', '').trim()
+
     const params = {
       code,
       files,
@@ -129,6 +131,7 @@ export default class WebPlayer extends React.Component {
       styles: playerStyles,
       playground,
       typescript,
+      sharedEnvironment: true,
     }
 
     if (isMobile) {
