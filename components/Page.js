@@ -45,7 +45,7 @@ const FooterContainer = styled.div({
   flexDirection: 'column',
 })
 
-import logo from '../images/logo.png'
+import logo from '../images/logo.svg'
 
 export default class Page extends Component {
   render() {
