@@ -1,4 +1,4 @@
-let myValue
+let myValue: string | null
 
 const someCondition = false
 
