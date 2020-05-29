@@ -1,0 +1,32 @@
+import EditorConsole from '../../components/EditorConsole'
+import arraysAddingAndRemoving from '../../examples/files/collections/arraysAddingAndRemoving.ts'
+import splice from '../../examples/files/collections/splice.ts'
+import slice from '../../examples/files/collections/slice.ts'
+
+There are a variety of standard library methods for modifying the contents of arrays. In this section, we'll look at:
+
+- `push`
+- `pop`
+- `shift`
+- `unshift`
+- `splice`
+
+## Adding and Removing Elements
+
+To add or remove from the _end_ of an array, we use `push` and `pop`.
+
+To add or remove from the _front_, we use `shift` and `unshift`.
+
+<EditorConsole   
+  title={"Adding and Removing"}
+  code={arraysAddingAndRemoving}
+/>
+
+## Inserting and Deleting
+
+We can use `splice` to insert or delete elements from any part of the array.
+
+<EditorConsole   
+  title={"Splice"}
+  code={splice}
+/>

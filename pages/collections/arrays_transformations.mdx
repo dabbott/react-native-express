@@ -1,0 +1,41 @@
+import EditorConsole from '../../components/EditorConsole'
+import slice from '../../examples/files/collections/slice.ts'
+import concat from '../../examples/files/collections/concat.ts'
+import filter from '../../examples/files/collections/filter.ts'
+
+While modifying an array is often useful, sometimes we want to create a new array instead.
+
+- `slice`
+- `concat`
+- `filter`
+
+When we copy elements from the original array to a new array, we're only copying _references_. In other words, mutating an element in the copy will mutate it in the original array too. We often call this a "shallow" copy. 
+
+## Slices
+
+We use `slice` to create a copy of part (or all) of an array. 
+
+<EditorConsole   
+  title={"Slice"}
+  code={slice}
+/>
+
+## Concat
+
+We use `concat` to join multiple arrays in a new array.
+
+Any parameters that are arrays are flattened into the new array. Any parameters that aren't arrays are added as elements directly.
+
+<EditorConsole   
+  title={"Concat"}
+  code={concat}
+/>
+
+## Filter
+
+We use `filter` to make a new array that contains a subset of the elements of the original.
+
+<EditorConsole   
+  title={"Filter"}
+  code={filter}
+/>

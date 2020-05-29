@@ -2,14 +2,15 @@ function formatSlug(string) {
   return string.replace(/ /g, '_').toLowerCase()
 }
 
-function createSection(folder, title) {
+function createSection(folder, title, nestedTitle) {
   if (!title) {
     const slug = formatSlug(`${folder}/index`)
     return { depth: 0, title: folder, slug }
   }
 
-  const slug = formatSlug(`${folder}/${title}`)
-  return { depth: 1, title, slug }
+  const page = nestedTitle ? `${title}_${nestedTitle}` : title
+  const slug = formatSlug(`${folder}/${page}`)
+  return { depth: nestedTitle ? 2 : 1, title: nestedTitle || title, slug }
 }
 
 let sections = [
@@ -20,8 +21,8 @@ let sections = [
     slug: '',
   },
 
-  createSection('Environment'),
-  createSection('Environment', 'Quick Start'),
+  // createSection('Environment'),
+  // createSection('Environment', 'Quick Start'),
 
   createSection('Types'),
   createSection('Types', 'Primitive Types'),
@@ -37,6 +38,9 @@ let sections = [
 
   createSection('Collections'),
   createSection('Collections', 'Arrays'),
+  createSection('Collections', 'Arrays', 'Adding and Removing'),
+  createSection('Collections', 'Arrays', 'Transformations'),
+  createSection('Collections', 'Arrays', 'Searching'),
   createSection('Collections', 'Objects'),
   createSection('Collections', 'Sets and Maps'),
   createSection('Collections', 'Iteration'),
