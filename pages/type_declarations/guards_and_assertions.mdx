@@ -1,0 +1,27 @@
+import EditorConsole from '../../components/EditorConsole'
+import assertions from '../../examples/files/type_declarations/assertions.ts'
+import guards from '../../examples/files/type_declarations/guards.ts'
+
+We often refine more general types into more specific types (i.e. downcasting). There are 2 approaches for this in TypeScript: type assertions and type guards.
+
+> TypeScript generally infers _upcasts_ automatically.
+
+## Type assertions
+
+We use type assertions to explicitly change the compile-time type of a value. We do this when we _know something the compiler doesn't_.
+
+The types `any` and `unknown` can be asserted as any type. Other types can be asserted too, but TypeScript will prevent the assertion if the types are incompatible (e.g. `4 as string`).
+
+<EditorConsole   
+  title={"Type assertions"}
+  code={assertions}
+/>
+
+## Type guards
+
+We use type guards to refine the compile-time type of a value by reasoning about its runtime value. We can use built-in expressions like `typeof`, standard library functions like `Array.isArray`, or even write our own.
+
+<EditorConsole   
+  title={"Type guards"}
+  code={guards}
+/>

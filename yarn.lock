@@ -4325,10 +4325,10 @@ react-is@16.8.6, react-is@^16.6.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-native-web-player@^2.0.0-alpha.17:
-  version "2.0.0-alpha.17"
-  resolved "https://registry.yarnpkg.com/react-native-web-player/-/react-native-web-player-2.0.0-alpha.17.tgz#05b1b95f4b8e7eae2bdf8dbf7bc404d469d33957"
-  integrity sha512-Zg3Viw4RfQQrS55uXCpWsVikbqisMqwaXToZMZw+w/xnmdeYYxH9hGAQCGsMC81A+osyRdI56m192Mvt91q/SA==
+react-native-web-player@^2.0.0-alpha.18:
+  version "2.0.0-alpha.18"
+  resolved "https://registry.yarnpkg.com/react-native-web-player/-/react-native-web-player-2.0.0-alpha.18.tgz#399b56e6250fd4d57e7a515c192ba10aeb1a37bc"
+  integrity sha512-07ZkRFbC3LxgPS2dWYfBIXVCg9mwpypXUMf1n/k3ses6xH1DIHwNEV+eE3l7qv2bupO+Rar8W3eg8RS/bfnwiw==
 
 react-side-effect@^1.1.0:
   version "1.1.5"

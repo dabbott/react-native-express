@@ -109,6 +109,7 @@ export default class WebPlayer extends React.Component {
       playground,
       typescript,
       panes, // Should be used sparingly to override
+      sharedEnvironment = true,
     } = this.props
 
     code = code.replace('export {}', '').trim()
@@ -131,7 +132,7 @@ export default class WebPlayer extends React.Component {
       styles: playerStyles,
       playground,
       typescript,
-      sharedEnvironment: true,
+      sharedEnvironment,
     }
 
     if (isMobile) {

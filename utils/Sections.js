@@ -59,16 +59,15 @@ let sections = [
   createSection('Classes', 'Inheritance'), // Super
 
   createSection('Type Declarations'),
-  createSection('Type Declarations', 'Constants'), // Like type = "hello"
+  createSection('Type Declarations', 'Constants'),
   createSection('Type Declarations', 'Enums'),
-  createSection('Type Declarations', 'Arrays'), // Cover tuple behavior
+  createSection('Type Declarations', 'Arrays'),
   createSection('Type Declarations', 'Objects'),
   createSection('Type Declarations', 'Interfaces'),
-  createSection('Type Declarations', 'Unions'), // Including discriminated
+  createSection('Type Declarations', 'Unions'),
   createSection('Type Declarations', 'Generics'),
-  createSection('Type Declarations', 'Type Casting'),
-  createSection('Type Declarations', 'Type Guards'),
   createSection('Type Declarations', 'Any and Unknown'),
+  createSection('Type Declarations', 'Guards and Assertions'),
 
   createSection('Async Control Flow'), // No threads. Callbacks & promises
   createSection('Async Control Flow', 'Callbacks'),

@@ -1,0 +1,25 @@
+import EditorConsole from '../../components/EditorConsole'
+import any from '../../examples/files/type_declarations/any.ts'
+import unknown from '../../examples/files/type_declarations/unknown.ts'
+
+The types `any` and `unknown` are used when we don't know the type of a value (e.g. dynamic content like parsed json).
+
+## Any
+
+The type `any` essentially disables type-checking for a value. A variable with type `any` can be assigned any value, passed to any function, and called with any arguments, etc.
+
+<EditorConsole   
+  title={"Any"}
+  code={any}
+/>
+
+## Unknown
+
+The type `unknown` is the type-safe version of `any`. A variable with type `unknown` can't be used for anything without first refining it to another type.
+
+Many standard library functions use `any`, but we should almost use `unknown` instead. Unknown is relatively new - otherwise more standard library functions would probably use it.
+
+<EditorConsole   
+  title={"Unknown"}
+  code={unknown}
+/>
