@@ -1,17 +1,34 @@
 import EditorConsole from '../../components/EditorConsole'
-import literals from '../../examples/files/types/literals.ts'
-import primitiveConstructors from '../../examples/files/types/primitiveConstructors.ts'
-import primitiveMethods from '../../examples/files/types/primitiveMethods.ts'
-import primitiveCasting from '../../examples/files/types/primitiveCasting.ts'
+import literals from '!raw-loader!../../examples/files/types/literals.ts'
+import primitiveConstructors from '!raw-loader!../../examples/files/types/primitiveConstructors.ts'
+import primitiveMethods from '!raw-loader!../../examples/files/types/primitiveMethods.ts'
+import primitiveCasting from '!raw-loader!../../examples/files/types/primitiveCasting.ts'
 
-## Literal values
+# Primitive types
 
-We declare primitive types using literal values:
+There are 6 primitive types:
+
+- `undefined`
+- `Boolean`
+- `Number`
+- `String`
+- `BigInt`
+- `Symbol`
+
+> We'll look at `undefined` when we cover nullability. `BigInt` and `Symbol` are less common.
+
+---
+
+## Primitive values
+
+We declare primitive types using... primitive values (i.e. literals).
 
 <EditorConsole   
   title={"Literal values"}
   code={literals}
 />
+
+---
 
 ## Constructor functions
 
@@ -21,6 +38,8 @@ It's also possible to instantiate the built-in types using their constructors â€
   title={'Constructor functions'}
   code={primitiveConstructors}
 />
+
+---
 
 ## Standard library methods
 
@@ -32,6 +51,8 @@ We use standard library methods for manipulating primitives. These are available
   title={'Standard library methods'}
   code={primitiveMethods}
 />
+
+---
 
 ## Type casting
 

@@ -33,6 +33,9 @@ const playerStyles = {
   tabTextActive: {
     color: '#000',
   },
+  editorPane: {
+    backgroundColor: 'teal',
+  },
   playerPane: {
     // backgroundColor: 'rgba(0,0,0,0.02)',
     overflow: 'hidden',
@@ -59,11 +62,12 @@ playerStyles.workspacesHeaderText = playerStyles.headerText
 const Container = styled.div({
   display: 'flex',
   marginBottom: '15px',
+  flex: '1',
 })
 
 const styles = {
   player: {
-    flex: '1 1 auto',
+    flex: '1',
     minWidth: '0',
     minHeight: '0',
     marginRight: '-10px',
@@ -96,6 +100,7 @@ export default class WebPlayer extends React.Component {
       entry,
       title,
       height,
+      flex,
       width,
       scale,
       fullscreen,
@@ -110,6 +115,7 @@ export default class WebPlayer extends React.Component {
       typescript,
       panes, // Should be used sparingly to override
       sharedEnvironment = true,
+      workspaceCSS,
     } = this.props
 
     code = code.replace('export {}', '').trim()
@@ -133,6 +139,7 @@ export default class WebPlayer extends React.Component {
       playground,
       typescript,
       sharedEnvironment,
+      workspaceCSS,
     }
 
     if (isMobile) {
@@ -173,7 +180,7 @@ export default class WebPlayer extends React.Component {
     return (
       <Container>
         <ReactNativeWebPlayer
-          style={{ ...styles.player, height }}
+          style={{ ...styles.player, ...(flex ? { flex } : { height }) }}
           {...params}
         />
       </Container>

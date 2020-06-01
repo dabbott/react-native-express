@@ -143,16 +143,18 @@ class ChapterPage extends React.Component {
       </Footer>
     )
 
-    const contents = (
-      <>
-        <PageHeader
-          title={title}
-          // author={author.name || '@dvnabbott'}
-          // authorURL={author.url || 'https://twitter.com/dvnabbott'}
-        />
-        <MarkdownProvider>{children}</MarkdownProvider>
-      </>
-    )
+    const contents = <MarkdownProvider>{children}</MarkdownProvider>
+
+    // const contents = (
+    //   <>
+    //     <PageHeader
+    //       title={title}
+    //       // author={author.name || '@dvnabbott'}
+    //       // authorURL={author.url || 'https://twitter.com/dvnabbott'}
+    //     />
+    //     <MarkdownProvider>{children}</MarkdownProvider>
+    //   </>
+    // )
 
     return (
       <>

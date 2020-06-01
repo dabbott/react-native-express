@@ -21,6 +21,7 @@
     "react-ga": "^2.6.0",
     "react-helmet": "^5.2.1",
     "react-native-web-player": "^2.0.0-alpha.18",
+    "spectacle": "^6.1.0",
     "styled-components": "^4.3.1"
   },
   "keywords": [],
@@ -34,11 +35,12 @@
   },
   "devDependencies": {
     "@mdx-js/loader": "^1.0.20",
+    "babel-loader": "^8.1.0",
     "eslint-plugin-graphql": "^3.0.3",
     "loader-utils": "^1.2.3",
     "prettier": "^1.13.7",
     "raw-loader": "^3.0.0",
-    "webpack": "^4.0.0"
+    "spectacle-mdx-loader": "^0.1.1"
   },
   "repository": {
     "type": "git",

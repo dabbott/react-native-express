@@ -19,7 +19,7 @@ const Container = styled.div({
 const ContentContainer = styled.div({
   borderTop: '1px solid rgba(220,220,220,0.5)',
   backgroundColor: 'white',
-  padding: '60px 60px 40px 60px',
+  padding: '0px 60px 40px 60px',
 })
 
 const Content = styled.div({

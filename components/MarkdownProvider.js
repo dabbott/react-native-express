@@ -21,6 +21,7 @@ export default function MarkdownProvider({ children }) {
         blockquote: props => (
           <blockquote {...props} style={styles.blockquote} />
         ),
+        hr: props => null,
       }}
     >
       {children}

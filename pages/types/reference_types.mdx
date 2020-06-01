@@ -3,6 +3,8 @@ import arrayType from '../../examples/files/types/arrayType.ts'
 import objectType from '../../examples/files/types/objectType.ts'
 import functionType from '../../examples/files/types/functionType.ts'
 
+# Reference Types
+
 Everything that isn't a primitive type is a reference type. 
 
 The main differences are: 
@@ -11,6 +13,8 @@ The main differences are:
 - Primitive types are passed to functions **by value** (a copy of the data), while reference types are passed **by reference** (the original).
 
 There are 3 extremely common built-in reference types: `Array`, `Object`, and `Function`.
+
+---
 
 ## Arrays
 
@@ -21,18 +25,20 @@ We use array literal syntax to declare arrays:
   code={arrayType}
 />
 
+---
+
 ## Objects
 
-Objects are associative arrays (a.k.a maps or dictionaries). 
+Objects are associative arrays (a.k.a maps or dictionaries). We use object literal syntax to declare objects.
 
 > Objects are used extensively throughout JavaScript, both in the standard library and implementation of OOP (classes, inheritance, etc).
-
-We use object literal syntax to declare objects:
 
 <EditorConsole
   title={"Objects"}
   code={objectType}
 />
+
+---
 
 ## Functions
 
