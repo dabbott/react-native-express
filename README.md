@@ -2,6 +2,10 @@
 
 A guide and reference to help people get started with React Native.
 
+## Translations
+
+- `zh-CN` by [@cnscorpions](https://github.com/cnscorpions): https://github.com/cnscorpions/react-native-express-cn
+
 ## Installation
 
 ```bash
