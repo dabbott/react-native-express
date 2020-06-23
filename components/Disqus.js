@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
 import { DiscussionEmbed } from 'disqus-react'
-import mediaQuery from '../utils/mediaQuery'
+import React from 'react'
+import { mediaQuery } from 'react-guidebook'
+import styled from 'styled-components'
 
 const Container = styled.div({
   backgroundColor: 'rgb(250,250,250)',
@@ -14,25 +14,25 @@ const Container = styled.div({
   },
 })
 
-export default class Disqus extends Component {
-  render() {
-    if (typeof window === 'undefined') {
-      return null
-    }
+const isDev = process.env.NODE_ENV === 'development'
 
-    const url = window.location.href
+export default function Disqus({
+  identifier,
+  title,
+  shortname,
+  stagingShortname,
+}) {
+  if (typeof window === 'undefined') return null
 
-    const prod = window.location.hostname.match('reactnativeexpress.com')
-    const shortname = prod ? 'reactnativeexpress' : 'reactnativeexpress-staging'
+  const name = isDev ? stagingShortname : shortname
 
-    const { identifier, title } = this.props
+  if (!name) return null
 
-    const config = { url, identifier, title }
+  const url = window.location.href
 
-    return (
-      <Container>
-        <DiscussionEmbed shortname={shortname} config={config} />
-      </Container>
-    )
-  }
+  return (
+    <Container>
+      <DiscussionEmbed shortname={name} config={{ url, identifier, title }} />
+    </Container>
+  )
 }
