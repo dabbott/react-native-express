@@ -9,22 +9,21 @@ const withMDX = require('next-mdx-frontmatter')({
   extension: /\.mdx?$/,
 })
 
-const withRawExampleLoader = (nextConfig = {}) => {
-  return Object.assign({}, nextConfig, {
-    webpack(config, options) {
-      config.module.rules.push({
-        test: /examples(\/|\\)files(\/|\\).*$/,
-        use: 'raw-loader',
-      })
+const withRawExampleLoader = (nextConfig) => ({
+  ...nextConfig,
+  webpack(config, options) {
+    config.module.rules.push({
+      test: /examples(\/|\\)files(\/|\\).*$/,
+      use: 'raw-loader',
+    })
 
-      if (typeof nextConfig.webpack === 'function') {
-        return nextConfig.webpack(config, options)
-      }
+    if (typeof nextConfig.webpack === 'function') {
+      return nextConfig.webpack(config, options)
+    }
 
-      return config
-    },
-  })
-}
+    return config
+  },
+})
 
 module.exports = withRawExampleLoader(
   withGuidebook(

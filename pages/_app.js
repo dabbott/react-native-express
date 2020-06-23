@@ -13,6 +13,8 @@ import { pageView } from '../utils/Analytics'
 import colors from '../styles/colors'
 import textStyles from '../styles/textStyles'
 import EditorConsole from '../components/EditorConsole'
+import Disqus from '../components/Disqus'
+import BookBanner from '../components/BookBanner'
 import logo from '../images/logo.svg'
 import guidebook from '../guidebook'
 
@@ -43,7 +45,21 @@ export default class MyApp extends App {
               <meta property="og:title" content={node.title} />
             </Helmet>
             <MDXProvider components={Components}>
-              <Page rootNode={guidebook} logo={logo}>
+              <Page
+                rootNode={guidebook}
+                logo={logo}
+                footer={
+                  <>
+                    <BookBanner />
+                    <Disqus
+                      title={node.title}
+                      identifier={node.slug}
+                      shortname="reactnativeexpress"
+                      stagingShortname="reactnativeexpress-staging"
+                    />
+                  </>
+                }
+              >
                 <Component {...pageProps} />
               </Page>
             </MDXProvider>
