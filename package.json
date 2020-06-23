@@ -1,47 +1,56 @@
 {
-  "name": "react-native-express",
-  "description": "Interactive examples, code samples, and tutorial projects for React Native",
+  "name": "react-express",
+  "description": "Learn React through interactive examples",
   "version": "1.0.0",
   "author": "Devin Abbott <devinabbott@gmail.com> (http://github.com/dabbott)",
   "dependencies": {
-    "@babel/core": "^7.0.0-0",
+    "@babel/core": "^7.10.2",
     "@mdx-js/mdx": "^1.0.20",
     "@mdx-js/react": "^1.0.0",
     "@mdx-js/tag": "^0.20.3",
     "@next/mdx": "^8.1.0",
-    "@zeit/next-css": "^1.0.1",
     "babel-plugin-styled-components": "^1.10.1",
-    "disqus-react": "^1.0.5",
+    "disqus-react": "^1.0.9",
+    "github-fork-ribbon-css": "^0.2.3",
     "global": "^4.4.0",
-    "graphql": "^0.13.0",
-    "next": "^8.1.0",
+    "next": "^9.4.4",
     "next-images": "^1.1.2",
     "react": "^16.8.0",
     "react-dom": "^16.8.6",
     "react-ga": "^2.6.0",
+    "react-guidebook": "^0.0.6",
     "react-helmet": "^5.2.1",
-    "react-native-web-player": "^2.0.0-alpha.8",
+    "react-native-web-player": "^2.0.0-alpha.18",
+    "reset-css": "^5.0.1",
+    "spectacle": "^6.1.0",
     "styled-components": "^4.3.1"
   },
   "keywords": [],
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start -p $PORT",
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "@mdx-js/loader": "^1.0.20",
-    "eslint-plugin-graphql": "^3.0.3",
+    "babel-loader": "^8.1.0",
+    "generate-guidebook": "^1.0.5",
     "loader-utils": "^1.2.3",
-    "prettier": "^1.13.7",
+    "next-mdx-frontmatter": "^0.0.3",
+    "prettier": "^2.0.5",
     "raw-loader": "^3.0.0",
-    "webpack": "^4.0.0"
+    "spectacle-mdx-loader": "^0.1.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
   }
 }

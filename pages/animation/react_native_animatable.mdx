@@ -1,0 +1,15 @@
+import { RepositoryLink } from 'react-guidebook'
+import example from '../../examples/react_native_animatable'
+
+# React Native Animatable
+
+We can use the library <RepositoryLink user="oblador" repo="react-native-animatable" showStars />
+for creating complex animations.
+
+Like with `Animated`, we'll first need to use a specially wrapped component:
+`Animatable.View`, `Animatable.Text`, `Animatable.Image`, or `Animatable.createAnimatableComponent(Component)`.
+From there, we add an `animation` prop to our component to specify which kind of
+animation to use, e.g. `fadeIn`. We can control the parameters of the animation through
+props.
+
+<Example {...example} />
