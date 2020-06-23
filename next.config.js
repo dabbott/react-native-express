@@ -1,8 +1,11 @@
-const withCSS = require('@zeit/next-css')
-
 const withImages = require('next-images')
 
-const withMDX = require('@next/mdx')({
+const withGuidebook = require('generate-guidebook/next')({
+  guidebookDirectory: './pages',
+  guidebookModulePath: './guidebook.js',
+})
+
+const withMDX = require('next-mdx-frontmatter')({
   extension: /\.mdx?$/,
 })
 
@@ -10,7 +13,7 @@ const withRawExampleLoader = (nextConfig = {}) => {
   return Object.assign({}, nextConfig, {
     webpack(config, options) {
       config.module.rules.push({
-        test: /examples\/files\/.*\.js$/,
+        test: /examples(\/|\\)files(\/|\\).*$/,
         use: 'raw-loader',
       })
 
@@ -24,8 +27,8 @@ const withRawExampleLoader = (nextConfig = {}) => {
 }
 
 module.exports = withRawExampleLoader(
-  withImages(
-    withCSS(
+  withGuidebook(
+    withImages(
       withMDX({
         pageExtensions: ['js', 'jsx', 'md', 'mdx'],
       })

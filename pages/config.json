@@ -1,0 +1,13 @@
+{
+  "order": [
+    "environment",
+    "jsx",
+    "core_components",
+    "component_libraries",
+    "data_management",
+    "persistence",
+    "networking",
+    "animation",
+    "gestures"
+  ]
+}
