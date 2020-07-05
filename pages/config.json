@@ -2,6 +2,7 @@
   "order": [
     "environment",
     "jsx",
+    "react",
     "core_components",
     "component_libraries",
     "data_management",

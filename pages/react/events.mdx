@@ -1,0 +1,23 @@
+import nativeEvent from '../../examples/files/react/nativeEvent.js'
+import customEvent from '../../examples/files/react/customEvent.js'
+
+# Events
+
+Some components trigger events/callbacks in response to user input. To add an event handler, pass a function as a prop to a React element:
+
+<Example
+  code={nativeEvent}
+  console={{
+    enabled: true,
+    visible: true,
+  }}
+  playground={{ enabled: false }}
+/>
+
+---
+
+## Custom Events
+
+Suppose we want to make a custom `CounterButton` component with an `onIncrement` callback. <Details>We can pass this prop into the `onPress` of a Button.</Details>
+
+<Example code={customEvent} />

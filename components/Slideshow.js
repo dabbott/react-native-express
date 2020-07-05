@@ -55,7 +55,7 @@ const styles = {
 // Load spectacle dynamically, since it doesn't work with SSR
 export default dynamic(
   () =>
-    import('spectacle').then(spectacle => {
+    import('spectacle').then((spectacle) => {
       const {
         Deck,
         FlexBox,
@@ -70,26 +70,31 @@ export default dynamic(
       const slideComponentMap = {
         ...mdxComponentMap,
         ...PageComponents,
-        Example: props => <EditorConsole variant="slides" {...props} />,
+        Example: (props) => <EditorConsole variant="slides" {...props} />,
         Details: () => null,
-        h2: props => <PageComponents.h2 {...props} style={styles.heading} />,
-        h1: props => <PageComponents.h2 {...props} style={styles.heading} />,
-        blockquote: props => null,
+        h2: (props) => <PageComponents.h2 {...props} style={styles.heading} />,
+        h1: (props) => <PageComponents.h2 {...props} style={styles.heading} />,
+        blockquote: (props) => null,
       }
 
       const notesComponentMap = {
         ...Object.fromEntries(
           Object.entries(slideComponentMap).map(([key, Component]) => [
             key,
-            props => {
+            (props) => {
               const isVisible = useContext(NotesContext)
               return isVisible && <Component {...props} />
             },
           ])
         ),
-        blockquote: props => (
+        blockquote: (props) => (
           <NotesContext.Provider value={true}>
             <PageComponents.blockquote {...props} />
+          </NotesContext.Provider>
+        ),
+        Details: (props) => (
+          <NotesContext.Provider value={true}>
+            <PageComponents.p {...props} />
           </NotesContext.Provider>
         ),
       }

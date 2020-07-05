@@ -1,0 +1,40 @@
+import functionComponent from '../../../examples/files/react/functionComponent.js'
+import composingComponents from '../../../examples/files/react/composingComponents.js'
+import componentBehaviors from '../../../examples/files/react/componentBehaviors.js'
+import typescriptTypes from '../../../examples/files/react/typescriptTypes.tsx'
+
+# Function Components
+
+A function component is a function that returns a React element.
+
+<Example code={functionComponent} />
+
+---
+
+## Composing Components
+
+We can use custom components like `MyComponent` in the same way as built-in ones like `View`. We use props to communicate between components.
+
+<Example code={composingComponents} />
+
+---
+
+## TypeScript Types
+
+We typically create a `Props` type.
+
+> We typically don't set the type of the return value, since it can generally be inferred and doesn't provide much useful type safety.
+>
+> For more detail: https://github.com/typescript-cheatsheets/react-typescript-cheatsheet#function-components
+
+<Example code={typescriptTypes} />
+
+---
+
+## Component Behaviors
+
+We use **hooks** to add functionality to function components. Hooks are specially implemented functions that typically start with the prefix `use`.
+
+> React provides ~10 built-in hooks, but we can also build our own. We'll talk much more about hooks later.
+
+<Example code={componentBehaviors} />
