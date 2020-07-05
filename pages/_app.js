@@ -12,6 +12,7 @@ import { Page, PageComponents, findNode } from 'react-guidebook'
 import { pageView } from '../utils/Analytics'
 import colors from '../styles/colors'
 import textStyles from '../styles/textStyles'
+import slidesTheme from '../styles/slidesTheme'
 import EditorConsole from '../components/EditorConsole'
 import Disqus from '../components/Disqus'
 import BookBanner from '../components/BookBanner'
@@ -26,6 +27,7 @@ const theme = {
 const Components = {
   ...PageComponents,
   Example: EditorConsole,
+  Details: ({ children }) => children,
 }
 
 export default class MyApp extends App {
@@ -34,37 +36,38 @@ export default class MyApp extends App {
 
     const node = findNode(guidebook, router.pathname.slice(1)) || guidebook
 
-    return (
+    return router.pathname.endsWith('slides') ? (
+      <ThemeProvider theme={slidesTheme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    ) : (
       <ThemeProvider theme={theme}>
-        {router.pathname.endsWith('slides') ? (
-          <Component {...pageProps} />
-        ) : (
-          <>
-            <Helmet title={node.title}>
-              <html lang="en" />
-              <meta property="og:title" content={node.title} />
-            </Helmet>
-            <MDXProvider components={Components}>
-              <Page
-                rootNode={guidebook}
-                logo={logo}
-                footer={
-                  <>
-                    <BookBanner />
-                    <Disqus
-                      title={node.title}
-                      identifier={node.slug}
-                      shortname="reactnativeexpress"
-                      stagingShortname="reactnativeexpress-staging"
-                    />
-                  </>
-                }
-              >
-                <Component {...pageProps} />
-              </Page>
-            </MDXProvider>
-          </>
-        )}
+        {/* Fragment needed for React.Children.only */}
+        <>
+          <Helmet title={node.title}>
+            <html lang="en" />
+            <meta property="og:title" content={node.title} />
+          </Helmet>
+          <MDXProvider components={Components}>
+            <Page
+              rootNode={guidebook}
+              logo={logo}
+              footer={
+                <>
+                  <BookBanner />
+                  <Disqus
+                    title={node.title}
+                    identifier={node.slug}
+                    shortname="reactnativeexpress"
+                    stagingShortname="reactnativeexpress-staging"
+                  />
+                </>
+              }
+            >
+              <Component {...pageProps} />
+            </Page>
+          </MDXProvider>
+        </>
       </ThemeProvider>
     )
   }
