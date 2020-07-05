@@ -1,0 +1,48 @@
+import reactElements from '../../examples/files/react/reactElements.js'
+
+# Elements
+
+We instantiate **React elements** using the `React.createElement` API.<Details> Typically, we call this API using JSX elements, but it's also possible to call it directly.</Details>
+
+The function signature is: `createElement(type, props, children)`.
+
+---
+
+## Element tree
+
+Let's take a quick peek at the internals of a React element tree. <Details>The exact
+details of the element tree aren't important to understand right now, but it's
+useful to get the _gist_ of how React works.</Details>
+
+In this example, we instantiate a few React components using JSX and then print their value to the console.
+
+> If you click the line of text in the console on the right, you can navigate the tree of JavaScript objects.
+
+<Example
+  code={reactElements}
+  sharedEnvironment={true}
+  console={{
+    enabled: true,
+    visible: true,
+    maximized: true,
+    collapsible: false,
+    renderReactElements: false,
+  }}
+  playground={{ enabled: false }}
+  styles={{
+    playerPane: {
+      width: '50%',
+    },
+  }}
+/>
+
+---
+
+## Element internals
+
+A React element is a JavaScript object containing at least a `type` and `props`.
+
+- The `type` is a function representing what UI element to render.
+- The `props` object may contain arbitrary properties, e.g. `foo`, plus a `children` property containing nested React elements.<Details> The `children` property is somewhat special, since it's created automatically from the nested JSX elements in our code.</Details>
+
+The `ref` and `key` aren't props... we'll come back to those.

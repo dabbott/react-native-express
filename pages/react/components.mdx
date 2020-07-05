@@ -1,0 +1,24 @@
+import functionComponent from '../../examples/files/react/functionComponent.js'
+
+# Components
+
+React **components** are the reusable building blocks we use to create the user interface of our app.
+
+Components are the `type` of the React element.
+
+We've already seen a few built-in components: `View`, `Text`, and `Button`. We can also define custom components.
+
+> This is analagous to classes and instances. `View` is like a class, while `React.createElement(View)` instantiates the class.
+
+---
+
+## Defining Components
+
+There are 2 ways we can define a React component:
+
+- **Function components** - A function that takes parameters (called `props`) as input, and returns a React element
+- **Class components** - A `class` that extends `React.Component` and implements a `render` method
+
+> Lets take a look at each way we can define a React component.
+>
+> The function component API is the one we should use for new code, and the one we'll focus on. The class component API is older, but you'll definitely still see it in examples online.

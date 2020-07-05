@@ -1,0 +1,13 @@
+import classComponent from '../../../examples/files/react/classComponent.js'
+
+## `React.Component`
+
+We can also create components by subclassing `React.Component` and overriding the `render()` method.
+
+Props are accessible as `this.props`.
+
+> There are additional methods for hooking into the component rendering lifecycle.
+>
+> However, this API can become significantly more complex, without providing major benefits, so it's best to use function components if you're not maintaining legacy code.
+
+<Example code={classComponent} />
