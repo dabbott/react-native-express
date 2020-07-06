@@ -3,6 +3,7 @@
     "environment",
     "jsx",
     "react",
+    "hooks",
     "core_components",
     "component_libraries",
     "data_management",
