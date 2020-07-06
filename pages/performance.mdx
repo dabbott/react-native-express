@@ -1,0 +1,16 @@
+# Performance
+
+React is built for performance; React is used to build massively complex interfaces with thousands of elements, each one potentially responding to user interaction.
+
+Because performance is so fundamental to React, it can be helpful to understand the performance model of various operations at a high level.
+
+---
+
+## Performance model
+
+<!-- prettier-ignore -->
+| Operation <div style={{ width: '260px' }} /> | Cost <div style={{ width: '100px' }} /> | Description |
+| --- | --- | --- |
+| Native UI manipulation | Slow | React attempts to modify the native UI as _little_ as possible. |
+| Component render | Fast | It's common for component functions to be called many times as the `props` of a component change. We often call this **rendering**. Components can re-render very frequently without a noticeable performance impact. |
+| Comparing props | Very fast | In cases where a component is rendering too frequently and causing performance issues, we can limit the amount of re-renders by only re-rendering when props actually change. (See [`memo`](https://reactjs.org/docs/react-api.html#reactmemo)) |
