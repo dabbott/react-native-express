@@ -7,7 +7,7 @@ export default function Counter() {
   useEffect(() => {
     const id = setInterval(() => setCount((count) => count + 1), 1000)
 
-    return () => clearTimeout(id)
+    return () => clearInterval(id)
   }, [])
 
   return <Text style={{ fontSize: 120 }}>{count}</Text>
