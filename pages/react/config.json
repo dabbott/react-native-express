@@ -1,3 +1,10 @@
 {
-  "order": ["elements", "components"]
+  "order": [
+    "elements",
+    "components",
+    "events",
+    "conditional_rendering",
+    "user_input",
+    "lists_and_keys"
+  ]
 }

@@ -1,13 +1,18 @@
+import React from 'react'
+import { View, Text } from 'react-native'
+
 const data = [
   { id: 'a', name: 'Devin' },
   { id: 'b', name: 'Gabe' },
   { id: 'c', name: 'Kim' },
 ]
 
-export default () => (
-  <div>
-    {data.map((item) => (
-      <div>{item.name}</div>
-    ))}
-  </div>
-)
+export default function App() {
+  return (
+    <View>
+      {data.map((item) => (
+        <Text>{item.name}</Text>
+      ))}
+    </View>
+  )
+}
