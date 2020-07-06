@@ -2,11 +2,7 @@ import React, { useState } from 'react'
 import { Button } from 'react-native'
 
 function CounterButton({ title, onIncrement }) {
-  return (
-    <Button title={title} onPress={onIncrement}>
-      {title}
-    </Button>
-  )
+  return <Button title={title} onPress={onIncrement} />
 }
 
 export default function App() {
