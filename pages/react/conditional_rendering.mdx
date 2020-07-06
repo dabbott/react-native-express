@@ -1,0 +1,62 @@
+import shortCircuitAnd from '../../examples/files/react/shortCircuitAnd.js'
+import ternaryEvaluation from '../../examples/files/react/ternaryEvaluation.js'
+import complexRendering from '../../examples/files/react/complexRendering.js'
+
+# Conditional Rendering
+
+It's common for a component to return completely different types of React elements based on its `props`.
+
+React is extremely flexible in this regard — we can return an entirely different element tree each time the component function is called.
+
+> In other words, to show or hide a component, we either do or don't include it in the element tree.
+
+---
+
+## React Nodes
+
+We can actually return more than just React Elements from a component function. Valid values:
+
+- A React Element
+- `false`, `null`, or `undefined` to render nothing
+- An array of any of these
+- Some more obscure things (e.g. Portals)
+
+The TypeScript type `React.ReactNode` includes all of these.
+
+---
+
+## Rendering with `&&`
+
+One of the most common cases: conditionally rendering a React element based on whether a specific `prop` is true or not. <Details>In this example, we'll render a Card component that takes a `title` prop and optionally a `showButton` prop. We only want to render a `Button` for the subtitle if it exists.</Details>
+
+> The same technique works with `||` too.
+
+<Example code={shortCircuitAnd} />
+
+---
+
+## Rendering with ternary `?`
+
+Another common case: rendering a different React element for when a `prop` exists and when it doesn't. <Details>We can accomplish this with the ternary operator.</Details>
+
+> Note that a buttonTitle equal to the empty string, `""`, won't render. If we did want it to, we could use `buttonTitle === 'undefined'` to check for that case.
+
+<Example code={ternaryEvaluation} />
+
+---
+
+## Rendering with `if/else`
+
+For more complex rendering, we can introduce variables to store our React elements, letting us combine them in different ways.<Details> Let's take a look at an example where the rendering is substantially different based on whether or not the `loading` and `error` props exist.</Details>
+
+<Example code={complexRendering} />
+
+---
+
+## Managing complexity
+
+Rendering in React is powerful because the logic can be as simple or complex as we need it to be.
+
+However, as rendering complexity grows, the code can start to become unmanageable.
+
+**Consider breaking down complex components into smaller, simpler ones for a more maintainable code base.**

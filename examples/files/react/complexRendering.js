@@ -1,59 +1,30 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { View, Text } from 'react-native'
 
-const Card = ({ loading, error, title, subtitle }) => {
+const Card = ({ loading, error, title }) => {
   let content
 
   if (error) {
-    content = 'Error'
+    content = <Text style={{ fontSize: 24, color: 'red' }}>Error</Text>
   } else if (loading) {
-    content = <h3 style={styles.empty}>Loading...</h3>
+    content = <Text style={{ fontSize: 24, color: 'gray' }}>Loading...</Text>
   } else {
     content = (
-      <div>
-        <h1 style={styles.title}>{title}</h1>
-        {subtitle ? (
-          <h2 style={styles.subtitle}>{subtitle}</h2>
-        ) : (
-          <h3 style={styles.empty}>No subtitle</h3>
-        )}
-      </div>
+      <View>
+        <Text style={{ fontSize: 60 }}>{title}</Text>
+      </View>
     )
   }
 
-  return <div style={styles.card}>{content}</div>
+  return <View style={{ padding: 24 }}>{content}</View>
 }
 
-const App = () => (
-  <div>
-    <Card error={true} />
-    <Card loading={true} />
-    <Card loading={false} title={'Title'} subtitle={'Subtitle'} />
-  </div>
-)
-
-const styles = {
-  card: {
-    padding: '20px',
-    margin: '20px',
-    textAlign: 'center',
-    color: 'white',
-    backgroundColor: 'steelblue',
-    border: '1px solid rgba(0,0,0,0.15)',
-  },
-  title: {
-    fontSize: '18px',
-    lineHeight: '24px',
-  },
-  subtitle: {
-    fontSize: '14px',
-    lineHeight: '18px',
-  },
-  empty: {
-    fontSize: '12px',
-    lineHeight: '15px',
-    opacity: '0.5',
-  },
+export default function App() {
+  return (
+    <View>
+      <Card error={true} />
+      <Card loading={true} />
+      <Card loading={false} title="Title" />
+    </View>
+  )
 }
-
-render(<App />, document.querySelector('#app'))

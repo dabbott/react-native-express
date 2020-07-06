@@ -1,26 +1,22 @@
 import React, { useState } from 'react'
-import { render } from 'react-dom'
+import { View, Text, TextInput } from 'react-native'
 
-const TextInput = () => {
-  const [state, setState] = useState('')
+export default function App() {
+  const [text, setText] = useState('')
 
   return (
-    <div>
-      <label htmlFor={'my-input'}>Enter text: </label>
-      <input
-        id={'my-input'}
-        type={'text'}
-        value={state}
-        placeholder={'Type here'}
-        onChange={(event) => {
-          setState(event.target.value)
+    <View>
+      <TextInput
+        value={text}
+        style={{ fontSize: 42, color: 'steelblue' }}
+        placeholder="Type here..."
+        onChangeText={(text) => {
+          setText(text)
         }}
       />
-      <br />
-      <br />
-      You entered: {state}
-    </div>
+      <Text style={{ fontSize: 24 }}>
+        {'\n'}You entered: {text}
+      </Text>
+    </View>
   )
 }
-
-render(<TextInput />, document.querySelector('#app'))
