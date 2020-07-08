@@ -1,0 +1,32 @@
+import hooks from '../../examples/files/navigation/hooks.tsx'
+import route from '../../examples/files/navigation/route.tsx'
+import push from '../../examples/files/navigation/push.tsx'
+
+# Navigating and Routes
+
+- Every navigator supports different ways of navigating
+  - Stack: `push`
+  - Tabs: `navigate`
+  - Drawer: `openDrawer`
+- When navigating, we specify a screen name and params
+  - `navigator.push("Screen2", { paramA: "Hello!" })`
+
+---
+
+## `Navigation`
+
+<Example code={push} panes={['editor']} />
+
+---
+
+## `Routes`
+
+> Within a screen, we have access to the current route
+
+<Example code={route} panes={['editor']} />
+
+---
+
+## `Hooks`
+
+<Example code={hooks} panes={['editor']} />

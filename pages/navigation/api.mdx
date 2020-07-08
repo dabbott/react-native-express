@@ -1,0 +1,38 @@
+---
+title: API
+---
+
+import navigator from '../../examples/files/navigation/navigator.tsx'
+import screen from '../../examples/files/navigation/screen.tsx'
+import render from '../../examples/files/navigation/render.tsx'
+
+# API
+
+- `<NavigationContainer>` from `@react-navigation/native`
+- Navigators
+  - `createStackNavigator` from `@react-navigation/stack`
+  - `createBottomTabNavigator` from `@react-navigation/bottom-tabs`
+  - `createDrawerNavigator` from `@react-navigation/drawer`
+- Screens
+
+---
+
+## 1. Create a navigator
+
+> Define the types for **all screens** in the navigator.
+
+<Example code={navigator} panes={['editor']} />
+
+---
+
+## 2. Create a screen component
+
+> Create a component for each screen.
+
+<Example code={screen} panes={['editor']} />
+
+---
+
+## 3. Render it
+
+<Example code={render} panes={['editor']} />
