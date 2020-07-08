@@ -1,0 +1,80 @@
+import viewSubclassKt from '../examples/files/native_modules/viewSubclass.kt'
+import viewSubclassSwift from '../examples/files/native_modules/viewSubclass.swift'
+import viewManagerKt from '../examples/files/native_modules/viewManager.kt'
+import viewManagerSwift from '../examples/files/native_modules/viewManager.swift'
+import MyPackageKt from '../examples/files/native_modules/MyPackage.kt'
+import MainApplicationJava from '../examples/files/native_modules/MainApplication.java'
+import MyView from '../examples/files/native_modules/MyView.m'
+import requireNativeComponent from '../examples/files/native_modules/requireNativeComponent.ts'
+import PropsSwift from '../examples/files/native_modules/Props.swift'
+import PropsKt from '../examples/files/native_modules/Props.kt'
+import PropsM from '../examples/files/native_modules/Props.m'
+import PropsTs from '../examples/files/native_modules/Props.ts'
+
+# Native Modules
+
+How to make a native module:
+
+1. Create a native UIView or Android View subclass
+2. Create a React ViewManager subclass that manages the view pool
+3. Register the ViewManager subclass with React Native
+4. `requireNativeComponent` from JS
+
+---
+
+## 1. Create a native view subclass
+
+<Example
+  panes={['editor']}
+  files={[
+    ['MyView.kt', viewSubclassKt],
+    ['MyView.swift', viewSubclassSwift],
+  ]}
+/>
+
+---
+
+## 2. Create a ViewManager subclass
+
+<Example
+  panes={['editor']}
+  files={[
+    ['MyViewManager.kt', viewManagerKt],
+    ['MyViewManager.swift', viewManagerSwift],
+  ]}
+/>
+
+---
+
+## 3. Register the ViewManager subclass
+
+<Example
+  panes={['editor']}
+  files={[
+    ['MyPackage.kt', MyPackageKt],
+    ['MainApplication.java', MainApplicationJava],
+    ['MyView.m', MyView],
+  ]}
+/>
+
+---
+
+## 4. Load the native module from JS
+
+<Example panes={['editor']} code={requireNativeComponent} />
+
+---
+
+## Props
+
+Next, we need to pass props from JS to native:
+
+<Example
+  panes={['editor']}
+  files={[
+    ['MyView.ts', PropsTs],
+    ['MyViewManager.kt', PropsKt],
+    ['MyView.swift', PropsSwift],
+    ['MyView.m', PropsM],
+  ]}
+/>
