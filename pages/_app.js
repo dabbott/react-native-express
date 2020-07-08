@@ -49,21 +49,7 @@ export default class MyApp extends App {
             <meta property="og:title" content={node.title} />
           </Helmet>
           <MDXProvider components={Components}>
-            <Page
-              rootNode={guidebook}
-              logo={logo}
-              footer={
-                <>
-                  <BookBanner />
-                  <Disqus
-                    title={node.title}
-                    identifier={node.slug}
-                    shortname="reactnativeexpress"
-                    stagingShortname="reactnativeexpress-staging"
-                  />
-                </>
-              }
-            >
+            <Page rootNode={guidebook} logo={logo}>
               <Component {...pageProps} />
             </Page>
           </MDXProvider>

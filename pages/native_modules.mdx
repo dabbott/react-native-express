@@ -25,6 +25,7 @@ How to make a native module:
 ## 1. Create a native view subclass
 
 <Example
+  height={200}
   panes={['editor']}
   files={[
     ['MyView.kt', viewSubclassKt],
@@ -37,6 +38,7 @@ How to make a native module:
 ## 2. Create a ViewManager subclass
 
 <Example
+  height={400}
   panes={['editor']}
   files={[
     ['MyViewManager.kt', viewManagerKt],
@@ -49,6 +51,7 @@ How to make a native module:
 ## 3. Register the ViewManager subclass
 
 <Example
+  height={300}
   panes={['editor']}
   files={[
     ['MyPackage.kt', MyPackageKt],
@@ -61,7 +64,7 @@ How to make a native module:
 
 ## 4. Load the native module from JS
 
-<Example panes={['editor']} code={requireNativeComponent} />
+<Example height={300} panes={['editor']} code={requireNativeComponent} />
 
 ---
 
@@ -70,6 +73,7 @@ How to make a native module:
 Next, we need to pass props from JS to native:
 
 <Example
+  height={500}
   panes={['editor']}
   files={[
     ['MyView.ts', PropsTs],
