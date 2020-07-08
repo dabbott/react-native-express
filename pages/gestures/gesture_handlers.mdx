@@ -1,0 +1,51 @@
+import panGestureHandler from '../../examples/files/gestures/panGestureHandler.tsx'
+
+# Gesture Handlers
+
+We can use these React components to detect gestures:
+
+- `PanGestureHandler`
+- `TapGestureHandler`
+- `LongPressGestureHandler`
+- `RotationGestureHandler`
+- `FlingGestureHandler`
+- `PinchGestureHandler`
+- `ForceTouchGestureHandler`
+
+---
+
+## States
+
+A gesture is always in one of the following states:
+
+- `UNDETERMINED`
+- `BEGAN`
+- `ACTIVE`
+- `END`
+- `CANCELLED`
+- `FAILED`
+
+The `onHandlerStateChange` prop is called when the state changes.
+
+---
+
+## Events
+
+Any change will trigger an **event** - we can listen for this with the `onGestureEvent` prop.
+
+PanGestureHandler event metadata includes:
+
+- `x`
+- `y`
+- `translationX`
+- `translationY`
+- `velocityX`
+- `velocityY`
+
+These can become `Animated.Value`s.
+
+---
+
+## Example
+
+<Example code={panGestureHandler} panes={['editor']} />

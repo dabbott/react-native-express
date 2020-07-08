@@ -1,0 +1,3 @@
+class MyView(context: Context?) : View(context) {
+  // ...
+}
