@@ -1,0 +1,28 @@
+---
+title: Block-scoped Declarations
+---
+
+import variables from '../../../examples/files/javascript/variables.js'
+import constants from '../../../examples/files/javascript/constants.js'
+
+# Variables
+
+Declare variables with `let` and constants with `const`.
+
+> Avoid variable declarations with `var` unless maintaining legacy code
+
+<Example
+  width={0}
+  title={'Declaring variables and constants'}
+  code={variables}
+/>
+
+---
+
+## Constants with mutable values
+
+With `const`, a _name_ is permanently bound to a value in scope and can't be reassigned.
+
+However, if the _value_ is an object, then the value is still mutable.
+
+<Example width={0} title={'Constants with mutable values'} code={constants} />

@@ -1,0 +1,39 @@
+import importsAndExports from '../../../examples/importsAndExports'
+import namedImportsAndExports from '../../../examples/namedImportsAndExports'
+import momentExample from '../../../examples/files/javascript/momentExample'
+import { moment } from '../../../examples/modules'
+
+# Imports and Exports
+
+We can use the keyword `import` to load values from other JavaScript files via relative path.
+
+We use `export` to expose values for importing.
+
+<Example {...importsAndExports} />
+
+---
+
+## Named imports and exports
+
+A single file can have multiple exports, and any subset of these can be imported simultaneously.
+
+<Example {...namedImportsAndExports} />
+
+---
+
+## Importing from modules
+
+3rd party libraries specify a "main" file, usually named `index.js`.
+
+There's a shorter syntax for importing this file: we import the name of the module's directory (which is the name of the package in the `npm` registry).
+
+E.g. assuming we had downloaded the `moment` library into our `node_modules`:
+
+> Similarly, importing a directory will import the `index.js` file in that directory.
+
+<Example
+  width={0}
+  heigth={300}
+  code={momentExample}
+  vendorComponents={[moment]}
+/>
