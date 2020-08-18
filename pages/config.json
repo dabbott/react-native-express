@@ -4,6 +4,7 @@
     "javascript",
     "react",
     "core_components",
+    "app",
     "component_libraries",
     "data_management",
     "persistence",
