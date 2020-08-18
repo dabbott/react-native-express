@@ -3,3 +3,33 @@ title: JavaScript
 ---
 
 # JavaScript
+
+React Native apps are written in JavaScript. Instead of writing a separate app in Swift (for iOS) and Kotlin (for Android), we can write a single JavaScript codebase that powers our app on multiple platforms. The React Native framework provides a set of JavaScript bindings to native iOS and Android APIs. Using these bindings, we're able to control the user interface and access device hardware, like the camera.
+
+## JavaScript engines
+
+Our JavaScript code runs in a JavaScript "engine", or interpreter, on mobile devices. On iOS, our code runs in JSC, the same open source engine used by the Safari web browser. On Android, our code can either use JSC, or a new engine from Facebook called Hermes.
+
+Each JavaScript engine, and each version of each engine, supports slightly JavaScript language features. The JSC used by iOS 12 may not support the exact same feature set as the one in iOS 13 or iOS 14, and it will almost certainly be a little different than Hermes.
+
+We don't want to have to think about this complexity when writing an app - thats where **Babel** comes in.
+
+## Babel
+
+Babel is a highly configurable compiler that lets us use newer JavaScript language features (and extensions, like JSX), compiling "down" into older versions of JavaScript that are supported on a wider range of engines. This essentially smooths out any differences between JSC versions, or between JSC and Hermes, so we don't have to think about those differences when writing our app.
+
+When we generate a new React Native app, a Babel configuration file, `babel.config.js`, is generated alongside our project. This file configures Babel with a React Native preset, so our JavaScript code should "just work" regardless of which engine it runs on.
+
+## TypeScript
+
+JavaScript is _dynamically_ typed, which means that type checking happens at runtime. This is convenient for small scripts, but for large apps it's often helpful to have type checking at compile-time. For this reason, many React Native developers write their apps in TypeScript, a language that compiles "down" into JavaScript (somewhat like Babel). React Native officially supports TypeScript via a separate [starter template](https://reactnative.dev/docs/typescript).
+
+TypeScript extends JavaScript, adding syntax for type declarations and annotations. The TypeScript compiler can then perform compile-time type checking, before transforming the TypeScript code into JavaScript.
+
+In this guide, we'll be using JavaScript primarily, but I'll add relevant TypeScript types to a few examples for those who are interested.
+
+> If your background is in web development and you haven't used TypeScript before, I recommend writing your first React Native without it, so you're not learning 2 things at once. If your background is in iOS or Android development, you may find writing in TypeScript more comfortable.
+
+### Up next
+
+Let's go through a few key JavaScript language features, and then jump into the JSX language extension, before moving on to React.

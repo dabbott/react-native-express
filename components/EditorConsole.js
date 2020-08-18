@@ -61,16 +61,20 @@ export default class EditorConsole extends Component {
         width={260}
         scale={0.75}
         style={style}
-        styles={{
-          playerPane: {
-            overflow: 'hidden',
-            background: 'rgba(0,0,0,0.02)',
-            marginLeft: '0',
-            marginRight: '0',
-            paddingLeft: '10px',
-            paddingRight: '10px',
-          },
-        }}
+        styles={
+          rest.width === 0
+            ? {}
+            : {
+                playerPane: {
+                  overflow: 'hidden',
+                  background: 'rgba(0,0,0,0.02)',
+                  marginLeft: '0',
+                  marginRight: '0',
+                  paddingLeft: '10px',
+                  paddingRight: '10px',
+                },
+              }
+        }
         playground={{ enabled: true }}
         typescript={{ enabled: true }}
         workspaceCSS={variant === 'slides' ? slidesCSS : workspaceCSS}
