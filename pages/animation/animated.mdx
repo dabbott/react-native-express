@@ -7,9 +7,9 @@ import animatedInterpolate from '../../examples/files/animation/animatedInterpol
 
 The `Animated` API lets us animate component styles.
 
-There are 4 parts:
+There are 4 fundamental parts to this API:
 
-- `Animated.Value` - wrap a value that we want to use in a style
+- `Animated.Value` - wrap a number value that we want to use in a style
 - `Animated.View`, `Animated.Text`, ... - use a component that supports animated styles
 - `Animated.timing`, `Animated.spring`, ... - choose an animation type
 - `.start()` - start the animation
@@ -18,7 +18,7 @@ There are 4 parts:
 
 ## `Animated.Value`
 
-To wrap a value, call `new Animated.Value(value)`.
+To wrap a number value, call `new Animated.Value(value)`.
 
 <Example code={animatedValue} panes={['editor']} />
 
@@ -28,13 +28,15 @@ To wrap a value, call `new Animated.Value(value)`.
 
 Use the `Animated.Value` in a style.
 
+> This won't animated, since we haven't specified a style we want to animate yet.
+
 <Example code={animatedView} />
 
 ---
 
 ## Animate!
 
-Pick an animation function, e.g. `Animated.timing` and then call `.start()` imperatively.
+Pick an animation function, e.g. `Animated.timing` and then call `.start()` imperatively. <Details>Now we can should see an animation when we click the button.</Details>
 
 > Don't forget `.start()`!
 
@@ -44,4 +46,14 @@ Pick an animation function, e.g. `Animated.timing` and then call `.start()` impe
 
 ## Interpolate
 
+To animate styles in more complex ways, we can use a single animated value, but interpolate its value into different ranges for different styles.
+
 <Example code={animatedInterpolate} />
+
+## Other animations
+
+There are other types of animations we can run besides `timing`: `delay` and `spring`. We can also choose the easing curve to use with a timing animation.
+
+We can also perform other operations on animated values besides `interpolate`.
+
+The [documentation](https://reactnative.dev/docs/animated) covers all of the available options in more detail.
