@@ -2,8 +2,8 @@
 title: SectionList
 ---
 
-import { homogenousExample } from '../../../examples/sectionlist'
-import { heterogenousExample } from '../../../examples/sectionlist'
+import sectionlistHomogenous from '../../../examples/files/core_components/sectionlistHomogenous.js'
+import sectionlistHeterogenous from '../../../examples/files/core_components/sectionlistHeterogenous.js'
 
 # SectionList
 
@@ -15,10 +15,10 @@ import { heterogenousExample } from '../../../examples/sectionlist'
 
 If each row is rendered with the same `renderItem` function, we call this homogenous rendering.
 
-<Example code={homogenousExample.code} />
+<Example code={sectionlistHomogenous} />
 
 ## Heterogenous row example
 
 A `renderItem` function may be specified as part of the `sections` data, one per section, rather than as a `prop` of the `SectionList`. This lets us render each section differently. Alternately, you could use the item data to determine how to render items differently.
 
-<Example code={heterogenousExample.code} />
+<Example code={sectionlistHeterogenous} />
