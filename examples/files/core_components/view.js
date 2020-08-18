@@ -1,14 +1,12 @@
-const code = `import React, { Component } from 'react'
+import React from 'react'
 import { View, StyleSheet } from 'react-native'
 
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.box} />
-      </View>
-    )
-  }
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.box} />
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -26,6 +24,3 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
 })
-`
-
-export default { code }
