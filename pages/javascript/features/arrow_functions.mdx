@@ -1,0 +1,36 @@
+import arrowFunctions from '../../../examples/files/javascript/arrowFunctions.js'
+
+# Arrow Functions
+
+There are two syntaxes for declaring functions:
+
+- The `function` keyword
+- Arrow (`=>`) function expressions
+
+The `=>` syntax is a newer, more lightweight syntax for defining functions. However, these syntaxes have somewhat different behavior, so arrow functions are more than just a new syntax.
+
+<Example width={0} title={'Functions'} code={arrowFunctions} />
+
+## Arrow syntax
+
+Arrow function syntax can vary a bit.
+
+If the function takes exactly one parameter, the parentheses can be omitted: `x => Math.pow(x, 2)`. Any other number of arguments will need parentheses: `(x, y) => Math.pow(x, y)`.
+
+If the function body is not wrapped in curly braces (as in the previous sentences), it is executed as an **expression**, and the return value of the function is the value of the expression. The function body can be wrapped in curly braces to make it a **block**, in which case you will need to explicitly `return` a value, if you want something returned.
+
+## Behavior Differences
+
+### `this` Binding
+
+For functions defined with `=>`, the binding for the keyword `this` is the same inside and outside the function. This is different than functions declared with `function`, which can bind `this` to another object upon invocation. Maintaining the `this` binding is very convenient for operations like mapping: `this.items.map(x => this.doSomethingWith(x))`.
+
+### `arguments`
+
+Arrow functions don't have an `arguments` object defined. We can achieve the same thing using the **spread syntax**: `(...args) => doSomething(args[0], args[1])`.
+
+### Naming
+
+Functions defined with `=>` are always anonymous, while functions defined with `function` can optionally be named. Naming can be very helpful in stack traces when debugging, so I recommend using named functions when exporting a function from a file with the `export` keyword.
+
+> A named function `foo` is defined as `function foo()`, which simultaneously introduces the variable name `foo` into scope. This is different than `const foo = () => {}`, which introduces the variable name `foo` pointing to an anonymous function.
