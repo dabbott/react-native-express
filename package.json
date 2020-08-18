@@ -23,7 +23,8 @@
     "react-native-web-player": "^2.0.0-alpha.20",
     "reset-css": "^5.0.1",
     "spectacle": "^6.1.0",
-    "styled-components": "^4.3.1"
+    "styled-components": "^4.3.1",
+    "tree-visit": "^0.0.6"
   },
   "keywords": [],
   "license": "MIT",

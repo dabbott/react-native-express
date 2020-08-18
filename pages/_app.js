@@ -16,6 +16,7 @@ import slidesTheme from '../styles/slidesTheme'
 import EditorConsole from '../components/EditorConsole'
 import Disqus from '../components/Disqus'
 import BookBanner from '../components/BookBanner'
+import FileTreeDiagram from '../components/FileTreeDiagram'
 import logo from '../images/logo.svg'
 import guidebook from '../guidebook'
 
@@ -27,6 +28,7 @@ const theme = {
 const Components = {
   ...PageComponents,
   Example: EditorConsole,
+  FileTreeDiagram: FileTreeDiagram,
   Details: ({ children }) => children,
 }
 

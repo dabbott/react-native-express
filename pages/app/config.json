@@ -1,6 +1,6 @@
 {
   "order": [
-    "architecture",
+    "project_structure",
     "navigation",
     "data_management",
     "persistence",

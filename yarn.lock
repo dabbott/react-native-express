@@ -6817,6 +6817,11 @@ traverse@0.6.6:
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
   integrity sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=
 
+tree-visit@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/tree-visit/-/tree-visit-0.0.6.tgz#d845c572c5c358a731f04c54b2f326291a2b2876"
+  integrity sha512-0vm4UZWDl66kHksFeO6Ce2O8ysmG4ndB8DJtwlwG61lJXjSQOPqMZeblaCQkDcQ87x0eV8tE7Yi5t6KA6L/11g==
+
 trim-lines@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/trim-lines/-/trim-lines-1.1.1.tgz#da738ff58fa74817588455e30b11b85289f2a396"
