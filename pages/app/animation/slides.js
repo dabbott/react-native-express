@@ -1,3 +1,3 @@
-import SectionSlideshow from '../../components/SectionSlideshow'
+import SectionSlideshow from '../../../components/SectionSlideshow'
 
 export default () => <SectionSlideshow sectionName={'animation'} />
