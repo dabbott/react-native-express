@@ -6,6 +6,7 @@
     "conditional_rendering",
     "user_input",
     "lists_and_keys",
-    "performance"
+    "performance",
+    "hooks"
   ]
 }
