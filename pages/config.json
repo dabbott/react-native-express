@@ -1,7 +1,7 @@
 {
   "order": [
     "environment",
-    "jsx",
+    "javascript",
     "react",
     "hooks",
     "performance",

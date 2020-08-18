@@ -1,3 +1,5 @@
+import appRegistry from '../examples/files/environment/appRegistry.js'
+
 # Environment
 
 There are two common ways to set up a React Native development environment: [`expo-cli`](https://docs.expo.io/workflow/expo-cli/) and `react-native` CLI.
@@ -17,13 +19,7 @@ If you know you'll need custom native modules in your app, you'll want to use th
 
 In terms of the JavaScript code, the main difference from `expo-cli` is that `react-native` apps require registering the root component of your app using `AppRegistry.registerComponent`, e.g:
 
-```js
-import { AppRegistry } from 'react-native'
-import App from './App'
-import { name as appName } from './app.json'
-
-AppRegistry.registerComponent(appName, () => App)
-```
+<Example panes={['editor']} code={appRegistry} />
 
 This allows you to optionally have multiple React Native root components, which you might embed into different native screens. `expo-cli` uses the default export of `App.js` as your root component.
 
