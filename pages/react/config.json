@@ -5,6 +5,7 @@
     "events",
     "conditional_rendering",
     "user_input",
-    "lists_and_keys"
+    "lists_and_keys",
+    "performance"
   ]
 }

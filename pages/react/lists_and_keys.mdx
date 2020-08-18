@@ -81,9 +81,9 @@ The `data.map` expression will evaluate to:
 
 ```js
 <View>
-  <View>Devin</View>
-  <View>Gabe</View>
-  <View>Kim</View>
+  <Text>Devin</Text>
+  <Text>Gabe</Text>
+  <Text>Kim</Text>
 </View>
 ```
 
@@ -100,7 +100,7 @@ We should set up our list using the `id` of each data element as a `key`:
 ```js
 <View>
   {data.map((item) => (
-    <View key={item.id}>{item.name}</View>
+    <Text key={item.id}>{item.name}</Text>
   ))}
 </View>
 ```
