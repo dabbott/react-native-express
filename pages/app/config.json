@@ -1,0 +1,13 @@
+{
+  "order": [
+    "architecture",
+    "navigation",
+    "data_management",
+    "persistence",
+    "networking",
+    "animation",
+    "gestures",
+    "native_modules",
+    "component_libraries"
+  ]
+}
