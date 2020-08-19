@@ -21,7 +21,9 @@ When our app is small, we often keep all components in a single directory:
   }}
 </FileTreeDiagram>
 
-As our app grows, we'll typically separate "screen" components into a `screens` directory, and start further categorizing files within the `components` directory.
+Generally, each component in our app should live in a separate file, and should be the `default` export of that file. We give the file the same name as the component, e.g. a component called `Avatar` should live in `Avatar.js`. In React Native, component names _must_ be capitalized, so the file name will usually be capitalized too for consistency.
+
+As our app grows, we'll typically separate "screen" components into a `screens` directory, and start further categorizing files within the `components` directory. A "screen" component should take up the full screen, such as a Profile screen or a Settings screen.
 
 If we're using a library like `react-navigation`, we may organize our navigators/routers into a separate `navigation` directory (also sometimes `navigators` or `routing`).
 
@@ -66,6 +68,7 @@ A few other common categories of file:
 - `api`: network API calls, often organized by provider or route
 - `assets`: images and other files to bundle with the app
 - `hooks`: custom hooks
+- `reducers`: reducer functions, for managing app data with the `useReducer` hook (or another library)
 - `theme`: shared colors and text styles (sometimes called `styles`)
 - `utils`: miscellaneous tools like string formatting
 
@@ -84,6 +87,10 @@ A few other common categories of file:
       {
         name: 'hooks',
         children: ['useInterval.js', 'useLogin.js'],
+      },
+      {
+        name: 'reducers',
+        children: ['posts.js', 'users.js', 'tweets.js'],
       },
       {
         name: 'theme',

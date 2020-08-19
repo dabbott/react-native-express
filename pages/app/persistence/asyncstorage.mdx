@@ -2,53 +2,44 @@
 title: AsyncStorage
 ---
 
-import example from '../../../examples/asyncstorage'
-
 # AsyncStorage
 
-`AsyncStorage` is a built-in React Native API for client-side data persistence. Here we'll cover basic usage of the API; as your data gets complex, you will likely want to use a library built on top of `AsyncStorage`, such as Redux Persist.
+[`AsyncStorage`](https://github.com/react-native-community/async-storage) is a (formerly built-in) API for client-side data persistence. Here we'll cover basic usage of the API and an example.
 
 ## API
 
-The AsyncStorage API is promise-based. All getting and setting of key-value pairs is asynchronous. Thanks to the new `async/await`, interacting with the API isn't much more difficult than if it were synchronous.
+The `AsyncStorage` API is promise-based. Getting and setting key-value pairs is asynchronous.
 
-### **`await getItem(key) => ?string`**
+All of the following APIs can throw errors upon failure, which you'll want to handle!
 
-Get the `value` stored at `key`. This will return a string, or null if no data has been stored yet for that `key`. Don't forget to call `JSON.parse(value)` if you're storing your data in JSON format.
+### `function getItem(key: string): Promise<string | null>`
 
-### **`await setItem(key, value)`**
+Get the `value` stored at `key`. This will return a string, or null if no data has been stored yet for that `key`. Remember to call `JSON.parse(value)` if you're storing your data in JSON format.
 
-Store `value` at `key`. Don't forget to call `JSON.stringify(value)` if you're storing your data in JSON format.
+### `function setItem(key: string, value: string): Promise<void>`
 
-### **`await clear()`**
+Store the `value` at `key`, replacing any existing value stored there. Remember to call `JSON.stringify(value)` if you're storing your data in JSON format.
+
+### `function clear()`
 
 Clear all stored data.
 
 ### That's it!
 
-These three APIs are frequently all you'll need. There are a few more APIs worth being aware of, in case you end up using AsyncStorage for more complex things:
-
-- `removeItem(key)`
-- `mergeItem(key, value)`
-- `getAllKeys() => Array(string)`
-- `flushGetRequests()`
-- `multiGet(keys) => Array(Array(string))`
-- `multiSet(keyValuePairs)`
-- `multiRemove(keys)`
-- `multiMerge(keyValuePairs)`
-
-Don't forget, all of these functions (including `getItem` and `setItem`) can throw errors upon failure which you'll want to handle!
+These three APIs are frequently all you'll need, although there are more APIs for getting/setting multiple values and merging values if you have more advanced needs.
 
 ## Example
 
 Let's look at an example of getting and setting a key-value pair in `AsyncStorage`.
 
-### Files
+This app contains:
 
-- `index.js`<br />
-  The `App` component loads the value at `STORAGE_KEY` into `this.state` when it mounts. Every time you type your name in the input field and hit enter, we save `name` to `STORAGE_KEY`, as well as updating the value in `this.state`. Note that we also catch errors thrown when loading/saving, which is simple thanks to `async/await`.
+- An `App` component thats loads the value at `STORAGE_KEY` into `name` using `useState` when it mounts. Every time you type your name in the input field and hit enter, we save `name` to `STORAGE_KEY`, as well as updating the value in `name`. Note that we also catch errors thrown when loading/saving.
+- `Input.js`, a presentational `TextInput`-based component
 
-- `Input.js`<br />
-  Presentational component
-
-<Example {...example} />
+<Example
+  files={[
+    ['App.js', require('../../../examples/files/app/AsyncStorage').default],
+    ['Input.js', require('../../../examples/files/app/Input').default],
+  ]}
+/>
