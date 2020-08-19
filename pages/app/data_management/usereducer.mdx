@@ -1,0 +1,30 @@
+---
+title: useReducer
+---
+
+import App from '../../../examples/files/app/TodoListWithReducer'
+import List from '../../../examples/files/app/List'
+import Input from '../../../examples/files/app/Input'
+import Title from '../../../examples/files/app/Title'
+import reducer from '../../../examples/files/app/TodoListReducer'
+
+# Managing data with useReducer
+
+We can use React's `useReducer` hook to manage our application data. In this example we'll look at a small To-Do list app that manages its data with `useReducer`.
+
+Using the terminology from the [Project Structure](/app/project_structure) section, this app contains:
+
+- A "container" component, `App`, that connects our application/business logic for adding and removing To-Do items with our UI components
+- 3 "presentational" components that we use to display our UI: `List`, `Input`, and `Title`
+- A `reducer` file that contains the initial state of our app and a reducer function for updating the state
+
+<Example
+  height={900}
+  files={[
+    ['App.js', App],
+    ['List.js', List],
+    ['Input.js', Input],
+    ['Title.js', Title],
+    ['reducer.js', reducer],
+  ]}
+/>

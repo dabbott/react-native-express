@@ -2,7 +2,7 @@ import toggle from './files/core_components/toggle.js'
 import flexbox from './files/core_components/flexbox.js'
 
 const files = [
-  ['index.js', flexbox],
+  ['App.js', flexbox],
   ['Toggle.js', toggle],
 ]
 
