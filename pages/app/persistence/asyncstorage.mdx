@@ -6,6 +6,8 @@ title: AsyncStorage
 
 [`AsyncStorage`](https://github.com/react-native-community/async-storage) is a (formerly built-in) API for client-side data persistence. Here we'll cover basic usage of the API and an example.
 
+> Since this library includes native modules, if you're not using Expo, you'll need to update your `CocoaPods` on iOS. See the installation instructions: https://react-native-community.github.io/async-storage/docs/install
+
 ## API
 
 The `AsyncStorage` API is promise-based. Getting and setting key-value pairs is asynchronous.
@@ -41,5 +43,11 @@ This app contains:
   files={[
     ['App.js', require('../../../examples/files/app/AsyncStorage').default],
     ['Input.js', require('../../../examples/files/app/Input').default],
+  ]}
+  vendorComponents={[
+    [
+      '@react-native-community/async-storage',
+      'https://gitcdn.xyz/repo/dabbott/c808d04daf4d8d5477e911fe2bce2e63/raw/ef6952e3f4e9fdc6fcd0fc1cd199dda526d2d006/AsyncStorageInterop.js',
+    ],
   ]}
 />
