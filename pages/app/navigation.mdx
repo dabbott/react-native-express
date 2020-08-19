@@ -1,9 +1,21 @@
 # Navigation
 
-- [react-navigation](https://reactnavigation.org/)
-- Everything is a React Component
-  - Doesn’t map 1:1 to native paradigms
-  - Some React Components don’t map to Views at all
-- Fundamentally different on web vs. mobile
-  - On web, navigation is mostly stateless, 1 route === 1 screen/page
-  - On mobile, navigation is stateful (e.g. a stack can even contain the same screen twice)
+We use a **navigation** library to handle screen-to-screen transitions (i.e. routing) within our app.
+
+React Native original included a built-in navigation library, but it was eventually removed, in favor of a semi-official community-maintained library called `react-navigation`.
+
+## Navigation challenges
+
+There are a few aspects of navigation which make it challenging in React Native:
+
+- Navigation works differently on each native platform. iOS uses **view controllers**, while android uses **activities**. These platform-specific APIs work differently technically and appear differently to the user. React Native navigation libraries try to support the look-and-feel of each platform, while still providing a single consistent JavaScript API.
+- Native navigation APIs don't correspond with "views". React Native components like `View`, `Text`, and `Image`, roughly map to an underlying native "view", but there isn't really an equivalent for some of the navigation APIs. There isn't always a clear way to expose these APIs to JavaScript.
+- Navigation on mobile is stateful. On the web, navigation is typically stateless, where a url (i.e. route) takes a user to a single screen/page. On mobile, the history of the user's navigation state is persisted in the application so that the user can go back to previous screens - a stack of screens can even include the same screen multiple times.
+
+Due to these challenges, there isn't a single best way to implement navigation, so it was removed from the core React Native package.
+
+## React Navigation
+
+By far the most popular navigation library is [react-navigation](https://reactnavigation.org/). It handles most of the challenges described above nicely, and is sufficiently configurable for most apps. In the next sections, we'll walk through the APIs needed to add React Navigation to an app.
+
+> When adding React Native to an existing native app, it may be worth considering [react-native-navigation](https://github.com/wix/react-native-navigation)

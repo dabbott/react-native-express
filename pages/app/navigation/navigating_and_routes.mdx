@@ -1,32 +1,65 @@
-import hooks from '../../../examples/files/navigation/hooks.tsx'
-import route from '../../../examples/files/navigation/route.tsx'
-import push from '../../../examples/files/navigation/push.tsx'
+import hooksTsx from '../../../examples/files/navigation/hooks.tsx'
+import hooksJs from '../../../examples/files/navigation/hooks.js'
+import routeTsx from '../../../examples/files/navigation/route.tsx'
+import routeJs from '../../../examples/files/navigation/route.js'
+import pushTsx from '../../../examples/files/navigation/push.tsx'
+import pushJs from '../../../examples/files/navigation/push.js'
 
 # Navigating and Routes
 
-- Every navigator supports different ways of navigating
-  - Stack: `push`
-  - Tabs: `navigate`
-  - Drawer: `openDrawer`
-- When navigating, we specify a screen name and params
-  - `navigator.push("Screen2", { paramA: "Hello!" })`
+Each navigator supports different ways of navigating:
+
+- Stack: `push`
+- Tabs: `navigate`
+- Drawer: `openDrawer`
+
+When navigating, we typically specify a screen name and optionally parameters, e.g. `navigator.push("Screen2", { paramA: "Hello!" })`.
+
+Let's look at how this might work.
 
 ---
 
-## `Navigation`
+## Navigation
 
-<Example code={push} panes={['editor']} />
+In this example, we navigate from `Screen1` to `Screen2` by pushing `Screen2` onto the stack when a button is pressed.
+
+<Example
+  height={300}
+  files={[
+    ['JavaScript', pushJs],
+    ['TypeScript', pushTsx],
+  ]}
+  panes={['editor']}
+/>
 
 ---
 
-## `Routes`
+## Routes
 
-> Within a screen, we have access to the current route
+Within a screen, we have access to the current route and its parameters.
 
-<Example code={route} panes={['editor']} />
+<Example
+  height={300}
+  files={[
+    ['JavaScript', routeJs],
+    ['TypeScript', routeTsx],
+  ]}
+  panes={['editor']}
+/>
 
 ---
 
-## `Hooks`
+## Hooks
 
-<Example code={hooks} panes={['editor']} />
+For components which aren't screens (direct descendants of a navigator), we can access the `navigation` and `route` objects using hooks.
+
+> Some developers prefer using these hooks instead of props, even in screen components.
+
+<Example
+  height={300}
+  files={[
+    ['JavaScript', hooksJs],
+    ['TypeScript', hooksTsx],
+  ]}
+  panes={['editor']}
+/>
