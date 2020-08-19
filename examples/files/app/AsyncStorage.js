@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, AsyncStorage, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
+import AsyncStorage from '@react-native-community/async-storage'
 
 import Input from './Input'
 
