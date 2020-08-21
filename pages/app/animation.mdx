@@ -1,7 +1,9 @@
 # Animation
 
-Approaches:
+There are 3 common approaches to animation in React Native:
 
-- `Animated` - built-in, for animating styles
+- `Animated` - a built-in API for animating component styles
+- `LayoutAnimation` - a built-in API for animating between 2 component hierarchies (think "magic move"), although still considered experimental
 - `react-native-reanimated` - "worklets" that run in a second JS context on the UI thread
-- `LayoutAnimation` - built-in automatic animations, like "magic move"
+
+Most animations will use `Animated`.

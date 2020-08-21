@@ -1,3 +1,9 @@
 # Reanimated
 
-Check it out: https://blog.swmansion.com/introducing-reanimated-2-752b913af8b3
+For animations that need to be particularly high performance, you may want to consider [`react-native-reanimated`](https://github.com/software-mansion/react-native-reanimated).
+
+The library runs separate JavaScript contexts (which are sort of like threads/web workers) for animation. This approach allows a lot of flexibility in terms of the animation code you can write, while not blocking the main UI thread. However, it requires you to write your code in a special way, so only turn to this if you find an animation written with `Animated` is sluggish.
+
+> The main goal here is to reduce the number of round trips between JavaScript and native code. The library's implementation changed from v1 to v2, but the goal is still the same).
+
+To learn more: https://blog.swmansion.com/introducing-reanimated-2-752b913af8b3
