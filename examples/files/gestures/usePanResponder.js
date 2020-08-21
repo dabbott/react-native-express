@@ -6,10 +6,10 @@ import { actionCreators, initialState, reducer } from './pan'
 export default function usePanResponder() {
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  // Should we become active when the user presses down on the square?
+  // Should we claim the interaction lock when the user presses down on the square?
   const handleStartShouldSetPanResponder = (e, gestureState) => true
 
-  // We were granted responder status, start the drag!
+  // We were granted the interaction lock, so start the drag!
   const handlePanResponderGrant = (e, gestureState) => {
     dispatch(actionCreators.start())
   }

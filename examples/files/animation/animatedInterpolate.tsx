@@ -9,7 +9,10 @@ export default function MyComponent() {
       <Button
         title="Animate"
         onPress={() => {
-          const animation = Animated.timing(value.current, { toValue: 1 })
+          const animation = Animated.timing(value.current, {
+            toValue: 1,
+            useNativeDriver: true,
+          })
 
           animation.start()
         }}

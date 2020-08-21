@@ -13,12 +13,26 @@ import PropsTs from '../../examples/files/native_modules/Props.ts'
 
 # Native Modules
 
-How to make a native module:
+Native modules let us access native APIs through JavaScript. All of the built-in components, like `View` and `Image`, are native modules. There are also non-component native modules, like the `Animated` module.
+
+## Bridging APIs
+
+When writing a native module to expose native APIs, we call this **bridging** an API. The process for bridging components and non-component APIs is somewhat different, but the main idea is the same: we need to register a native Swift/Kotlin function to handle each JavaScript function call. React Native includes classes/methods/macros for registering these functions from native code.
+
+In this guide we'll briefly cover the steps involved in bridging a component.
+
+> Bridging an API is fairly formulaic, but may be difficult if you don't have native development experience.
+
+## Bridging a component
+
+How to expose a native UI component to JavaScript:
 
 1. Create a native UIView or Android View subclass
 2. Create a React ViewManager subclass that manages the view pool
 3. Register the ViewManager subclass with React Native
 4. `requireNativeComponent` from JS
+
+> These steps are essentially the same for iOS and Android.
 
 ---
 

@@ -7,7 +7,7 @@
     "networking",
     "animation",
     "gestures",
-    "native_modules",
-    "component_libraries"
+    "component_libraries",
+    "native_modules"
   ]
 }

@@ -14,6 +14,7 @@ import colors from '../styles/colors'
 import textStyles from '../styles/textStyles'
 import slidesTheme from '../styles/slidesTheme'
 import EditorConsole from '../components/EditorConsole'
+import Author from '../components/Author'
 import Disqus from '../components/Disqus'
 import BookBanner from '../components/BookBanner'
 import FileTreeDiagram from '../components/FileTreeDiagram'
@@ -28,6 +29,7 @@ const theme = {
 const Components = {
   ...PageComponents,
   Example: EditorConsole,
+  Author,
   FileTreeDiagram: FileTreeDiagram,
   Details: ({ children }) => children,
 }
