@@ -76,7 +76,7 @@ export default class EditorConsole extends Component {
               }
         }
         playground={{ enabled: true }}
-        typescript={{ enabled: true }}
+        // typescript={{ enabled: true }}
         workspaceCSS={variant === 'slides' ? slidesCSS : workspaceCSS}
         panes={panes}
         {...rest}
