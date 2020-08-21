@@ -1,4 +1,5 @@
-import example from '../../examples/networking'
+import App from '../../examples/files/app/networking'
+import posts from '../../examples/files/app/networkingReducer'
 
 # Networking
 
@@ -7,9 +8,9 @@ import example from '../../examples/networking'
 - Web developers don't have to learn a new way to make network requests
 - Libraries built on top of these function as expected in React Native
 
-It's common to use the `fetch` API directly, since it's pretty simple and high-level. It's rare to use XMLHttpRequest directly, since it's complex and low-level. If your networking needs are advanced (multi-part form requests, etc), you'll likely want to use a library which abstracts the details of these networking APIs.
+It's common to use the `fetch` API directly, since it's fairly powerful and high-level. It's rare to use XMLHttpRequest directly, since it's complex and low-level. If your networking needs are advanced (multi-part form requests, etc), you'll likely want to use a library that abstracts the details of these networking APIs.
 
-If you're looking for an abstraction layer, the common networking libraries like `axios` and `superagent` will still work in React Native.
+If you're looking for an abstraction layer, browser/node networking libraries like `axios` and `superagent` will still work in React Native.
 
 ## Fetch API
 
@@ -33,8 +34,15 @@ We can get started using `fetch` with just that! If you want to use fetch with c
 
 ## Example
 
-Here we'll fetch a list of posts and display them in a ScrollView. Since `fetch` is asynchronous, our app may not have data when it loads. We should be prepared to show an `ActivityIndicator` (spinner) while data loads. We should also be prepared to show an error message if fetching data fails.
+Here we'll fetch a list of posts and display them in a FlatList. Since `fetch` is asynchronous, our app won't have data to show right when it loads. We should instead show a loading state, e.g. an `ActivityIndicator` (spinner), while data loads. We should also be prepared to show an error message if fetching data fails.
+
+This example uses [`useReducer` for managing data](/app/data_management/usereducer)
 
 _Note: fetch may not work if you're using an older browser._
 
-<Example {...example} />
+<Example
+  files={[
+    ['App.js', App],
+    ['posts.js', posts],
+  ]}
+/>
