@@ -57,7 +57,19 @@ export default class MyApp extends App {
             <Page
               rootNode={guidebook}
               logo={logo}
-              footer={isIntroduction ? undefined : <BookBanner />}
+              footer={
+                <>
+                  {isIntroduction ? undefined : <BookBanner />}
+                  {isIntroduction ? undefined : (
+                    <Disqus
+                      title={node.title}
+                      identifier={node.slug}
+                      shortname={'reactnativeexpress'}
+                      stagingShortname={'reactnativeexpress-staging'}
+                    />
+                  )}
+                </>
+              }
             >
               <Component {...pageProps} />
             </Page>
