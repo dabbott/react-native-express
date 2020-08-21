@@ -42,6 +42,8 @@ Then, we can use the `Animated.Value` we created earlier in a style.
 
 Pick an animation function, e.g. `Animated.timing` and then call `.start()` imperatively. <Details>Now we can should see an animation when we click the button.</Details>
 
+We'll typically use the `useNativeDriver` option when possible - this improves animation performance, but we can only use it when animating styles that don't affect layout (e.g. `color`, `opacity`, and `transform` but not `width` or `flex`)
+
 > Don't forget `.start()`!
 
 <Example code={animatedExample} />

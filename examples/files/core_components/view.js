@@ -16,11 +16,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   box: {
-    width: 200,
-    height: 200,
-    backgroundColor: 'skyblue',
-    borderWidth: 2,
-    borderColor: 'steelblue',
-    borderRadius: 20,
+    width: 150,
+    height: 150,
+    backgroundColor: '#3B6CD4',
+    borderWidth: 1,
+    borderColor: 'black',
+    borderRadius: 4,
   },
 })

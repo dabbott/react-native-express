@@ -1,21 +1,12 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React from 'react'
+import { Paragraph, Anchor } from 'react-guidebook'
 
-const Container = styled.div({
-  fontSize: '12px',
-  fontWeight: '400',
-  fontStyle: 'italic',
-  paddingBottom: '15px',
-})
-
-export default class Author extends Component {
-  render() {
-    const { children, url } = this.props
-
-    return (
-      <Container>
-        By <a href={url}>{children}</a>
-      </Container>
-    )
-  }
+export default function Author({ name, url }) {
+  return (
+    <>
+      <Paragraph style={{ marginTop: '0', marginBottom: '24px' }}>
+        By <Anchor href={url}>{name}</Anchor>
+      </Paragraph>
+    </>
+  )
 }

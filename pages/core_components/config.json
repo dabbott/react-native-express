@@ -1,7 +1,7 @@
 {
   "order": [
     "view",
-    "flexbox",
+    "layout",
     "text",
     "image",
     "button",

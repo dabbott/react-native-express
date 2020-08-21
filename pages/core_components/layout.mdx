@@ -1,8 +1,13 @@
-import example from '../../examples/flexbox'
+import toggle from '../../examples/files/core_components/toggle.js'
+import flexbox from '../../examples/files/core_components/flexbox.js'
 
-# Flexbox
+# Layout
 
 Components specify the layout of their children using the **flexbox** algorithm. Using flexbox lets you specify a layout that expands or shrinks to fill screens of various dimensions. You can seamlessly mix and match these automatic layouts with fixed sizes like `width: 100`.
+
+> Under the hood, flexbox is implemented with the library [Yoga](https://yogalayout.com/).
+
+## Properties
 
 To choose the right layout for a component's children, you must make 3 choices:
 
@@ -14,4 +19,10 @@ To choose the right layout for a component's children, you must make 3 choices:
 
 The following example lets you try all the possible combinations of flexbox properties and layouts.
 
-<Example height={800} {...example} />
+<Example
+  height={800}
+  files={[
+    ['App.js', flexbox],
+    ['Toggle.js', toggle],
+  ]}
+/>

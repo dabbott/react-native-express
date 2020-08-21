@@ -1,5 +1,6 @@
-import importsAndExports from '../../../examples/importsAndExports'
-import namedImportsAndExports from '../../../examples/namedImportsAndExports'
+import defaultImport from '../../../examples/files/javascript/defaultImport'
+import namedImports from '../../../examples/files/javascript/namedImports'
+import namedExports from '../../../examples/files/javascript/namedExports'
 import momentExample from '../../../examples/files/javascript/momentExample'
 import { moment } from '../../../examples/modules'
 
@@ -9,7 +10,14 @@ We can use the keyword `import` to load values from other JavaScript files via r
 
 We use `export` to expose values for importing.
 
-<Example {...importsAndExports} />
+<Example
+  width={0}
+  height={300}
+  files={[
+    ['index.js', defaultImport],
+    ['myNumber.js', `export default 42\n`],
+  ]}
+/>
 
 ---
 
@@ -17,7 +25,14 @@ We use `export` to expose values for importing.
 
 A single file can have multiple exports, and any subset of these can be imported simultaneously.
 
-<Example {...namedImportsAndExports} />
+<Example
+  width={0}
+  height={300}
+  files={[
+    ['index.js', namedImports],
+    ['myValues.js', namedExports],
+  ]}
+/>
 
 ---
 
@@ -33,7 +48,7 @@ E.g. assuming we had downloaded the `moment` library into our `node_modules`:
 
 <Example
   width={0}
-  heigth={300}
+  height={300}
   code={momentExample}
   vendorComponents={[moment]}
 />

@@ -2,7 +2,41 @@ import panResponder from '../../../examples/files/gestures/panResponder'
 import usePanResponder from '../../../examples/files/gestures/usePanResponder'
 import pan from '../../../examples/files/gestures/pan'
 
+# Pan Responder
+
+Most React Native components, like `View`, can handle touch/click events. However, the APIs for doing this are fairly low level, so we rarely use them directly. Instead, we use the `PanResponder` API, which is a higher level abstraction for handling touch/click events.
+
+## API
+
+Only a single component can respond to touch events at one time - the component responding to events owns a global "interaction lock". The `PanResponder` API helps us manage what component owns this lock through a set of callbacks. Each of these callbacks is also passed an `event` and `gestureState` object containing info about the touch events (e.g. position and velocity).
+
+To create a `PanResponder`, we call `PanResponder.create(callbacksObject)`. The result is a set of props that can be passed to `View` as props (these are the lower-level touch event handling props). We'll typically wrap the result with `useRef`, since we only want to create a single `PanResponder` for the lifecycle of the component.
+
+The full set of callbacks we can pass is:
+
+- `onStartShouldSetPanResponder: (event, gestureState) => {}`
+- `onStartShouldSetPanResponderCapture: (event, gestureState) => {}`
+- `onMoveShouldSetPanResponder: (event, gestureState) => {}`
+- `onMoveShouldSetPanResponderCapture: (event, gestureState) => {}`
+- `onPanResponderReject: (event, gestureState) => {}`
+- `onPanResponderGrant: (event, gestureState) => {}`
+- `onPanResponderStart: (event, gestureState) => {}`
+- `onPanResponderEnd: (event, gestureState) => {}`
+- `onPanResponderRelease: (event, gestureState) => {}`
+- `onPanResponderMove: (event, gestureState) => {}`
+- `onPanResponderTerminate: (event, gestureState) => {}`
+- `onPanResponderTerminationRequest: (event, gestureState) => {}`
+- `onShouldBlockNativeResponder: (event, gestureState) => {}`
+
 ## Example
+
+In this example, we'll use `PanResponder` to create a drag interaction. There are 3 parts:
+
+- `pan.js` - This contains a reducer function for managing the state of the drag (we use the conventions from the [managing data with useReducer](/app/data_management/usereducer) section)
+- `usePanResponder.js` - A custom hook that creates a `PanResponder` with a set of callbacks for managing the gesture and updating the state of the drag via `useReducer`.
+- `App.js` - We call our custom `usePanResponder` hook, passing the created panHandlers into a `View`, and using the drag state to update the style.
+
+> In a real app, we should use `Animated.Value`s in our style for better performance. E.g. create a `positionY` animated value from `initialY` and `offsetY`, and update whenever the state of the drag changes.
 
 <Example
   files={[
