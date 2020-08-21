@@ -10,25 +10,16 @@ title: AsyncStorage
 
 ## API
 
-The `AsyncStorage` API is promise-based. Getting and setting key-value pairs is asynchronous.
+The `AsyncStorage` API is promise-based. Getting and setting key-value pairs is asynchronous. All of the APIs can throw errors upon failure, which you'll want to handle!
 
-All of the following APIs can throw errors upon failure, which you'll want to handle!
+The main APIs are:
 
-### `function getItem(key: string): Promise<string | null>`
+- `getItem(key: string)` - Get the `value` stored at `key`. This will return a `Promise` containing a string, or null if no data has been stored yet for that `key`.
+- `setItem(key: string, value: string)` - Store the `value` at `key`, replacing any existing value stored there.
 
-Get the `value` stored at `key`. This will return a string, or null if no data has been stored yet for that `key`. Remember to call `JSON.parse(value)` if you're storing your data in JSON format.
+These two APIs are frequently all you'll need, although there are more APIs for getting/setting multiple values and merging values if you have more advanced needs.
 
-### `function setItem(key: string, value: string): Promise<void>`
-
-Store the `value` at `key`, replacing any existing value stored there. Remember to call `JSON.stringify(value)` if you're storing your data in JSON format.
-
-### `function clear()`
-
-Clear all stored data.
-
-### That's it!
-
-These three APIs are frequently all you'll need, although there are more APIs for getting/setting multiple values and merging values if you have more advanced needs.
+> The API operates on strings, but typically you'll use JSON: remember to call `JSON.stringify` before storing data and `JSON.parse` after retreiving it.
 
 ## Example
 
