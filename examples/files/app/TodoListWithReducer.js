@@ -4,7 +4,7 @@ import { View } from 'react-native'
 import List from './List'
 import Input from './Input'
 import Title from './Title'
-import { reducer, initialState } from './reducer'
+import { actionCreators, reducer, initialState } from './todos'
 
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
@@ -14,11 +14,11 @@ export default function App() {
       <Title>To-Do List</Title>
       <Input
         placeholder={'Type a todo, then hit enter!'}
-        onSubmitEditing={(text) => dispatch({ type: 'add', value: text })}
+        onSubmitEditing={(title) => dispatch(actionCreators.add(title))}
       />
       <List
         items={state.items}
-        onPressItem={(id) => dispatch({ type: 'remove', value: id })}
+        onPressItem={(id) => dispatch(actionCreators.remove(id))}
       />
     </View>
   )

@@ -6,11 +6,24 @@ import App from '../../../examples/files/app/TodoListWithReducer'
 import List from '../../../examples/files/app/List'
 import Input from '../../../examples/files/app/Input'
 import Title from '../../../examples/files/app/Title'
-import reducer from '../../../examples/files/app/TodoListReducer'
+import reducer from '../../../examples/files/app/todos'
 
 # Managing data with useReducer
 
 We can use React's `useReducer` hook to manage our application data. In this example we'll look at a small To-Do list app that manages its data with `useReducer`.
+
+## Reducer patterns
+
+While `useReducer` doesn't enforce any particular types/shapes for **states** and **actions**, there are a few that are common when managing medium/large quantities of data:
+
+- The actions we pass to the reducer are objects containing a `type` and `payload`
+- We often define constants for the `type`, enumerating every action our reducer function knows how to handle
+- We expose `actionCreator` functions that abstract the details of our action objects from the rest of the app
+- Our state is an object, so that we can add fields to it easily as our app grows
+
+These patterns help keep the reducer code self-contained for each kind of entity in our app (e.g todos, posts, photos).
+
+## Example
 
 Using the terminology from the [Project Structure](/app/project_structure) section, this app contains:
 
@@ -25,6 +38,6 @@ Using the terminology from the [Project Structure](/app/project_structure) secti
     ['List.js', List],
     ['Input.js', Input],
     ['Title.js', Title],
-    ['reducer.js', reducer],
+    ['todos.js', reducer],
   ]}
 />
