@@ -1,8 +1,10 @@
+import example from '../../examples/files/navigation/example'
+
 # Navigation
 
 We use a **navigation** library to handle screen-to-screen transitions (i.e. routing) within our app.
 
-React Native original included a built-in navigation library, but it was eventually removed, in favor of a semi-official community-maintained library called `react-navigation`.
+React Native original included a built-in navigation library, but it was eventually removed, in favor of a semi-official library called [`react-navigation`](https://reactnavigation.org/).
 
 ## Navigation challenges
 
@@ -16,6 +18,20 @@ Due to these challenges, there isn't a single best way to implement navigation, 
 
 ## React Navigation
 
-By far the most popular navigation library is [react-navigation](https://reactnavigation.org/). It handles most of the challenges described above nicely, and is sufficiently configurable for most apps. In the next sections, we'll walk through the APIs needed to add React Navigation to an app.
+[react-navigation](https://reactnavigation.org/) is the most popular navigation library. It handles most of the challenges described above nicely, and is sufficiently configurable for most apps. In the next sections, we'll walk through the APIs needed to add React Navigation to an app.
 
 > When adding React Native to an existing native app, it may be worth considering [react-native-navigation](https://github.com/wix/react-native-navigation)
+
+<Example
+  code={example}
+  prelude={`var bundle = window._require('react-navigation-bundle');
+var v = window._VendorComponents;
+v.register('@react-navigation/native', { NavigationContainer: bundle.NavigationContainer });
+v.register('@react-navigation/stack', { createStackNavigator: bundle.createStackNavigator });`}
+  vendorComponents={[
+    [
+      'react-navigation-bundle',
+      'https://gitcdn.xyz/repo/dabbott/8aeaf791bb9fa75e67d1639b4a4dd448/raw/1273fc4f77e006f7deabacce0305008bfcc152a7/react-navigation-bundle.js',
+    ],
+  ]}
+/>

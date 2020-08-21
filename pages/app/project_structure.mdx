@@ -115,7 +115,7 @@ One common abstraction is to separate **presentational** and **container** compo
 
 Container components contain application/business logic. They're usually just called "containers". You may also hear "smart components", or occasionally, "view controllers" (although they may not be totally analogous to traditional view controllers).
 
-Containers are aware of the data and logic unique to your application. Containers pass data and callbacks as props to presentational components, and handle updating the data when a user interacts with the app. Containers _shouldn't_ core components like `Text` or `Image` - that's the responsibility of _presentational_ components.
+Containers are aware of the data and logic unique to your application. Containers pass data and callbacks as props to presentational components, and handle updating the data when a user interacts with the app. Containers _shouldn't_ render core components like `Text` or `Image` - that's the responsibility of _presentational_ components.
 
 ### Presentational Components
 
