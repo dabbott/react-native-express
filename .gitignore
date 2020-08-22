@@ -1,12 +1,12 @@
+.DS_Store
+
 # Project dependencies
-.cache
 node_modules
 yarn-error.log
 .next
 
 # Build directory
-.DS_Store
-out
+/out
 
 # Editors
 .vscode
