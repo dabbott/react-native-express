@@ -4,7 +4,7 @@ const colors = {
   primary: 'rgb(59, 108, 212)',
   neutralBackground: '#DEDFE8',
   banner: {
-    top: 'rgba(104, 43, 255, 0.1)',
+    top: '#F4F7FC',
     bottom: 'rgba(104, 43, 255, 0.02)',
   },
   button: {
