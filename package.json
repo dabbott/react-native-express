@@ -18,12 +18,12 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.6",
     "react-ga": "^2.6.0",
-    "react-guidebook": "^0.0.13",
+    "react-guidebook": "^0.0.14",
     "react-helmet": "^5.2.1",
     "reset-css": "^5.0.1",
     "spectacle": "^6.1.0",
     "styled-components": "^4.3.1",
-    "tree-visit": "^0.0.6"
+    "tree-visit": "^0.0.7"
   },
   "keywords": [],
   "license": "MIT",

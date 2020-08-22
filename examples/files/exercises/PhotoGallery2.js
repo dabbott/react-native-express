@@ -8,7 +8,7 @@ import PhotoGrid from './components/PhotoGrid'
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const { photos, loading, error } = state
+  const { photos, nextPage, loading, error } = state
 
   // We'll show an error only if the first page fails to load
   if (photos.length === 0) {

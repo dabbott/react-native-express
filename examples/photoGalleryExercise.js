@@ -1,6 +1,19 @@
 const defaultAppTemplate = require('./files/exercises/defaultApp').default
 
 export default {
+  prelude: `ReactNative.Dimensions._update();
+  
+if (!window._originalRequire) {
+  window._originalRequire = window._require;
+}
+
+window._require = function __req(name, ...args) {
+  if (name.indexOf('..') === 0) {
+    return window._originalRequire(name.slice(1), ...args);
+  }
+
+  return window._originalRequire(name, ...args);
+};`,
   workspaces: [
     {
       title: '1. Create a new project',
@@ -53,7 +66,7 @@ There are 2 exported functions: <br />
     },
     {
       title: '4. Create types and actionCreators',
-      description: `Our reducer will support 3 actions, LOADING, SUCCESS, and ERROR, which correspond to states.`,
+      description: `Our reducer will support 3 actions, LOADING, SUCCESS, and ERROR, which correspond to UI states.`,
       workspace: {
         initialTab: 'reducers/photos.js',
         entry: 'App.js',
@@ -62,7 +75,7 @@ There are 2 exported functions: <br />
           'api/picsum.js': require('./files/exercises/picsum').default,
           'reducers/photos.js': require('./files/exercises/photos')
             .default.split('\n')
-            .slice(0, 12)
+            .slice(0, 15)
             .join('\n'),
         },
       },
@@ -78,7 +91,7 @@ There are 2 exported functions: <br />
           'api/picsum.js': require('./files/exercises/picsum').default,
           'reducers/photos.js': require('./files/exercises/photos')
             .default.split('\n')
-            .slice(0, 19)
+            .slice(0, 22)
             .join('\n'),
         },
       },
@@ -87,7 +100,7 @@ There are 2 exported functions: <br />
       title: '6. Add reducer function',
       description: `Write a reducer function to handle each of our actions.<br />
 
-When handling a SUCCESS action, we concatenate the existing photos array with the new page of photos, and increment the \`nextPage\` counter.`,
+When handling a SUCCESS action, we concatenate the existing photos array with the new page of photos and increment the \`nextPage\` counter.`,
       workspace: {
         initialTab: 'reducers/photos.js',
         entry: 'App.js',
@@ -173,7 +186,9 @@ Then, based on the state, we can render a loading or error screen, or our \`Phot
       description: `Lastly, we'll write a \`fetchPhotos\` function that fetches the next page of photos. We call this in 2 places:<br />
 
 • once within \`useEffect\` after the initial render
-• any time \`onEndReached\` is called`,
+• any time \`onEndReached\` is called<br />
+
+We use \`useCallback\` because our \`fetchPhotos\` function is async, and we need to make sure we're working with up-to-date values.`,
       workspace: {
         initialTab: 'App.js',
         entry: 'App.js',

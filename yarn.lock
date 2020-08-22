@@ -5716,10 +5716,10 @@ react-ga@^2.6.0:
   resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.6.0.tgz#c3fe830ead2ad25117e1d33280d9698de9b28496"
   integrity sha512-GWHBWZDFjDGMkIk1LzroIn0mNTygKw3adXuqvGvheFZvlbpqMPbHsQsTdQBIxRRdXGQM/Zq+dQLRPKbwIHMTaw==
 
-react-guidebook@^0.0.13:
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.0.13.tgz#4aa61c05d7952c3e91158382ff1ff3070b63eb6f"
-  integrity sha512-ucZC2L8VH9XdYkGF1ICgJaGmU4MarxrD41tAiqfVQ/9hUN3H7d1hmHOWwJ74sQKsf7iyVL382G/zLk0SDcN3Tg==
+react-guidebook@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.0.14.tgz#4ad3a237c5c12402662369ad2596e4e92f661596"
+  integrity sha512-ZSd0Mhl9SMG/RY84dW6891d5wKa0pNxAZ3Q6ii8g80LnaIRxsb573DkMXZNEZYDEfiXTDb9OWNHWQ3CmoLomMw==
   dependencies:
     react-native-web-player "^2.0.0-alpha.22"
 
@@ -6817,10 +6817,10 @@ traverse@0.6.6:
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
   integrity sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=
 
-tree-visit@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/tree-visit/-/tree-visit-0.0.6.tgz#d845c572c5c358a731f04c54b2f326291a2b2876"
-  integrity sha512-0vm4UZWDl66kHksFeO6Ce2O8ysmG4ndB8DJtwlwG61lJXjSQOPqMZeblaCQkDcQ87x0eV8tE7Yi5t6KA6L/11g==
+tree-visit@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/tree-visit/-/tree-visit-0.0.7.tgz#479c502b55cf2fbfbac52e71ba22d302216245a1"
+  integrity sha512-+lH4o4qi1/4eTOIto24lW4bqgqsXtaLOiY9U0NmUEv9L53ta+GPPqKAtHBSxEvwt9sFkw2yJf9SUPTFz+/H3Iw==
 
 trim-lines@^1.0.0:
   version "1.1.1"
