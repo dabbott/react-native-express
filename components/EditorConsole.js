@@ -64,7 +64,11 @@ export default class EditorConsole extends Component {
         style={style}
         styles={
           rest.width === 0
-            ? {}
+            ? {
+                playerPane: {
+                  display: 'none',
+                },
+              }
             : {
                 workspacesPane: {
                   overflowY: 'auto',
@@ -92,13 +96,16 @@ export default class EditorConsole extends Component {
   }
 }
 
-const workspaceCSS = `
-@media (max-width: 600px) {
-  #react-root > div > div {
-    flex-direction: column;
-  }
-}
-`
+const workspaceCSS = ''
+
+// This doesn't work for players with a small height, since the player pane covers the entire iframe
+// const workspaceCSS = `
+// @media (max-width: 600px) {
+//   #react-root > div > div {
+//     flex-direction: column;
+//   }
+// }
+// `
 
 const slidesCSS = `
 .CodeMirror {

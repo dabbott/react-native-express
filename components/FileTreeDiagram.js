@@ -20,15 +20,13 @@ export default function FileTreeDiagram({ children }) {
       return normalized.name
     },
     type: 'directory',
+    flattenSingleChildNodes: false,
   })
 
   return (
     <Pre
       style={{
-        background: 'white',
-        borderWidth: '2px',
-        borderStyle: 'solid',
-        borderColor: colors.divider,
+        border: '1px solid rgba(0,0,0,0.05)',
         padding: '16px 20px',
       }}
     >
