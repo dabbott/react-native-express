@@ -1,0 +1,79 @@
+import photoGalleryExercise from '../../examples/photoGalleryExercise'
+
+# Photo Gallery
+
+In this exercise, we'll render a grid of photos from [Picsum Photos](https://picsum.photos) in an infinitely-scrolling `FlatList`.
+
+<Example
+  prelude={`ReactNative.Dimensions._update()`}
+  panes={['player']}
+  height={540}
+  files={[
+    ['App.js', require('../../examples/files/exercises/PhotoGallery').default],
+    [
+      'components/PhotoGrid.js',
+      require('../../examples/files/exercises/PhotoGrid').default,
+    ],
+    [
+      'reducers/photos.js',
+      require('../../examples/files/exercises/photos').default,
+    ],
+    ['api/picsum.js', require('../../examples/files/exercises/picsum').default],
+  ]}
+/>
+
+## Project set up
+
+Start by initializing a new project. You can use either approach described in the [Environment](/environment) section. If you're using Expo (recommended for beginners), run:
+
+```bash
+expo init PhotoGallery
+```
+
+## Project Structure
+
+In this app, we'll follow the suggested structure from the [Project Structure](/app/project_structure) section, and divide our files into 3 directories:
+
+- `api` - for fetching remote data
+- `components` - presentational components
+- `reducers` - for managing app data with `useReducer`
+
+The final directory structure will look like this:
+
+<FileTreeDiagram>
+  {() => ({
+    name: 'PhotoGallery',
+    children: [
+      {
+        name: 'api',
+        children: ['picsum.js'],
+      },
+      {
+        name: 'components',
+        children: ['PhotoGrid.js'],
+      },
+      {
+        name: 'reducers',
+        children: ['photos.js'],
+      },
+      'App.js',
+    ],
+  })}
+</FileTreeDiagram>
+
+## Walkthrough
+
+Here's a step-by-step walkthrough to build this app.
+
+<Example
+  prelude={`ReactNative.Dimensions._update()`}
+  {...photoGalleryExercise}
+/>
+
+## Possible improvements
+
+If you'd like to continue further with this exercise, here are a few ideas:
+
+- Use the `PixelRatio` API to detect the pixel density of the device (e.g. `3`), and fetch higher resolution images if needed.
+- Persist the fetched images across app launches with [AsyncStorage](/app/persistence/asyncstorage)
+- Use [`react-navigation`](/app/navigation/react_navigation) to add a "details" screen that appears when tapping a photo - there's more
