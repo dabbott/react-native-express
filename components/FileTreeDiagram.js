@@ -7,7 +7,9 @@ const normalizeNode = (node) =>
   typeof node === 'string' ? { name: node } : node
 
 export default function FileTreeDiagram({ children }) {
-  const output = diagram(children, {
+  const root = children()
+
+  const output = diagram(root, {
     getChildren: (node) => {
       const normalized = normalizeNode(node)
       return normalized.children ?? []

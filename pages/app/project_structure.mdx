@@ -9,7 +9,7 @@ There are many valid ways to organize a project. Here we recommend a common appr
 When our app is small, we often keep all components in a single directory:
 
 <FileTreeDiagram>
-  {{
+  {() => ({
     name: 'MyApp',
     children: [
       {
@@ -18,7 +18,7 @@ When our app is small, we often keep all components in a single directory:
       },
       'App.js',
     ],
-  }}
+  })}
 </FileTreeDiagram>
 
 Generally, each component in our app should live in a separate file, and should be the `default` export of that file. We give the file the same name as the component, e.g. a component called `Avatar` should live in `Avatar.js`. In React Native, component names _must_ be capitalized, so the file name will usually be capitalized too for consistency.
@@ -28,7 +28,7 @@ As our app grows, we'll typically separate "screen" components into a `screens` 
 If we're using a library like `react-navigation`, we may organize our navigators/routers into a separate `navigation` directory (also sometimes `navigators` or `routing`).
 
 <FileTreeDiagram>
-  {{
+  {() => ({
     name: 'MyApp',
     children: [
       {
@@ -60,7 +60,7 @@ If we're using a library like `react-navigation`, we may organize our navigators
       },
       'App.js',
     ],
-  }}
+  })}
 </FileTreeDiagram>
 
 A few other common categories of file:
@@ -73,7 +73,7 @@ A few other common categories of file:
 - `utils`: miscellaneous tools like string formatting
 
 <FileTreeDiagram>
-  {{
+  {() => ({
     name: 'MyApp',
     children: [
       {
@@ -102,7 +102,7 @@ A few other common categories of file:
       },
       '...',
     ],
-  }}
+  })}
 </FileTreeDiagram>
 
 ## Separation of concerns in components
@@ -128,7 +128,7 @@ If your company has multiple apps, it may be valuable to share code between apps
 In the example file structure above, our `screens` directory contains our "container" components, while `components` contains our presentational components. If we wanted container components that didn't represent entire screens in the app, but rather portions of a screen (that might be shared between different screens), we might additionally make a `containers` directory.
 
 <FileTreeDiagram>
-  {{
+  {() => ({
     name: 'MyApp',
     children: [
       {
@@ -164,5 +164,5 @@ In the example file structure above, our `screens` directory contains our "conta
       },
       '...',
     ],
-  }}
+  })}
 </FileTreeDiagram>
