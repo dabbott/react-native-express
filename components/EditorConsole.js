@@ -66,13 +66,19 @@ export default class EditorConsole extends Component {
           rest.width === 0
             ? {}
             : {
+                workspacesPane: {
+                  overflowY: 'auto',
+                },
                 playerPane: {
                   overflow: 'hidden',
-                  background: 'rgba(0,0,0,0.02)',
+                  // background: 'rgba(0,0,0,0.02)',
+                  background: 'rgb(250, 250, 250)',
                   marginLeft: '0',
                   marginRight: '0',
                   paddingLeft: '10px',
                   paddingRight: '10px',
+                  ...(panes.length === 1 &&
+                    panes[0] === 'player' && { flex: 1, paddingTop: '12px' }),
                 },
               }
         }
