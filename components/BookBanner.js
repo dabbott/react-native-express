@@ -30,7 +30,7 @@ const DesktopOnly = styled.div({
 const BOOK_URL = 'https://gumroad.com/a/567063667'
 
 const Container = styled.div({
-  display: 'column',
+  display: 'flex',
   flexDirection: 'row',
   alignItems: 'stretch',
   borderTop: '1px solid rgba(220,220,220,0.5)',

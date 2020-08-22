@@ -5716,10 +5716,10 @@ react-ga@^2.6.0:
   resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.6.0.tgz#c3fe830ead2ad25117e1d33280d9698de9b28496"
   integrity sha512-GWHBWZDFjDGMkIk1LzroIn0mNTygKw3adXuqvGvheFZvlbpqMPbHsQsTdQBIxRRdXGQM/Zq+dQLRPKbwIHMTaw==
 
-react-guidebook@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.0.12.tgz#803de2658f83e4493a9870ebe66f69818df85174"
-  integrity sha512-Iqvdlf1zAmG94da3y7nlsGQXm8EtUSxvbNU3lHJJ+B1jxX2rox+nXzlrVHZ4WEVKIgtPFyrfL7BWdY5xQuHrrw==
+react-guidebook@^0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.0.13.tgz#4aa61c05d7952c3e91158382ff1ff3070b63eb6f"
+  integrity sha512-ucZC2L8VH9XdYkGF1ICgJaGmU4MarxrD41tAiqfVQ/9hUN3H7d1hmHOWwJ74sQKsf7iyVL382G/zLk0SDcN3Tg==
   dependencies:
     react-native-web-player "^2.0.0-alpha.22"
 

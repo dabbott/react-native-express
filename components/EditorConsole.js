@@ -56,6 +56,7 @@ export default class EditorConsole extends Component {
 
     return (
       <WebPlayer
+        containerStyle={{ marginBottom: '15px', flex: '1' }}
         fullscreen={true}
         platform={'ios'}
         width={260}

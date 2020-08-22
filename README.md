@@ -41,7 +41,7 @@ Please contribute!
 
 ## License
 
-MIT, Copyright (c) 2016 Devin Abbott
+MIT, Copyright (c) 2020 Devin Abbott
 
 ## Author
 
