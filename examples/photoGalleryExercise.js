@@ -17,11 +17,7 @@ window._require = function __req(name, ...args) {
   workspaces: [
     {
       title: '1. Create a new project',
-      description: `First, create a new React Native project:
-
-\`\`\`
-expo init PhotoGallery
-\`\`\`
+      description: `First, create a new React Native project: \`expo init PhotoGallery --template blank\`<br />
 
 When this is finished, open up \`App.js\`. If it's different from the code on the right, paste the code on the right in. Then, click the "Next" button below to continue.`,
       workspace: {

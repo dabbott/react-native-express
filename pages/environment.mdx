@@ -15,13 +15,15 @@ The company behind `expo-cli`, [Expo](https://expo.io/), has been heavily involv
 
 ## `react-native-cli`
 
-If you know you'll need custom native modules in your app, you'll want to use the `react-native` CLI to create your app. You can read how to do this on the Facebook docs for [environment setup](https://reactnative.dev/docs/environment-setup). Click on the "React Native CLI Quickstart" tab.
+If you're integrating React Native into an existing native app, or if you know you'll need custom native modules in your app, you'll want to use the `react-native` CLI to create your app. You can read how to do this on the Facebook docs for [environment setup](https://reactnative.dev/docs/environment-setup). Click on the "React Native CLI Quickstart" tab.
 
 In terms of the JavaScript code, the main difference from `expo-cli` is that `react-native` apps require registering the root component of your app using `AppRegistry.registerComponent`, e.g:
 
-<Example panes={['editor']} code={appRegistry} />
+<Example title="index.js" panes={['editor']} code={appRegistry} />
 
-This allows you to optionally have multiple React Native root components, which you might embed into different native screens. `expo-cli` uses the default export of `App.js` as your root component.
+This allows you to optionally have multiple React Native root components, which you might embed into different native screens.
+
+> This code isn't required when using Expo, since Expo only allows one root component. Expo automatically registers the default export of `App.js` as your root component.
 
 ### Up Next
 
