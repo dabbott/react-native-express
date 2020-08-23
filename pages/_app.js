@@ -39,7 +39,8 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps, router } = this.props
 
-    const node = findNode(guidebook, router.pathname.slice(1))
+    const slug = router.pathname.slice(1)
+    const node = findNode(guidebook, slug)
 
     if (!node) {
       return (
@@ -51,7 +52,7 @@ export default class MyApp extends App {
 
     const isIntroduction = node.slug === ''
 
-    return router.pathname.endsWith('slides') ? (
+    return slug.endsWith('slides') ? (
       <ThemeProvider theme={slidesTheme}>
         <Component {...pageProps} />
       </ThemeProvider>

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { Anchor, InlineCode, Spacer } from 'react-guidebook'
 import { useRouter } from 'next/router'
+
+import legacyRoutes from '../utils/legacyRoutes'
 
 const Banner = styled.div(({ theme }) => ({
   flex: '1 1 auto',
@@ -22,16 +24,44 @@ const IndexLink = styled.span(({ theme }) => ({
 export default () => {
   const router = useRouter()
   const path = router.asPath
+  const slug = path.slice(1)
+  const moved = slug in legacyRoutes
+  const legacyRoute = moved ? '/' + legacyRoutes[slug] : undefined
+
+  useEffect(() => {
+    if (!moved) return
+
+    setTimeout(() => {
+      router.push(legacyRoute)
+    }, 4000)
+  }, [moved])
 
   return (
     <Banner>
-      <Subtitle>
-        Page <InlineCode>{path}</InlineCode> not found
-      </Subtitle>
-      <Spacer size={20} />
-      <Anchor href="/">
-        <IndexLink>Go to site index</IndexLink>
-      </Anchor>
+      {moved ? (
+        <>
+          <Subtitle>
+            The page <InlineCode>{path}</InlineCode>{' '}
+            {legacyRoute === '/' ? 'was removed :(' : 'moved'}
+          </Subtitle>
+          <Spacer size={20} />
+          <Anchor href={legacyRoute}>
+            <IndexLink>
+              Redirecting you to <InlineCode>{legacyRoute}</InlineCode> now...
+            </IndexLink>
+          </Anchor>
+        </>
+      ) : (
+        <>
+          <Subtitle>
+            Page <InlineCode>{path}</InlineCode> not found
+          </Subtitle>
+          <Spacer size={20} />
+          <Anchor href="/">
+            <IndexLink>Go to site index</IndexLink>
+          </Anchor>
+        </>
+      )}
     </Banner>
   )
 }
