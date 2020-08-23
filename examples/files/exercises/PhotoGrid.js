@@ -14,7 +14,6 @@ export default function PhotoGrid({ photos, numColumns, onEndReached }) {
       keyExtractor={(item) => item.id}
       numColumns={numColumns}
       onEndReached={onEndReached}
-      onEndReachedThreshold={0.5}
       renderItem={({ item }) => (
         <Image
           source={{

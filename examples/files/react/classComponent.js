@@ -5,7 +5,7 @@ export default class MyComponent extends React.Component {
   render() {
     return (
       <View>
-        <Button title="Press me!" color="purple" />
+        <Button title="Press me!" color="#1ACDA5" />
       </View>
     )
   }

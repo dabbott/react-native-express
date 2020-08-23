@@ -8,12 +8,13 @@ There are two common ways to set up a React Native development environment: [`ex
 
 This is a command-line utility for configuring and publishing React Native projects. _This is the best way to get started as a beginner_. This tool generates a QR code which you can scan to launch the app on your device. As you update your code, the changes will automatically be reflected on your device. In order to preview the app on your device, you'll be prompted to download the `Expo` app, which is a React Native app previewing client.
 
-The downside to this approach is that it only works for pure-JavaScript apps. If at any point you need to use custom native modules (Swift, Kotlin, etc), you'll need to `eject`. The `expo-cli` utility provides an `eject` command to export your app into the same format used by `react-native` CLI, which you can then add native modules to.
-We'll walk through this in the next section, [Quick Start](/environment/quick_start).
+The downside to this approach is that it only works for pure-JavaScript apps. If at any point you need to use native modules (Swift, Kotlin, etc), you'll need to `eject`. The `expo-cli` utility provides an `eject` command to export your app into the same format used by `react-native` CLI, which you can then add native modules to.
 
 The company behind `expo-cli`, [Expo](https://expo.io/), has been heavily involved in the React Native codebase and community since it's inception, so you can be confident that the tool is well-maintained and doesn't deviate too much from a "standard" React Native setup.
 
-## `react-native-cli`
+We'll walk through setting up a project in the next section, [Quick Start](/environment/quick_start).
+
+## React Native CLI
 
 If you're integrating React Native into an existing native app, or if you know you'll need custom native modules in your app, you'll want to use the `react-native` CLI to create your app. You can read how to do this on the Facebook docs for [environment setup](https://reactnative.dev/docs/environment-setup). Click on the "React Native CLI Quickstart" tab.
 
