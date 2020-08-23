@@ -127,6 +127,7 @@ export default class EditorConsole extends Component {
                         title: paneNames[pane] || pane,
                         ...(pane === 'workspaces' && {
                           style: {
+                            overflowY: 'auto',
                             width: 'inherit',
                           },
                         }),

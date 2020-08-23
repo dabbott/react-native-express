@@ -127,10 +127,10 @@ We'll start by using the \`Dimensions\` API to determine the width of the screen
     {
       title: '8. Return a FlatList',
       description: `Next, we'll return a \`FlatList\`.<br />
-      
+
 In our \`renderItem\`, we return an \`Image\` component. We specify the intrinsic/natural size of the image in the source prop, so that it's displayed with the correct dimensions.<br />
 
-We also make sure to propagate the \`onEndReached\` function into the \`FlatList\`. We'll add an \`onEndReachedThreshold\` to specify how close we need to scroll to the end of the list to trigger the callback (in this case, half the list height)`,
+We also make sure to propagate the \`onEndReached\` function into the \`FlatList\`.`,
       workspace: {
         initialTab: 'components/PhotoGrid.js',
         entry: 'App.js',

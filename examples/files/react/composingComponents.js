@@ -4,7 +4,7 @@ import { Button, View } from 'react-native'
 function MyComponent({ title }) {
   return (
     <View>
-      <Button title={title} color="purple" />
+      <Button title={title} color="#1ACDA5" />
     </View>
   )
 }
