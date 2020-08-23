@@ -5716,12 +5716,12 @@ react-ga@^2.6.0:
   resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.6.0.tgz#c3fe830ead2ad25117e1d33280d9698de9b28496"
   integrity sha512-GWHBWZDFjDGMkIk1LzroIn0mNTygKw3adXuqvGvheFZvlbpqMPbHsQsTdQBIxRRdXGQM/Zq+dQLRPKbwIHMTaw==
 
-react-guidebook@^0.0.19:
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.0.19.tgz#ff6a510040c00359b78ff2a398d240b8cf48a49a"
-  integrity sha512-arz2vKnlxEd9cgVMC7QG7QjOla4EkTWve5XIQPx+WeBl3X3Uftw4YPLKxXBmW0G+yIYYLsKe0VBQEJrprpIqdQ==
+react-guidebook@^0.0.20:
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.0.20.tgz#6e45bcd428db48be0818bae00edcdce3396d96e9"
+  integrity sha512-NFoGkBKzyDshNUA1WHy1D4XNIgQ6wVT8HUOxT2ArJHh1d7c32J2b9e5PBeDTrjqYxDKgQFRFqpHZo0rOQ7+5Iw==
   dependencies:
-    react-native-web-player "^2.0.0-alpha.25"
+    react-native-web-player "^2.0.0-alpha.26"
 
 react-helmet@^5.2.1:
   version "5.2.1"
@@ -5743,10 +5743,10 @@ react-is@^16.6.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-native-web-player@^2.0.0-alpha.25:
-  version "2.0.0-alpha.25"
-  resolved "https://registry.yarnpkg.com/react-native-web-player/-/react-native-web-player-2.0.0-alpha.25.tgz#020c2a1a05e3bbe3d77b2fc35903616d9ab2ce09"
-  integrity sha512-+cxgbZjeR0hKooYcx7Yne4nBMlR5JtdhLrbLlc/YSA1VDJJhKoSxuHiACFw8ywA8t4eumLLJCY5jFsSsPUGJog==
+react-native-web-player@^2.0.0-alpha.26:
+  version "2.0.0-alpha.26"
+  resolved "https://registry.yarnpkg.com/react-native-web-player/-/react-native-web-player-2.0.0-alpha.26.tgz#95374259fd71c34efbc7ca142d2bdd30c60854f2"
+  integrity sha512-0GR2BrORnBKj1kBenPD7u2Wb3QVtJWWZ+uLRxlUO8cVccH1CK8Z+teh093wjRqZuln1z4ycG7C091I1dJbyubg==
 
 react-refresh@0.8.3:
   version "0.8.3"

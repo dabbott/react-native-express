@@ -74,7 +74,6 @@ export default class EditorConsole extends Component {
         backgroundColor: colors.primary,
       },
       workspacesPane: {
-        overflowY: 'auto',
         width: '25%',
       },
       tabTextActive: {
@@ -127,7 +126,6 @@ export default class EditorConsole extends Component {
                         title: paneNames[pane] || pane,
                         ...(pane === 'workspaces' && {
                           style: {
-                            overflowY: 'auto',
                             width: 'inherit',
                           },
                         }),
@@ -165,15 +163,6 @@ const workspaceCSS = `
   color: #555;
 }
 `
-
-// This doesn't work for players with a small height, since the player pane covers the entire iframe
-// const workspaceCSS = `
-// @media (max-width: 600px) {
-//   #react-root > div > div {
-//     flex-direction: column;
-//   }
-// }
-// `
 
 const slidesCSS = `
 .CodeMirror {
