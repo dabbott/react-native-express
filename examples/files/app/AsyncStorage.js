@@ -50,6 +50,6 @@ export default function App() {
 const styles = StyleSheet.create({
   text: {
     padding: 15,
-    backgroundColor: 'skyblue',
+    backgroundColor: '#EEB',
   },
 })

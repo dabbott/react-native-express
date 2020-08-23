@@ -72,7 +72,7 @@ Here's a step-by-step walkthrough to build this app.
 If you'd like to continue further with this exercise, here are a few ideas:
 
 - Use the `PixelRatio` API to detect the pixel density of the device (e.g. `3`), and fetch higher resolution images if needed.
-- Persist the fetched images across app launches with [AsyncStorage](/app/persistence/asyncstorage).
-- Use [`react-navigation`](/app/navigation/react_navigation) to add a "details" screen that appears when tapping a photo - the `list` API which we're using already returns some photo metadata that you could display.
+- Persist the fetched list of images across app launches with [AsyncStorage](/app/persistence/asyncstorage).
+- Use [`react-navigation`](/app/navigation/react_navigation) to add a "details" screen that appears when tapping a photo - the `list` API that we're using already returns some photo metadata that you could display.
 - Handle errors more gracefully. Retry failed requests a few times, and also show a separate error component if the first page of photos loads but a subsequent one fails.
 - Consider a more sophisticated approach for data fetching to avoid the somewhat messy `useEffect` and `useCallback`. Ideally, we could wrap our API calls with React's [Suspense](https://reactjs.org/docs/concurrent-mode-suspense.html) feature, e.g. by using https://resthooks.io/.

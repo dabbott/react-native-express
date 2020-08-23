@@ -9,7 +9,7 @@ export default function App() {
   const { dragging, initialY, initialX, offsetY, offsetX } = state
 
   const style = {
-    backgroundColor: dragging ? 'skyblue' : 'steelblue',
+    backgroundColor: dragging ? '#2DC' : '#0BA',
     transform: [
       { translateX: initialX + offsetX },
       { translateY: initialY + offsetY },
