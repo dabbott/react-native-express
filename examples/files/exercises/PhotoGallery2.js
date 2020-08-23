@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useEffect, useReducer, useCallback } from 'react'
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
 
 import { getList } from './api/picsum'
