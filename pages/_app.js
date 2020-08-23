@@ -20,6 +20,7 @@ import BookBanner from '../components/BookBanner'
 import FileTreeDiagram from '../components/FileTreeDiagram'
 import logo from '../images/logo.svg'
 import guidebook from '../guidebook'
+import NotFound from '../components/NotFound'
 
 const theme = {
   colors: colors,
@@ -38,7 +39,16 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps, router } = this.props
 
-    const node = findNode(guidebook, router.pathname.slice(1)) || guidebook
+    const node = findNode(guidebook, router.pathname.slice(1))
+
+    if (!node) {
+      return (
+        <ThemeProvider theme={theme}>
+          <NotFound />
+        </ThemeProvider>
+      )
+    }
+
     const isIntroduction = node.slug === ''
 
     return router.pathname.endsWith('slides') ? (
