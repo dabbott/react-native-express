@@ -38,13 +38,11 @@ A single file can have multiple exports, and any subset of these can be imported
 
 ## Importing from modules
 
-3rd party libraries specify a "main" file, usually named `index.js`.
+There's a shorter syntax for importing 3rd party libraries: we import the name of the module's directory within `node_modules` (which is the name of the package in the `npm` package registry).
 
-There's a shorter syntax for importing this file: we import the name of the module's directory (which is the name of the package in the `npm` registry).
+Libraries specify a "main" file in their `package.json`, usually named `index.js`, which is what actually gets imported. E.g. assuming we had downloaded the `moment` library into our `node_modules`, we could import `'./node_modules/moment/index.js'` with just `'moment'`.
 
-E.g. assuming we had downloaded the `moment` library into our `node_modules`:
-
-> Similarly, importing a directory will import the `index.js` file in that directory.
+> Note: importing the _relative_ path to a directory will always import the `index.js` file in that directory, ignoring any "main" file specified.
 
 <Example
   width={0}
