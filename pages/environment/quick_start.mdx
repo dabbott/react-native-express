@@ -7,7 +7,7 @@ import expo from '../../images/expo.png'
 
 In this section, we'll use `expo-cli` to set up a new React Native app.
 
-You'll need Node.js (v10 or newer) installed, so if you don't have it already, download the installer at [nodejs.org](https://nodejs.org/en/download/). Choose the appropriate package for your platform and follow the instructions to install.
+You'll need Node.js v10 or newer installed, so if you don't have it already, download the installer at [nodejs.org](https://nodejs.org/en/download/). Choose the appropriate package for your platform and follow the instructions to install.
 
 ## Installation
 
@@ -20,12 +20,17 @@ npm install --global expo-cli
 Now use expo-cli to create a new app:
 
 ```bash
-expo init MyApp
+expo init MyApp --template blank
+
 cd MyApp
 npm start
 ```
 
-`expo-cli` might take a few minutes to download dependencies. You should see a QR code like this after it's done:
+`expo-cli` may take a few minutes to download dependencies.
+
+> If you have `yarn` installed, Expo will ask whether you'd like to use `yarn` instead of `npm`. Either way is fine.
+
+You should see a QR code like this after it's done:
 
 <img src={createnativeapp} style={{ width: '550px', maxWidth: '100%' }} />
 

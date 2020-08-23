@@ -5,8 +5,8 @@ const colors = {
   neutralBackground: '#dedfe8',
   codeBackground: 'rgb(250, 250, 250)',
   banner: {
-    top: '#f4f7fc',
-    bottom: 'rgba(104, 43, 255, 0.02)',
+    top: 'rgba(244, 247, 252, 1)',
+    bottom: 'rgba(252, 252, 254, 1)',
   },
   button: {
     primaryText: 'white',
