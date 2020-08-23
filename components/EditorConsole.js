@@ -28,6 +28,13 @@ function codeHeight(code) {
   )
 }
 
+const paneNames = {
+  editor: 'Code',
+  player: 'Live Preview',
+  transpiler: 'Transpiler Output',
+  workspaces: 'Walkthrough',
+}
+
 export default class EditorConsole extends Component {
   shouldComponentUpdate() {
     return false
@@ -107,6 +114,29 @@ export default class EditorConsole extends Component {
         // typescript={{ enabled: true }}
         workspaceCSS={variant === 'slides' ? slidesCSS : workspaceCSS}
         panes={panes}
+        responsivePaneSets={
+          panes.length > 1 && rest.width !== 0
+            ? [
+                {
+                  maxWidth: 920,
+                  panes: [
+                    {
+                      type: 'stack',
+                      children: panes.map((pane) => ({
+                        type: pane,
+                        title: paneNames[pane] || pane,
+                        ...(pane === 'workspaces' && {
+                          style: {
+                            width: 'inherit',
+                          },
+                        }),
+                      })),
+                    },
+                  ],
+                },
+              ]
+            : []
+        }
         {...rest}
       />
     )
