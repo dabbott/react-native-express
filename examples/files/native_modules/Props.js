@@ -1,5 +1,10 @@
 import { requireNativeComponent, ViewStyle } from 'react-native'
 
+export default requireNativeComponent('MyView')
+
+// Or in TypeScript:
+
+/*
 type MyViewProps = {
   style: ViewStyle
   myInt: number
@@ -7,6 +12,5 @@ type MyViewProps = {
   myArray: number[]
 }
 
-const MyView = requireNativeComponent<MyViewProps>('MyView')
-
-export default MyView
+export default requireNativeComponent<MyViewProps>('MyView')
+*/
