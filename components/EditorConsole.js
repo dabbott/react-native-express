@@ -68,6 +68,7 @@ export default class EditorConsole extends Component {
       },
       workspacesPane: {
         overflowY: 'auto',
+        width: '25%',
       },
       tabTextActive: {
         color: '#333',
