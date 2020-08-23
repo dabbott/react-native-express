@@ -55,13 +55,10 @@ export default function App() {
       data={posts}
       renderItem={({ item: { id, title, body }, index }) => (
         <View key={id} style={styles.post}>
-          <View style={styles.postNumber}>
-            <Text>{index + 1}</Text>
-          </View>
-          <View style={styles.postContent}>
-            <Text>{title}</Text>
-            <Text style={styles.postBody}>{body}</Text>
-          </View>
+          <Text style={styles.title}>
+            {index}. {title}
+          </Text>
+          <Text style={styles.body}>{body}</Text>
         </View>
       )}
     />
@@ -71,34 +68,28 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#1ACDA5',
   },
   post: {
-    flexDirection: 'row',
-  },
-  postNumber: {
-    width: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  postContent: {
-    flex: 1,
     borderBottomWidth: 1,
-    borderBottomColor: '#EEE',
-    paddingVertical: 25,
-    paddingRight: 15,
+    borderBottomColor: 'white',
+    paddingVertical: 20,
+    paddingRight: 20,
+    marginLeft: 20,
   },
-  postBody: {
+  title: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  body: {
     marginTop: 10,
-    fontSize: 12,
-    color: 'lightgray',
+    fontSize: 14,
+    color: '#F8F8F8',
   },
   center: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  text: {
-    padding: 15,
-    backgroundColor: 'skyblue',
   },
 })

@@ -11,11 +11,12 @@ export default function Title({ children }) {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: 'skyblue',
+    backgroundColor: 'rgb(59, 108, 212)',
     padding: 15,
   },
   title: {
     textAlign: 'center',
     color: 'white',
+    fontWeight: 'bold',
   },
 })

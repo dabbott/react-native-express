@@ -21,7 +21,15 @@ export function reducer(state, action) {
     case types.LOADING:
       return { ...state, loading: true, error: false }
     case types.SUCCESS:
-      return { loading: false, error: false, posts: action.payload }
+      return {
+        loading: false,
+        error: false,
+        posts: action.payload.map((post) => ({
+          ...post,
+          title: post.title.slice(0, 20),
+          body: post.body.slice(0, 60),
+        })),
+      }
     case types.FAILURE:
       return { ...state, loading: false, error: true }
   }

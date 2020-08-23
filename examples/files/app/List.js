@@ -6,22 +6,28 @@ export default function List({ items, onPressItem }) {
     <FlatList
       data={items}
       keyExtractor={(item) => item.id}
-      renderItem={({ item }) => (
+      renderItem={({ item, index }) => (
         <TouchableOpacity
-          style={styles.item}
+          style={[styles.item, { backgroundColor: itemColor(index) }]}
           onPress={() => onPressItem(item.id)}
         >
-          <Text>{item.title}</Text>
+          <Text style={styles.title}>{item.title}</Text>
         </TouchableOpacity>
       )}
     />
   )
 }
 
+function itemColor(index) {
+  return `rgba(59, 108, 212, ${Math.max(1 - index / 10, 0.4)})`
+}
+
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: 'whitesmoke',
-    marginBottom: 5,
+    marginBottom: 1,
     padding: 15,
+  },
+  title: {
+    color: 'white',
   },
 })
