@@ -1,7 +1,7 @@
 {
   "name": "react-express",
-  "description": "Learn React through interactive examples",
-  "version": "1.0.0",
+  "description": "The all-in-one guide to React Native",
+  "version": "2.0.0",
   "author": "Devin Abbott <devinabbott@gmail.com> (http://github.com/dabbott)",
   "dependencies": {
     "@babel/core": "^7.10.2",
