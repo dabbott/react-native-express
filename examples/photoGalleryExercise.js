@@ -34,7 +34,7 @@ When this is finished, open up \`App.js\`. If it's different from the code on th
       },
     },
     {
-      title: '2. Add picsum API file',
+      title: '2. Copy picsum API file',
       description: `Create the directory \`api\` and the file \`picsum.js\` within it. Copy the code on the right into \`picsum.js\`.
   
 There are 2 exported functions: <br />
@@ -52,7 +52,7 @@ There are 2 exported functions: <br />
       },
     },
     {
-      title: '3. Add photos reducer file',
+      title: '3. Create photos reducer file',
       description: `Create the directory \`reducers\` and the file \`photos.js\` within it.`,
       workspace: {
         initialTab: 'reducers/photos.js',
@@ -115,7 +115,7 @@ When handling a SUCCESS action, we concatenate the existing photos array with th
       title: '7. Create a PhotoGrid component',
       description: `Create the directory \`components\` and the file \`PhotoGrid.js\` within it.<br />
 This component will have 3 props: \`photos\`, containing our list of photos, \`numColumns\` specifying how many columns our \`FlatList\` should render, and an \`onEndReached\` callback to let us know when to load more photos.<br />
-We'll start by using the \`Dimensions\` API to determine the width of the screen, and dividing that by \`numColumns\` to know what size of image to display.`,
+We'll start by using the \`Dimensions\` API to determine the width of the screen, and divide the result by \`numColumns\` to know what size of image to display.`,
       workspace: {
         initialTab: 'components/PhotoGrid.js',
         entry: 'App.js',
