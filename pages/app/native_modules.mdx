@@ -5,11 +5,11 @@ import viewManagerSwift from '../../examples/files/native_modules/viewManager.sw
 import MyPackageKt from '../../examples/files/native_modules/MyPackage.kt'
 import MainApplicationJava from '../../examples/files/native_modules/MainApplication.java'
 import MyView from '../../examples/files/native_modules/MyView.m'
-import requireNativeComponent from '../../examples/files/native_modules/requireNativeComponent.ts'
+import requireNativeComponent from '../../examples/files/native_modules/requireNativeComponent.js'
 import PropsSwift from '../../examples/files/native_modules/Props.swift'
 import PropsKt from '../../examples/files/native_modules/Props.kt'
 import PropsM from '../../examples/files/native_modules/Props.m'
-import PropsTs from '../../examples/files/native_modules/Props.ts'
+import PropsJs from '../../examples/files/native_modules/Props.js'
 
 # Native Modules
 
@@ -28,15 +28,19 @@ In this guide we'll briefly cover the steps involved in bridging a component.
 How to expose a native UI component to JavaScript:
 
 1. Create a native UIView or Android View subclass
-2. Create a React ViewManager subclass that manages the view pool
+2. Create a React ViewManager subclass that manages a pool of the view subclass
 3. Register the ViewManager subclass with React Native
 4. `requireNativeComponent` from JS
 
 > These steps are essentially the same for iOS and Android.
 
+Tip: be careful with names! The names of the annotations _do_ matter. Replace "My" in the examples with the component name you want.
+
 ---
 
 ## 1. Create a native view subclass
+
+This can be any view - there's nothing specific to React Native yet.
 
 <Example
   height={200}
@@ -51,6 +55,8 @@ How to expose a native UI component to JavaScript:
 
 ## 2. Create a ViewManager subclass
 
+A ViewManager manages a pool of our View subclass from step 1. Native views are reused as much as possible for better performance.
+
 <Example
   height={400}
   panes={['editor']}
@@ -63,6 +69,8 @@ How to expose a native UI component to JavaScript:
 ---
 
 ## 3. Register the ViewManager subclass
+
+We need to let React Native know about our ViewManager by registering it.
 
 <Example
   height={300}
@@ -78,6 +86,8 @@ How to expose a native UI component to JavaScript:
 
 ## 4. Load the native module from JS
 
+Once we've registered a ViewManager on the native side, we can instantiate the view as a React component.
+
 <Example height={300} panes={['editor']} code={requireNativeComponent} />
 
 ---
@@ -90,7 +100,7 @@ Next, we need to pass props from JS to native:
   height={500}
   panes={['editor']}
   files={[
-    ['MyView.ts', PropsTs],
+    ['MyView.js', PropsJs],
     ['MyViewManager.kt', PropsKt],
     ['MyView.swift', PropsSwift],
     ['MyView.m', PropsM],

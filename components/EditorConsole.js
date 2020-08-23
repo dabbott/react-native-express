@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { WebPlayer } from 'react-guidebook'
+import colors from '../styles/colors'
 
 function countPlaygroundWidgets(code) {
   return (code.match(/console\.log/g) || []).length
@@ -54,6 +55,26 @@ export default class EditorConsole extends Component {
       panes = ['workspaces', ...panes]
     }
 
+    const baseStyles = {
+      workspacesButtonWrapper: {
+        backgroundColor: colors.primary,
+      },
+      workspacesRowActive: {
+        backgroundColor: colors.primary,
+        borderLeftColor: colors.primary,
+      },
+      workspacesDescription: {
+        backgroundColor: colors.primary,
+      },
+      workspacesPane: {
+        overflowY: 'auto',
+      },
+      tabTextActive: {
+        color: '#333',
+        borderBottomColor: colors.primary,
+      },
+    }
+
     return (
       <WebPlayer
         containerStyle={{ marginBottom: '15px', flex: '1' }}
@@ -62,18 +83,14 @@ export default class EditorConsole extends Component {
         width={260}
         scale={0.75}
         style={style}
-        styles={
-          rest.width === 0
-            ? {
-                playerPane: {
+        styles={{
+          ...baseStyles,
+          playerPane:
+            rest.width === 0
+              ? {
                   display: 'none',
-                },
-              }
-            : {
-                workspacesPane: {
-                  overflowY: 'auto',
-                },
-                playerPane: {
+                }
+              : {
                   overflow: 'hidden',
                   // background: 'rgba(0,0,0,0.02)',
                   background: 'rgb(250, 250, 250)',
@@ -84,8 +101,7 @@ export default class EditorConsole extends Component {
                   ...(panes.length === 1 &&
                     panes[0] === 'player' && { flex: 1, paddingTop: '12px' }),
                 },
-              }
-        }
+        }}
         playground={{ enabled: true }}
         // typescript={{ enabled: true }}
         workspaceCSS={variant === 'slides' ? slidesCSS : workspaceCSS}
@@ -96,7 +112,27 @@ export default class EditorConsole extends Component {
   }
 }
 
-const workspaceCSS = ''
+const workspaceCSS = `
+.cm-s-react {
+  color: #777;
+}
+
+.cm-s-react span.cm-def, .cm-s-react span.cm-attribute {
+  color: #333;
+}
+
+.cm-s-react span.cm-keyword {
+  color: ${colors.primary};
+}
+
+.cm-s-react span.cm-string, .cm-s-react span.cm-string-2, .cm-s-react span.cm-tag {
+  color: #2e9f74;
+}
+
+.cm-s-react span.cm-bracket {
+  color: #555;
+}
+`
 
 // This doesn't work for players with a small height, since the player pane covers the entire iframe
 // const workspaceCSS = `
