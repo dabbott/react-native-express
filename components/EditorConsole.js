@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { WebPlayer } from 'react-guidebook'
-import colors from '../styles/colors'
+import { colors } from '../styles/theme'
 
 function countPlaygroundWidgets(code) {
   return (code.match(/console\.log/g) || []).length
@@ -44,18 +44,21 @@ export default class EditorConsole extends Component {
     let { variant, panes = ['editor', 'player'], height, ...rest } = this.props
 
     const style = {
+      minWidth: '0',
+      minHeight: '0',
       ...(variant === 'slides'
-        ? { flex: '1' }
+        ? {
+            flex: '1',
+            height: '100%',
+          }
         : {
+            flex: '1 1 0%',
             height: height
               ? `${height}px`
               : rest.code
               ? codeHeight(rest.code)
               : 700,
           }),
-      flex: '1 1 0%',
-      minWidth: '0',
-      minHeight: '0',
     }
 
     if (rest.workspaces && rest.workspaces.length > 0) {

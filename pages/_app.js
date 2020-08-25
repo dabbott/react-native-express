@@ -2,25 +2,32 @@ import 'reset-css'
 import 'github-fork-ribbon-css/gh-fork-ribbon.css'
 import '../styles/main.css'
 
+import ReactGA from 'react-ga'
 import React from 'react'
 import Helmet from 'react-helmet'
 import { MDXProvider } from '@mdx-js/react'
 import { ThemeProvider } from 'styled-components'
 import App from 'next/app'
 import Router from 'next/router'
-import { Page, PageComponents, findNode } from 'react-guidebook'
-import { pageView } from '../utils/Analytics'
-import colors from '../styles/colors'
+import {
+  Page,
+  Author,
+  PageComponents,
+  NotFound,
+  findNode,
+  trackPageView,
+  initializeAnalytics,
+} from 'react-guidebook'
+import { colors } from '../styles/theme'
 import textStyles from '../styles/textStyles'
 import slidesTheme from '../styles/slidesTheme'
 import EditorConsole from '../components/EditorConsole'
-import Author from '../components/Author'
 import Disqus from '../components/Disqus'
 import BookBanner from '../components/BookBanner'
 import FileTreeDiagram from '../components/FileTreeDiagram'
 import logo from '../images/logo.svg'
+import legacyRoutes from '../utils/legacyRoutes'
 import guidebook from '../guidebook'
-import NotFound from '../components/NotFound'
 
 const theme = {
   colors: colors,
@@ -40,23 +47,28 @@ export default class MyApp extends App {
     const { Component, pageProps, router } = this.props
 
     const slug = router.pathname.slice(1)
+
+    if (slug.endsWith('slides')) {
+      return (
+        <ThemeProvider theme={slidesTheme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      )
+    }
+
     const node = findNode(guidebook, slug)
 
     if (!node) {
       return (
         <ThemeProvider theme={theme}>
-          <NotFound />
+          <NotFound routeMap={legacyRoutes} />
         </ThemeProvider>
       )
     }
 
     const isIntroduction = node.slug === ''
 
-    return slug.endsWith('slides') ? (
-      <ThemeProvider theme={slidesTheme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    ) : (
+    return (
       <ThemeProvider theme={theme}>
         {/* Fragment needed for React.Children.only */}
         <>
@@ -92,6 +104,9 @@ export default class MyApp extends App {
 }
 
 if (typeof document !== 'undefined') {
+  const pageView = () => trackPageView(ReactGA)
+
+  initializeAnalytics(ReactGA, 'UA-77053427-1')
   pageView()
   Router.onRouteChangeComplete = pageView
 }

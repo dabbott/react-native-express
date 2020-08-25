@@ -1,11 +1,8 @@
 import React from 'react'
-import Slideshow from '../components/Slideshow'
+import SpectacleSlideshow from '../components/SpectacleSlideshow'
 
 const introSlides = require('!!babel-loader!spectacle-mdx-loader!../slides/intro.mdx')
 
-/**
- * @type {import('../utils/requireSlides').Slide[]}
- */
 const slides = introSlides.default.map((slide, index, list) => {
   return {
     sectionName: `Intro`,
@@ -14,4 +11,4 @@ const slides = introSlides.default.map((slide, index, list) => {
   }
 })
 
-export default () => <Slideshow slides={slides} />
+export default () => <SpectacleSlideshow slides={slides} />

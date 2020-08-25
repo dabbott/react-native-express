@@ -1,7 +1,5 @@
-import react from 'react'
+import { Code, Pre } from 'react-guidebook'
 import { diagram } from 'tree-visit'
-import { Pre, Code } from 'react-guidebook'
-import colors from '../styles/colors'
 
 const normalizeNode = (node) =>
   typeof node === 'string' ? { name: node } : node
