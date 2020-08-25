@@ -1,8 +1,7 @@
 import React from 'react'
-import { findNode } from 'react-guidebook'
+import { findNode, requireSlides } from 'react-guidebook'
 import guidebook from '../guidebook'
-import requireSlides from '../utils/requireSlides'
-import Slideshow from './Slideshow'
+import SpectacleSlideshow from './SpectacleSlideshow'
 
 function requireModule(id) {
   return require('!!babel-loader!spectacle-mdx-loader!../pages/' + id + '.mdx')
@@ -10,8 +9,7 @@ function requireModule(id) {
 
 export default ({ sectionName }) => {
   const root = findNode(guidebook, sectionName)
+  const slides = requireSlides(root, requireModule)
 
-  const slides = requireSlides([root], requireModule)
-
-  return <Slideshow slides={slides} />
+  return <SpectacleSlideshow slides={slides} />
 }
