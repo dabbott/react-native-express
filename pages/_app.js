@@ -56,6 +56,14 @@ export default class MyApp extends App {
       )
     }
 
+    if (slug.endsWith('playgrounds')) {
+      return (
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      )
+    }
+
     const node = findNode(guidebook, slug)
 
     if (!node) {

@@ -54,7 +54,9 @@ export default class EditorConsole extends Component {
         : {
             flex: '1 1 0%',
             height: height
-              ? `${height}px`
+              ? typeof height === 'number'
+                ? `${height}px`
+                : height
               : rest.code
               ? codeHeight(rest.code)
               : 700,
