@@ -2,14 +2,16 @@ import userInput from '../../examples/files/react/userInput.js'
 
 # User Input
 
-In React, most input components are stateless.
-
-An input component has a `value` prop and an `onChange` prop, and together these things give us complete control over the input without ever having to access the native UI imperatively.
+In React, most input components are stateless. An input component typically has a `value` prop and a prop prefixed with `onChange`, and together these things give us complete control over the input without ever having to access the native UI imperatively.
 
 ---
 
 ## Input field
 
-Here's a text input field:
+Here's an example of a text input field.
+
+We introduce a **state variable**, `text`, to store the current value of the input field. We pass `text` into the `TextInput` as the `value` prop, and any time `onChangeText` is called, we update call `setText` to update our state variable.
+
+> We use a the [useState](/react/hooks/usestate) hook to store the text value. We'll cover this soon.
 
 <Example code={userInput} />

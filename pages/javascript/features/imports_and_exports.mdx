@@ -42,7 +42,7 @@ There's a shorter syntax for importing 3rd party libraries: we import the name o
 
 Libraries specify a "main" file in their `package.json`, usually named `index.js`, which is what actually gets imported. E.g. assuming we had downloaded the `moment` library into our `node_modules`, we could import `'./node_modules/moment/index.js'` with just `'moment'`.
 
-> Note: importing the _relative_ path to a directory will always import the `index.js` file in that directory, ignoring any "main" file specified.
+> Note: importing the path to a directory will generally import the `index.js` file in that directory. Some developers prefer importing from `./myDirectory` rather than `./myDirectory/index.js`, but these are equivalent.
 
 <Example
   title="Importing a library"
