@@ -32,8 +32,27 @@ In this example, we instantiate a few React components using JSX and then print 
   styles={{
     playerPane: {
       width: '50%',
+      marginLeft: '0',
     },
   }}
+  responsivePaneSets={[
+    {
+      maxWidth: 920,
+      panes: [
+        {
+          type: 'stack',
+          children: [
+            { type: 'editor', title: 'Code' },
+            {
+              type: 'player',
+              title: 'Console Output',
+              style: { width: '100%' },
+            },
+          ],
+        },
+      ],
+    },
+  ]}
 />
 
 ---

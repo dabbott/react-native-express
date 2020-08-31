@@ -22,13 +22,13 @@ We don't want to have to think about this complexity when writing an app - thats
 
 Babel is a highly configurable compiler that lets us use newer JavaScript language features (and extensions, like JSX), compiling "down" into older versions of JavaScript that are supported on a wider range of engines. This essentially smooths out any differences between JSC versions, or between JSC and Hermes, so we don't have to think about those differences when writing our app.
 
-When we generate a new React Native app, a Babel configuration file, `babel.config.js`, is generated alongside our project. This file configures Babel with a React Native preset, so our JavaScript code should "just work" regardless of which engine it runs on.
+When we initialize a new React Native app, a Babel configuration file, `babel.config.js`, is generated alongside our project. This file configures Babel with a React Native preset, so our JavaScript code should "just work" regardless of which engine it runs on.
 
 ---
 
 ## TypeScript
 
-JavaScript is _dynamically_ typed, which means that type checking happens at runtime. This is convenient for small scripts, but for large apps it's often helpful to have type checking at compile-time. For this reason, many React Native developers write their apps in TypeScript, a language that compiles "down" into JavaScript (somewhat like Babel). React Native officially supports TypeScript via a separate [starter template](https://reactnative.dev/docs/typescript).
+JavaScript is _dynamically_ typed, which means that type checking happens at runtime. This is convenient for small scripts, but for large apps it's often helpful to have type checking at compile-time. For this reason, many React Native developers write their apps in TypeScript, a language that compiles "down" into JavaScript (somewhat like how Babel works). React Native officially supports TypeScript via a separate [starter template](https://reactnative.dev/docs/typescript), and Expo includes a TypeScript template too.
 
 TypeScript extends JavaScript, adding syntax for type declarations and annotations. The TypeScript compiler can then perform compile-time type checking, before transforming the TypeScript code into JavaScript.
 

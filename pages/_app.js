@@ -18,8 +18,7 @@ import {
   trackPageView,
   initializeAnalytics,
 } from 'react-guidebook'
-import { colors } from '../styles/theme'
-import textStyles from '../styles/textStyles'
+import { colors, textStyles } from '../styles/theme'
 import slidesTheme from '../styles/slidesTheme'
 import EditorConsole from '../components/EditorConsole'
 import Disqus from '../components/Disqus'

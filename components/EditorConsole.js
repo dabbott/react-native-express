@@ -134,6 +134,12 @@ export default class EditorConsole extends Component {
                             width: 'inherit',
                           },
                         }),
+                        ...(pane === 'player' && {
+                          style: {
+                            paddingLeft: '0px',
+                            paddingRight: '0px',
+                          },
+                        }),
                       })),
                     },
                   ],

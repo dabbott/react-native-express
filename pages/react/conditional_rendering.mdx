@@ -21,7 +21,7 @@ We can actually return more than just React Elements from a component function. 
 - An array of any of these
 - Some more obscure things (e.g. Portals)
 
-The TypeScript type `React.ReactNode` includes all of these.
+> If you're using TypeScript, the TypeScript type `React.ReactNode` includes all of these.
 
 ---
 
@@ -39,7 +39,7 @@ One of the most common cases: conditionally rendering a React element based on w
 
 Another common case: rendering a different React element for when a `prop` exists and when it doesn't. <Details>We can accomplish this with the ternary operator.</Details>
 
-> Note that a buttonTitle equal to the empty string, `""`, won't render. If we did want it to, we could use `buttonTitle === 'undefined'` to check for that case.
+> Note that a buttonTitle equal to the empty string, `""`, won't render, since the empty string is a falsy value. If we did want it to, we could use `buttonTitle === undefined` to check for that case.
 
 <Example code={ternaryEvaluation} />
 
