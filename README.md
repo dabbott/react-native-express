@@ -1,10 +1,12 @@
-## About
+# React Native Express
 
-A guide and reference to help people get started with React Native.
+The all-in-one guide to React Native: https://www.reactnative.express
 
 ## Translations
 
 - `zh-CN` by [@cnscorpions](https://github.com/cnscorpions): https://github.com/cnscorpions/react-native-express-cn
+
+> If you'd like to help translate, for now, please fork the repo and I'll list it here.
 
 ## Installation
 
@@ -12,32 +14,22 @@ A guide and reference to help people get started with React Native.
 yarn
 ```
 
-OR
-
-```bash
-npm install
-```
-
 ## Running Dev Server
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 ## Building and Running Production Server
 
 ```bash
-npm run build
-npm run start
+yarn build
+yarn start
 ```
-
-## Demo
-
-The production version of this app is running [here](http://www.reactnativeexpress.com).
 
 ## Contributing
 
-Please contribute!
+Contributions are welcome! (It might take me some time to get around to reviewing however)
 
 ## License
 
