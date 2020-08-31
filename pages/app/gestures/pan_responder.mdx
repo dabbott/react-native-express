@@ -36,7 +36,7 @@ In this example, we'll use `PanResponder` to create a drag interaction. There ar
 - `usePanResponder.js` - A custom hook that creates a `PanResponder` with a set of callbacks for managing the gesture and updating the state of the drag via `useReducer`.
 - `App.js` - We call our custom `usePanResponder` hook, passing the created panHandlers into a `View`, and using the drag state to update the style.
 
-> In a real app, we should generally use `Animated.Value`s in our style for better performance. E.g. create a `positionY` animated value from `initialY` and `offsetY`, and start a fast `.timing` animation whenever the state of the drag changes.
+> In a real app, we should generally use `Animated.Value`s in our style for better performance. E.g. create a `positionY` animated value from `initialY` and `offsetY`, and start a `.timing` animation with a very short duration whenever the state of the drag changes.
 
 <Example
   files={[

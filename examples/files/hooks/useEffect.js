@@ -5,7 +5,7 @@ export default function App() {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
-    if (count % 5 == 0) {
+    if (count % 3 == 0) {
       console.log(count)
     }
   }, [count])
