@@ -5,7 +5,7 @@ export default function App() {
   return (
     <Image
       style={styles.image}
-      source={{ uri: 'http://www.reactnativeexpress.com/static/logo.png' }}
+      source={{ uri: 'https://www.reactnative.express/static/logo.png' }}
     />
   )
 }

@@ -9,6 +9,6 @@ To bundle an image in the app, `import` the image file by its path, including th
 Layout works differently for images downloaded from the web and those imported as files.
 
 - **Imported images**: the image file is scanned at build-time, and the image's dimensions are included as metadata in the app bundle. The dimensions of an `Image` component are then set to image's dimensions by default.
-- **Images from the web**: the dimensions of the image aren't known at build-time, so the width and height of the `Image` are set to 0 by default. In order for the image to show up on the screen, we need to either set the width and height or a `flex` value in the `style` of the `Image`. If the dimensions _are_ known ahead-of-time, then they may be passed in the `source` prop.
+- **Images from the web**: the dimensions of the image aren't known at build-time, so the width and height of the `Image` are set to 0 by default. In order for the image to show up on the screen, we need to either set the width and height or a `flex` value in the `style` of the `Image`. If the dimensions _are_ known ahead-of-time, then they may be passed in the `source` prop along with the `uri`.
 
 <Example code={image} />
