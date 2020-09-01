@@ -87,6 +87,7 @@ export default class MyApp extends App {
             <Page
               rootNode={guidebook}
               logo={logo}
+              githubUrl={'https://github.com/dabbott/react-native-express'}
               footer={
                 <>
                   {isIntroduction ? undefined : <BookBanner />}
