@@ -1,0 +1,26 @@
+import memo from '../../../examples/files/react/memo.js'
+
+# Memo
+
+The `memo` function is a built-in utility for improving performance by reducing component re-renders.
+
+Normally, when we instantiate a JSX element, like `<MyComponent foo={bar} />`, React will run our component function `MyComponent` with the props `{ foo: bar }`. However, if our component function always returns the same thing given the same props, then React can _memoize_ (save) the results of the previous call, and avoid calling the function again until props actually change.
+
+---
+
+## Example
+
+In this example, we'll see how wrapping a component function in `memo` limits the number of times the function is called.
+
+Every time we press the button, our `App` function re-runs, since its state changed. This causes `<Label />` to re-render, while `<LabelMemo />` doesn't.
+
+> By default, props are compared for identity, essentially with `===`. To change this behavior, we can pass an optional comparator function as the 2nd argument to `memo`. See ([the React docs on memo](https://reactjs.org/docs/react-api.html#reactmemo))
+
+<Example
+  code={memo}
+  console={{
+    enabled: true,
+    visible: true,
+  }}
+  playground={{ enabled: false }}
+/>
