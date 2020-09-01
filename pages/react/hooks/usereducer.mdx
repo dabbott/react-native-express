@@ -8,7 +8,23 @@ import useReducer from '../../../examples/files/hooks/useReducer.js'
 
 The `useReducer` hook is similar to `useState`, but gives us a more structured approach for updating complex values.
 
-In this example, store both a `first` and `last` name in a single state object with `useReducer`.
+We typically use `useReducer` when our state has multiple sub-values, e.g. an object containing keys that we want to update independently.
+
+## API
+
+The `useReducer` hook requires 2 arguments, and has an optional 3rd argument:
+
+- `reducer` - a pure function that takes a state and an action, and returns a new state value based on the action
+- `initialState` - any initial state value, just like `useState`
+- `initializer` (optional) - a function called to lazily instantiate the `initialState` (this is uncommon)
+
+The `useReducer` hook returns the current state, and a `dispatch` function to update the state.
+
+## Example
+
+In this example, we store both a `first` and `last` name in a single state object with `useReducer`.
+
+When we type a new first name, dispatch is called with `{ type: 'first', value: text }` as its argument. This argument gets passed to the reducer as `action`. Then the reducer follows the switch case logic `case 'first'` and returns the new state: the current last name (from `...state`) and the new first name contained in the action as `action.value`.
 
 > There are certain patterns/naming conventions we often use around reducers, which we'll discuss in more detail in [`useReducer` for managing data](/app/data_management/usereducer).
 

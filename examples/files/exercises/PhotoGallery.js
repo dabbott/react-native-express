@@ -22,10 +22,8 @@ export default function App() {
   }, [nextPage])
 
   useEffect(() => {
-    if (nextPage === 1 && !loading && !error) {
-      fetchPhotos()
-    }
-  }, [fetchPhotos, nextPage, loading, error])
+    fetchPhotos()
+  }, [])
 
   // We'll show an error only if the first page fails to load
   if (photos.length === 0) {

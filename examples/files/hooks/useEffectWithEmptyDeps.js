@@ -3,11 +3,10 @@ import { Button } from 'react-native'
 
 export default function App() {
   const [count, setCount] = useState(0)
-  const countEvery3 = Math.floor(count / 3)
 
   useEffect(() => {
-    console.log(countEvery3)
-  }, [countEvery3])
+    console.log('Only once!')
+  }, [])
 
   return (
     <Button

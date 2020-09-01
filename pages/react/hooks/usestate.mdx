@@ -10,13 +10,28 @@ import useStateArray from '../../../examples/files/hooks/useStateArray.js'
 
 The `useState` hook lets us "remember" a value within a component function. Since our component function may be called many times throughout the lifecycle of the component, any variable we declare normally (i.e. with `let myVar = ...`) will get reset. With `useState`, React can remember a **state variable** for us, making sure it gets passed into our component instance correctly.
 
+---
+
 ## API
 
-`useState` takes in an initial state as an argument and returns an array containing two elements: the current state, and a function which we can call to set a new state value.
+The `useState` hook takes a single argument, our initial state, and returns an array containing two elements:
 
-> Notice, in the code when we call `setDiceRoll`, we are not pushing the integer returned from `randomDiceRoll()` into the `diceRolls` array. Instead, we are returning a new array that contains the destructured `diceRolls` array and the newly randomized dice roll.
+- `state` - the current state
+- `setState` - a function to update our state
+
+E.g. `const [state, setState] = useState(initialValue)`
+
+---
+
+## Example
+
+In this example, we'll use `useState` to append to an array.
+
+The `useState` hook can store any type of value: a number, a string, an array, an object, etc. We've previously used `useState` to [increment a number value](/react/events) and [change a string](/react/user_input).
 
 <Example code={useStateArray} />
+
+---
 
 ## Updating mutable state values
 
