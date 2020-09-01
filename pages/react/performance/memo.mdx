@@ -14,7 +14,7 @@ In this example, we'll see how wrapping a component function in `memo` limits th
 
 Every time we press the button, our `App` function re-runs, since its state changed. This causes `<Label />` to re-render, while `<LabelMemo />` doesn't.
 
-> By default, props are compared for identity, essentially with `===`. To change this behavior, we can pass an optional comparator function as the 2nd argument to `memo`. See ([the React docs on memo](https://reactjs.org/docs/react-api.html#reactmemo))
+> By default, props are compared for identity, essentially with `===`. To change this behavior, we can pass an optional comparator function as the 2nd argument to `memo`. See the [memo docs](https://reactjs.org/docs/react-api.html#reactmemo) for more info.
 
 <Example
   code={memo}
