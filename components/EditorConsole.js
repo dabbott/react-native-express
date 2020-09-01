@@ -31,7 +31,7 @@ function codeHeight(code) {
 const paneNames = {
   editor: 'Code',
   player: 'Live Preview',
-  transpiler: 'Transpiler Output',
+  transpiler: 'Babel Output',
   workspaces: 'Walkthrough',
 }
 
