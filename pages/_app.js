@@ -14,7 +14,7 @@ import {
   Author,
   PageComponents,
   NotFound,
-  findNode,
+  findNodeBySlug,
   trackPageView,
   initializeAnalytics,
 } from 'react-guidebook'
@@ -27,6 +27,7 @@ import FileTreeDiagram from '../components/FileTreeDiagram'
 import logo from '../images/logo.svg'
 import legacyRoutes from '../utils/legacyRoutes'
 import guidebook from '../guidebook'
+import { searchPages, searchTextMatch } from '../utils/search'
 
 const theme = {
   colors: colors,
@@ -39,6 +40,11 @@ const Components = {
   Author,
   FileTreeDiagram: FileTreeDiagram,
   Details: ({ children }) => children,
+}
+
+const github = {
+  user: 'dabbott',
+  repo: 'react-native-express',
 }
 
 export default class MyApp extends App {
@@ -63,7 +69,7 @@ export default class MyApp extends App {
       )
     }
 
-    const node = findNode(guidebook, slug)
+    const node = findNodeBySlug(guidebook, slug)
 
     if (!node) {
       return (
@@ -87,7 +93,7 @@ export default class MyApp extends App {
             <Page
               rootNode={guidebook}
               logo={logo}
-              githubUrl={'https://github.com/dabbott/react-native-express'}
+              github={github}
               footer={
                 <>
                   {isIntroduction ? undefined : <BookBanner />}
@@ -101,6 +107,8 @@ export default class MyApp extends App {
                   )}
                 </>
               }
+              searchPages={searchPages}
+              searchTextMatch={searchTextMatch}
             >
               <Component {...pageProps} />
             </Page>

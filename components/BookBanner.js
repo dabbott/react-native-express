@@ -41,17 +41,15 @@ export default () => (
     buttonTitle="Check it out!"
     image={<BookImage />}
   >
-    <Paragraph>
-      If you like React Native Express, you'll love my new book,{' '}
-      <Anchor href={BOOK_URL}>
-        Fullstack React Native: The complete guide to React Native
-      </Anchor>
-      ! Throughout the book, we'll build 7 full apps, covering complex topics
-      like navigation, gestures, and native modules. We don't assume any
-      knowledge of React or newer JavaScript language features, so you can dive
-      right in regardless of your experience level. The book comes in{' '}
-      <InlineCode>PDF</InlineCode>, <InlineCode>EPUB</InlineCode> and{' '}
-      <InlineCode>MOBI</InlineCode> formats.
-    </Paragraph>
+    If you like React Native Express, you'll love my new book,{' '}
+    <Anchor href={BOOK_URL}>
+      Fullstack React Native: The complete guide to React Native
+    </Anchor>
+    ! Throughout the book, we'll build 7 full apps, covering complex topics like
+    navigation, gestures, and native modules. We don't assume any knowledge of
+    React or newer JavaScript language features, so you can dive right in
+    regardless of your experience level. The book comes in{' '}
+    <InlineCode>PDF</InlineCode>, <InlineCode>EPUB</InlineCode> and{' '}
+    <InlineCode>MOBI</InlineCode> formats.
   </Promotion>
 )
