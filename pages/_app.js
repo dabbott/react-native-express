@@ -17,7 +17,7 @@ import {
   trackPageView,
   initializeAnalytics,
 } from 'react-guidebook'
-import { colors, textStyles } from '../styles/theme'
+import theme from '../styles/theme'
 import slidesTheme from '../styles/slidesTheme'
 import EditorConsole from '../components/EditorConsole'
 import Disqus from '../components/Disqus'
@@ -27,11 +27,6 @@ import logo from '../images/logo.svg'
 import legacyRoutes from '../utils/legacyRoutes'
 import guidebook from '../guidebook'
 import { searchPages, searchTextMatch } from '../utils/search'
-
-const theme = {
-  colors: colors,
-  textStyles: textStyles,
-}
 
 const Components = {
   ...PageComponents,
