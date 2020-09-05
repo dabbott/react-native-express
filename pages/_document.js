@@ -40,10 +40,7 @@ export default class MyDocument extends Document {
           {/* Site description */}
           <meta name="description" content={guidebook.subtitle} />
           <meta property="og:type" content="article" />
-          <meta
-            property="og:url"
-            content="https://www.reactnativeexpress.com/"
-          />
+          <meta property="og:url" content="https://www.reactnative.express/" />
           <meta property="og:site_name" content={guidebook.title} />
           <meta property="og:description" content={guidebook.subtitle} />
           <meta property="og:locale" content="en_US" />
@@ -57,11 +54,11 @@ export default class MyDocument extends Document {
           {/* Image */}
           <meta
             property="og:image"
-            content="http://www.reactnativeexpress.com/static/preview.png"
+            content="http://www.reactnative.express/static/preview.png"
           />
           <meta
             property="og:image:secure_url"
-            content="https://www.reactnativeexpress.com/static/preview.png"
+            content="https://www.reactnative.express/static/preview.png"
           />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="1200" />
