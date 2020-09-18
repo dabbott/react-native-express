@@ -39,8 +39,6 @@ export default class MyDocument extends Document {
 
           {/* Site description */}
           <meta name="description" content={guidebook.subtitle} />
-          <meta name="twitter:card" content="summary"></meta>
-          <meta name="twitter:creator" content="@dvnabbott" />
           <meta property="og:type" content="article" />
           <meta property="og:url" content="https://www.reactnative.express/" />
           <meta property="og:site_name" content={guidebook.title} />
@@ -66,6 +64,14 @@ export default class MyDocument extends Document {
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
           <meta property="og:image:alt" content="" />
+
+          {/* Twitter */}
+          <meta name="twitter:card" content="summary"></meta>
+          <meta name="twitter:creator" content="@dvnabbott" />
+          <meta
+            name="twitter:image"
+            content="https://www.reactnative.express/static/preview.png"
+          />
 
           {/* Facebook */}
           <meta property="fb:app_id" content="907755649360812" />
