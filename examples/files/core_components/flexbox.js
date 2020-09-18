@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   box: {
     padding: 25,
-    backgroundColor: 'steelblue',
+    backgroundColor: '#3B6CD4',
     margin: 5,
   },
 })
