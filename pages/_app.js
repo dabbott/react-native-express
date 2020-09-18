@@ -1,9 +1,9 @@
+import Head from 'next/head'
 import 'reset-css'
 import '../styles/main.css'
 
 import ReactGA from 'react-ga'
 import React from 'react'
-import Helmet from 'react-helmet'
 import { MDXProvider } from '@mdx-js/react'
 import { ThemeProvider } from 'styled-components'
 import App from 'next/app'
@@ -79,10 +79,10 @@ export default class MyApp extends App {
       <ThemeProvider theme={theme}>
         {/* Fragment needed for React.Children.only */}
         <>
-          <Helmet title={node.title}>
-            <html lang="en" />
+          <Head>
+            <title>{node.title}</title>
             <meta property="og:title" content={node.title} />
-          </Helmet>
+          </Head>
           <MDXProvider components={Components}>
             <Page
               rootNode={guidebook}

@@ -32,13 +32,15 @@ export default class MyDocument extends Document {
   render() {
     return (
       <html>
-        <Head>
+        <Head lang="en">
           {/* Favicon */}
           <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
           <link rel="icon" type="image/png" href="/static/favicon.png" />
 
           {/* Site description */}
           <meta name="description" content={guidebook.subtitle} />
+          <meta name="twitter:card" content="summary_large_image"></meta>
+          <meta name="twitter:creator" content="@dvnabbott" />
           <meta property="og:type" content="article" />
           <meta property="og:url" content="https://www.reactnative.express/" />
           <meta property="og:site_name" content={guidebook.title} />
