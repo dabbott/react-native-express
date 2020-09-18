@@ -39,7 +39,7 @@ export default class MyDocument extends Document {
 
           {/* Site description */}
           <meta name="description" content={guidebook.subtitle} />
-          <meta name="twitter:card" content="summary_large_image"></meta>
+          <meta name="twitter:card" content="summary"></meta>
           <meta name="twitter:creator" content="@dvnabbott" />
           <meta property="og:type" content="article" />
           <meta property="og:url" content="https://www.reactnative.express/" />
