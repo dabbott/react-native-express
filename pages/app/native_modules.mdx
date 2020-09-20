@@ -45,10 +45,11 @@ This can be any view - there's nothing specific to React Native yet.
 <Example
   height={200}
   panes={['editor']}
-  files={[
-    ['MyView.kt', viewSubclassKt],
-    ['MyView.swift', viewSubclassSwift],
-  ]}
+  initialTab="MyView.kt"
+  files={{
+    'MyView.kt': viewSubclassKt,
+    'MyView.swift': viewSubclassSwift,
+  }}
 />
 
 ---
@@ -60,10 +61,10 @@ A ViewManager manages a pool of our View subclass from the previous step. Native
 <Example
   height={400}
   panes={['editor']}
-  files={[
-    ['MyViewManager.kt', viewManagerKt],
-    ['MyViewManager.swift', viewManagerSwift],
-  ]}
+  files={{
+    'MyViewManager.kt': viewManagerKt,
+    'MyViewManager.swift': viewManagerSwift,
+  }}
 />
 
 ---
@@ -75,11 +76,11 @@ We need to let React Native know about our ViewManager by registering it.
 <Example
   height={300}
   panes={['editor']}
-  files={[
-    ['MyPackage.kt', MyPackageKt],
-    ['MainApplication.java', MainApplicationJava],
-    ['MyView.m', MyView],
-  ]}
+  files={{
+    'MyPackage.kt': MyPackageKt,
+    'MainApplication.java': MainApplicationJava,
+    'MyView.m': MyView,
+  }}
 />
 
 ---
@@ -99,12 +100,12 @@ Next, we need to pass props from JS to native:
 <Example
   height={500}
   panes={['editor']}
-  files={[
-    ['MyView.js', PropsJs],
-    ['MyViewManager.kt', PropsKt],
-    ['MyView.swift', PropsSwift],
-    ['MyView.m', PropsM],
-  ]}
+  files={{
+    'MyView.js': PropsJs,
+    'MyViewManager.kt': PropsKt,
+    'MyView.swift': PropsSwift,
+    'MyView.m': PropsM,
+  }}
 />
 
 ---

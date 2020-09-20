@@ -31,14 +31,15 @@ This app contains:
 - `Input.js`, a presentational `TextInput`-based component
 
 <Example
-  files={[
-    ['App.js', require('../../../examples/files/app/AsyncStorage').default],
-    ['Input.js', require('../../../examples/files/app/Input').default],
-  ]}
-  vendorComponents={[
-    [
-      '@react-native-community/async-storage',
-      'https://gitcdn.xyz/repo/dabbott/c808d04daf4d8d5477e911fe2bce2e63/raw/ef6952e3f4e9fdc6fcd0fc1cd199dda526d2d006/AsyncStorageInterop.js',
-    ],
+  files={{
+    'App.js': require('../../../examples/files/app/AsyncStorage').default,
+    'Input.js': require('../../../examples/files/app/Input').default,
+  }}
+  modules={[
+    {
+      name: '@react-native-community/async-storage',
+      url:
+        'https://gitcdn.xyz/repo/dabbott/c808d04daf4d8d5477e911fe2bce2e63/raw/ef6952e3f4e9fdc6fcd0fc1cd199dda526d2d006/AsyncStorageInterop.js',
+    },
   ]}
 />

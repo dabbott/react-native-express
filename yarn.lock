@@ -4475,6 +4475,11 @@ isomorphic-fetch@^2.1.1:
     node-fetch "^1.0.1"
     whatwg-fetch ">=0.10.0"
 
+javascript-playgrounds@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/javascript-playgrounds/-/javascript-playgrounds-1.0.2.tgz#b5334cf3836b0f045f1046536301b1dd85fe0d97"
+  integrity sha512-+3ZSuc7ugJtIbFyJ18CzE/8lSLub9IuuEj0ICHSJMHD2avToNGAgoq9aOU2DQxg5GDY/TM7Y8tQPlq6UkakETg==
+
 jest-worker@24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-24.9.0.tgz#5dbfdb5b2d322e98567898238a9697bcce67b3e5"
@@ -6098,13 +6103,13 @@ react-ga@^2.6.0:
   resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.6.0.tgz#c3fe830ead2ad25117e1d33280d9698de9b28496"
   integrity sha512-GWHBWZDFjDGMkIk1LzroIn0mNTygKw3adXuqvGvheFZvlbpqMPbHsQsTdQBIxRRdXGQM/Zq+dQLRPKbwIHMTaw==
 
-react-guidebook@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.3.1.tgz#d3803c467cbdf82afaaabf9dc4b9195067150079"
-  integrity sha512-gPfxL6dXpgUpgV05bLrpdtWmTksCkKifvYKVM9lqZkfgAwZ5gpmktoQF1zOKtei7cQHTleq0HAQgXlGIWqFhXg==
+react-guidebook@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.4.3.tgz#af03f34ae59c8928ea5ad47370507edc21c094b0"
+  integrity sha512-gLw/ZQ9WnLpDRwRamoXZXJBzobx4xMy+dv1uG32o7oF9bcuQusTOCXqKUYLXOcqDyK9XfPC/Mqk0q22buS/sXQ==
   dependencies:
     downshift "^6.0.5"
-    react-native-web-player "^2.0.0-alpha.26"
+    javascript-playgrounds "^1.0.2"
 
 react-is@16.13.1, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
@@ -6115,11 +6120,6 @@ react-is@^16.6.0:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
-
-react-native-web-player@^2.0.0-alpha.26:
-  version "2.0.0-alpha.26"
-  resolved "https://registry.yarnpkg.com/react-native-web-player/-/react-native-web-player-2.0.0-alpha.26.tgz#95374259fd71c34efbc7ca142d2bdd30c60854f2"
-  integrity sha512-0GR2BrORnBKj1kBenPD7u2Wb3QVtJWWZ+uLRxlUO8cVccH1CK8Z+teh093wjRqZuln1z4ycG7C091I1dJbyubg==
 
 react-refresh@0.8.3:
   version "0.8.3"

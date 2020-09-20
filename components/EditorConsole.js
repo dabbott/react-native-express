@@ -3,6 +3,10 @@ import React, { Component } from 'react'
 import { WebPlayer } from 'react-guidebook'
 import { colors } from '../styles/theme'
 
+function getPaneType(pane) {
+  return typeof pane === 'string' ? pane : pane.type
+}
+
 function countPlaygroundWidgets(code) {
   return (code.match(/console\.log/g) || []).length
 }
@@ -33,6 +37,7 @@ const paneNames = {
   player: 'Live Preview',
   transpiler: 'Babel Output',
   workspaces: 'Walkthrough',
+  console: 'Console Output',
 }
 
 export default class EditorConsole extends Component {
@@ -41,7 +46,25 @@ export default class EditorConsole extends Component {
   }
 
   render() {
-    let { variant, panes = ['editor', 'player'], height, ...rest } = this.props
+    let {
+      variant,
+      width,
+      prelude,
+      modules,
+      panes = [
+        'editor',
+        {
+          type: 'player',
+          platform: 'ios',
+          width: width ?? 260,
+          scale: 0.75,
+          prelude,
+          modules,
+        },
+      ],
+      height,
+      ...rest
+    } = this.props
 
     const style = {
       minWidth: '0',
@@ -79,7 +102,7 @@ export default class EditorConsole extends Component {
         backgroundColor: colors.primary,
       },
       workspacesPane: {
-        width: '25%',
+        flex: '0 0 25%',
       },
       tabTextActive: {
         color: '#333',
@@ -89,16 +112,14 @@ export default class EditorConsole extends Component {
 
     return (
       <WebPlayer
+        preset="react-native"
         containerStyle={{ marginBottom: '15px', flex: '1' }}
         fullscreen={true}
-        platform={'ios'}
-        width={260}
-        scale={0.75}
         style={style}
         styles={{
           ...baseStyles,
           playerPane:
-            rest.width === 0
+            width === 0
               ? {
                   display: 'none',
                 }
@@ -111,36 +132,42 @@ export default class EditorConsole extends Component {
                   paddingLeft: '10px',
                   paddingRight: '10px',
                   ...(panes.length === 1 &&
-                    panes[0] === 'player' && { flex: 1, paddingTop: '12px' }),
+                    getPaneType(panes[0]) === 'player' && {
+                      flex: 1,
+                      paddingTop: '12px',
+                    }),
                 },
         }}
-        playground={{ enabled: true }}
-        // typescript={{ enabled: true }}
-        workspaceCSS={variant === 'slides' ? slidesCSS : workspaceCSS}
+        css={variant === 'slides' ? slidesCSS : undefined}
         panes={panes}
         responsivePaneSets={
-          panes.length > 1 && rest.width !== 0
+          panes.length > 1 && width !== 0
             ? [
                 {
                   maxWidth: 920,
                   panes: [
                     {
                       type: 'stack',
-                      children: panes.map((pane) => ({
-                        type: pane,
-                        title: paneNames[pane] || pane,
-                        ...(pane === 'workspaces' && {
-                          style: {
-                            width: 'inherit',
-                          },
-                        }),
-                        ...(pane === 'player' && {
-                          style: {
-                            paddingLeft: '0px',
-                            paddingRight: '0px',
-                          },
-                        }),
-                      })),
+                      children: panes.map((pane) => {
+                        const type = getPaneType(pane)
+
+                        return {
+                          title: paneNames[type] || type,
+                          ...(typeof pane === 'string' ? { type } : pane),
+                          ...(type === 'workspaces' && {
+                            style: {
+                              flex: '1 1 0%',
+                              width: 'inherit',
+                            },
+                          }),
+                          ...(type === 'player' && {
+                            style: {
+                              paddingLeft: '0px',
+                              paddingRight: '0px',
+                            },
+                          }),
+                        }
+                      }),
                     },
                   ],
                 },
@@ -152,28 +179,6 @@ export default class EditorConsole extends Component {
     )
   }
 }
-
-const workspaceCSS = `
-.cm-s-react {
-  color: #777;
-}
-
-.cm-s-react span.cm-def, .cm-s-react span.cm-attribute {
-  color: #333;
-}
-
-.cm-s-react span.cm-keyword {
-  color: ${colors.primary};
-}
-
-.cm-s-react span.cm-string, .cm-s-react span.cm-string-2, .cm-s-react span.cm-tag {
-  color: #2e9f74;
-}
-
-.cm-s-react span.cm-bracket {
-  color: #555;
-}
-`
 
 const slidesCSS = `
 .CodeMirror {

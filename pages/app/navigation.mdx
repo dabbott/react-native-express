@@ -24,14 +24,15 @@ Due to these challenges, there isn't a single best way to implement navigation, 
 
 <Example
   code={example}
-  prelude={`var bundle = window._require('react-navigation-bundle');
-var v = window._VendorComponents;
-v.register('@react-navigation/native', { NavigationContainer: bundle.NavigationContainer });
-v.register('@react-navigation/stack', { createStackNavigator: bundle.createStackNavigator });`}
-  vendorComponents={[
-    [
-      'react-navigation-bundle',
-      'https://gitcdn.xyz/repo/dabbott/8aeaf791bb9fa75e67d1639b4a4dd448/raw/1273fc4f77e006f7deabacce0305008bfcc152a7/react-navigation-bundle.js',
-    ],
+  prelude={`var bundle = window['react-navigation-bundle'];
+__VendorComponents.register('@react-navigation/native', { NavigationContainer: bundle.NavigationContainer });
+__VendorComponents.register('@react-navigation/stack', { createStackNavigator: bundle.createStackNavigator });`}
+  modules={[
+    {
+      name: 'react-navigation-bundle',
+      url:
+        'https://gitcdn.xyz/repo/dabbott/8aeaf791bb9fa75e67d1639b4a4dd448/raw/1273fc4f77e006f7deabacce0305008bfcc152a7/react-navigation-bundle.js',
+      globalName: 'react-navigation-bundle',
+    },
   ]}
 />

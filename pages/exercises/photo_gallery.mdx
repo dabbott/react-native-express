@@ -6,20 +6,22 @@ In this exercise, we'll render a grid of photos from [Picsum Photos](https://pic
 
 <Example
   prelude={photoGalleryExercise.prelude}
-  panes={['player']}
-  height={540}
-  files={[
-    ['App.js', require('../../examples/files/exercises/PhotoGallery').default],
-    [
-      'components/PhotoGrid.js',
-      require('../../examples/files/exercises/PhotoGrid').default,
-    ],
-    [
-      'reducers/photos.js',
-      require('../../examples/files/exercises/photos').default,
-    ],
-    ['api/picsum.js', require('../../examples/files/exercises/picsum').default],
+  panes={[
+    {
+      type: 'player',
+      platform: 'ios',
+      width: 260,
+    },
   ]}
+  height={540}
+  files={{
+    'App.js': require('../../examples/files/exercises/PhotoGallery').default,
+    'components/PhotoGrid.js': require('../../examples/files/exercises/PhotoGrid')
+      .default,
+    'reducers/photos.js': require('../../examples/files/exercises/photos')
+      .default,
+    'api/picsum.js': require('../../examples/files/exercises/picsum').default,
+  }}
 />
 
 ## Project set up

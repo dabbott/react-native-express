@@ -1,19 +1,6 @@
 const defaultAppTemplate = require('./files/exercises/defaultApp').default
 
 export default {
-  prelude: `ReactNative.Dimensions._update();
-  
-if (!window._originalRequire) {
-  window._originalRequire = window._require;
-}
-
-window._require = function __req(name, ...args) {
-  if (name.indexOf('..') === 0) {
-    return window._originalRequire(name.slice(1), ...args);
-  }
-
-  return window._originalRequire(name, ...args);
-};`,
   workspaces: [
     {
       title: '1. Create a new project',
@@ -199,16 +186,3 @@ We use \`useCallback\` because our \`fetchPhotos\` function is async, and we nee
     },
   ],
 }
-
-// files={[
-//   ['App.js', require('../../examples/files/exercises/PhotoGallery').default],
-//   [
-// 'components/PhotoGrid.js',
-// require('../../examples/files/exercises/PhotoGrid').default,
-//   ],
-//   [
-//     'reducers/photos.js',
-//     require('../../examples/files/exercises/photos').default,
-//   ],
-//   ['api/picsum.js', require('../../examples/files/exercises/picsum').default],
-// ]}
