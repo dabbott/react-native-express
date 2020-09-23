@@ -39,9 +39,9 @@ In this example, we'll use `PanResponder` to create a drag interaction. There ar
 > In a real app, we should generally use `Animated.Value`s in our style for better performance. E.g. create a `positionY` animated value from `initialY` and `offsetY`, and start a `.timing` animation with a very short duration whenever the state of the drag changes.
 
 <Example
-  files={[
-    ['App.js', panResponder],
-    ['usePanResponder.js', usePanResponder],
-    ['pan.js', pan],
-  ]}
+  files={{
+    'App.js': panResponder,
+    'usePanResponder.js': usePanResponder,
+    'pan.js': pan,
+  }}
 />
