@@ -4,7 +4,9 @@ In this section, we'll cover project organization and separation of concerns wit
 
 ## Project organization
 
-There are many valid ways to organize a project. Here we recommend a common approach, but if you're already familiar with web development, you can organize your project the same way you would for a web app.
+There are many valid ways to organize a project. Here we recommend a few common approaches for projects of different sizes, but if you're already familiar with web development, you can organize your project the same way you would for a web app.
+
+### Small projects
 
 When our app is small, we often keep all components in a single directory:
 
@@ -22,6 +24,10 @@ When our app is small, we often keep all components in a single directory:
 </FileTreeDiagram>
 
 Generally, each component in our app should live in a separate file, and should be the `default` export of that file. We give the file the same name as the component, e.g. a component called `Avatar` should live in `Avatar.js`. In React Native, component names _must_ be capitalized, so the file name will usually be capitalized too for consistency.
+
+> If you're starting a brand new app and you're not sure how large it's going to be, starting here and letting it grow naturally is fine! If you know it's going to be a massive app (e.g. Facebook, WeChat) with multiple teams of developers contributing code, consider choosing the _large project_ structure to begin with.
+
+### Medium projects
 
 As our app grows, we'll typically separate "screen" components into a `screens` directory, and start further categorizing files within the `components` directory. A "screen" component should take up the full screen, such as a Profile screen or a Settings screen.
 
@@ -105,6 +111,69 @@ A few other common categories of file:
   })}
 </FileTreeDiagram>
 
+### Large projects
+
+When a project grows to include many different features or UI flows, it's common to categorize files by feature at the top level. If multiple teams are working on the app, the feature names will frequently align with the team names: e.g. accounts, growth, privacy.
+
+The feature directories are commonly grouped under a `modules`, `packages`, or `apps` directory. Components or utilities that are shared between multiple features/teams will often be in a special `shared` or `core` directory within that, and treated as a public API. A feature should **only** reference files within its own directory or the shared directory, _never_ a file within another feature directory — that's a sign that the file is a candidate for moving to shared and considering it a public API.
+
+This project structure aims to clearly describe for each file: where it should live, who maintains it, and whether it's allowed to be imported into other features.
+
+<FileTreeDiagram>
+  {() => ({
+    name: 'MyApp',
+    children: [
+      {
+        name: 'modules',
+        children: [
+          {
+            name: 'accounts',
+            children: [
+              {
+                name: 'components',
+                children: ['UserProfile.js', 'LoginInput.js'],
+              },
+              {
+                name: 'screens',
+                children: ['Profile.js', 'Login.js', 'Deactivate.js'],
+              },
+              {
+                name: 'utils',
+                children: ['formatAccountName.js'],
+              },
+              {
+                name: 'App.js',
+              },
+            ],
+          },
+          {
+            name: 'growth',
+            children: ['components', 'screens', 'utils', 'App.js'],
+          },
+          {
+            name: 'privacy',
+            children: ['components', 'screens', 'utils', 'App.js'],
+          },
+          {
+            name: 'shared',
+            children: [
+              {
+                name: 'components',
+                children: ['Avatar.js', 'Button.js', 'List.js'],
+              },
+              {
+                name: 'utils',
+                children: ['format.js'],
+              },
+            ],
+          },
+        ],
+      },
+      'App.js',
+    ],
+  })}
+</FileTreeDiagram>
+
 ## Separation of concerns in components
 
 In React Native, the component is the _only_ building block of our UI. Some frameworks separate concepts like "views" and "controllers", but React doesn't enforce any specific pattern. It's up to us to decide what abstractions we want.
@@ -125,7 +194,7 @@ If your company has multiple apps, it may be valuable to share code between apps
 
 ### Example
 
-In the example file structure above, our `screens` directory contains our "container" components, while `components` contains our presentational components. If we wanted container components that didn't represent entire screens in the app, but rather portions of a screen (that might be shared between different screens), we might additionally make a `containers` directory.
+In the medium-sized project example file structure above, our `screens` directory contains our "container" components, while `components` contains our presentational components. If we wanted container components that didn't represent entire screens in the app, but rather portions of a screen (that might be shared between different screens), we might additionally make a `containers` directory.
 
 <FileTreeDiagram>
   {() => ({

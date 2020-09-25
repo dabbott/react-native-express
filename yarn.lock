@@ -4475,10 +4475,10 @@ isomorphic-fetch@^2.1.1:
     node-fetch "^1.0.1"
     whatwg-fetch ">=0.10.0"
 
-javascript-playgrounds@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/javascript-playgrounds/-/javascript-playgrounds-1.0.2.tgz#b5334cf3836b0f045f1046536301b1dd85fe0d97"
-  integrity sha512-+3ZSuc7ugJtIbFyJ18CzE/8lSLub9IuuEj0ICHSJMHD2avToNGAgoq9aOU2DQxg5GDY/TM7Y8tQPlq6UkakETg==
+javascript-playgrounds@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/javascript-playgrounds/-/javascript-playgrounds-1.0.5.tgz#6f49e42776743df8092569d37b3cdd449cdab959"
+  integrity sha512-8S+nuXgvGrHkQ7tYWaM+rXLhtlFYljuyQhxgB5OPjvrbrMbuedHD5iO+ytTozHsixZ0T3X+RvioU79FkfQ2GoQ==
 
 jest-worker@24.9.0:
   version "24.9.0"
@@ -6103,13 +6103,13 @@ react-ga@^2.6.0:
   resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.6.0.tgz#c3fe830ead2ad25117e1d33280d9698de9b28496"
   integrity sha512-GWHBWZDFjDGMkIk1LzroIn0mNTygKw3adXuqvGvheFZvlbpqMPbHsQsTdQBIxRRdXGQM/Zq+dQLRPKbwIHMTaw==
 
-react-guidebook@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.4.3.tgz#af03f34ae59c8928ea5ad47370507edc21c094b0"
-  integrity sha512-gLw/ZQ9WnLpDRwRamoXZXJBzobx4xMy+dv1uG32o7oF9bcuQusTOCXqKUYLXOcqDyK9XfPC/Mqk0q22buS/sXQ==
+react-guidebook@^0.4.6:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.4.6.tgz#07edb4639b33c5f38254732a63d1b292507b69dd"
+  integrity sha512-2FfVMgZyjSlALkfrZZtdiLb8Slw6FhEDDZd2P2tjKzn6OFUvmTD+dxktir5Ebb1r7lNYq3dKP+gyGvb+aB1FZg==
   dependencies:
     downshift "^6.0.5"
-    javascript-playgrounds "^1.0.2"
+    javascript-playgrounds "^1.0.5"
 
 react-is@16.13.1, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
