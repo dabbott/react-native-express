@@ -1,5 +1,5 @@
 import { Code, Pre } from 'react-guidebook'
-import { diagram } from 'tree-visit'
+import { diagram } from 'tree-visit/lib/diagram'
 
 const normalizeNode = (node) =>
   typeof node === 'string' ? { name: node } : node

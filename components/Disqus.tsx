@@ -16,12 +16,19 @@ const Container = styled.div({
 
 const isDev = process.env.NODE_ENV === 'development'
 
+interface Props {
+  identifier: string
+  title: string
+  shortname: string
+  stagingShortname: string
+}
+
 export default function Disqus({
   identifier,
   title,
   shortname,
   stagingShortname,
-}) {
+}: Props) {
   if (typeof window === 'undefined') return null
 
   const name = isDev ? stagingShortname : shortname

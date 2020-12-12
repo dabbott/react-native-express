@@ -1,7 +1,8 @@
 import React from 'react'
-import { findNodeBySlug, requireSlides } from 'react-guidebook'
-import guidebook from '../guidebook'
+import { findNodeBySlug, requireSlides, TreeNode } from 'react-guidebook'
 import SpectacleSlideshow from './SpectacleSlideshow'
+
+const guidebook: TreeNode = require('../guidebook')
 
 function requireModule(id) {
   return require('!!babel-loader!spectacle-mdx-loader!../pages/' + id + '.mdx')
