@@ -1,13 +1,6 @@
 import React from 'react'
+import { Anchor, InlineCode, mediaQuery, Promotion } from 'react-guidebook'
 import styled from 'styled-components'
-import {
-  Anchor,
-  Paragraph,
-  mediaQuery,
-  InlineCode,
-  Promotion,
-} from 'react-guidebook'
-
 import bookImage from '../images/fsrn-book.png'
 import bookImage2x from '../images/fsrn-book@2x.png'
 

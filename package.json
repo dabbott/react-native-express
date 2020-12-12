@@ -33,6 +33,9 @@
   },
   "devDependencies": {
     "@mdx-js/loader": "^1.0.20",
+    "@types/node": "^14.14.11",
+    "@types/react": "^17.0.0",
+    "@types/styled-components": "^5.1.4",
     "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.11.1",
     "generate-guidebook": "^1.1.0",
@@ -40,7 +43,8 @@
     "next-mdx-frontmatter": "^0.0.3",
     "prettier": "^2.0.5",
     "raw-loader": "^3.0.0",
-    "spectacle-mdx-loader": "^0.1.1"
+    "spectacle-mdx-loader": "^0.1.1",
+    "typescript": "^4.1.2"
   },
   "repository": {
     "type": "git",

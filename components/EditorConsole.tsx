@@ -40,7 +40,14 @@ const paneNames = {
   console: 'Console Output',
 }
 
-export default class EditorConsole extends Component {
+interface Props {
+  variant?: 'slides'
+  width?: number
+  prelude?: string
+  modules: unknown[]
+}
+
+export default class EditorConsole extends Component<Props> {
   shouldComponentUpdate() {
     return false
   }
