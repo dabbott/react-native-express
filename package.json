@@ -16,9 +16,9 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.6",
     "react-ga": "^2.6.0",
-    "react-guidebook": "^0.4.6",
+    "react-guidebook": "^0.5.3",
     "reset-css": "^5.0.1",
-    "spectacle": "^6.1.0",
+    "spectacle": "^6.2.0",
     "styled-components": "^5.1.1",
     "tree-visit": "^0.0.7"
   },

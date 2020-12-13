@@ -1,17 +1,16 @@
-import React, { Component } from 'react'
+import React, { memo } from 'react'
+import { WebPlayer, WebPlayerProps } from 'react-guidebook'
+import { useTheme } from 'styled-components'
 
-import { WebPlayer } from 'react-guidebook'
-import { colors } from '../styles/theme'
-
-function getPaneType(pane) {
+function getPaneType(pane): string {
   return typeof pane === 'string' ? pane : pane.type
 }
 
-function countPlaygroundWidgets(code) {
+function countPlaygroundWidgets(code): number {
   return (code.match(/console\.log/g) || []).length
 }
 
-function codeHeight(code) {
+function codeHeight(code): number {
   const headerHeight = 40
   const footerHeight = 40
   const lineHeight = 20
@@ -43,35 +42,36 @@ const paneNames = {
 interface Props {
   variant?: 'slides'
   width?: number
+  height?: number
+  code?: string
   prelude?: string
-  modules: unknown[]
+  modules?: WebPlayerProps['modules']
+  panes?: WebPlayerProps['panes']
+  workspaces?: WebPlayerProps['workspaces']
 }
 
-export default class EditorConsole extends Component<Props> {
-  shouldComponentUpdate() {
-    return false
-  }
-
-  render() {
-    let {
-      variant,
-      width,
-      prelude,
-      modules,
-      panes = [
-        'editor',
-        {
-          type: 'player',
-          platform: 'ios',
-          width: width ?? 260,
-          scale: 0.75,
-          prelude,
-          modules,
-        },
-      ],
-      height,
-      ...rest
-    } = this.props
+export default memo(
+  function EditorConsole({
+    variant,
+    width,
+    prelude,
+    modules,
+    panes = [
+      'editor',
+      {
+        id: 'player',
+        type: 'player',
+        platform: 'ios',
+        width: width ?? 260,
+        scale: 0.75,
+        prelude,
+        modules,
+      },
+    ],
+    height,
+    ...rest
+  }: Props) {
+    const theme = useTheme()
 
     const style = {
       minWidth: '0',
@@ -99,23 +99,59 @@ export default class EditorConsole extends Component<Props> {
 
     const baseStyles = {
       workspacesButtonWrapper: {
-        backgroundColor: colors.primary,
+        backgroundColor: theme.colors.primary,
       },
       workspacesRowActive: {
-        backgroundColor: colors.primary,
-        borderLeftColor: colors.primary,
+        backgroundColor: theme.colors.primary,
+        borderLeftColor: theme.colors.primary,
       },
       workspacesDescription: {
-        backgroundColor: colors.primary,
+        backgroundColor: theme.colors.primary,
       },
       workspacesPane: {
         flex: '0 0 25%',
       },
       tabTextActive: {
         color: '#333',
-        borderBottomColor: colors.primary,
+        borderBottomColor: theme.colors.primary,
       },
     }
+
+    const responsivePaneSets: WebPlayerProps['responsivePaneSets'] =
+      panes.length > 1 && width !== 0
+        ? [
+            {
+              maxWidth: 920,
+              panes: [
+                {
+                  id: 'stack',
+                  type: 'stack',
+                  children: panes.map((pane, index) => {
+                    const type = getPaneType(pane)
+
+                    return {
+                      id: `${type}-${index}`,
+                      title: paneNames[type] || type,
+                      ...(typeof pane === 'string' ? { type } : pane),
+                      ...(type === 'workspaces' && {
+                        style: {
+                          flex: '1 1 0%',
+                          width: 'inherit',
+                        },
+                      }),
+                      ...(type === 'player' && {
+                        style: {
+                          paddingLeft: '0px',
+                          paddingRight: '0px',
+                        },
+                      }),
+                    } as any // Improve JavaScript Playgrounds exported types to make this easier to type
+                  }),
+                },
+              ],
+            },
+          ]
+        : []
 
     return (
       <WebPlayer
@@ -147,45 +183,13 @@ export default class EditorConsole extends Component<Props> {
         }}
         css={variant === 'slides' ? slidesCSS : undefined}
         panes={panes}
-        responsivePaneSets={
-          panes.length > 1 && width !== 0
-            ? [
-                {
-                  maxWidth: 920,
-                  panes: [
-                    {
-                      type: 'stack',
-                      children: panes.map((pane) => {
-                        const type = getPaneType(pane)
-
-                        return {
-                          title: paneNames[type] || type,
-                          ...(typeof pane === 'string' ? { type } : pane),
-                          ...(type === 'workspaces' && {
-                            style: {
-                              flex: '1 1 0%',
-                              width: 'inherit',
-                            },
-                          }),
-                          ...(type === 'player' && {
-                            style: {
-                              paddingLeft: '0px',
-                              paddingRight: '0px',
-                            },
-                          }),
-                        }
-                      }),
-                    },
-                  ],
-                },
-              ]
-            : []
-        }
+        responsivePaneSets={responsivePaneSets}
         {...rest}
       />
     )
-  }
-}
+  },
+  () => true
+)
 
 const slidesCSS = `
 .CodeMirror {

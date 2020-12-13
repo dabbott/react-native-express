@@ -6151,10 +6151,10 @@ react-ga@^2.6.0:
   resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.6.0.tgz#c3fe830ead2ad25117e1d33280d9698de9b28496"
   integrity sha512-GWHBWZDFjDGMkIk1LzroIn0mNTygKw3adXuqvGvheFZvlbpqMPbHsQsTdQBIxRRdXGQM/Zq+dQLRPKbwIHMTaw==
 
-react-guidebook@^0.4.6:
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.4.6.tgz#07edb4639b33c5f38254732a63d1b292507b69dd"
-  integrity sha512-2FfVMgZyjSlALkfrZZtdiLb8Slw6FhEDDZd2P2tjKzn6OFUvmTD+dxktir5Ebb1r7lNYq3dKP+gyGvb+aB1FZg==
+react-guidebook@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.5.3.tgz#4137b41e50d71d6acba1e327c2315c323d03398c"
+  integrity sha512-6dVqaBjU6BYZ2yRAp4gld/OMGGjW0JCgCzhVIGHWGmLAstdWPYcHekEzjrG9d3FOPfFbs5HfFI+tdv5VoMVb2w==
   dependencies:
     downshift "^6.0.5"
     javascript-playgrounds "^1.0.5"
@@ -6831,7 +6831,7 @@ spectacle-mdx-loader@^0.1.1:
     loader-utils "^1.2.3"
     normalize-newline "^3.0.0"
 
-spectacle@^6.1.0:
+spectacle@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/spectacle/-/spectacle-6.2.0.tgz#15dd4ab94f85ffb7cbbd8a3091f5ed209fd6deba"
   integrity sha512-coUt0FOMbeskqF0noTmG1Jg8qhL6j2C/ov9bRwNtWIN/ISqmaC/k5G91HyYNLfzs6w9BkOrDS/MKX8XDwoHhEg==
