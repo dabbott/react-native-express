@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import 'reset-css'
 import '../styles/main.css'
 
@@ -16,8 +17,11 @@ import {
   findNodeBySlug,
   trackPageView,
   initializeAnalytics,
+  LinkContext,
+  Anchor,
+  RouterContext,
 } from 'react-guidebook'
-import theme from '../styles/theme'
+import defaultTheme from '../styles/theme'
 import slidesTheme from '../styles/slidesTheme'
 import EditorConsole from '../components/EditorConsole'
 import Disqus from '../components/Disqus'
@@ -41,74 +45,75 @@ const github = {
   repo: 'react-native-express',
 }
 
+const LinkComponent = ({ href, children, style }) => (
+  <Link href={href}>
+    <Anchor style={style}>{children}</Anchor>
+  </Link>
+)
+
 export default class MyApp extends App {
   render() {
     const { Component, pageProps, router } = this.props
-
     const slug = router.pathname.slice(1)
+    const theme = slug.endsWith('slides') ? slidesTheme : defaultTheme
 
-    if (slug.endsWith('slides')) {
-      return (
-        <ThemeProvider theme={slidesTheme}>
-          <Component {...pageProps} />
-        </ThemeProvider>
-      )
+    let content
+
+    // Serve these pages "bare", without the Page component wrapper
+    if (slug.endsWith('slides') || slug.endsWith('playgrounds')) {
+      content = <Component {...pageProps} />
+    } else {
+      const node = findNodeBySlug(guidebook, slug)
+
+      if (!node) {
+        content = <NotFound routeMap={legacyRoutes} />
+      } else {
+        const isIntroduction = node.slug === ''
+
+        content = (
+          <>
+            <Head>
+              <title>{node.title}</title>
+              <meta property="og:title" content={node.title} />
+            </Head>
+            <MDXProvider components={Components}>
+              <Page
+                rootNode={guidebook}
+                logo={logo}
+                github={github}
+                footer={
+                  <>
+                    {isIntroduction ? undefined : <BookBanner />}
+                    {isIntroduction ? undefined : (
+                      <Disqus
+                        title={node.title}
+                        identifier={node.slug}
+                        shortname={'reactnativeexpress'}
+                        stagingShortname={'reactnativeexpress-staging'}
+                      />
+                    )}
+                  </>
+                }
+                searchPages={searchPages}
+                searchTextMatch={searchTextMatch}
+              >
+                <Component {...pageProps} />
+              </Page>
+            </MDXProvider>
+          </>
+        )
+      }
     }
-
-    if (slug.endsWith('playgrounds')) {
-      return (
-        <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
-        </ThemeProvider>
-      )
-    }
-
-    const node = findNodeBySlug(guidebook, slug)
-
-    if (!node) {
-      return (
-        <ThemeProvider theme={theme}>
-          <NotFound routeMap={legacyRoutes} />
-        </ThemeProvider>
-      )
-    }
-
-    const isIntroduction = node.slug === ''
 
     return (
-      <ThemeProvider theme={theme}>
-        {/* Fragment needed for React.Children.only */}
-        <>
-          <Head>
-            <title>{node.title}</title>
-            <meta property="og:title" content={node.title} />
-          </Head>
-          <MDXProvider components={Components}>
-            <Page
-              rootNode={guidebook}
-              logo={logo}
-              github={github}
-              footer={
-                <>
-                  {isIntroduction ? undefined : <BookBanner />}
-                  {isIntroduction ? undefined : (
-                    <Disqus
-                      title={node.title}
-                      identifier={node.slug}
-                      shortname={'reactnativeexpress'}
-                      stagingShortname={'reactnativeexpress-staging'}
-                    />
-                  )}
-                </>
-              }
-              searchPages={searchPages}
-              searchTextMatch={searchTextMatch}
-            >
-              <Component {...pageProps} />
-            </Page>
-          </MDXProvider>
-        </>
-      </ThemeProvider>
+      <RouterContext.Provider value={router}>
+        <LinkContext.Provider value={LinkComponent}>
+          <ThemeProvider theme={theme}>
+            {/* A single child is required here for React.Children.only */}
+            {content}
+          </ThemeProvider>
+        </LinkContext.Provider>
+      </RouterContext.Provider>
     )
   }
 }
