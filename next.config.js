@@ -1,4 +1,5 @@
 const withImages = require('next-images')
+const slug = require('rehype-slug')
 
 const withGuidebook = require('generate-guidebook/next')({
   guidebookDirectory: './pages',
@@ -7,6 +8,9 @@ const withGuidebook = require('generate-guidebook/next')({
 
 const withMDX = require('next-mdx-frontmatter')({
   extension: /\.mdx?$/,
+  MDXOptions: {
+    rehypePlugins: [slug],
+  },
 })
 
 const withRawExampleLoader = (nextConfig) => ({

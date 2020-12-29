@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 93.75%; /* 15px, assuming 16px default */
+  text-rendering: optimizeLegibility;
+}
+
 body {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
