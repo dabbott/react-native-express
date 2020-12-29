@@ -7,6 +7,9 @@ import Document, {
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 import guidebook from '../guidebook'
+import pkg from '../package.json'
+
+const config: Config.Guidebook = pkg.guidebook ?? {}
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -39,50 +42,91 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head lang="en">
-          {/* Favicon */}
-          <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
-          <link rel="icon" type="image/png" href="/static/favicon.png" />
-
           {/* Site description */}
           <meta name="description" content={guidebook.subtitle} />
           <meta property="og:type" content="article" />
-          <meta property="og:url" content="https://www.reactnative.express/" />
           <meta property="og:site_name" content={guidebook.title} />
           <meta property="og:description" content={guidebook.subtitle} />
           <meta property="og:locale" content="en_US" />
           <meta property="og:card" content="summary" />
-          <meta property="og:creator" content="@dvnabbott" />
-          <meta
-            property="article:author"
-            content="https://twitter.com/dvnabbott"
-          />
 
-          {/* Image */}
-          <meta
-            property="og:image"
-            content="http://www.reactnative.express/static/preview.png"
-          />
-          <meta
-            property="og:image:secure_url"
-            content="https://www.reactnative.express/static/preview.png"
-          />
-          <meta property="og:image:type" content="image/png" />
-          <meta property="og:image:width" content="1200" />
-          <meta property="og:image:height" content="630" />
-          <meta property="og:image:alt" content="" />
+          {/* Location */}
+          {config.location && (
+            <meta
+              property="og:url"
+              content={`https://${config.location.host}`}
+            />
+          )}
+
+          {/* Favicon */}
+          {config.favicons?.map(({ type, path }, index) => (
+            <link key={index} rel="icon" type={type} href={path} />
+          ))}
+
+          {/* Author */}
+          {config.author && (
+            <>
+              <meta
+                property="og:creator"
+                content={`@${config.author.twitter}`}
+              />
+              <meta
+                property="article:author"
+                content={`https://twitter.com/${config.author.twitter}`}
+              />
+            </>
+          )}
+
+          {/* Preview Image */}
+          {config.location && config.previewImage && (
+            <>
+              <meta
+                property="og:image"
+                content={`http://${config.location.host}${config.previewImage.path}`}
+              />
+              <meta
+                property="og:image:secure_url"
+                content={`https://${config.location.host}${config.previewImage.path}`}
+              />
+              <meta
+                property="og:image:type"
+                content={config.previewImage.type}
+              />
+              <meta
+                property="og:image:width"
+                content={config.previewImage.width}
+              />
+              <meta
+                property="og:image:height"
+                content={config.previewImage.height}
+              />
+              <meta property="og:image:alt" content={config.previewImage.alt} />
+            </>
+          )}
 
           {/* Twitter */}
-          <meta name="twitter:card" content="summary"></meta>
-          <meta name="twitter:creator" content="@dvnabbott" />
-          <meta
-            name="twitter:image"
-            content="https://www.reactnative.express/static/preview.png"
-          />
+          {config.author?.twitter && (
+            <>
+              <meta name="twitter:card" content="summary"></meta>
+              <meta
+                name="twitter:creator"
+                content={`@${config.author.twitter}`}
+              />
+              {config.location && config.previewImage && (
+                <meta
+                  name="twitter:image"
+                  content={`https://${config.location.host}${config.previewImage.path}`}
+                />
+              )}
+            </>
+          )}
 
           {/* Facebook */}
-          <meta property="fb:app_id" content="907755649360812" />
+          {config.facebook && (
+            <meta property="fb:app_id" content={config.facebook.appId} />
+          )}
 
-          {/* Step 5: Output the styles in the head  */}
+          {/* Output the styles in the head  */}
           {(this.props as any).styleTags}
         </Head>
         <body>

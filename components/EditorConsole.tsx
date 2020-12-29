@@ -2,15 +2,23 @@ import React, { memo } from 'react'
 import { WebPlayer, WebPlayerProps } from 'react-guidebook'
 import { useTheme } from 'styled-components'
 
-function getPaneType(pane): string {
+const paneNames = {
+  editor: 'Code',
+  player: 'Live Preview',
+  transpiler: 'Babel Output',
+  workspaces: 'Walkthrough',
+  console: 'Console Output',
+}
+
+function getPaneType(pane: any): keyof typeof paneNames {
   return typeof pane === 'string' ? pane : pane.type
 }
 
-function countPlaygroundWidgets(code): number {
+function countPlaygroundWidgets(code: string): number {
   return (code.match(/console\.log/g) || []).length
 }
 
-function codeHeight(code): number {
+function codeHeight(code: string): number {
   const headerHeight = 40
   const footerHeight = 40
   const lineHeight = 20
@@ -29,14 +37,6 @@ function codeHeight(code): number {
     padding +
     footerHeight
   )
-}
-
-const paneNames = {
-  editor: 'Code',
-  player: 'Live Preview',
-  transpiler: 'Babel Output',
-  workspaces: 'Walkthrough',
-  console: 'Console Output',
 }
 
 interface Props {

@@ -16,7 +16,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-ga": "^3.3.0",
-    "react-guidebook": "^0.6.1",
+    "react-guidebook": "^0.7.0",
     "reset-css": "^5.0.1",
     "spectacle": "^6.2.0",
     "styled-components": "^5.1.1",
@@ -39,7 +39,7 @@
     "@types/styled-components": "^5.1.4",
     "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.11.1",
-    "generate-guidebook": "^1.3.2",
+    "generate-guidebook": "^1.3.3",
     "loader-utils": "^1.2.3",
     "next-mdx-frontmatter": "^0.0.3",
     "prettier": "^2.0.5",
@@ -50,11 +50,50 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/dabbott/react-native-express"
   },
   "prettier": {
     "semi": false,
     "singleQuote": true,
     "trailingComma": "es5"
+  },
+  "guidebook": {
+    "location": {
+      "host": "www.reactnative.express"
+    },
+    "author": {
+      "twitter": "dvnabbott"
+    },
+    "favicons": [
+      {
+        "type": "image/x-icon",
+        "path": "/static/favicon.ico"
+      },
+      {
+        "type": "image/png",
+        "path": "/static/favicon.png"
+      }
+    ],
+    "previewImage": {
+      "type": "image/png",
+      "width": "1200",
+      "height": "630",
+      "alt": "Website preview",
+      "path": "/static/preview.png"
+    },
+    "github": {
+      "user": "dabbott",
+      "repo": "react-native-express"
+    },
+    "disqus": {
+      "shortname": "reactnativeexpress",
+      "stagingShortname": "reactnativeexpress-staging"
+    },
+    "googleAnalytics": {
+      "trackingId": "UA-77053427-1"
+    },
+    "facebook": {
+      "appId": "907755649360812"
+    }
   }
 }

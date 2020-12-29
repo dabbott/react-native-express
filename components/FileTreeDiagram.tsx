@@ -1,10 +1,19 @@
 import { Code, Pre } from 'react-guidebook'
 import { diagram } from 'tree-visit/lib/diagram'
 
-const normalizeNode = (node) =>
+type Node = {
+  name: string
+  children?: Node[]
+}
+
+const normalizeNode = (node: Node) =>
   typeof node === 'string' ? { name: node } : node
 
-export default function FileTreeDiagram({ children }) {
+interface Props {
+  children: () => Node
+}
+
+export default function FileTreeDiagram({ children }: Props) {
   const root = children()
 
   const output = diagram(root, {

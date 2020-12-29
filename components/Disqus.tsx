@@ -13,7 +13,7 @@ interface Props {
   identifier: string
   title: string
   shortname: string
-  stagingShortname: string
+  stagingShortname?: string
 }
 
 export default function Disqus({

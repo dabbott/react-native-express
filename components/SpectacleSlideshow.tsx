@@ -6,7 +6,9 @@ import { Slide } from 'react-guidebook/lib/utils/requireSlides'
 
 import EditorConsole from './EditorConsole'
 
-const Example = (props) => <EditorConsole variant="slides" {...props} />
+const Example = (props: React.ComponentProps<typeof EditorConsole>) => (
+  <EditorConsole variant="slides" {...props} />
+)
 
 interface Props {
   slides: Slide[]

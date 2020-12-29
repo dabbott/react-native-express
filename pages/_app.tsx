@@ -33,6 +33,9 @@ import logo from '../images/logo.svg'
 import legacyRoutes from '../utils/legacyRoutes'
 import guidebook from '../guidebook'
 import { searchPages, searchTextMatch } from '../utils/search'
+import pkg from '../package.json'
+
+const config: Config.Guidebook = pkg.guidebook ?? {}
 
 const Components = {
   ...PageComponents,
@@ -40,11 +43,6 @@ const Components = {
   Author,
   FileTreeDiagram: FileTreeDiagram,
   Details: ({ children }: { children: React.ReactNode }) => children,
-}
-
-const github = {
-  user: 'dabbott',
-  repo: 'react-native-express',
 }
 
 const LinkComponent = ({ href, children, style }: LinkProps) => (
@@ -81,20 +79,20 @@ export default function App({ Component, pageProps, router }: AppProps) {
               rootNode={guidebook}
               header={
                 isIntroduction ? (
-                  <Banner logo={logo} github={github} />
+                  <Banner logo={logo} github={config.github} />
                 ) : undefined
               }
               footer={
                 <>
                   {isIntroduction ? undefined : <BookBanner />}
-                  {isIntroduction ? undefined : (
+                  {isIntroduction ? undefined : config.disqus ? (
                     <Disqus
                       title={node.title}
                       identifier={node.slug}
-                      shortname={'reactnativeexpress'}
-                      stagingShortname={'reactnativeexpress-staging'}
+                      shortname={config.disqus.shortname}
+                      stagingShortname={config.disqus.stagingShortname}
                     />
-                  )}
+                  ) : undefined}
                 </>
               }
               searchPages={searchPages}
@@ -120,10 +118,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
   )
 }
 
-if (typeof document !== 'undefined') {
+if (typeof document !== 'undefined' && config.googleAnalytics) {
   const pageView = () => trackPageView(ReactGA)
 
-  initializeAnalytics(ReactGA, 'UA-77053427-1')
+  initializeAnalytics(ReactGA, config.googleAnalytics.trackingId)
   pageView()
   ;(Router as any).onRouteChangeComplete = pageView
 }
