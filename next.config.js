@@ -33,7 +33,7 @@ module.exports = withRawExampleLoader(
   withGuidebook(
     withImages(
       withMDX({
-        pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+        pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
       })
     )
   )
