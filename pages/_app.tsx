@@ -21,6 +21,7 @@ import {
   Anchor,
   RouterContext,
   Banner,
+  LinkProps,
 } from 'react-guidebook'
 import defaultTheme from '../styles/theme'
 import slidesTheme from '../styles/slidesTheme'
@@ -38,7 +39,7 @@ const Components = {
   Example: EditorConsole,
   Author,
   FileTreeDiagram: FileTreeDiagram,
-  Details: ({ children }) => children,
+  Details: ({ children }: { children: React.ReactNode }) => children,
 }
 
 const github = {
@@ -46,7 +47,7 @@ const github = {
   repo: 'react-native-express',
 }
 
-const LinkComponent = ({ href, children, style }) => (
+const LinkComponent = ({ href, children, style }: LinkProps) => (
   <Link href={href}>
     <Anchor style={style}>{children}</Anchor>
   </Link>
