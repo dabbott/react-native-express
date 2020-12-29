@@ -1,4 +1,4 @@
-import { TreeNode } from 'react-guidebook'
+import type { TreeNode } from 'generate-guidebook'
 
 const value: TreeNode
 
