@@ -20,6 +20,7 @@ import {
   LinkContext,
   Anchor,
   RouterContext,
+  Banner,
 } from 'react-guidebook'
 import defaultTheme from '../styles/theme'
 import slidesTheme from '../styles/slidesTheme'
@@ -79,8 +80,11 @@ export default class MyApp extends App {
             <MDXProvider components={Components}>
               <Page
                 rootNode={guidebook}
-                logo={logo}
-                github={github}
+                header={
+                  isIntroduction ? (
+                    <Banner logo={logo} github={github} />
+                  ) : undefined
+                }
                 footer={
                   <>
                     {isIntroduction ? undefined : <BookBanner />}
