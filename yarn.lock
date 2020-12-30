@@ -3000,10 +3000,10 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-generate-guidebook@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/generate-guidebook/-/generate-guidebook-1.3.3.tgz#e404600e9495f36516564a8447320ac86ab10aa0"
-  integrity sha512-QOfuniFPmoLjy5LhKy5kDiK/onYvM220pdEY8G7yruYovyZCbFbgi+hoxAXsp50inpR4nWsF35UNuJl7z8FwjQ==
+generate-guidebook@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/generate-guidebook/-/generate-guidebook-1.3.4.tgz#1b0e52b400ee11c5fd131a6aef8dad4576e8c117"
+  integrity sha512-CvbuQvTzY08yCyS7kLJ2pmQGovYMZNM00Xev7aYhflkTpQd2pEkyCmP2KdpVkIAStKm8nHxyKUHcjX/mFwlrgw==
   dependencies:
     "@mdx-js/mdx" "^1.6.16"
     eval-webpack-plugin "^1.0.0"
@@ -5033,10 +5033,10 @@ react-ga@^3.3.0:
   resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-3.3.0.tgz#c91f407198adcb3b49e2bc5c12b3fe460039b3ca"
   integrity sha512-o8RScHj6Lb8cwy3GMrVH6NJvL+y0zpJvKtc0+wmH7Bt23rszJmnqEQxRbyrqUzk9DTJIHoP42bfO5rswC9SWBQ==
 
-react-guidebook@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.7.0.tgz#c527dd91acd8d58c8f2a1c8a0cc99fd9e8916305"
-  integrity sha512-94myjM2mOfE/8nNodzuWdeBroxftulzY8cipOFpn0eO8ircWS9FdSdDlAbwf9h9ksdzAONuLMckzgpUKC/CQBA==
+react-guidebook@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.9.0.tgz#d20f82a1e7d4671f12a0857b9926af181ba1309c"
+  integrity sha512-0QkYx3uDfVSIoOYmVOzQaffWe1Kj8dddSb9oUPn7moRDCFmvzyAr8hd84H3ZxN2O4hjVs4smLY3++gCbFiuWgw==
   dependencies:
     downshift "^6.0.5"
     javascript-playgrounds "^1.1.1"
