@@ -32,7 +32,7 @@ export default function Disqus({
 
   return (
     <Container>
-      <PageLayout useLargeContent>
+      <PageLayout>
         <DiscussionEmbed shortname={name} config={{ url, identifier, title }} />
       </PageLayout>
     </Container>
