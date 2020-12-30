@@ -17,7 +17,6 @@
     "react-dom": "^17.0.1",
     "react-ga": "^3.3.0",
     "react-guidebook": "^0.9.0",
-    "reset-css": "^5.0.1",
     "spectacle": "^6.2.0",
     "styled-components": "^5.1.1",
     "tree-visit": "^0.0.7"
@@ -40,7 +39,6 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.11.1",
     "generate-guidebook": "^1.3.4",
-    "loader-utils": "^1.2.3",
     "next-mdx-frontmatter": "^0.0.3",
     "prettier": "^2.0.5",
     "raw-loader": "^3.0.0",
