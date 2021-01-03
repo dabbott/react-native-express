@@ -11,8 +11,6 @@ import PropsKt from '../../examples/files/native_modules/Props.kt'
 import PropsM from '../../examples/files/native_modules/Props.m'
 import PropsJs from '../../examples/files/native_modules/Props.js'
 
-# Native Modules
-
 Native modules let us access native APIs through JavaScript. All of the built-in components, like `View` and `Image`, are native modules. There are also non-component native modules, like the `Animated` module.
 
 ## Bridging APIs
@@ -38,7 +36,7 @@ Tip: be careful with names! The names of the annotations _do_ matter. Replace "M
 
 ---
 
-## 1. Create a native view subclass
+### 1. Create a native view subclass
 
 This can be any view - there's nothing specific to React Native yet.
 
@@ -54,7 +52,7 @@ This can be any view - there's nothing specific to React Native yet.
 
 ---
 
-## 2. Create a ViewManager subclass
+### 2. Create a ViewManager subclass
 
 A ViewManager manages a pool of our View subclass from the previous step. Native views are reused as much as possible for better performance.
 
@@ -69,7 +67,7 @@ A ViewManager manages a pool of our View subclass from the previous step. Native
 
 ---
 
-## 3. Register the ViewManager subclass
+### 3. Register the ViewManager subclass
 
 We need to let React Native know about our ViewManager by registering it.
 
@@ -85,7 +83,7 @@ We need to let React Native know about our ViewManager by registering it.
 
 ---
 
-## 4. Load the native module from JS
+### 4. Load the native module from JS
 
 Once we've registered a ViewManager on the native side, we can instantiate the view as a React component.
 
@@ -93,7 +91,7 @@ Once we've registered a ViewManager on the native side, we can instantiate the v
 
 ---
 
-## Props
+### 5. Props
 
 Next, we need to pass props from JS to native:
 

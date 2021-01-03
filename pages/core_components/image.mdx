@@ -1,7 +1,5 @@
 import image from '../../examples/files/core_components/image.js'
 
-# Image
-
 `Image` is used to render images. Images may either be downloaded from the web, or imported as files, which are then bundled with the app.
 
 To bundle an image in the app, `import` the image file by its path, including the file extension. When loading bundled images, the same images are used to render on both iOS and Android. Writing `import './test.png'` will choose the most appropriate image for the device size: `test.png`, `test@2x.png`, or `test@3x.png`.

@@ -1,7 +1,5 @@
 import memo from '../../../examples/files/react/memo.js'
 
-# Memo
-
 The `memo` function is a built-in utility for improving performance by reducing component re-renders.
 
 Normally, when we instantiate a JSX element, like `<MyComponent foo={bar} />`, React will run our component function `MyComponent` with the props `{ foo: bar }`. However, if our component function always returns the same thing given the same props, then React can _memoize_ (save) the results of the previous call, and avoid calling the function again until props actually change.
