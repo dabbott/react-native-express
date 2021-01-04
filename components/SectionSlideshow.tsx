@@ -3,7 +3,7 @@ import type { TreeNode } from 'generate-guidebook'
 import { findNodeBySlug, requireSlides } from 'react-guidebook'
 import SpectacleSlideshow from './SpectacleSlideshow'
 
-const guidebook: TreeNode = require('../guidebook')
+const guidebook: TreeNode = require('../guidebook-en')
 
 function requireModule(id: string) {
   return require('!!babel-loader!spectacle-mdx-loader!../pages/' + id + '.mdx')

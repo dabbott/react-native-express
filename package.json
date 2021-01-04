@@ -94,6 +94,13 @@
     },
     "facebook": {
       "appId": "907755649360812"
+    },
+    "i18n": {
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "defaultLocale": "en"
     }
   }
 }
