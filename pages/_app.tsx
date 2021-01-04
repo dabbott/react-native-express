@@ -1,10 +1,11 @@
+import App, { AppInitialProps } from 'next/app'
 import Head from 'next/head'
 import Link from 'next/link'
 import ReactGA from 'react-ga'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { ThemeProvider } from 'styled-components'
-import type { AppProps } from 'next/app'
+import type { AppProps, AppContext } from 'next/app'
 import Router from 'next/router'
 import {
   Page,
@@ -31,11 +32,15 @@ import BookBanner from '../components/BookBanner'
 import FileTreeDiagram from '../components/FileTreeDiagram'
 import logo from '../images/logo.svg'
 import legacyRoutes from '../utils/legacyRoutes'
-import guidebook from '../guidebook'
 import { searchPages, searchTextMatch } from '../utils/search'
 import pkg from '../package.json'
+import type { TreeNode } from 'generate-guidebook'
 
 const config: GuidebookConfig = pkg.guidebook ?? {}
+const { locales, defaultLocale } = (config as any).i18n as {
+  locales: string[]
+  defaultLocale: string
+}
 
 const Components = {
   ...PageComponents,
@@ -45,14 +50,35 @@ const Components = {
   Details: ({ children }: { children: React.ReactNode }) => children,
 }
 
-const LinkComponent = ({ href, children, style }: LinkProps) => (
-  <Link href={href}>
-    <Anchor style={style}>{children}</Anchor>
-  </Link>
-)
+const isExternalLink = (href: string): boolean => !!/https?:/.exec(href)
 
-export default function App({ Component, pageProps, router }: AppProps) {
-  const slug = router.pathname.slice(1)
+export default function GuidebookApp({
+  Component,
+  pageProps,
+  router,
+  locale,
+  guidebook,
+}: AppProps & {
+  locale: string
+  guidebook: TreeNode
+}) {
+  const localePrefix = locale === defaultLocale ? '' : `/${locale}`
+
+  const LinkComponent = useMemo(() => {
+    return ({ href, children, style }: LinkProps) => {
+      const localizedHref = isExternalLink(href)
+        ? href
+        : `${localePrefix}${href}`
+
+      return (
+        <Link href={localizedHref}>
+          <Anchor style={style}>{children}</Anchor>
+        </Link>
+      )
+    }
+  }, [localePrefix])
+
+  const slug = router.pathname.slice(1 + localePrefix.length)
   const theme = slug.endsWith('slides') ? slidesTheme : defaultTheme
 
   let content
@@ -87,20 +113,22 @@ export default function App({ Component, pageProps, router }: AppProps) {
               ) : undefined
             }
             footer={
-              <>
-                {isIntroduction ? undefined : <BookBanner />}
-                {isIntroduction ? undefined : config.disqus ? (
-                  <Disqus
-                    title={node.title}
-                    identifier={node.slug}
-                    shortname={config.disqus.shortname}
-                    stagingShortname={config.disqus.stagingShortname}
-                  />
-                ) : undefined}
-              </>
+              locale === 'en' ? (
+                <>
+                  {isIntroduction ? undefined : <BookBanner />}
+                  {isIntroduction ? undefined : config.disqus ? (
+                    <Disqus
+                      title={node.title}
+                      identifier={node.slug}
+                      shortname={config.disqus.shortname}
+                      stagingShortname={config.disqus.stagingShortname}
+                    />
+                  ) : undefined}
+                </>
+              ) : undefined
             }
-            searchPages={searchPages}
-            searchTextMatch={searchTextMatch}
+            searchPages={locale === 'en' ? searchPages : undefined}
+            searchTextMatch={locale === 'en' ? searchTextMatch : undefined}
           >
             <Component {...pageProps} />
           </Page>
@@ -108,6 +136,15 @@ export default function App({ Component, pageProps, router }: AppProps) {
       )
     }
   }
+
+  const routerWithLocale = useMemo(
+    () => ({
+      pathname: `/${slug}`,
+      asPath: `/${slug}`,
+      push: (pathname: string) => router.push(`/${locale}${pathname}`),
+    }),
+    [locale, router.pathname, router.asPath]
+  )
 
   return (
     <>
@@ -118,7 +155,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
           pageDescription: description,
         })}
       </Head>
-      <RouterProvider value={router}>
+      <RouterProvider value={routerWithLocale}>
         <LinkProvider value={LinkComponent}>
           <Styles.Reset />
           <Styles.Main />
@@ -130,6 +167,21 @@ export default function App({ Component, pageProps, router }: AppProps) {
       </RouterProvider>
     </>
   )
+}
+
+GuidebookApp.getInitialProps = async (appContext: AppContext) => {
+  const router = appContext.router
+  const appProps = await App.getInitialProps(appContext)
+
+  const locale =
+    locales.find((item) => router.asPath.startsWith(`/${item}`)) ??
+    defaultLocale
+
+  return {
+    ...appProps,
+    locale,
+    guidebook: (await import(`../guidebook-${locale}.js`)).default,
+  }
 }
 
 if (typeof document !== 'undefined' && config.googleAnalytics) {
