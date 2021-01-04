@@ -71,7 +71,7 @@ export default function GuidebookApp({
         : `${localePrefix}${href}`
 
       return (
-        <Link href={localizedHref}>
+        <Link href={localizedHref} passHref>
           <Anchor style={style}>{children}</Anchor>
         </Link>
       )
