@@ -2,4 +2,32 @@
 title: 环境配置
 ---
 
-Test markdown link to [core components](/core_components)
+import appRegistry from '../../examples/files/environment/appRegistry.js'
+
+React Native 的开发环境配置主要有两种方法：[`expo-cli`](https://docs.expo.io/workflow/expo-cli/) 和 `react-native` 命令行.
+
+## `expo-cli`
+
+`expo-cli` 是一个配置和发布 React Native 项目的命令行工具，_它也是初学者入门的最佳方式_。你只需在手机安装一个 `Expo` 应用程式，在本地运行 `expo-cli` 来生成一个 QR 码，通过扫码的方式即可快速的在手机上运行开发中的应用。而且，本地编辑后代码会以所见即所得的方式自动更新到手机上，省去了打包发布的等待时间。
+
+但是 `expo-cli` 有一个缺点，你只能使用它来开发纯 JS 的应用。如果你的项目发展到一定阶段，需要使用自定义的原生代码（如 Swift, Kotlin 等）。你可以使用 `eject` 命令把 `expo` 项目导出成 `react-native` 的格式，然后在导出的项目里引用原生代码模块。
+
+`expo-cli` 的开发团队是 [Expo](https://expo.io/)。从 React Native 项目创立至今，Expo 团队即参与了代码研发，也十分活跃在开发者社区里。因此 `expo-cli` 和 `react-native` 的标准不会偏差太多，而且 Expo 团队也会定期维护，请放心使用。
+
+我们会在下一个章节[快速开始](/environment/quick_start)里介绍如何使用 `expo-cli` 来创建一个新项目。
+
+## React Native 命令行
+
+如果你想在现有的应用里集成 React Native，又或是在 React Native 应用里引用原生代码模块，请使用 `react-native` 命令行来创建项目。详细步骤请参照 Facebook 的[官方文档](https://reactnative.dev/docs/environment-setup)里的 React Native CLI Quickstart。
+
+就 JS 代码而言，`react-native` 和 `expo-cli` 项目的区别在于，在`react-native` 项目里，开发者必须调用 `AppRegistry.registerComponent` 来注册一个 React Native 根组件。
+
+<Example title="index.js" panes={['editor']} code={appRegistry} />
+
+`react-native` 允许多个 React Native 根组件的注册，你可以自由发挥，把不同的 React Native 根组件嵌入到对应的原生页面里。
+
+> 在 Expo 项目里则无需调用 `AppRegistry.registerComponent`，Expo 会自动将 `App.js` 里的导出的组件注册为唯一的 React Native 根组件。
+
+### 接下来
+
+下个章节我们会介绍如何使用 `expo-cli` 来创建一个 React Native 项目。
