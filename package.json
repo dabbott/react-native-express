@@ -98,7 +98,7 @@
     "i18n": {
       "locales": [
         "en",
-        "zh-CN"
+        "zh-cn"
       ],
       "defaultLocale": "en"
     }
