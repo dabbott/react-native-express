@@ -23,6 +23,7 @@ import {
   HeadTags,
   GuidebookConfig,
   Styles,
+  isExternalUrl,
 } from 'react-guidebook'
 import defaultTheme from '../styles/theme'
 import slidesTheme from '../styles/slidesTheme'
@@ -37,20 +38,8 @@ import pkg from '../package.json'
 import type { TreeNode } from 'generate-guidebook'
 
 const config: GuidebookConfig = pkg.guidebook ?? {}
-const { locales, defaultLocale } = (config as any).i18n as {
-  locales: string[]
-  defaultLocale: string
-}
 
-const Components = {
-  ...PageComponents,
-  Example: EditorConsole,
-  Author,
-  FileTreeDiagram,
-  Details: ({ children }: { children: React.ReactNode }) => children,
-}
-
-const isExternalLink = (href: string): boolean => !!/https?:/.exec(href)
+const { locales, defaultLocale } = config.i18n!
 
 export default function GuidebookApp({
   Component,
@@ -65,39 +54,53 @@ export default function GuidebookApp({
   const localePrefix = locale === defaultLocale ? '' : `/${locale}`
 
   const LinkComponent = useMemo(() => {
-    return ({ href, children, style }: LinkProps) => {
-      const localizedHref = isExternalLink(href)
-        ? href
-        : `${localePrefix}${href}`
-
-      return (
-        <Link href={localizedHref} passHref>
-          <Anchor style={style}>{children}</Anchor>
-        </Link>
-      )
-    }
+    return ({ href, children, style }: LinkProps) => (
+      <Link
+        href={isExternalUrl(href) ? href : `${localePrefix}${href}`}
+        passHref
+      >
+        <Anchor style={style}>{children}</Anchor>
+      </Link>
+    )
   }, [localePrefix])
 
-  const slug = router.pathname.slice(1 + localePrefix.length)
-  const theme = slug.endsWith('slides') ? slidesTheme : defaultTheme
+  const Components = useMemo(
+    () => ({
+      ...PageComponents,
+      Example: EditorConsole,
+      Author,
+      FileTreeDiagram,
+      Details: ({ children }: { children: React.ReactNode }) => children,
+      a: LinkComponent,
+    }),
+    [LinkComponent]
+  )
+
+  // Use `asPath`, since `pathname` will be "_error" if the page isn't found
+  const pathname = router.asPath.slice(localePrefix.length)
+  const theme = pathname.endsWith('slides') ? slidesTheme : defaultTheme
 
   let content
   let title: string
   let description: string | undefined
 
   // Serve these pages "bare", without the Page component wrapper
-  if (slug.endsWith('slides')) {
+  if (pathname.endsWith('slides')) {
     title = 'Slides'
     content = <Component {...pageProps} />
-  } else if (slug.endsWith('playgrounds')) {
+  } else if (pathname.endsWith('playgrounds')) {
     title = 'Playgrounds'
     content = <Component {...pageProps} />
   } else {
-    const node = findNodeBySlug(guidebook, slug)
+    const node = findNodeBySlug(guidebook, pathname.slice(1))
 
     if (!node) {
       title = 'Not found'
-      content = <NotFound routeMap={legacyRoutes} />
+      content = (
+        <div style={{ height: '100vh', display: 'flex' }}>
+          <NotFound routeMap={legacyRoutes} />
+        </div>
+      )
     } else {
       const isIntroduction = node.slug === ''
 
@@ -139,9 +142,10 @@ export default function GuidebookApp({
 
   const routerWithLocale = useMemo(
     () => ({
-      pathname: `/${slug}`,
-      asPath: `/${slug}`,
-      push: (pathname: string) => router.push(`/${locale}${pathname}`),
+      pathname,
+      push: (pathname: string) => {
+        router.push(`${localePrefix}${pathname}`)
+      },
     }),
     [locale, router.pathname, router.asPath]
   )

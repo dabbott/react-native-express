@@ -5033,10 +5033,10 @@ react-ga@^3.3.0:
   resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-3.3.0.tgz#c91f407198adcb3b49e2bc5c12b3fe460039b3ca"
   integrity sha512-o8RScHj6Lb8cwy3GMrVH6NJvL+y0zpJvKtc0+wmH7Bt23rszJmnqEQxRbyrqUzk9DTJIHoP42bfO5rswC9SWBQ==
 
-react-guidebook@^0.9.5:
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.9.5.tgz#bcc5cd0e4b81a3a62fbd40c77521da6d0fb56eed"
-  integrity sha512-oall+nPE0KD4kJiBWMVOg+FtpOViQSm6xzbP/Utd0eYzaJ+W+iCATDl15KdGsHdH8ULNlkX+nk/qdWtAHt5+JQ==
+react-guidebook@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/react-guidebook/-/react-guidebook-0.10.0.tgz#d825b7b205555e96b5c43db45ed7cbdc9b3968c0"
+  integrity sha512-bpQDjDH1vQKjHXyaCVSjZyhd9Dq2M1cskuQStzy1CXfYMpB/hsIlOjRgxlOLcRp3PQKo3uye3wJUKHbOHijN0Q==
   dependencies:
     downshift "^6.0.5"
     javascript-playgrounds "^1.1.1"
