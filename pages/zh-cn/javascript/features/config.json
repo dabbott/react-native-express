@@ -1,0 +1,11 @@
+{
+  "order": [
+    "imports_and_exports",
+    "variables",
+    "arrow_functions",
+    "classes",
+    "destructuring",
+    "spread",
+    "async_and_await"
+  ]
+}
