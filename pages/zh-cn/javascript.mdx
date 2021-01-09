@@ -2,40 +2,40 @@
 title: JavaScript
 ---
 
-React Native apps are written in JavaScript. Instead of writing a separate app in Swift (for iOS) and Kotlin (for Android), we can write a single JavaScript codebase that powers our app on multiple platforms. The React Native framework provides a set of JavaScript bindings to native iOS and Android APIs. Using these bindings, we're able to control the user interface and access device hardware, like the camera.
+传统的手机应用开发模式需要开发者使用不同的语言（如 Swift 和 Kotlin）为 iOS 安卓这两个端分别开发应用。在 React Native 的开发模式下，开发者只需要使用 JavaScript 写一套代码就可以实现多端投放。React Native 框架提供了一个 JavaScript 桥接器，让开发者能使用 JavaScript API 来访问原生资源，比如相机。
 
 ---
 
-## JavaScript engines
+## JavaScript 引擎
 
-Our JavaScript code runs in a JavaScript "engine", or interpreter, on mobile devices. On iOS, our code runs in JSC, the same open source engine used by the Safari web browser. On Android, our code can either use JSC, or a new engine from Facebook called Hermes.
+JavaScript 代码运行在 JavaScript 引擎（也叫转译器）里。iOS 端使用的是和 Safari 浏览器一样的开源 JSC，而安卓端除了 JSC 外，还可以使用 Facebook 开发的 Hermes 新引擎。
 
-Each JavaScript engine, and each version of each engine, supports slightly JavaScript language features. The JSC used by iOS 12 may not support the exact same feature set as the one in iOS 13 or iOS 14, and it will almost certainly be a little different than Hermes.
+每个 JavaScript 引擎，甚至在同一引擎的不同版本，支持的 Javascript 语言特性都有少许不同。比如 iOS 12 的 JSC 就可能无法支持 iOS 13 或 14 里的 JSC 的语言特性，更不用说像 Hermes 一个完全不同的引擎。
 
-We don't want to have to think about this complexity when writing an app - thats where **Babel** comes in.
+**Babel** 工具正是为了解决这个复杂问题而孕育而生。
 
 ---
 
 ## Babel
 
-Babel is a highly configurable compiler that lets us use newer JavaScript language features (and extensions, like JSX), compiling "down" into older versions of JavaScript that are supported on a wider range of engines. This essentially smooths out any differences between JSC versions, or between JSC and Hermes, so we don't have to think about those differences when writing our app.
+Babel 是一个高度可配置的编译器，让我们可以在旧的 JavaScript 引擎上也可以使用新的语言特性和扩展（如 JSX），实现向下兼容。这从根本上抹除 JSC 版本之间或 JSC 与 Hermes 之间的任何差异，让我们在编写代码的时候不需要担忧 JavaScript 引擎兼容性问题。
 
-When we initialize a new React Native app, a Babel configuration file, `babel.config.js`, is generated alongside our project. This file configures Babel with a React Native preset, so our JavaScript code should "just work" regardless of which engine it runs on.
+当我们初始化一个新的 React Native 应用时，工具会自动创建一个 `babel.config.js` 配置文件。使用该文件所包含 React Native 项目所需的 Babel 预制配置，应该能让 JavaScript 代码在任何引擎上都正常工作。
 
 ---
 
 ## TypeScript
 
-JavaScript is _dynamically_ typed, which means that type checking happens at runtime. This is convenient for small scripts, but for large apps it's often helpful to have type checking at compile-time. For this reason, many React Native developers write their apps in TypeScript, a language that compiles "down" into JavaScript (somewhat like how Babel works). React Native officially supports TypeScript via a separate [starter template](https://reactnative.dev/docs/typescript), and Expo includes a TypeScript template too.
+JavaScript 是一个__动态__类型的语言，在运行期间才去做数据类型检查。这样的灵活性可能对小型项目带来方便，但是对于大项目来说，在编译阶段进行类型检查会更有帮助。因此，许多 React Native 开发者都会使用 TypeScript 语言来进行研发。TypeScript 编译器使用类似 Babel 的方式，把的 TypeScript 代码“向下”编译成 JavaScript 代码。React Native 和 Expo 都已经官方支持 TypeScript，并提供相应的模版给开发者使用。
 
-TypeScript extends JavaScript, adding syntax for type declarations and annotations. The TypeScript compiler can then perform compile-time type checking, before transforming the TypeScript code into JavaScript.
+TypeScript 在 JavaScript 的基础上，增加了类型声明和注释相关语法。这样 TypeScript 编译器就能在编译时进行类型检查，检查通过后再把 TypeScript 代码转换成 JavaScript。
 
-In this guide, we'll be using JavaScript primarily, but I'll add relevant TypeScript types to a few examples for those who are interested.
+本指南使用的主要语言还是 JavaScript，我也会为感兴趣的人在一些示例中添加相关的 TypeScript 类型。
 
-> If your background is in web development and you haven't used TypeScript before, I recommend writing your first React Native without it, so you're not learning 2 things at once. If your background is in iOS or Android development, you may find writing in TypeScript more comfortable.
+> 如果你主要从事 Web 开发，没有使用过 TypeScript，我建议你使用 JavaScript 来开发你的第一个 React Native 应用。如果你的背景是 iOS 或安卓开发，你可能会觉得使用 TypeScript 会更舒适些。
 
 ---
 
-### Up next
+### 接下来
 
-Let's go through a few key JavaScript language features, and then jump into the JSX language extension, before moving on to React.
+让我们先复习一些关键的 JavaScript 语言新特性，学习一下 JSX 语言扩展，然后就可以正式开始 React 开发了。
