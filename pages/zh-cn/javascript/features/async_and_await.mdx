@@ -1,0 +1,11 @@
+import asyncAwait from '../../../../examples/files/javascript/fetch.js'
+
+The keywords `async` and `await` are special syntax for working with promises.
+
+A function marked as `async` _always_ returns a `Promise` — if we return a non-promise value, it's automatically wrapped in `Promise.resolve`.
+
+Within the function, we can use `await` to wait for a promise to be resolved or rejected and access its value.
+
+> The main advantage of this syntax is that we don't introduce deeply nested callback chains. However, all the complexity of asynchronous programming is still here, even if the syntax looks nicer.
+
+<Example width={0} title={'Async and Await'} code={asyncAwait} />

@@ -1,0 +1,53 @@
+import defaultImport from '../../../../examples/files/javascript/defaultImport'
+import namedImports from '../../../../examples/files/javascript/namedImports'
+import namedExports from '../../../../examples/files/javascript/namedExports'
+import momentExample from '../../../../examples/files/javascript/momentExample'
+import { moment } from '../../../../examples/modules'
+
+## Syntax
+
+We use the keyword `import` to load values from other JavaScript files via relative path.
+
+We use `export` to expose values for importing.
+
+<Example
+  width={0}
+  height={300}
+  files={{
+    'index.js': defaultImport,
+    'myNumber.js': `export default 42\n`,
+  }}
+/>
+
+---
+
+## Named imports and exports
+
+A single file can have multiple exports, and any subset of these can be imported simultaneously.
+
+<Example
+  width={0}
+  height={300}
+  files={{
+    'index.js': namedImports,
+    'myValues.js': namedExports,
+  }}
+/>
+
+---
+
+## Importing from modules
+
+There's a shorter syntax for importing 3rd party libraries: we import the name of the module's directory within `node_modules` (which is the name of the package in the `npm` package registry).
+
+Libraries specify a "main" file in their `package.json`, usually named `index.js`, which is what actually gets imported. E.g. assuming we had downloaded the `moment` library into our `node_modules`, we could import `'./node_modules/moment/index.js'` with just `'moment'`.
+
+> Note: importing the path to a directory will generally import the `index.js` file in that directory. Some developers prefer importing from `./myDirectory` rather than `./myDirectory/index.js`, but these are equivalent.
+
+<Example
+  title="Importing a library"
+  width={0}
+  height={300}
+  code={momentExample}
+  vendorComponents={[moment]}
+/>
