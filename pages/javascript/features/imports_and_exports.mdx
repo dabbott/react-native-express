@@ -4,11 +4,11 @@ import namedExports from '../../../examples/files/javascript/namedExports'
 import momentExample from '../../../examples/files/javascript/momentExample'
 import { moment } from '../../../examples/modules'
 
-## Syntax
+## 语法
 
-We use the keyword `import` to load values from other JavaScript files via relative path.
+使用 `import` 关键字将其他 JavaScript 文件里定义的值，通过相对路径的方式导入到当前文件里。
 
-We use `export` to expose values for importing.
+使用 `export` 关键字把当前文件里定义的值导出，供其他文件使用。
 
 <Example
   width={0}
@@ -21,9 +21,9 @@ We use `export` to expose values for importing.
 
 ---
 
-## Named imports and exports
+## 命名导入和导出
 
-A single file can have multiple exports, and any subset of these can be imported simultaneously.
+一个文件里可以导出多个值，而这些导出值的子集可以同时被导入到其他文件中。
 
 <Example
   width={0}
@@ -36,13 +36,14 @@ A single file can have multiple exports, and any subset of these can be imported
 
 ---
 
-## Importing from modules
+## 从模块导入
 
-There's a shorter syntax for importing 3rd party libraries: we import the name of the module's directory within `node_modules` (which is the name of the package in the `npm` package registry).
+导入三方库的语法更精炼：只需要使用 `node_modules` 里模块文件夹的名称即可。(同时也是该模块包在 `npm` 注册表的名称)。
 
-Libraries specify a "main" file in their `package.json`, usually named `index.js`, which is what actually gets imported. E.g. assuming we had downloaded the `moment` library into our `node_modules`, we could import `'./node_modules/moment/index.js'` with just `'moment'`.
+通常三方库会在 `package.json` 文件里定义一个叫 `index.js` 的主文件来提供给集成方引入。举个例子，当我们要引入 `node_modules` 里已经下载好的 `moment` 三方库时，语法上只需要引入 `'moment'` 即可使用 `'./node_modules/moment/index.js'`里的内容。
 
-> Note: importing the path to a directory will generally import the `index.js` file in that directory. Some developers prefer importing from `./myDirectory` rather than `./myDirectory/index.js`, but these are equivalent.
+> 请注意: 导入目录路径的时候，通常也会导入该目录下的 `index.js`文件。 因此，不管是使用 `./myDirectory`，还是用 `./myDirectory/index.js` 导入，效果是一样的。
+
 
 <Example
   title="Importing a library"
