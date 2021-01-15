@@ -4,45 +4,43 @@ title: 箭头函数
 
 import arrowFunctions from '../../../../examples/files/javascript/arrowFunctions.js'
 
-## Declaring Functions
+## 声明函数
 
-There are two syntaxes for declaring functions:
+一般来说，有两种声明函数的方式：
 
-- The `function` keyword
-- Arrow (`=>`) function expressions
+- 使用 `function` 关键字
+- 使用箭头函数 (`=>`) 表达式
 
-The `=>` syntax is a newer, more lightweight syntax for defining functions. However, these syntaxes have somewhat different behavior, so arrow functions are more than just a new syntax.
+箭头（i.e., `=>`) 是用于声明函数的轻量方式。 但它的语法行为和 `function` 有些差异，我们不能把箭头函数当作仅仅只是一个新语法那么简单。
 
 <Example width={0} title={'Functions'} code={arrowFunctions} />
 
 ---
 
-## Arrow syntax
+## 箭头函数语法
 
-Arrow function syntax can vary a bit.
+当只有一个参数时，圆括号是可选的：`x => Math.pow(x, 2)`。但在多个参数的情况下圆括号必须保留：`(x, y) => Math.pow(x, y)`
 
-If the function takes exactly one parameter, the parentheses can be omitted: `x => Math.pow(x, 2)`. Any other number of arguments will need parentheses: `(x, y) => Math.pow(x, y)`.
-
-If the function body is not wrapped in curly braces (as in the previous sentences), it is executed as an **expression**, and the return value of the function is the value of the expression. The function body can be wrapped in curly braces to make it a **block**, in which case you will need to explicitly `return` a value, if you want something returned.
+如果函数体没有使用大括号，该函数为“简写体”，只需要一个**表达式**，并附加一个隐式的返回值。如果函数体使用了大括号，则称为"块体"，必须使用明确的 `return` 语句。
 
 ---
 
-## Behavior Differences
+## 行为差异
 
-### `this` Binding
+### `this` 绑定
 
-For functions defined with `=>`, the binding for the keyword `this` is the same inside and outside the function. This is different than functions declared with `function`, which can bind `this` to another object upon invocation. Maintaining the `this` binding is very convenient for operations like mapping: `this.items.map(x => this.doSomethingWith(x))`.
+和用 `function` 关键字声明的函数不同，箭头函数内部和外部的 `this` 指向的对象是一致的，这种一致性对遍历的操作非常方便，如 `this.items.map(x => this.doSomethingWith(x))`。开发者不需要再担心 `this` 指向错误的对象的问题。
 
 ---
 
 ### `arguments`
 
-Arrow functions don't have an `arguments` object defined. We can achieve the same thing using the **spread syntax**: `(...args) => doSomething(args[0], args[1])`.
+箭头函数不绑定 `arguments` 对象，请使用**剩余参数**来获取入参值： `(...args) => doSomething(args[0], args[1])`.
 
 ---
 
-### Naming
+### 命名
 
-Functions defined with `=>` are always anonymous, while functions defined with `function` can optionally be named. Naming can be very helpful in stack traces when debugging, so I recommend using named functions when exporting a function from a file with the `export` keyword.
+使用箭头声明的函数一定是匿名函数，而用 `function` 关键字声明的函数可以选择命名。命名在调试时的堆栈跟踪中非常有用。因此，如果你的函数会被输出到其他文件里使用，建议命名函数。
 
-> A named function `foo` is defined as `function foo()`, which simultaneously introduces the variable name `foo` into scope. This is different than `const foo = () => {}`, which introduces the variable name `foo` pointing to an anonymous function.
+> 一个函数 `foo` 是用 `function foo()` 的方式定义的，同时它将变量名 `foo` 引入作用域。而 `const foo = () => {}` 并不会定义函数 `foo` ，它只是把变量名 `foo` 指向一个匿名函数。
