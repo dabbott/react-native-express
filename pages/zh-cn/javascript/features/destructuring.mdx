@@ -7,29 +7,29 @@ import destructuringArrays from '../../../../examples/files/javascript/destructu
 import destructuringFunctionArguments from '../../../../examples/files/javascript/destructuringFunctionArguments.js'
 import destructuringAdvanced from '../../../../examples/files/javascript/destructuringAdvanced.js'
 
-We can use **destructuring** to extract multiple values from an object or array and assign them to variables simultaneously.
+我们可以使用**解构赋值**来从对象或数组中提取多个值，并将它们一起赋值给多个变量。
 
 ---
 
-## Destructuring objects
+## 解构对象
 
-We can extract multiple values within an object.
+将多个属性从一个对象里取出。
 
 <Example title="Destructuring objects" width={0} code={destructuringObjects} />
 
 ---
 
-## Destructuring arrays
+## 解构数组
 
-We can extract multiple values within an array.
+将多个属性从一个数组里取出。
 
 <Example title="Destructuring arrays" width={0} code={destructuringArrays} />
 
 ---
 
-## Destructuring function arguments
+## 从函数实参的对象中提取数据
 
-We can destructure object and array parameters directly in the function declaration.
+自动解构传入函数的实参，并从中提取分解后的数据。
 
 <Example
   title="Destructuring function arguments"
@@ -39,11 +39,11 @@ We can destructure object and array parameters directly in the function declarat
 
 ---
 
-## Advanced destructuring
+## 高阶解构
 
-We can also nest and rename destructured variables and supply default values.
+我们还可以嵌套并重命名解构变量并提供默认值。
 
-The rest syntax `...` collects remaining values. <Details>Rest is roughly the inverse of spread.</Details>
+这里的 `...` 是剩余语法，用来收集剩余值。<Details>剩余语法是展开语法的逆操作。</Details>
 
 <Example
   title="Advanced destructuring"
