@@ -4,12 +4,12 @@ title: Async 和 await
 
 import asyncAwait from '../../../../examples/files/javascript/fetch.js'
 
-The keywords `async` and `await` are special syntax for working with promises.
+`async` 和 `await` 这两个关键字为 `Promises` 量身定制的。
 
-A function marked as `async` _always_ returns a `Promise` — if we return a non-promise value, it's automatically wrapped in `Promise.resolve`.
+一个标记为 `async` 的函数*一定*会返回一个 `Promise` 对象，如果返回值不是 `Promise` 类型，则会自动用 `Promise.resolve` 包装。
 
-Within the function, we can use `await` to wait for a promise to be resolved or rejected and access its value.
+在 `async` 函数里，我们可以使用 `await` 来等待和访问一个 `Promise` 对象的解析值或拒绝原因。
 
-> The main advantage of this syntax is that we don't introduce deeply nested callback chains. However, all the complexity of asynchronous programming is still here, even if the syntax looks nicer.
+> 这种语法的主要优点是避免深度嵌套的回调链。 但即使语法看起来更简练了，我们还是要注意异步编程的复杂性。
 
 <Example width={0} title={'Async and Await'} code={asyncAwait} />
