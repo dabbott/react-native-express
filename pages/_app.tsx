@@ -1,4 +1,4 @@
-import App, { AppInitialProps } from 'next/app'
+import App from 'next/app'
 import Head from 'next/head'
 import Link from 'next/link'
 import ReactGA from 'react-ga'
@@ -32,7 +32,6 @@ import Disqus from '../components/Disqus'
 import BookBanner from '../components/BookBanner'
 import FileTreeDiagram from '../components/FileTreeDiagram'
 import logo from '../images/logo.svg'
-import legacyRoutes from '../utils/legacyRoutes'
 import { searchPages, searchTextMatch } from '../utils/search'
 import pkg from '../package.json'
 import type { TreeNode } from 'generate-guidebook'
@@ -77,77 +76,66 @@ export default function GuidebookApp({
   )
 
   // Use `asPath`, since `pathname` will be "_error" if the page isn't found
-  const pathname = router.asPath.slice(localePrefix.length)
+  const pathname = router.pathname.slice(localePrefix.length)
+  const clientPath = router.asPath.slice(localePrefix.length)
   const theme = pathname.endsWith('slides') ? slidesTheme : defaultTheme
 
   let content
   let title: string
   let description: string | undefined
 
-  // Serve these pages "bare", without the Page component wrapper
-  if (pathname.endsWith('slides')) {
-    title = 'Slides'
-    content = <Component {...pageProps} />
-  } else if (pathname.endsWith('playgrounds')) {
-    title = 'Playgrounds'
-    content = <Component {...pageProps} />
+  const node = findNodeBySlug(guidebook, pathname.slice(1))
+
+  if (node) {
+    const isIntroduction = node.slug === ''
+
+    title = node.title
+    description = node.subtitle
+    content = (
+      <MDXProvider components={Components}>
+        <Page
+          rootNode={guidebook}
+          header={
+            isIntroduction ? (
+              <Banner logo={logo} github={config.github} />
+            ) : undefined
+          }
+          footer={
+            locale === 'en' ? (
+              <>
+                {isIntroduction ? undefined : <BookBanner />}
+                {isIntroduction ? undefined : config.disqus ? (
+                  <Disqus
+                    title={node.title}
+                    identifier={node.slug}
+                    shortname={config.disqus.shortname}
+                    stagingShortname={config.disqus.stagingShortname}
+                  />
+                ) : undefined}
+              </>
+            ) : undefined
+          }
+          searchPages={locale === 'en' ? searchPages : undefined}
+          searchTextMatch={locale === 'en' ? searchTextMatch : undefined}
+        >
+          <Component {...pageProps} />
+        </Page>
+      </MDXProvider>
+    )
   } else {
-    const node = findNodeBySlug(guidebook, pathname.slice(1))
-
-    if (!node) {
-      title = 'Not found'
-      content = (
-        <div style={{ height: '100vh', display: 'flex' }}>
-          <NotFound routeMap={legacyRoutes} />
-        </div>
-      )
-    } else {
-      const isIntroduction = node.slug === ''
-
-      title = node.title
-      description = node.subtitle
-      content = (
-        <MDXProvider components={Components}>
-          <Page
-            rootNode={guidebook}
-            header={
-              isIntroduction ? (
-                <Banner logo={logo} github={config.github} />
-              ) : undefined
-            }
-            footer={
-              locale === 'en' ? (
-                <>
-                  {isIntroduction ? undefined : <BookBanner />}
-                  {isIntroduction ? undefined : config.disqus ? (
-                    <Disqus
-                      title={node.title}
-                      identifier={node.slug}
-                      shortname={config.disqus.shortname}
-                      stagingShortname={config.disqus.stagingShortname}
-                    />
-                  ) : undefined}
-                </>
-              ) : undefined
-            }
-            searchPages={locale === 'en' ? searchPages : undefined}
-            searchTextMatch={locale === 'en' ? searchTextMatch : undefined}
-          >
-            <Component {...pageProps} />
-          </Page>
-        </MDXProvider>
-      )
-    }
+    title = (Component as any).title || ''
+    content = <Component {...pageProps} />
   }
 
   const routerWithLocale = useMemo(
     () => ({
       pathname,
+      clientPath,
       push: (pathname: string) => {
         router.push(`${localePrefix}${pathname}`)
       },
     }),
-    [locale, router.pathname, router.asPath]
+    [locale, pathname, clientPath]
   )
 
   return (
@@ -178,7 +166,7 @@ GuidebookApp.getInitialProps = async (appContext: AppContext) => {
   const appProps = await App.getInitialProps(appContext)
 
   const locale =
-    locales.find((item) => router.asPath.startsWith(`/${item}`)) ??
+    locales.find((item) => router.pathname.startsWith(`/${item}`)) ??
     defaultLocale
 
   return {
