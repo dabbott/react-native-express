@@ -35,6 +35,7 @@ import logo from '../images/logo.svg'
 import { searchPages, searchTextMatch } from '../utils/search'
 import pkg from '../package.json'
 import type { TreeNode } from 'generate-guidebook'
+import CommunityResources from '../components/CommunityResources'
 
 const config: GuidebookConfig = pkg.guidebook ?? {}
 
@@ -101,10 +102,11 @@ export default function GuidebookApp({
             ) : undefined
           }
           footer={
-            locale === 'en' ? (
+            locale === 'en' && !isIntroduction ? (
               <>
-                {isIntroduction ? undefined : <BookBanner />}
-                {isIntroduction ? undefined : config.disqus ? (
+                <BookBanner />
+                <CommunityResources />
+                {config.disqus ? (
                   <Disqus
                     title={node.title}
                     identifier={node.slug}

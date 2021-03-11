@@ -1,6 +1,6 @@
 import { DiscussionEmbed } from 'disqus-react'
 import React from 'react'
-import { mediaQuery, PageLayout } from 'react-guidebook'
+import { PageLayout } from 'react-guidebook'
 import styled from 'styled-components'
 
 const Container = styled.div({
