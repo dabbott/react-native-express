@@ -156,7 +156,11 @@ export default memo(
     return (
       <WebPlayer
         preset="react-native"
-        containerStyle={{ marginBottom: '15px', flex: '1' }}
+        containerStyle={{
+          marginTop: `${theme.sizes.spacing.medium}px`,
+          marginBottom: `${theme.sizes.spacing.medium}px`,
+          flex: '1',
+        }}
         fullscreen={true}
         style={style}
         styles={{
