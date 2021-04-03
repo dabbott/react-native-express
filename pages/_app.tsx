@@ -28,7 +28,7 @@ import {
 import defaultTheme from '../styles/theme'
 import slidesTheme from '../styles/slidesTheme'
 import EditorConsole from '../components/EditorConsole'
-import Disqus from '../components/Disqus'
+// import Disqus from '../components/Disqus'
 import BookBanner from '../components/BookBanner'
 import FileTreeDiagram from '../components/FileTreeDiagram'
 import logo from '../images/logo.svg'
@@ -106,14 +106,14 @@ export default function GuidebookApp({
               <>
                 <BookBanner />
                 <CommunityResources />
-                {config.disqus ? (
+                {/* {config.disqus ? (
                   <Disqus
                     title={node.title}
                     identifier={node.slug}
                     shortname={config.disqus.shortname}
                     stagingShortname={config.disqus.stagingShortname}
                   />
-                ) : undefined}
+                ) : undefined} */}
               </>
             ) : undefined
           }
