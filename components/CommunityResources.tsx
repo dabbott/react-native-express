@@ -14,7 +14,7 @@ import styled from 'styled-components'
 const RN_NEWSLETTER_URL = 'https://reactnative.cc'
 const RN_RADIO_URL = 'https://reactnativeradio.com'
 const CHAIN_REACT_URL = 'https://cr.infinite.red'
-const INFINITE_RED_URL = 'https://t.co/XsBweZ7ulU?amp=1'
+const INFINITE_RED_URL = 'https://infinite.red/react-native'
 
 const Container = styled.div({
   display: 'flex',
