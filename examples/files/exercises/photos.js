@@ -7,9 +7,9 @@ const types = {
 export const actionCreators = {
   loading: () => ({ type: types.LOADING }),
   failure: () => ({ type: types.FAILURE }),
-  success: (photos, page) => ({
+  success: (photos) => ({
     type: types.SUCCESS,
-    payload: { photos, page },
+    payload: { photos },
   }),
 }
 
@@ -26,7 +26,6 @@ export function reducer(state, action) {
       return { ...state, loading: true, error: false }
     case types.SUCCESS:
       return {
-        ...state,
         loading: false,
         error: false,
         photos: [...state.photos, ...action.payload.photos],

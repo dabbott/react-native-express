@@ -15,7 +15,7 @@ export default function App() {
 
     try {
       const nextPhotos = await getList(nextPage)
-      dispatch(actionCreators.success(nextPhotos, nextPage))
+      dispatch(actionCreators.success(nextPhotos))
     } catch (e) {
       dispatch(actionCreators.failure())
     }
